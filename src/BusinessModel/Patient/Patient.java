@@ -34,14 +34,14 @@ public class Patient {
     private String pBloodBankStatus;
     private String pPoliceStatus;
     private boolean pIsConcentFormSigned;
-    //private ArrayList<PatientBills> pBills;
+    private ArrayList<PatientBills> pBills;
 
     public Patient() {
     }
 
     public Patient(String pUserName) {
         this.pUserName = pUserName;
-//        pBills = new ArrayList<>();
+        pBills = new ArrayList<>();
     }
     
     
@@ -229,26 +229,26 @@ public class Patient {
         this.pIsConcentFormSigned = pIsConcentFormSigned;
     }
 
-////    public ArrayList<PatientBills> getpBills() {
-////        return pBills;
-////    }
-////
-////    public void setpBills(ArrayList<PatientBills> pBills) {
-////        this.pBills = pBills;
-////    }
-////    
-////    public void addbill(PatientBills bill){
-////        pBills.add(bill);
-////    } 
-////     public float totalBill() {
-////        float total =0;
-////           for(PatientBills b:pBills){
-////               total =  total + b.getAmount();
-////        }
-////        return total;
-////    }
-//    
-//    
-//}
+    public ArrayList<PatientBills> getpBills() {
+        return pBills;
+    }
 
+    public void setpBills(ArrayList<PatientBills> pBills) {
+        this.pBills = pBills;
+    }
+    
+    public void addbill(PatientBills bill){
+        pBills.add(bill);
+    } 
+     public float totalBill() {
+        float total =0;
+           for(PatientBills b:pBills){
+               total =  total + b.getAmount();
+        }
+        return total;
+    }
+    
+    
 }
+
+
