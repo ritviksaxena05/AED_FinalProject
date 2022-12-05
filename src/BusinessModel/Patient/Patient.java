@@ -244,7 +244,7 @@ public class Patient {
         float total =0;
            for(PatientBills b:pBills){
                total =  total + b.getAmount();
-        }
+           }
         return total;
     }
     
