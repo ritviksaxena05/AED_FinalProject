@@ -245,9 +245,9 @@ public class Patient {
     } 
      public float totalBill() {
         float total =0;
-//           for(PatientBills b:pBills){
-//               total =  total + b.getAmount();
-//        }
+           for(PatientBills b:patientBills){
+               total =  total + b.getAmount();
+        }
         return total;
     }
            
