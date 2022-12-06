@@ -38,13 +38,12 @@ public class DBUtil {
     private ObjectContainer createConnection() {
         try {
             EmbeddedConfiguration config = Db4oEmbedded.newConfiguration();
-            ObjectContainer database = Db4oEmbedded.openFile(config, FILENAME);
-            
-            config.common().add(new TransparentPersistenceSupport());
+            ObjectContainer db = Db4oEmbedded.openFile(config, FILENAME);            
             config.common().activationDepth(Integer.MAX_VALUE);
-            config.common().updateDepth(Integer.MAX_VALUE);            
+            config.common().updateDepth(Integer.MAX_VALUE);
+            config.common().add(new TransparentPersistenceSupport());            
             config.common().objectClass(EcoModel.class).cascadeOnUpdate(true);
-            return database;
+            return db;
         } catch (Exception ex) {}
         return null;
     }

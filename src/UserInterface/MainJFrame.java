@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package UserInterface;
+import Model.DBUtil.DBUtil;
+import Model.EcoModel;
+import Model.Roles.DoctorAdmin;
+import Model.Roles.DoctorUser;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -12,12 +16,19 @@ import javax.swing.JPanel;
  * @author ramya
  */
 public class MainJFrame extends javax.swing.JFrame {
-
+    private final DBUtil dBUtil = DBUtil.getInstance();
+    private final EcoModel system;
+    
     /**
      * Creates new form MainJFrame
      */
     public MainJFrame() {
         initComponents();
+        
+        system = dBUtil.retrieveSystem();
+        this.setSize(1000, 900);
+        system.getUserDirectory().createUser("doc", "doc", null, new DoctorUser());
+        system.getUserDirectory().createUser("docadmin", "docadmin", null, new DoctorAdmin());
     }
 
     /**

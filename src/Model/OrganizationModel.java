@@ -4,6 +4,8 @@
  */
 package Model;
 
+import Model.User.UserDirectory;
+
 /**
  *
  * @author ramya
@@ -12,6 +14,7 @@ public class OrganizationModel {
     private String name;
     private int id;
     private static int counter = 0;
+    private UserDirectory userDirectory;
     
     public OrganizationModel(String name) {        
         this.id = counter;
@@ -21,6 +24,14 @@ public class OrganizationModel {
 
     public OrganizationModel() {
 
+    }
+
+    public UserDirectory getUserDirectory() {
+        return userDirectory;
+    }
+
+    public void setUserDirectory(UserDirectory userDirectory) {
+        this.userDirectory = userDirectory;
     }
 
     public String getName() {
