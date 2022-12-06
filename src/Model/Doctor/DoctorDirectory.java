@@ -4,6 +4,7 @@
  */
 package Model.Doctor;
 
+import Model.Patient.Patient;
 import java.util.ArrayList;
 
 /**
@@ -13,6 +14,21 @@ import java.util.ArrayList;
 public class DoctorDirectory {
     private ArrayList<Doctor> doctorList;
     
+    public Doctor createDoctor(Doctor doc) {
+        Doctor doctor = new Doctor(doc.getUserName());
+        doctorList.add(doc);
+        return doctor;
+    }
+
+    public void deleteDoctor(Doctor d) {
+        doctorList.remove(d);
+    }
+
+    public Doctor addTreatedPatient(Doctor d, Patient p) {
+        d.getTreatedPatients().add(p);
+        return d;
+    }
+
     public DoctorDirectory() {
         doctorList = new ArrayList<Doctor>();
     }
