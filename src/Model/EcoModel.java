@@ -5,6 +5,8 @@
 package Model;
 
 import Model.Doctor.DoctorDirectory;
+import Model.Roles.Role;
+import java.util.ArrayList;
 
 /**
  *
@@ -40,4 +42,22 @@ public class EcoModel extends OrganizationModel {
         return business;
     }
     
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roleList=new ArrayList<>();
+//        TODO: UNCOMMENT
+//        roleList.add(new Administrator());
+        return roleList;
+    }
+    private EcoModel()
+    {
+        super(null);
+    }
+
+    
+    public boolean checkIfUserIsUnique(String userName)
+    {
+       return false;
+    }
+        
 }
