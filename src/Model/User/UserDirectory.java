@@ -5,6 +5,7 @@
 package Model.User;
 
 import Model.Roles.Role;
+import Model.employee.Employee;
 import java.util.ArrayList;
 
 /**
@@ -18,13 +19,12 @@ public class UserDirectory {
         userList = new ArrayList();
     }
     
-    public User createUser(String uName, String pwd, Role r) {
-//      public User createUser(String username, String password, Employee employee, Role role) {
+      public User createUser(String uName, String pwd, Employee employee, Role r) {
         User user = new User();
         user.setRole(r);
         user.setPassword(pwd);
         user.setUsername(uName);
-//      user.setEmployee(employee);
+        user.setEmployee(employee);
         userList.add(user);
         System.out.println("----Creating user ----");
         System.out.println("----user name----"+uName);

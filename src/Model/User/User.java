@@ -5,13 +5,14 @@
 package Model.User;
 
 import Model.Roles.Role;
+import Model.employee.Employee;
 
 /**
  *
  * @author ramya
  */
 public class User {
-//    private Employee employee;
+    private Employee employee;
     private Role role;
     private String password;
     private String username;
@@ -22,6 +23,14 @@ public class User {
     }
     
     public User() {}
+    
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
     
     public Role getRole() {
         return role;

@@ -27,8 +27,8 @@ public class MainJFrame extends javax.swing.JFrame {
         
         system = dBUtil.retrieveSystem();
         this.setSize(1000, 900);
-        system.getUserDirectory().createUser("doc", "doc", null, new DoctorUser());
-        system.getUserDirectory().createUser("docadmin", "docadmin", null, new DoctorAdmin());
+        system.getUserDirectory().createUser("doctor", "doctor", null, new DoctorUser());
+        system.getUserDirectory().createUser("doctorAdmin", "doctorAdmin", null, new DoctorAdmin());
     }
 
     /**
