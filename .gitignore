@@ -24,3 +24,5 @@ hs_err_pid*
 
 #Made changes in .gitignore
 /nbproject/private/
+/dist/
+/build/
