@@ -4,8 +4,15 @@
  */
 package UI.Doctor;
 
+import java.awt.CardLayout;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 import Model.EcoModel;
+import Model.User.User;
 import Model.Patient.Patient;
+import Model.Patient.Patient_Bills;
 import javax.swing.JPanel;
 
 /**
@@ -17,8 +24,16 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DocMedicineRequestJPanel
      */
-    public DocMedicineRequestJPanel(JPanel userProcessArea, User userAccount, EcoModel ecoModel, Patient patient) {
+    private JPanel userWorkArea;
+    private EcoModel ecoModel;
+    private User userAccount;
+    private Patient patient;
+    public DocMedicineRequestJPanel(JPanel userWorkArea, User userAccount, EcoModel ecoModel, Patient patient) {
         initComponents();
+        this.userWorkArea = userWorkArea;
+        this.ecoModel = ecoModel;
+        this.userAccount = userAccount;
+        this.patient = patient;
     }
 
     /**
@@ -33,9 +48,9 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         lblReqMed = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        cartTableMedicines = new javax.swing.JTable();
+        tableSelectedMedicines = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableRequestMedicine1 = new javax.swing.JTable();
+        tableavailableMedicine = new javax.swing.JTable();
         btnMedRemove = new javax.swing.JButton();
         btnMedAdd = new javax.swing.JButton();
         btnFinalMedReq = new javax.swing.JButton();
@@ -51,10 +66,10 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         lblReqMed.setForeground(new java.awt.Color(255, 255, 255));
         lblReqMed.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblReqMed.setText("Request Medicines");
-        jPanel1.add(lblReqMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 350, -1));
+        jPanel1.add(lblReqMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 350, -1));
 
-        cartTableMedicines.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        cartTableMedicines.setModel(new javax.swing.table.DefaultTableModel(
+        tableSelectedMedicines.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        tableSelectedMedicines.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -80,12 +95,12 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(cartTableMedicines);
+        jScrollPane1.setViewportView(tableSelectedMedicines);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 500, 170));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 500, 170));
 
-        tableRequestMedicine1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        tableRequestMedicine1.setModel(new javax.swing.table.DefaultTableModel(
+        tableavailableMedicine.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        tableavailableMedicine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -111,29 +126,29 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tableRequestMedicine1);
+        jScrollPane2.setViewportView(tableavailableMedicine);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 510, 170));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 510, 170));
 
         btnMedRemove.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         btnMedRemove.setForeground(new java.awt.Color(0, 0, 102));
-        btnMedRemove.setText("<< REMOVE");
+        btnMedRemove.setText("REMOVE");
         btnMedRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMedRemoveActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMedRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 120, 46));
+        jPanel1.add(btnMedRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 100, 30));
 
         btnMedAdd.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
         btnMedAdd.setForeground(new java.awt.Color(0, 0, 102));
-        btnMedAdd.setText("ADD >>");
+        btnMedAdd.setText("ADD");
         btnMedAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMedAddActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMedAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 90, 47));
+        jPanel1.add(btnMedAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 90, 30));
 
         btnFinalMedReq.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnFinalMedReq.setForeground(new java.awt.Color(0, 0, 102));
@@ -144,7 +159,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
                 btnFinalMedReqActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFinalMedReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 180, 42));
+        jPanel1.add(btnFinalMedReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 350, 180, 42));
 
         btnBack.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnBack.setForeground(new java.awt.Color(0, 0, 102));
@@ -160,16 +175,16 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         lblMedAvailable.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblMedAvailable.setForeground(new java.awt.Color(255, 255, 255));
         lblMedAvailable.setText("Available Medicine");
-        jPanel1.add(lblMedAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        jPanel1.add(lblMedAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
 
         lblMedSelected.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblMedSelected.setForeground(new java.awt.Color(255, 255, 255));
         lblMedSelected.setText("Selected Medicine");
-        jPanel1.add(lblMedSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 120, -1, -1));
+        jPanel1.add(lblMedSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/med.png"))); // NOI18N
         jLabel4.setText("jLabel4");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 50, 50));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 50, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -195,15 +210,15 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
 
     private void btnMedRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedRemoveActionPerformed
         // TODO add your handling code here:
-        int selectedRow = cartTableMedicines.getSelectedRow();
+        int selectedRow = tableSelectedMedicines.getSelectedRow();
         if(selectedRow<0)
         {
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Medicine item=(Medicine)cartTableMedicines.getValueAt(selectedRow, 0);
+            Medicine item=(Medicine)tableSelectedMedicines.getValueAt(selectedRow, 0);
             items.remove(item);
-            DefaultTableModel model = (DefaultTableModel) cartTableMedicines.getModel();
+            DefaultTableModel model = (DefaultTableModel) tableSelectedMedicines.getModel();
             model.setRowCount(0);
             Object[] row = new Object[4];
             for(Medicine t:items){
@@ -219,12 +234,12 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
 
     private void btnMedAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedAddActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tableRequestMedicine1.getSelectedRow();
+        int selectedRow = tableavailableMedicine.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Medicine item=(Medicine)tableRequestMedicine1.getValueAt(selectedRow, 0);
+            Medicine item=(Medicine)tableavailableMedicine.getValueAt(selectedRow, 0);
 
             populateCart(item);
 
@@ -246,22 +261,22 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
 
                 //ecosystem.AddTreatedPatientList(patient);
             }
-            ecosystem.getPharmacy().AddpharmaRecordList(patient);
+            ecoModel.getPharmacy().AddpharmaRecordList(patient);
             patient.setpPharmaStatus("Requested");
 
-            DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
-            userProcessContainer.add("Visit Doctor", doctorVisit);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
+            DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userWorkArea, userAccount, ecoModel, patient);
+            userWorkArea.add("Visit Doctor", doctorVisit);
+            CardLayout layout = (CardLayout) userWorkArea.getLayout();
+            layout.next(userWorkArea);
         }
     }//GEN-LAST:event_btnFinalMedReqActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
-        userProcessContainer.add("Visit Doctor", doctorVisit);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userWorkArea, userAccount, ecoModel, patient);
+        userWorkArea.add("Visit Doctor", doctorVisit);
+        CardLayout layout = (CardLayout) userWorkArea.getLayout();
+        layout.next(userWorkArea);
     }//GEN-LAST:event_btnBackActionPerformed
 
 
@@ -270,7 +285,6 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnFinalMedReq;
     private javax.swing.JButton btnMedAdd;
     private javax.swing.JButton btnMedRemove;
-    private javax.swing.JTable cartTableMedicines;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -278,6 +292,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblMedAvailable;
     private javax.swing.JLabel lblMedSelected;
     private javax.swing.JLabel lblReqMed;
-    private javax.swing.JTable tableRequestMedicine1;
+    private javax.swing.JTable tableSelectedMedicines;
+    private javax.swing.JTable tableavailableMedicine;
     // End of variables declaration//GEN-END:variables
 }
