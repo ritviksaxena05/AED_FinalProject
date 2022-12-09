@@ -147,12 +147,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void signInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInBtnActionPerformed
         try{
-            User ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
-            CardLayout layout = (CardLayout) mainContainer.getLayout();
-            System.out.println("role of user ---"+ua.getRole());
-            mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
-            layout.next(mainContainer);
-            signOutBtn.setEnabled(true);
+//            User ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
+//            CardLayout layout = (CardLayout) mainContainer.getLayout();
+//            System.out.println("role of user ---"+ua.getRole());
+//            mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
+//            layout.next(mainContainer);
+//            signOutBtn.setEnabled(true);
         }
         catch(Exception e){
             System.out.println("exception ---");
