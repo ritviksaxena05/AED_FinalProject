@@ -4,43 +4,43 @@
  */
 package Model.Patient;
 
-import BusinessModel.Patient.PatientBills;
+import Model.Patient.PatientBills;
 import java.util.ArrayList;
-
+//Added this file
 /**
  *
  * @author devikaboddu
  */
-public class Patient_Directory {
+public class PatientDirectory {
     private PatientBills bill;
-    private ArrayList<BusinessModel.Patient.Patient> patients;
+    private ArrayList<Model.Patient.Patient> patients;
     
-     public PatientBills AddBill(BusinessModel.Patient.Patient patient,String ItemName,String Org,String amount){
+     public PatientBills AddBill(Model.Patient.Patient patient,String ItemName,String Org,String amount){
         
         bill = new PatientBills(ItemName, Org, (float) 800);
         patient.addbill(bill);
         return bill;
     }
-    public ArrayList<BusinessModel.Patient.Patient> getPatientList() {
+    public ArrayList<Model.Patient.Patient> getPatientList() {
         return patients;
     }
 
-    public void setPatientList(ArrayList<BusinessModel.Patient.Patient> patientList) {
+    public void setPatientList(ArrayList<Model.Patient.Patient> patientList) {
         this.patients = patientList;
     }
-    public void deletePatient(BusinessModel.Patient.Patient p){
+    public void deletePatient(Model.Patient.Patient p){
         patients.remove(p);
     }
-     public Patient_Directory()
+     public PatientDirectory()
      {
          patients = new ArrayList<>();
      }
-     
-      public BusinessModel.Patient.Patient createPatient(BusinessModel.Patient.Patient patient) {
+     //Added comment
+      public Model.Patient.Patient createPatient(Model.Patient.Patient patient) {
         patients.add(patient);
         return patient;
     }
-    public float billTotal(BusinessModel.Patient.Patient patient){
+    public float billTotal(Model.Patient.Patient patient){
          float billTotal = patient.totalBill();
          return billTotal;
     }

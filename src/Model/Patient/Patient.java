@@ -4,7 +4,7 @@
  */
 package Model.Patient;
 
-import BusinessModel.Patient.PatientBills;
+import Model.Patient.PatientBills;
 import java.util.ArrayList;
 import java.util.Date;
 
