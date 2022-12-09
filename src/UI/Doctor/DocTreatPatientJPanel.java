@@ -26,12 +26,12 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
     private User userAccount;
     private Patient patient;
     
-    public DocTreatPatientJPanel(JPanel userProcessArea, User userAccount, EcoModel ecoModel, Patient patient) {
+    public DocTreatPatientJPanel(JPanel userArea, User myUserAccount, EcoModel myEcoModel, Patient currentPatient) {
         initComponents();
-        this.userProcessArea = userProcessArea;
-        this.ecoModel = ecoModel;
-        this.userAccount = userAccount;
-        this.patient = patient;
+        this.userProcessArea = userArea;
+        this.ecoModel = myEcoModel;
+        this.userAccount = myUserAccount;
+        this.patient = currentPatient;
         populatePatientTable();
     }
 
