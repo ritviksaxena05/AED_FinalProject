@@ -172,6 +172,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/UserInterface/assets/logo_130x130.png"/>
                 </Property>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[130, 130]"/>
@@ -184,6 +185,8 @@
                 </Property>
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> ramya
               </Properties>
               <AccessibilityProperties>
                 <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
