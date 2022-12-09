@@ -7,7 +7,7 @@ package UI.Doctor;
 import Model.Patient.Patient;
 import Model.EcoModel;
 import Model.User.User;
-import Model.Patient.Patient_Bills;
+import Model.Patient.PatientBills;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.CardLayout;
