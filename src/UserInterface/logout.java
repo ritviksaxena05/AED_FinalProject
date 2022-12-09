@@ -8,7 +8,7 @@ package UserInterface;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import Model.EcoModel;
-import Model.Patient.Bills;
+import Model.Patient.PatientBills;
 import Model.Patient.Patient;
 import Model.User.User;
 import java.awt.CardLayout;

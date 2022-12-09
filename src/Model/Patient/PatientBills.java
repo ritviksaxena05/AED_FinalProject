@@ -8,19 +8,19 @@ package Model.Patient;
  *
  * @author devikaboddu
  */
-public class Patient_Bills {
+public class PatientBills {
     private String orgType;
     private float amount;
     private String name;
     private String result;
     private String status;
     
-     public Patient_Bills(String itemName,String organization1,float itemAmount) {
+     public PatientBills(String itemName,String organization1,float itemAmount) {
         this.orgType = organization1;
         this.amount = itemAmount;
         this.name = itemName;
     }
-    public Patient_Bills(String itemName,String organization1,float itemAmount, String result, String itemStatus) {
+    public PatientBills(String itemName,String organization1,float itemAmount, String result, String itemStatus) {
         this.orgType = organization1;
         this.amount = itemAmount;
         this.name = itemName;
