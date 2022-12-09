@@ -5,7 +5,7 @@
 package Model.User;
 
 import Model.Roles.Role;
-import Model.employee.Employee;
+import Model.Employee.Employee;
 
 /**
  *

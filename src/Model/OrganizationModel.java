@@ -6,7 +6,7 @@ package Model;
 
 import Model.Roles.Role;
 import Model.User.UserDirectory;
-import Model.employee.EmployeeDirectory;
+import Model.Employee.EmployeeDirectory;
 import java.util.ArrayList;
 
 /**
