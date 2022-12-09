@@ -14,9 +14,20 @@ import java.util.Date;
  * @author ramya
  */
 public class Doctor extends Person{
-    private String specialization;
-    private String experience;
-    private String imagePath;
+    private String docUserName;
+    private String docPassword;
+    private String docFirstName;
+    private String docLastName;
+    private String docGender;
+    private int docAge;
+    private Date docDOB;
+    private String docPhoneNumber;
+    private String docEmail;
+    private String docAddress;
+    private String docWorkID;
+    private String docSpecialization;
+    private String docExperience;
+    private String docImagePath;
     private ArrayList<Patient> treatedPatients;
 
     public Doctor() {
@@ -24,32 +35,120 @@ public class Doctor extends Person{
     }
      
     public Doctor(String userName) {
-        this.setUserName(userName); 
-        this.setTreatedPatients(new ArrayList<>());
+        this.setUserName(docUserName); 
+        this.setTreatedPatients(new ArrayList<Patient>());
     }
     
-    public String getSpecialization() {
-        return specialization;
+    public String getdocUserName() {
+        return docUserName;
     }
 
-    public void setSpecialization(String specialization) {
-        this.specialization = specialization;
+    public void setdocUserName(String docUserName) {
+        this.docUserName = docUserName;
     }
 
-    public String getExperience() {
-        return experience;
+    public String getdocPassword() {
+        return docPassword;
     }
 
-    public void setExperience(String experience) {
-        this.experience = experience;
+    public void setdocPassword(String docPassword) {
+        this.docPassword = docPassword;
     }
 
-    public String getImagePath() {
-        return imagePath;
+    public String getdocFirstName() {
+        return docFirstName;
     }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    public void setdocFirstName(String docFirstName) {
+        this.docFirstName = docFirstName;
+    }
+
+    public String getdocLastName() {
+        return docLastName;
+    }
+
+    public void setdocLastName(String docLastName) {
+        this.docLastName = docLastName;
+    }
+
+    public String getdocGender() {
+        return docGender;
+    }
+
+    public void setdocGender(String docGender) {
+        this.docGender = docGender;
+    }
+
+    public int getdocAge() {
+        return docAge;
+    }
+
+    public void setdocAge(int docAge) {
+        this.docAge = docAge;
+    }
+
+    public Date getdocDOB() {
+        return docDOB;
+    }
+
+    public void setdocDOB(Date docDOB) {
+        this.docDOB = docDOB;
+    }
+
+    public String getdocPhoneNumber() {
+        return docPhoneNumber;
+    }
+
+    public void setdocPhoneNumber(String docPhoneNumber) {
+        this.docPhoneNumber = docPhoneNumber;
+    }
+
+    public String getdocEmail() {
+        return docEmail;
+    }
+
+    public void setdocEmail(String docEmail) {
+        this.docEmail = docEmail;
+    }
+
+    public String getdocAddress() {
+        return docAddress;
+    }
+
+    public void setdocAddress(String docAddress) {
+        this.docAddress = docAddress;
+    }
+
+    public String getdocWorkID() {
+        return docWorkID;
+    }
+
+    public void setdocWorkID(String docWorkID) {
+        this.docWorkID = docWorkID;
+    }
+    
+    public String getdocSpecialization() {
+        return docSpecialization;
+    }
+
+    public void setdocSpecialization(String specialization) {
+        this.docSpecialization = specialization;
+    }
+
+    public String getdocExperience() {
+        return docExperience;
+    }
+
+    public void setdocExperience(String experience) {
+        this.docExperience = experience;
+    }
+
+    public String getdocImagePath() {
+        return docImagePath;
+    }
+
+    public void setdocImagePath(String imagePath) {
+        this.docImagePath = imagePath;
     }
 
     public ArrayList<Patient> getTreatedPatients() {
