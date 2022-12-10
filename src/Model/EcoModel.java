@@ -7,11 +7,15 @@ package Model;
 import Model.Ambulance.AmbulanceDirectory;
 import Model.Doctor.DoctorDirectory;
 import Model.Laboratory.Laboratory;
+import Model.Roles.Admin;
 import Model.Pharmacy.Pharmacy;
 import Model.Roles.Role;
 import java.util.ArrayList;
 import Model.Patient.PatientDirectory;
-
+import Model.Ambulance.AmbulanceDirectory;
+import Model.Roles.Role;
+import Model.BloodDonationCenter.BloodDonationCenter;
+import Model.InsuranceAuthority.InsuranceDirectory;
 
 /**
  *
@@ -20,12 +24,27 @@ import Model.Patient.PatientDirectory;
 public class EcoModel extends OrganizationModel {
     private static EcoModel business;
     private Laboratory laboratory;
+    private InsuranceDirectory insuranceDirectory;
     private DoctorDirectory doctorDirectory;
+    private BloodDonationCenter bloodDonationCenter;
     private Pharmacy pharmacy;
     private AmbulanceDirectory ambulanceDirectory;
-    private PatientDirectory patientDirectory;
+    private PatientDirectory patDirectory;
 
 
+    private EcoModel()
+    {
+        super(null);
+    }
+    
+    public PatientDirectory getPatDirectory() {
+        return patDirectory = (patDirectory == null) ? new PatientDirectory() : patDirectory;
+    }
+
+    public void setPatDirectory(PatientDirectory patDirectory) {
+        this.patDirectory = patDirectory;
+    }
+    
     public Pharmacy getPharmacy() {
         return pharmacy;
     }
@@ -54,6 +73,30 @@ public class EcoModel extends OrganizationModel {
         return doctorDirectory;
     }
 
+    public InsuranceDirectory getInsuranceDirectory() {
+        return insuranceDirectory = (insuranceDirectory == null)? new InsuranceDirectory() : insuranceDirectory;
+    }
+
+    public void setInsuranceDirectory(InsuranceDirectory insuranceDirectory) {
+        this.insuranceDirectory = insuranceDirectory;
+    }
+
+    public BloodDonationCenter getBloodDonationCenter() {
+        return bloodDonationCenter = (bloodDonationCenter == null) ? new BloodDonationCenter() : bloodDonationCenter;
+    }
+
+    public void setBloodDonationCenter(BloodDonationCenter bloodDonationCenter) {
+        this.bloodDonationCenter = bloodDonationCenter;
+    }
+
+    public AmbulanceDirectory getAmbulanceDirectory() {
+        return ambulanceDirectory = (ambulanceDirectory == null) ? new AmbulanceDirectory() : ambulanceDirectory;
+    }
+
+    public void setAmbulanceDirectory(AmbulanceDirectory ambulanceDirectory) {
+        this.ambulanceDirectory = ambulanceDirectory;
+    }
+
     public void setDoctorDirectory(DoctorDirectory doctorDirectory) {
         this.doctorDirectory = doctorDirectory;
     }
@@ -67,38 +110,18 @@ public class EcoModel extends OrganizationModel {
         
         return business;
     }
-     public AmbulanceDirectory getAmbulanceDirectory() {
-        return ambulanceDirectory = (ambulanceDirectory == null) ? new AmbulanceDirectory() : ambulanceDirectory;
-    }
 
-    public void setAmbulanceDirectory(AmbulanceDirectory ambulanceDirectory) {
-        this.ambulanceDirectory = ambulanceDirectory;
-    }
-
-    public PatientDirectory getPatientDirectory() {
-        return patientDirectory = (patientDirectory == null) ? new PatientDirectory() : patientDirectory;
-    }
-
-    public void setPatientDirectory(PatientDirectory patientDirectory) {
-        this.patientDirectory = patientDirectory;
-    }
-
-    
-    @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roleList=new ArrayList<>();
-//        TODO: UNCOMMENT
-//        roleList.add(new Administrator());
-        return roleList;
-    }
-    private EcoModel()
-    {
-        super(null);
-    }
 
     
     public boolean checkIfUserIsUnique(String userName)
     {
        return false;
-    }        
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roleList=new ArrayList<>();
+        roleList.add(new Admin());
+        return roleList;
+    }       
 }

@@ -6,7 +6,7 @@ package Model.Roles;
 
 import Model.EcoModel;
 import Model.User.User;
-import UI.DocAdmin.DoctorAdminAreaJPanel;
+import UI.DocAdmin.DocAdminAreaJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -17,6 +17,6 @@ public class DoctorAdmin extends Role {
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User user, EcoModel system) {
         System.out.println("inside doctors admin role---");
-        return new DoctorAdminAreaJPanel(userProcessContainer, user, system);
+        return new DocAdminAreaJPanel(userProcessContainer, user, system);
     }    
 }
