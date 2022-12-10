@@ -4,18 +4,79 @@
  */
 package UI.Cop;
 
+import Model.EcoModel;
+import Model.Patient.Patient;
+import Model.User.User;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
- * @author devikaboddu
+ * @author ritvik
  */
 public class CopWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form CopWorkAreaJPanel
      */
-    public CopWorkAreaJPanel() {
+    JPanel userProcessContainer;
+    User account;
+    EcoModel ecoModel;
+    public CopWorkAreaJPanel(JPanel userProcessContainer, User account, EcoModel business) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.ecoModel = business;
+        this.account = account;
+        loadPatientTable();
+        loadPatientTable1();
+        
     }
+        private void loadPatientTable() {
+        DefaultTableModel model = (DefaultTableModel) PatientTable.getModel();
+
+        model.setRowCount(0);
+
+        for (Patient patient : ecoModel.getCop().getPoliceRecordsList()) {
+
+            Object[] row = new Object[8];
+            row[0] = patient.getpFirstName();
+            row[1] = patient.getpLastName();           
+            row[2] = patient.getpHealthInsuranceID();
+            row[3] = patient.getpAge();
+            row[4] = patient.getpAddress();
+            row[5] = patient.getpEmailAddress();
+            row[6] = patient.getpPoliceStatus();
+            row[7] = patient;
+            if(patient.getpPoliceStatus().equals("Verifying")){
+            model.addRow(row);}
+
+        }
+    }
+        
+        private void loadPatientTable1() {
+        DefaultTableModel model = (DefaultTableModel) PatientTable1.getModel();
+
+        model.setRowCount(0);
+
+        for (Patient patient : ecoModel.getCop().getPoliceRecordsList()) {
+
+            Object[] row = new Object[8];
+            row[0] = patient.getpFirstName();
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpHealthInsuranceID();
+            row[3] = patient.getpAge();
+            row[4] = patient.getpAddress();
+            row[5] = patient.getpEmailAddress();
+            row[6] = patient.getpPoliceStatus();
+            row[7] = patient;
+            if(!patient.getpPoliceStatus().equals("Verifying")){
+            model.addRow(row);}
+
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,19 +87,167 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane3 = new javax.swing.JScrollPane();
+        PatientTable = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        PatientTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+
+        PatientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        PatientTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Last", "HealthId", "Age", "Address", "Email", "Police Verification", "obj"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(PatientTable);
+
+        PatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        PatientTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Last", "HealthId", "Age", "Address", "Email", "Police Verification", "obj"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, true, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(PatientTable1);
+
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 153, 204));
+        jButton1.setText("View Details of Verification");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 153, 204));
+        jButton2.setText("View Details of Past Records");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(475, 475, 475)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(461, 461, 461))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = PatientTable.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table!","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+
+            Patient d = (Patient) PatientTable.getValueAt(selectedRow, 7);
+            CopPersonalInfoJPanel bill = new CopPersonalInfoJPanel(userProcessContainer,ecoModel, d,account);
+            userProcessContainer.add("Police Person Info", bill);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = PatientTable1.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table!","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+
+            Patient d = (Patient) PatientTable1.getValueAt(selectedRow, 7);
+            //d.get
+            CopPastInfoJPanel bill = new CopPastInfoJPanel(userProcessContainer,ecoModel, d,account);
+            userProcessContainer.add("Past Info", bill);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable PatientTable;
+    private javax.swing.JTable PatientTable1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     // End of variables declaration//GEN-END:variables
 }
