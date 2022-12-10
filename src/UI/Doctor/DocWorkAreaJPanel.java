@@ -44,7 +44,7 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tablePatientDetail.getModel();
         model.setRowCount(0);
         for (Doctor doctor : ecoModel.getDoctorDirectory().getDoctorList()) {
-            if (doctor.getdocUserName().equals(userAccount.getUsername())) {
+            if (doctor.getdocUserName().equals(userAccount.getUserName())) {
                 for (Patient patient : doctor.getTreatedPatients()) 
                 {
                     Object[] row = new Object[8];
@@ -75,7 +75,7 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Doctor doctor : ecoModel.getDoctorDirectory().getDoctorList()) {
-            if (doctor.getdocUserName().equals(userAccount.getUsername())) {
+            if (doctor.getdocUserName().equals(userAccount.getUserName())) {
                 for (Patient patient : doctor.getTreatedPatients()) 
                 {
                     Object[] row = new Object[8];
@@ -118,6 +118,8 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
         lblPreviousPatient = new javax.swing.JLabel();
         lblPatientAssigned = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(0, 0, 102));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

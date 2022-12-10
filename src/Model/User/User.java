@@ -13,17 +13,12 @@ import Model.Employee.Employee;
  */
 public class User {
     private Employee employee;
-    private Role role;
-    private String password;
-    private String username;
-    
-    @Override
-    public String toString() {
-        return username;
-    }
+    private Role userRole;
+    private String userPassword;
+    private String userName;
     
     public User() {}
-    
+
     public Employee getEmployee() {
         return employee;
     }
@@ -31,28 +26,29 @@ public class User {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
+
+    public Role getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(Role userRole) {
+        this.userRole = userRole;
+    }
+
+    public String getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
     
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }   
 }

@@ -3,15 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package UserInterface;
+
+import java.awt.CardLayout;
 import Model.DBUtil.DBUtil;
 import Model.EcoModel;
 import Model.Roles.DoctorAdmin;
 import Model.Roles.DoctorUser;
 import Model.User.User;
-import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
+import Model.Pharmacy.Pharmacy;
+import Model.Ambulance.Ambulance;
+import Model.BloodDonationCenter.BloodDonationCenter;
 /**
  *
  * @author ramya
@@ -19,17 +22,16 @@ import javax.swing.JPanel;
 public class MainJFrame extends javax.swing.JFrame {
     private final DBUtil dBUtil = DBUtil.getInstance();
     private final EcoModel system;
-    
     /**
-     * Creates new form MainJFrame
+     * Creates new form NewJFrame
      */
     public MainJFrame() {
         initComponents();
-        
         system = dBUtil.retrieveSystem();
         this.setSize(1300, 900);
         system.getUserDirectory().createUser("doctor", "doctor", null, new DoctorUser());
         system.getUserDirectory().createUser("doctorAdmin", "doctorAdmin", null, new DoctorAdmin());
+        
     }
 
     /**
@@ -43,14 +45,15 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         panelLogin = new javax.swing.JPanel();
-        signInBtn = new javax.swing.JButton();
-        userNameInputField = new javax.swing.JTextField();
-        passwordInputField = new javax.swing.JPasswordField();
-        lblName = new javax.swing.JLabel();
+        btnLogin = new javax.swing.JButton();
+        txtUserNameInput = new javax.swing.JTextField();
+        pwdInput = new javax.swing.JPasswordField();
+        lblUserName = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         loginJLabel = new javax.swing.JLabel();
-        signOutBtn = new javax.swing.JButton();
-        HospLogo = new javax.swing.JLabel();
+        btnLogout = new javax.swing.JButton();
+        appLogo = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         panelWorkArea = new javax.swing.JPanel();
         homeDisplay = new javax.swing.JLabel();
 
@@ -59,35 +62,35 @@ public class MainJFrame extends javax.swing.JFrame {
         panelLogin.setBackground(new java.awt.Color(0, 0, 102));
         panelLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        signInBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        signInBtn.setForeground(new java.awt.Color(0, 153, 204));
-        signInBtn.setText("Log in");
-        signInBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(0, 0, 102));
+        btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signInBtnActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
-        panelLogin.add(signInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 120, 35));
+        panelLogin.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 120, 35));
 
-        userNameInputField.setFont(new java.awt.Font("Noto Sans Kannada", 2, 14)); // NOI18N
-        userNameInputField.addActionListener(new java.awt.event.ActionListener() {
+        txtUserNameInput.setFont(new java.awt.Font("Noto Sans Kannada", 2, 14)); // NOI18N
+        txtUserNameInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userNameInputFieldActionPerformed(evt);
+                txtUserNameInputActionPerformed(evt);
             }
         });
-        panelLogin.add(userNameInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 118, 35));
+        panelLogin.add(txtUserNameInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 118, 35));
 
-        passwordInputField.addActionListener(new java.awt.event.ActionListener() {
+        pwdInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordInputFieldActionPerformed(evt);
+                pwdInputActionPerformed(evt);
             }
         });
-        panelLogin.add(passwordInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 118, 35));
+        panelLogin.add(pwdInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 118, 35));
 
-        lblName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        lblName.setForeground(new java.awt.Color(255, 255, 255));
-        lblName.setText("Username");
-        panelLogin.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        lblUserName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblUserName.setForeground(new java.awt.Color(255, 255, 255));
+        lblUserName.setText("Username");
+        panelLogin.add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
         lblPassword.setBackground(new java.awt.Color(255, 255, 255));
         lblPassword.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -96,32 +99,30 @@ public class MainJFrame extends javax.swing.JFrame {
         panelLogin.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 108, -1));
         panelLogin.add(loginJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 231, -1, -1));
 
-        signOutBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        signOutBtn.setForeground(new java.awt.Color(0, 153, 204));
-        signOutBtn.setText("Log out");
-        signOutBtn.setEnabled(false);
-        signOutBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnLogout.setForeground(new java.awt.Color(0, 0, 102));
+        btnLogout.setText("Logout");
+        btnLogout.setEnabled(false);
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signOutBtnActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
-        panelLogin.add(signOutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 120, 35));
+        panelLogin.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 120, 35));
 
-        HospLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/logo_130x130.png"))); // NOI18N
-        HospLogo.setMaximumSize(new java.awt.Dimension(130, 130));
-        HospLogo.setMinimumSize(new java.awt.Dimension(130, 130));
-        HospLogo.setPreferredSize(new java.awt.Dimension(130, 130));
-        panelLogin.add(HospLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 130, 130));
-        HospLogo.getAccessibleContext().setAccessibleName("");
+        appLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/logo_130x130.png"))); // NOI18N
+        panelLogin.add(appLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 130, 130));
+        panelLogin.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 50, 40));
 
         jSplitPane1.setLeftComponent(panelLogin);
 
         panelWorkArea.setBackground(new java.awt.Color(255, 255, 255));
+        panelWorkArea.setLayout(new java.awt.CardLayout());
 
         homeDisplay.setBackground(new java.awt.Color(0, 153, 204));
         homeDisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/Hospital-Management-System-1200x720.jpeg"))); // NOI18N
-        panelWorkArea.add(homeDisplay);
+        homeDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/dribbble_2.gif"))); // NOI18N
+        panelWorkArea.add(homeDisplay, "card2");
 
         jSplitPane1.setRightComponent(panelWorkArea);
 
@@ -129,64 +130,64 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 1295, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 951, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 951, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 951, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void signInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInBtnActionPerformed
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         try{
-
-//            User ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
-//            CardLayout layout = (CardLayout) mainContainer.getLayout();
-//            System.out.println("role of user ---"+ua.getRole());
-//            mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
-//            layout.next(mainContainer);
-//            signOutBtn.setEnabled(true);
-
+            User user = system.getUserAccountDirectory().userAuthorization(txtUserNameInput.getText(), pwdInput.getText());
+            CardLayout layout = (CardLayout) panelWorkArea.getLayout();
+            System.out.println("role of user ---"+user.getUserRole());
+            panelWorkArea.add(user.getUserRole().createWorkArea(panelWorkArea, user, system));
+            layout.next(panelWorkArea);
+            btnLogout.setEnabled(true);
         }
         catch(Exception e){
-            System.out.println("exception ---");
             e.printStackTrace();
-            System.out.println("exception due to ---"+e.getMessage());
             JOptionPane.showMessageDialog(null,"Username/Password is wrong!","Warning",JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_signInBtnActionPerformed
+    }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void userNameInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameInputFieldActionPerformed
+    private void txtUserNameInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_userNameInputFieldActionPerformed
+    }//GEN-LAST:event_txtUserNameInputActionPerformed
 
-    private void passwordInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputFieldActionPerformed
+    private void pwdInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordInputFieldActionPerformed
+    }//GEN-LAST:event_pwdInputActionPerformed
 
-    private void signOutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signOutBtnActionPerformed
-        signOutBtn.setEnabled(false);
-        userNameInputField.setEnabled(true);
-        passwordInputField.setEnabled(true);
-        signInBtn.setEnabled(true);
-        userNameInputField.setText("");
-        passwordInputField.setText("");
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        btnLogout.setEnabled(false);
+        txtUserNameInput.setEnabled(true);
+        pwdInput.setEnabled(true);
+        btnLogin.setEnabled(true);
+        txtUserNameInput.setText("");
+        pwdInput.setText("");
 
-//        logout ua = new logout(mainContainer);
-//        mainContainer.add("logout", ua);
+        Logout ua = new Logout(panelWorkArea);
+        panelWorkArea.add("logout", ua);
         CardLayout layout = (CardLayout) panelWorkArea.getLayout();
         layout.next(panelWorkArea);
         dBUtil.storeSystem(system);
 
-    }//GEN-LAST:event_signOutBtnActionPerformed
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,6 +215,7 @@ public class MainJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -224,17 +226,18 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel HospLogo;
+    private javax.swing.JLabel appLogo;
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JLabel homeDisplay;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblUserName;
     private javax.swing.JLabel loginJLabel;
     private javax.swing.JPanel panelLogin;
     private javax.swing.JPanel panelWorkArea;
-    private javax.swing.JPasswordField passwordInputField;
-    private javax.swing.JButton signInBtn;
-    private javax.swing.JButton signOutBtn;
-    private javax.swing.JTextField userNameInputField;
+    private javax.swing.JPasswordField pwdInput;
+    private javax.swing.JTextField txtUserNameInput;
     // End of variables declaration//GEN-END:variables
 }

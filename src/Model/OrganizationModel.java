@@ -14,67 +14,60 @@ import java.util.ArrayList;
  * @author ramya
  */
 public abstract class OrganizationModel {
-    private String OrganisationName;
-    private EmployeeDirectory empDirectory;
-    private UserDirectory userDirectory;
-    private int organisationID;
+    private String name;
+    private int id;
     private static int counter = 0;
-
-    public enum Type {
-        RestaurantAdmin("RestaurantAdmin"),
-        Customer("Customer"),
-        DeliveryMan("Delivery"),
-        SysAdmin("Sysadmin");
-
-        private final String value;
-
-        private Type(String value) {
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-    }
-
-    public OrganizationModel(String name) {
-        
-        this.OrganisationName = name;
-        this.empDirectory = new EmployeeDirectory();
+    private UserDirectory userDirectory;
+    private EmployeeDirectory employeeDirectory;
+    
+    public OrganizationModel(String name) {        
+        this.id = counter;
+        this.name = name;
         this.userDirectory = new UserDirectory();
-        this.organisationID = counter;
+        this.employeeDirectory = new EmployeeDirectory();
         ++counter;
     }
 
     public OrganizationModel() {
 
     }
-
-    public abstract ArrayList<Role> getSupportedRole();
-
+    
     public UserDirectory getUserAccountDirectory() {
         return this.userDirectory;
     }
+    
+    public abstract ArrayList<Role> getSupportedRole();
 
-    public int getOrganizationID() {
-        return this.organisationID;
+    public UserDirectory getUserDirectory() {
+        return this.userDirectory;
     }
 
-    public EmployeeDirectory getEmployeeDirectory() {
-        return this.empDirectory;
+    public void setUserDirectory(UserDirectory userDirectory) {
+        this.userDirectory = userDirectory;
     }
 
-    public String getOrganisationName() {
-        return this.OrganisationName;
+    public String getName() {
+        return name;
     }
 
-    public void setOrganisationName(String name) {
-        this.OrganisationName = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return this.OrganisationName;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        OrganizationModel.counter = counter;
     }
     
     

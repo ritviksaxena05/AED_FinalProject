@@ -21,9 +21,9 @@ public class UserDirectory {
     
       public User createUser(String uName, String pwd, Employee employee, Role r) {
         User user = new User();
-        user.setRole(r);
-        user.setPassword(pwd);
-        user.setUsername(uName);
+        user.setUserRole(r);
+        user.setUserPassword(pwd);
+        user.setUserName(uName);
         user.setEmployee(employee);
         userList.add(user);
         System.out.println("----Creating user ----");
@@ -34,8 +34,8 @@ public class UserDirectory {
     }
     
     public boolean checkIfUsernameIsUnique(String uName) {
-        for (User u : userList) {
-            if (u.getUsername().equals(uName)) {
+        for (User ul : userList) {
+            if (ul.getUserName().equals(uName)) {
                 return false;
             }
         }
@@ -43,11 +43,24 @@ public class UserDirectory {
     }
     
     public void deleteUser(String uName){       
-        for (User u : userList) {
-            if (u.getUsername().equals(uName)) {
-                userList.remove(u);
+        for (User ul : userList) {
+            if (ul.getUserName().equals(uName)) {
+                userList.remove(ul);
                 break;
             }
         }
+    }
+    
+    public User userAuthorization(String username, String password) {
+        System.out.println("username ---"+ username);
+          System.out.println("password ---"+password);
+        for (User ul : userList) {
+            System.out.println("username ---"+ ul.getUserName());
+          System.out.println("password ---"+ul.getUserPassword());
+            if (ul.getUserName().equals(username) && ul.getUserPassword().equals(password)) {
+                return ul;
+            }
+        }
+        return null;
     }
 }
