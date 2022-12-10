@@ -4,7 +4,17 @@
  */
 package UI.DocAdmin;
 
+import Model.Doctor.Doctor;
+import java.text.SimpleDateFormat;
 import Model.EcoModel;
+import java.awt.CardLayout;
+import java.awt.Image;
+import Model.EcoModel;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import UI.Ambulance.DisplayPatientJPanel;
+import Model.User.User;
+import javax.swing.table.DefaultTableModel;
 import Model.Patient.Patient;
 import javax.swing.JPanel;
 
@@ -17,8 +27,20 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AssignDocToPatientJPanel
      */
-    public AssignDocToPatientJPanel(JPanel userWorkArea, User userAccount, EcoModel ecoModel, Patient patient) {
+    User userAccount;
+    private final JPanel userWorkArea;
+    private final EcoModel ecoModel;
+    private final Patient patient;
+    
+    
+    public AssignDocToPatientJPanel(JPanel userArea, User account, EcoModel ecoSystemModel, Patient patient) {
         initComponents();
+        this.userAccount = account;
+        this.userWorkArea = userArea;
+        this.ecoModel = ecoSystemModel;
+        this.patient = patient;
+        populateAvailableDoctorTable();
+        populatePatientDetails();
     }
 
     /**
@@ -30,19 +52,462 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        txtPatContactNumber = new javax.swing.JTextField();
+        txtPatInjury = new javax.swing.JTextField();
+        lblPatAge = new javax.swing.JLabel();
+        lblPatAdmitDate = new javax.swing.JLabel();
+        lblPatFirstName = new javax.swing.JLabel();
+        txtPatDOB = new javax.swing.JTextField();
+        lblPatLastName = new javax.swing.JLabel();
+        txtPatFirstName = new javax.swing.JTextField();
+        lblPatDOB = new javax.swing.JLabel();
+        lblPatEmail = new javax.swing.JLabel();
+        txtPatAddress = new javax.swing.JTextField();
+        txtPatEmail = new javax.swing.JTextField();
+        lblPatAddress = new javax.swing.JLabel();
+        txtPatBloodGroup = new javax.swing.JTextField();
+        txtPatAdmitDate = new javax.swing.JTextField();
+        txtPatCurrentStatus = new javax.swing.JTextField();
+        lblPatGender = new javax.swing.JLabel();
+        lblPatcontactNo = new javax.swing.JLabel();
+        lblPatDetailsDisplay = new javax.swing.JLabel();
+        lblPatBloodGroup = new javax.swing.JLabel();
+        btnAssignDocToPat = new javax.swing.JButton();
+        lblPatStatus = new javax.swing.JLabel();
+        txtPatGender = new javax.swing.JTextField();
+        lblPatInjuryType = new javax.swing.JLabel();
+        txtPatAge = new javax.swing.JTextField();
+        txtPatLastName = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableAvailableDoctor = new javax.swing.JTable();
+        lblPatProfilePic = new javax.swing.JLabel();
+        btnAssignPatBack = new javax.swing.JButton();
+        lblAvailableDoc = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtPatContactNumber.setEditable(false);
+        txtPatContactNumber.setBackground(new java.awt.Color(255, 255, 255));
+        txtPatContactNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatContactNumberActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPatContactNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 150, 30));
+
+        txtPatInjury.setEditable(false);
+        txtPatInjury.setBackground(new java.awt.Color(255, 255, 255));
+        txtPatInjury.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatInjuryActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPatInjury, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 150, 30));
+
+        lblPatAge.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatAge.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatAge.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatAge.setText("Age");
+        jPanel1.add(lblPatAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, -1, -1));
+
+        lblPatAdmitDate.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatAdmitDate.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatAdmitDate.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatAdmitDate.setText("Date of Admit ");
+        jPanel1.add(lblPatAdmitDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, 20));
+
+        lblPatFirstName.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatFirstName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatFirstName.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatFirstName.setText("First Name");
+        jPanel1.add(lblPatFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
+
+        txtPatDOB.setEditable(false);
+        txtPatDOB.setBackground(new java.awt.Color(255, 255, 255));
+        txtPatDOB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatDOBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPatDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 270, 140, 30));
+
+        lblPatLastName.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatLastName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatLastName.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatLastName.setText("Last Name");
+        jPanel1.add(lblPatLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+
+        txtPatFirstName.setEditable(false);
+        txtPatFirstName.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(txtPatFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 160, 30));
+
+        lblPatDOB.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatDOB.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatDOB.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatDOB.setText("Date of Birth");
+        jPanel1.add(lblPatDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, -1, -1));
+
+        lblPatEmail.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatEmail.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatEmail.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatEmail.setText("Email");
+        jPanel1.add(lblPatEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, -1, 20));
+
+        txtPatAddress.setEditable(false);
+        txtPatAddress.setBackground(new java.awt.Color(255, 255, 255));
+        txtPatAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatAddressActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPatAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 160, 70));
+
+        txtPatEmail.setEditable(false);
+        txtPatEmail.setBackground(new java.awt.Color(255, 255, 255));
+        txtPatEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatEmailActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPatEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 150, 30));
+
+        lblPatAddress.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatAddress.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatAddress.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatAddress.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPatAddress.setText("Address");
+        jPanel1.add(lblPatAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
+
+        txtPatBloodGroup.setEditable(false);
+        txtPatBloodGroup.setBackground(new java.awt.Color(255, 255, 255));
+        txtPatBloodGroup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatBloodGroupActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPatBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, 150, 30));
+
+        txtPatAdmitDate.setEditable(false);
+        txtPatAdmitDate.setBackground(new java.awt.Color(255, 255, 255));
+        txtPatAdmitDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatAdmitDateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPatAdmitDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 160, 30));
+
+        txtPatCurrentStatus.setEditable(false);
+        txtPatCurrentStatus.setBackground(new java.awt.Color(255, 255, 255));
+        txtPatCurrentStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatCurrentStatusActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPatCurrentStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 410, 150, 30));
+
+        lblPatGender.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatGender.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatGender.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatGender.setText("Gender");
+        jPanel1.add(lblPatGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, -1, -1));
+
+        lblPatcontactNo.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatcontactNo.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatcontactNo.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatcontactNo.setText("Phone Number");
+        jPanel1.add(lblPatcontactNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+
+        lblPatDetailsDisplay.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatDetailsDisplay.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        lblPatDetailsDisplay.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatDetailsDisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPatDetailsDisplay.setText("Patient Details");
+        jPanel1.add(lblPatDetailsDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 280, 82));
+
+        lblPatBloodGroup.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatBloodGroup.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatBloodGroup.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatBloodGroup.setText("Blood Group");
+        jPanel1.add(lblPatBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, -1, 20));
+
+        btnAssignDocToPat.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnAssignDocToPat.setForeground(new java.awt.Color(0, 153, 204));
+        btnAssignDocToPat.setText("Assign Doctor");
+        btnAssignDocToPat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignDocToPatActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAssignDocToPat, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 760, -1, 48));
+
+        lblPatStatus.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatStatus.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatStatus.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatStatus.setText("Patient Status");
+        jPanel1.add(lblPatStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, -1, 20));
+
+        txtPatGender.setEditable(false);
+        txtPatGender.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(txtPatGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 140, 30));
+
+        lblPatInjuryType.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatInjuryType.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatInjuryType.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatInjuryType.setText("Injury Type");
+        jPanel1.add(lblPatInjuryType, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, 20));
+
+        txtPatAge.setEditable(false);
+        txtPatAge.setBackground(new java.awt.Color(255, 255, 255));
+        txtPatAge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatAgeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPatAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 130, 30));
+
+        txtPatLastName.setEditable(false);
+        txtPatLastName.setBackground(new java.awt.Color(255, 255, 255));
+        txtPatLastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatLastNameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPatLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 170, 30));
+
+        tableAvailableDoctor.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        tableAvailableDoctor.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "First Name", "Last Name", "Health ID", "Experience", "Age", "Gender", "Email"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tableAvailableDoctor);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 930, 170));
+        jPanel1.add(lblPatProfilePic, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 90, 200, 200));
+
+        btnAssignPatBack.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnAssignPatBack.setForeground(new java.awt.Color(0, 153, 204));
+        btnAssignPatBack.setText("Back");
+        btnAssignPatBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignPatBackActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAssignPatBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 120, -1));
+
+        lblAvailableDoc.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        lblAvailableDoc.setForeground(new java.awt.Color(255, 255, 255));
+        lblAvailableDoc.setText("Available doctors");
+        jPanel1.add(lblAvailableDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 490, 360, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/Patient.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 50, 50));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/steth_45x46.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 500, 50, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1400, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void populateAvailableDoctorTable() {
+        DefaultTableModel model = (DefaultTableModel) tableAvailableDoctor.getModel();
+
+        model.setRowCount(0);
+
+        for (Doctor Doctor : ecoModel.getDoctorDirectory().getDoctorList()) {
+
+            Object[] row = new Object[9];
+            row[0] = Doctor;
+            row[1] = Doctor.getdocLastName();
+            row[2] = Doctor.getdocWorkID();
+            row[3] = Doctor.getdocAddress();
+            row[4] = Doctor.getdocAge();
+            row[5] = Doctor.getdocGender();
+            row[6] = Doctor.getdocEmail();
+
+            model.addRow(row);
+
+        }
+    }
+    
+    private void populatePatientDetails() {
+        
+        txtPatFirstName.setText(patient.getpFirstName());
+        txtPatLastName.setText(patient.getpLastName());
+        txtPatAge.setText(Integer.toString(patient.getpAge()));
+        txtPatGender.setText(patient.getpGender());
+        txtPatAddress.setText(patient.getpAddress());
+        txtPatContactNumber.setText(patient.getpPhoneNo());
+        txtPatEmail.setText(patient.getpEmailAddress());
+        if(patient.getPdob()!= null)
+        {
+            txtPatDOB.setText(new SimpleDateFormat("MM-dd-yyyy").format(patient.getPdob()));
+        }
+        if(patient.getpDateOfAdmit()!= null)
+        {
+            txtPatAdmitDate.setText(new SimpleDateFormat("MM-dd-yyyy").format(patient.getPdob()));
+        }
+        
+        txtPatInjury.setText(patient.getpInjuryType());
+        txtPatBloodGroup.setText(patient.getpBloodType());
+        txtPatCurrentStatus.setText(patient.getpStatus());
+        
+        ImageIcon ii = new ImageIcon(patient.getpImageUrl());
+        Image image = ii.getImage().getScaledInstance(130, 130, Image.SCALE_SMOOTH);
+        lblPatProfilePic.setIcon(new ImageIcon(image));
+
+
+    }
+    
+    private void txtPatContactNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatContactNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatContactNumberActionPerformed
+
+    private void txtPatInjuryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatInjuryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatInjuryActionPerformed
+
+    private void txtPatDOBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatDOBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatDOBActionPerformed
+
+    private void txtPatAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatAddressActionPerformed
+
+    private void txtPatEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatEmailActionPerformed
+
+    private void txtPatBloodGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatBloodGroupActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatBloodGroupActionPerformed
+
+    private void txtPatAdmitDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatAdmitDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatAdmitDateActionPerformed
+
+    private void txtPatCurrentStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatCurrentStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatCurrentStatusActionPerformed
+
+    private void btnAssignDocToPatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDocToPatActionPerformed
+        // TODO add your handling code here:
+
+        int selectedRowIndex = tableAvailableDoctor.getSelectedRow();
+        if (selectedRowIndex < 0)
+        {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        else
+        {
+
+            Doctor doctor = (Doctor) tableAvailableDoctor.getValueAt(selectedRowIndex, 0);
+            System.out.println("doctor details ---"+doctor);
+            System.out.println("patient details ---"+this.patient);
+            ecoModel.getDoctorDirectory().addTreatedPatient(doctor, this.patient);
+
+            JOptionPane.showMessageDialog(null, "Doctor Assigned", "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_btnAssignDocToPatActionPerformed
+
+    private void txtPatAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatAgeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatAgeActionPerformed
+
+    private void txtPatLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatLastNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatLastNameActionPerformed
+
+    private void btnAssignPatBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignPatBackActionPerformed
+        // TODO add your handling code here:
+        DocAdminAreaJPanel doctorAdminWorkArea = new DocAdminAreaJPanel(userWorkArea, userAccount, ecoModel);
+        userWorkArea.add("Admin Work Panel", doctorAdminWorkArea);
+        CardLayout layout = (CardLayout) userWorkArea.getLayout();
+        layout.next(userWorkArea);
+    }//GEN-LAST:event_btnAssignPatBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAssignDocToPat;
+    private javax.swing.JButton btnAssignPatBack;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAvailableDoc;
+    private javax.swing.JLabel lblPatAddress;
+    private javax.swing.JLabel lblPatAdmitDate;
+    private javax.swing.JLabel lblPatAge;
+    private javax.swing.JLabel lblPatBloodGroup;
+    private javax.swing.JLabel lblPatDOB;
+    private javax.swing.JLabel lblPatDetailsDisplay;
+    private javax.swing.JLabel lblPatEmail;
+    private javax.swing.JLabel lblPatFirstName;
+    private javax.swing.JLabel lblPatGender;
+    private javax.swing.JLabel lblPatInjuryType;
+    private javax.swing.JLabel lblPatLastName;
+    private javax.swing.JLabel lblPatProfilePic;
+    private javax.swing.JLabel lblPatStatus;
+    private javax.swing.JLabel lblPatcontactNo;
+    private javax.swing.JTable tableAvailableDoctor;
+    private javax.swing.JTextField txtPatAddress;
+    private javax.swing.JTextField txtPatAdmitDate;
+    private javax.swing.JTextField txtPatAge;
+    private javax.swing.JTextField txtPatBloodGroup;
+    private javax.swing.JTextField txtPatContactNumber;
+    private javax.swing.JTextField txtPatCurrentStatus;
+    private javax.swing.JTextField txtPatDOB;
+    private javax.swing.JTextField txtPatEmail;
+    private javax.swing.JTextField txtPatFirstName;
+    private javax.swing.JTextField txtPatGender;
+    private javax.swing.JTextField txtPatInjury;
+    private javax.swing.JTextField txtPatLastName;
     // End of variables declaration//GEN-END:variables
 }
