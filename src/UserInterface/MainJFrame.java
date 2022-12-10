@@ -37,15 +37,14 @@ public class MainJFrame extends javax.swing.JFrame {
         system = dBUtil.retrieveSystem();
         this.setSize(1300, 900);
         system.getUserDirectory().createUser("doctor", "doctor", null, new DoctorUser());
-        system.getUserDirectory().createUser("doctorAdmin", "doctorAdmin", null, new DoctorAdmin());
+        system.getUserDirectory().createUser("docadmin", "docadmin", null, new DoctorAdmin());
         system.getUserDirectory().createUser("ambulance", "ambulance", null, new AmbulanceDriver());
         system.getUserDirectory().createUser("police", "police", null, new Cop());
         system.getUserDirectory().createUser("bloodbank", "bloodbank", null, new BloodDonationCenter());
         system.getUserDirectory().createUser("lab", "lab", null, new Laboratory());   
          //system.getUserDirectory().createUser("insurance", "insurance", null, new InsuranceAuthority());
         system.getUserDirectory().createUser("reception", "reception", null, new ReceptionistRole());
-        
-        
+
     }
 
     /**
