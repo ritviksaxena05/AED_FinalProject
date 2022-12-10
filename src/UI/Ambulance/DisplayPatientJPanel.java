@@ -4,6 +4,14 @@
  */
 package UI.Ambulance;
 
+import Model.Ambulance.Ambulance;
+import Model.EcoModel;
+import Model.User.User;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author devikaboddu
@@ -13,8 +21,34 @@ public class DisplayPatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DisplayPatientJPanel
      */
-    public DisplayPatientJPanel() {
+    private final JPanel userProcessContainer;
+    private final EcoModel ecoSystem;
+    private User userAccount;
+
+    public DisplayPatientJPanel(JPanel userProcessContainer, User account, EcoModel system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.ecoSystem = system;
+        PopulateAmbulanceTable();
+    }
+    
+    private void PopulateAmbulanceTable() {
+        DefaultTableModel model = (DefaultTableModel) AmbulanceTable.getModel();
+
+        model.setRowCount(0);
+
+        for (Ambulance ambulance : ecoSystem.getAmbulanceDirectory().getAmbulances()) {
+
+            Object[] row = new Object[5];
+            row[0] = ambulance;
+            row[1] = ambulance.getDriverLastName();
+            row[2] = ambulance.getDriverAge();
+            row[3] = ambulance.getVehicleNo();
+            row[4] = ambulance.getStatus();
+            model.addRow(row);
+
+        }
     }
 
     /**
@@ -26,19 +60,118 @@ public class DisplayPatientJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        AmbulanceTable = new javax.swing.JTable();
+        btnCurrentPatient = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        AmbulanceTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        AmbulanceTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Driver First Name", "Driver Last Name", "Age", "Vehicle Number", "Ambulance Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(AmbulanceTable);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 1390, 191));
+
+        btnCurrentPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnCurrentPatient.setForeground(new java.awt.Color(0, 153, 204));
+        btnCurrentPatient.setText("Current Patient");
+        btnCurrentPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCurrentPatientActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCurrentPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, 200, 40));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("AMBULANCES DETAILS");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 420, 80));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1432, 10));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 70, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1400, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCurrentPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurrentPatientActionPerformed
+        // TODO add your handling code here:
+
+        int selectedRowIndex = AmbulanceTable.getSelectedRow();
+        if (selectedRowIndex < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else {
+            Ambulance ambulance = (Ambulance) AmbulanceTable.getValueAt(selectedRowIndex, 0);
+            if (ambulance.getStatus().toLowerCase().equals("busy")) {
+                ExistingPatientDetailsJPanel currentPatientDetailsJPanel = new ExistingPatientDetailsJPanel(userProcessContainer, userAccount, ecoSystem, ambulance);
+                userProcessContainer.add("Display Current Patient", currentPatientDetailsJPanel);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "No Active Patients Assigned", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnCurrentPatientActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable AmbulanceTable;
+    private javax.swing.JButton btnCurrentPatient;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

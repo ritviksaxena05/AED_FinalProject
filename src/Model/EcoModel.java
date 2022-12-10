@@ -4,11 +4,14 @@
  */
 package Model;
 
+import Model.Ambulance.AmbulanceDirectory;
 import Model.Doctor.DoctorDirectory;
 import Model.Laboratory.Laboratory;
 import Model.Pharmacy.Pharmacy;
 import Model.Roles.Role;
 import java.util.ArrayList;
+import Model.Patient.PatientDirectory;
+
 
 /**
  *
@@ -19,6 +22,9 @@ public class EcoModel extends OrganizationModel {
     private Laboratory laboratory;
     private DoctorDirectory doctorDirectory;
     private Pharmacy pharmacy;
+    private AmbulanceDirectory ambulanceDirectory;
+    private PatientDirectory patientDirectory;
+
 
     public Pharmacy getPharmacy() {
         return pharmacy;
@@ -61,6 +67,22 @@ public class EcoModel extends OrganizationModel {
         
         return business;
     }
+     public AmbulanceDirectory getAmbulanceDirectory() {
+        return ambulanceDirectory = (ambulanceDirectory == null) ? new AmbulanceDirectory() : ambulanceDirectory;
+    }
+
+    public void setAmbulanceDirectory(AmbulanceDirectory ambulanceDirectory) {
+        this.ambulanceDirectory = ambulanceDirectory;
+    }
+
+    public PatientDirectory getPatientDirectory() {
+        return patientDirectory = (patientDirectory == null) ? new PatientDirectory() : patientDirectory;
+    }
+
+    public void setPatientDirectory(PatientDirectory patientDirectory) {
+        this.patientDirectory = patientDirectory;
+    }
+
     
     @Override
     public ArrayList<Role> getSupportedRole() {

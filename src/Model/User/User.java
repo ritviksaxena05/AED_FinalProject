@@ -50,5 +50,9 @@ public class User {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    public Object getUsername() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

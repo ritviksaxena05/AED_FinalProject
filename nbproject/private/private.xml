@@ -3,15 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UI/Ambulance/ExistingPatientDetailsJPanel.java</file>
-            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UI/Ambulance/DisplayPatientJPanel.java</file>
-            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/Model/OrganizationModel.java</file>
-            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/Model/DBUtil/DBUtil.java</file>
-            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UserInterface/MainJFrame.java</file>
-            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/Model/Configuration.java</file>
-            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/Model/EcoModel.java</file>
-            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UserInterface/Logout.java</file>
+            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UserInterface/assets/meds.png</file>
+            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/Model/Ambulance/Ambulance.java</file>
+            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UserInterface/assets/med.png</file>
+            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UserInterface/assets/hosp-logo.jpeg</file>
+            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UserInterface/assets/dribbble_2.gif</file>
             <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UI/Ambulance/AmbulanceInfoJPanel.java</file>
+            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UserInterface/assets/heart-logo.jpeg</file>
+            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UserInterface/assets/icon.png</file>
+            <file>file:/Users/devikaboddu/Desktop/AED/AED_FinalProject/src/UI/Ambulance/AmbulanceWorkAreaJPanel.java</file>
         </group>
     </open-files>
 </project-private>
