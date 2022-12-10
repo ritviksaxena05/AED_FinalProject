@@ -32,6 +32,10 @@ public abstract class OrganizationModel {
 
     }
     
+    public UserDirectory getUserAccountDirectory() {
+        return this.userDirectory;
+    }
+    
     public abstract ArrayList<Role> getSupportedRole();
 
     public UserDirectory getUserDirectory() {

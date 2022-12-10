@@ -78,10 +78,5 @@ public class EcoModel extends OrganizationModel {
     public boolean checkIfUserIsUnique(String userName)
     {
        return false;
-    }
-
-    public Object getUserAccountDirectory() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-        
+    }        
 }
