@@ -12,7 +12,8 @@ import javax.swing.table.DefaultTableModel;
 import Model.EcoModel;
 import Model.User.User;
 import Model.Patient.Patient;
-import Model.Patient.Patient_Bills;
+import Model.Patient.PatientBills;
+import Model.Pharmacy.Prescription;
 import javax.swing.JPanel;
 
 /**
@@ -25,15 +26,19 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
      * Creates new form DocMedicineRequestJPanel
      */
     private JPanel userWorkArea;
+    Prescription medicine;
     private EcoModel ecoModel;
-    private User userAccount;
     private Patient patient;
+    private User userAccount;
+    ArrayList<Prescription> items=new ArrayList<Prescription>();
+    
     public DocMedicineRequestJPanel(JPanel userWorkArea, User userAccount, EcoModel ecoModel, Patient patient) {
         initComponents();
+        populateTablePrescription();
         this.userWorkArea = userWorkArea;
+        this.patient = patient;
         this.ecoModel = ecoModel;
         this.userAccount = userAccount;
-        this.patient = patient;
     }
 
     /**
@@ -208,6 +213,23 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void populateTablePrescription() {
+        DefaultTableModel model = (DefaultTableModel) tableavailableMedicine.getModel();
+
+        model.setRowCount(0); 
+
+        for (Prescription t : ecoModel.getPharmacy().getPrescriptionList()) {
+
+            
+               Object[] row = new Object[4];                
+                row[0] = t;
+                row[1] = t.getMedUsage();
+                row[2] =t.getMedQuantity();
+                row[3] = t.getMedPrice();
+                model.addRow(row);
+        }
+    }
+    
     private void btnMedRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedRemoveActionPerformed
         // TODO add your handling code here:
         int selectedRow = tableSelectedMedicines.getSelectedRow();
@@ -216,22 +238,37 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Medicine item=(Medicine)tableSelectedMedicines.getValueAt(selectedRow, 0);
+            Prescription item=(Prescription)tableSelectedMedicines.getValueAt(selectedRow, 0);
             items.remove(item);
             DefaultTableModel model = (DefaultTableModel) tableSelectedMedicines.getModel();
             model.setRowCount(0);
             Object[] row = new Object[4];
-            for(Medicine t:items){
+            for(Prescription t:items){
                 row[0] = t;
-                row[1] = t.getUsage();
-                row[2] =t.getQuantity();
-                row[3] = t.getPrice();
+                row[1] = t.getMedUsage();
+                row[2] =t.getMedQuantity();
+                row[3] = t.getMedPrice();
                 model.addRow(row);
             }
         }
 
     }//GEN-LAST:event_btnMedRemoveActionPerformed
 
+    public void addToCart(Prescription item){
+        DefaultTableModel model = (DefaultTableModel) tableSelectedMedicines.getModel();
+        model.setRowCount(0);
+        
+         items.add(item);
+         Object[] row = new Object[4];
+                for(Prescription t:items){
+                     row[0] = t;
+                    row[1] = t.getMedUsage();
+                    row[2] =t.getMedQuantity();
+                    row[3] = t.getMedPrice();
+                    model.addRow(row);
+                }  
+     }
+    
     private void btnMedAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedAddActionPerformed
         // TODO add your handling code here:
         int selectedRow = tableavailableMedicine.getSelectedRow();
@@ -239,9 +276,9 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Medicine item=(Medicine)tableavailableMedicine.getValueAt(selectedRow, 0);
+            Prescription item=(Prescription)tableavailableMedicine.getValueAt(selectedRow, 0);
 
-            populateCart(item);
+            addToCart(item);
 
         }
     }//GEN-LAST:event_btnMedAddActionPerformed
@@ -253,15 +290,15 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
 
         }
         else{
-            for(Medicine t:items){
+            for(Prescription t:items){
                 //String itemName,String organization1,float itemAmount, String result, String itemStatus
 
-                PatientBills bill = new PatientBills(t.getMedName(), "Pharmacy", t.getPrice(),"","Requested");
+                PatientBills bill = new PatientBills(t.getName(), "Pharmacy", t.getMedPrice(),"","Requested");
                 patient.addbill(bill);
 
                 //ecosystem.AddTreatedPatientList(patient);
             }
-            ecoModel.getPharmacy().AddpharmaRecordList(patient);
+            ecoModel.getPharmacy().addPatientRecordList(patient);
             patient.setpPharmaStatus("Requested");
 
             DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userWorkArea, userAccount, ecoModel, patient);

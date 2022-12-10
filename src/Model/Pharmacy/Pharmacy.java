@@ -16,6 +16,11 @@ public class Pharmacy {
     private ArrayList<Prescription> prescriptionList;
     private String address;
 
+    public Pharmacy() {
+        prescriptionList = new ArrayList<>();
+        patientRecordList = new ArrayList<>();        
+    }
+    
     public String getName() {
         return name;
     }
@@ -48,6 +53,26 @@ public class Pharmacy {
         this.address = address;
     }
 
+    public void addPatientRecordList(Patient patient)
+    {
+        patientRecordList.add(patient);
+    }
     
+    public Prescription createPrescription(Prescription m) {
+        //Tests bloodRecord = new Tests();
+        prescriptionList.add(m);
+        return m;
+    }
     
+    public void deletePrescription(Prescription p){
+        prescriptionList.remove(p);
+    }
+     
+    public void updatePrescription(Prescription t,String name,String username, int password,int q){
+       
+        t.setMedPrice(password);
+        t.setName(name);
+        t.setMedUsage(username);
+        t.setMedQuantity(q);
+    }
 }

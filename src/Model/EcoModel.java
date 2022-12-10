@@ -5,6 +5,8 @@
 package Model;
 
 import Model.Doctor.DoctorDirectory;
+import Model.Laboratory.Laboratory;
+import Model.Pharmacy.Pharmacy;
 import Model.Roles.Role;
 import java.util.ArrayList;
 
@@ -14,7 +16,25 @@ import java.util.ArrayList;
  */
 public class EcoModel extends OrganizationModel {
     private static EcoModel business;
+    private Laboratory laboratory;
     private DoctorDirectory doctorDirectory;
+    private Pharmacy pharmacy;
+
+    public Pharmacy getPharmacy() {
+        return pharmacy;
+    }
+
+    public void setPharmacy(Pharmacy pharmacy) {
+        this.pharmacy = pharmacy;
+    }
+
+    public Laboratory getLaboratory() {
+        return laboratory = (laboratory == null)? new Laboratory() : laboratory;
+    }
+
+    public void setLaboratory(Laboratory laboratory) {
+        this.laboratory = laboratory;
+    }
 
     public static EcoModel getBusiness() {
         return business;
