@@ -32,6 +32,11 @@ public abstract class OrganizationModel {
 
     }
     
+    @Override
+    public String toString() {
+        return this.name;
+    }
+    
     public UserDirectory getUserAccountDirectory() {
         return this.userDirectory;
     }
@@ -40,6 +45,14 @@ public abstract class OrganizationModel {
 
     public UserDirectory getUserDirectory() {
         return this.userDirectory;
+    }
+
+    public EmployeeDirectory getEmployeeDirectory() {
+        return employeeDirectory;
+    }
+
+    public void setEmployeeDirectory(EmployeeDirectory employeeDirectory) {
+        this.employeeDirectory = employeeDirectory;
     }
 
     public void setUserDirectory(UserDirectory userDirectory) {
@@ -70,5 +83,19 @@ public abstract class OrganizationModel {
         OrganizationModel.counter = counter;
     }
     
-    
+//    public enum Type {
+//        DoctorAdmin("DoctorAdmin"),
+//        Patient("Patient"),
+//        SysAdmin("Sysadmin");
+//        
+//        private final String value;
+//
+//        private Type(String value) {
+//            this.value = value;
+//        }
+//
+//        public String getValue() {
+//            return value;
+//        }
+//    }
 }

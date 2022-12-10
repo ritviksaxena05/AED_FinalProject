@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.CardLayout;
 import javax.swing.table.DefaultTableModel;
-import UI.DocAdmin.DoctorAdminAreaJPanel;
+import UI.DocAdmin.DocAdminAreaJPanel;
 
 /**
  *

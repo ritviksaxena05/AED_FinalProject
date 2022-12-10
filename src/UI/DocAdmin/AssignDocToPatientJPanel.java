@@ -5,31 +5,20 @@
 package UI.DocAdmin;
 
 import Model.EcoModel;
-import Model.User.User;
+import Model.Patient.Patient;
 import javax.swing.JPanel;
 
 /**
  *
  * @author ramya
  */
-public class DoctorAdminAreaJPanel extends javax.swing.JPanel {
+public class AssignDocToPatientJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form DoctorAdminAreaJPanel
+     * Creates new form AssignDocToPatientJPanel
      */
-    private final JPanel userContainer;
-    private final EcoModel ecoModel;
-    User userAccount;
-    
-    public DoctorAdminAreaJPanel(JPanel userProcessContainer, User account, EcoModel system) {
+    public AssignDocToPatientJPanel(JPanel userWorkArea, User userAccount, EcoModel ecoModel, Patient patient) {
         initComponents();
-
-        this.userContainer = userProcessContainer;
-        this.ecoModel = system;
-        this.userAccount = account;
-//        TODO: UNCOMMENT
-//        populateNetworkTable();
-//        populatePatientTable();
     }
 
     /**
