@@ -232,7 +232,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnTreatedPatientListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTreatedPatientListActionPerformed
         // TODO add your handling code here:
-        TreatedPatientJPanel treatedPatiPatientTableeatedPatientJPanel(userProcessContainer,userAccount,ecoSystem);
+        TreatedPatientJPanel treatedPatientJPanel= TreatedPatientJPanel(userProcessContainer,user,ecoModel);
         userProcessContainer.add("Display Treated Patient", treatedPatientJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -240,7 +240,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnBloodBankInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBloodBankInfoActionPerformed
         // TODO add your handling code here:
-        BloodBankInfoJPanel bloodBankInfoJPanel = new BloodBankInfoJPanel(userProcessContainer, userAccount, ecoSystem);
+        BloodDonationCenterInfoJPanel bloodBankInfoJPanel = new BloodDonationCenterInfoJPanel(userProcessContainer, user, ecoModel);
         userProcessContainer.add("Blood Bank Information", bloodBankInfoJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -253,23 +253,23 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
     private void ProcessReqbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcessReqbtnActionPerformed
         // TODO add your handling code here:
 
-        int selectedRowIndex = ManagePatientTable.getSelectedRow();
+        int selectedRowIndex = PatientTable.getSelectedRow();
 
         if (selectedRowIndex < 0) {
             JOptionPane.showMessageDialog(null, "Pls select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
-            Patient patient = (Patient) ManagePatientTable.getValueAt(selectedRowIndex, 9);
+            Patient patient = (Patient) PatientTable.getValueAt(selectedRowIndex, 9);
 
-            for (Patient p : ecoSystem.getPatientDirectory().getPatientList()) {
+            for (Patient p : ecoModel.getPatDirectory().getPatientList()) {
                 if (patient.getpUserName().equals(p.getpUserName())) {
                     if (!((String) BloodReqStBox.getSelectedItem()).equals("Select Status")) {
                         p.setpBloodBankStatus((String) BloodReqStBox.getSelectedItem());
                         billPatient = p;
                         if (p.getpBloodBankStatus().equals("Blood Delivered")) {
                             for (int bloodBag = 0; bloodBag < Integer.parseInt(billPatient.getpBloodBagQuantity()); bloodBag++) {
-                                ecoSystem.getPatientDirectory().AddBill(billPatient, "Blood Charges", "Blood Bank", "");
-                                ecoSystem.getBloodBank().AddTreatedPatientList(billPatient);
+                                ecoModel.getPatDirectory().AddBill(billPatient, "Blood Charges", "Blood Bank", "");
+                                ecoModel.getBloodBank().AddTreatedPatientList(billPatient);
                             }
                         }
                         break;
@@ -297,4 +297,8 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblCommunity;
     // End of variables declaration//GEN-END:variables
+
+    private TreatedPatientJPanel TreatedPatientJPanel(JPanel userProcessContainer, User user, EcoModel ecoModel) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

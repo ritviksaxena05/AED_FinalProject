@@ -38,6 +38,7 @@ public class MainJFrame extends javax.swing.JFrame {
         system.getUserDirectory().createUser("ambulance", "ambulance", null, new AmbulanceDriver());
         system.getUserDirectory().createUser("lab", "lab", null, new Laboratory());
         system.getUserDirectory().createUser("insurance", "insurance", null, new InsuranceAuthority());
+        //system.getUserDirectory().createUser("reception", "reception", null, new InsuranceAuthority());
     }
 
     /**
