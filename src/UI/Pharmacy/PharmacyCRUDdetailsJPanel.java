@@ -348,7 +348,7 @@ public class PharmacyCRUDdetailsJPanel extends javax.swing.JPanel {
     private void btnPharmBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPharmBackActionPerformed
         // TODO add your handling code here:
         //patient.setInsuranceStatus("Approved");
-        PharmacyWorkAreaJPanel bill = new PharmacyWorkAreaJPanel(userworkArea, userAccount, ecoModel);
+        PharmacyJPanel bill = new PharmacyJPanel(userworkArea, userAccount, ecoModel);
         userworkArea.add("Insurance main", bill);
         CardLayout layout = (CardLayout) userworkArea.getLayout();
         layout.next(userworkArea);
