@@ -62,6 +62,8 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         lblTestAvailable = new javax.swing.JLabel();
         lblTestSelected = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 0, 102));
+
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

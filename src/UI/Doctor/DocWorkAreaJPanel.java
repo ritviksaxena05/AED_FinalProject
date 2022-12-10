@@ -119,6 +119,8 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
         lblPatientAssigned = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 0, 102));
+
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

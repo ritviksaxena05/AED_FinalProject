@@ -74,6 +74,8 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
         btnRequestMedicine = new javax.swing.JButton();
         btnOrderBloodReport = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 0, 102));
+
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

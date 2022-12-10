@@ -181,11 +181,11 @@ public class MainJFrame extends javax.swing.JFrame {
         txtUserNameInput.setText("");
         pwdInput.setText("");
 
-//        Logout ua = new Logout(panelWorkArea);
-//        panelWorkArea.add("Logout", ua);
-//        CardLayout layout = (CardLayout) panelWorkArea.getLayout();
-//        layout.next(panelWorkArea);
-//        dBUtil.storeSystem(system);
+        Logout ua = new Logout(panelWorkArea);
+        panelWorkArea.add("logout", ua);
+        CardLayout layout = (CardLayout) panelWorkArea.getLayout();
+        layout.next(panelWorkArea);
+        dBUtil.storeSystem(system);
 
     }//GEN-LAST:event_btnLogoutActionPerformed
 
