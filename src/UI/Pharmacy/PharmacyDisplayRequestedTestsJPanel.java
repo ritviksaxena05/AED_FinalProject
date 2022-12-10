@@ -7,7 +7,12 @@ package UI.Pharmacy;
 import Model.EcoModel;
 import Model.Patient.Patient;
 import javax.swing.JPanel;
-
+import Model.Patient.PatientBills;
+import Model.Patient.Patient;
+import Model.User.User;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author devikaboddu
@@ -17,8 +22,42 @@ public class PharmacyDisplayRequestedTestsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PharmacyDisplayRequestedTestsJPanel
      */
-    public PharmacyDisplayRequestedTestsJPanel(JPanel userWorkArea, User userAccount, Patient patient, EcoModel ecoModel) {
+
+    Patient p;
+    JPanel userProcessContainer;
+    User account;
+    EcoModel ecoModel;
+    
+    public PharmacyDisplayRequestedTestsJPanel(JPanel userProcessContainer, User account, Patient p,EcoModel ecoModel) {
+
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.ecoModel = ecoModel;
+        this.p = p;
+        Fname.setText("Customer Name: "+p.getpFirstName()+" "+p.getpLastName());
+        populateBillTable();
+    }
+    
+     private void populateBillTable() {
+        DefaultTableModel model = (DefaultTableModel) BillTable.getModel();
+
+        model.setRowCount(0);
+
+        for (PatientBills b : p.getpBills()) {
+
+            Object[] row = new Object[7];
+            row[0] = b.getName();
+            row[1] = b.getOrgType();
+            row[2] = b.getAmount();
+            row[3] = b.getStatus();
+            row[4] = b.getResult();
+            
+
+            if(b.getOrgType().equals("Pharmacy")&&b.getStatus().equals("Requested")){
+
+            model.addRow(row);}
+        }
     }
 
     /**
@@ -30,19 +69,118 @@ public class PharmacyDisplayRequestedTestsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        BillTable = new javax.swing.JTable();
+        Fname = new javax.swing.JLabel();
+
+        jButton1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 153, 204));
+        jButton1.setText("Delivered");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        BillTable.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        BillTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Item Name", "Organization", "Amount", "Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(BillTable);
+
+        Fname.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(Fname, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 891, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(263, 263, 263))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(207, 207, 207))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(Fname, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        for (PatientBills b : p.getpBills()) {
+            if(b.getOrgType().equals("Pharmacy")){
+                b.setStatus("Delivered");}
+        }
+        p.setpPharmaStatus("Delivered");
+        populateBillTable();
+        PharmacyJPanel bill = new PharmacyJPanel(userProcessContainer, account, ecoModel);
+        userProcessContainer.add("Insurance main", bill);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable BillTable;
+    private javax.swing.JLabel Fname;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
