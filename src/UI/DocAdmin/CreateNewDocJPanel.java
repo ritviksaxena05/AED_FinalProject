@@ -439,7 +439,7 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
         // DefaultTableModel model = (DefaultTableModel) ManageCustomersTable.getModel();
 
         //model.setRowCount(0);
-        for (User user : ecoModel.getUserAccountDirectory().getUserAccountList()) {
+        for (User user : ecoModel.getUserAccountDirectory().getUserList()) {
             if ("Business.Role.DoctorRole".equals(user.getUserRole().getClass().getName())) {
                 Object[] row = new Object[3];
                 row[1] = user.getUserName();
