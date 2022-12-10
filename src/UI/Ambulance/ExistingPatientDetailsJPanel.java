@@ -4,6 +4,13 @@
  */
 package UI.Ambulance;
 
+import Model.Ambulance.Ambulance;
+import Model.EcoModel;
+import Model.User.User;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author devikaboddu
@@ -13,9 +20,25 @@ public class ExistingPatientDetailsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ExistingPatientDetailsJPanel
      */
-    public ExistingPatientDetailsJPanel() {
+    
+    private final JPanel userProcessContainer;
+    private final EcoModel ecoSystem;
+    private User userAccount;
+    private Ambulance ambulance;
+
+    public ExistingPatientDetailsJPanel(JPanel userProcessContainer, User account, EcoModel system, Ambulance ambulance) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.ecoSystem = system;
+        this.ambulance = ambulance;
+
+        lblFirstName.setText(ambulance.getAmbulancePatientsList().get(ambulance.getAmbulancePatientsList().size() - 1).getpFirstName());
+        lblLastName.setText(ambulance.getAmbulancePatientsList().get(ambulance.getAmbulancePatientsList().size() - 1).getpLastName());
+        lblLocation.setText(ambulance.getAmbulancePatientsList().get(ambulance.getAmbulancePatientsList().size() - 1).getpAccidentLocation());
+
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,19 +49,128 @@ public class ExistingPatientDetailsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblPatientLastName = new javax.swing.JLabel();
+        lblPatientFirstName = new javax.swing.JLabel();
+        lblPatientLocation = new javax.swing.JLabel();
+        btnSetFree = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        btnSetFree1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        lblFirstName = new javax.swing.JTextField();
+        lblLastName = new javax.swing.JTextField();
+        lblLocation = new javax.swing.JTextField();
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("EMERGENCY DETAILS");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1409, 80));
+
+        lblPatientLastName.setBackground(new java.awt.Color(15, 85, 177));
+        lblPatientLastName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientLastName.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatientLastName.setText("Patient Last Name");
+        jPanel1.add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, -1, -1));
+
+        lblPatientFirstName.setBackground(new java.awt.Color(0, 153, 204));
+        lblPatientFirstName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientFirstName.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatientFirstName.setText("Patient First Name");
+        jPanel1.add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, -1, -1));
+
+        lblPatientLocation.setBackground(new java.awt.Color(15, 85, 177));
+        lblPatientLocation.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientLocation.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatientLocation.setText("Patient Location");
+        jPanel1.add(lblPatientLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 490, -1, -1));
+
+        btnSetFree.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btnSetFree.setForeground(new java.awt.Color(0, 153, 204));
+        btnSetFree.setText("Set Free");
+        btnSetFree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSetFreeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSetFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(715, 550, 170, 38));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 107, 1432, 10));
+
+        btnSetFree1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btnSetFree1.setForeground(new java.awt.Color(0, 153, 204));
+        btnSetFree1.setText("Back");
+        btnSetFree1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSetFree1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSetFree1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 550, 150, 38));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/ambulance_gif.jpeg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 480, 170));
+        jPanel1.add(lblFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 390, 210, 30));
+        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, 210, 30));
+        jPanel1.add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, 210, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1013, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1013, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 650, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSetFreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetFreeActionPerformed
+        // TODO add your handling code here:
+
+        ambulance.setStatus("Free");
+        JOptionPane.showMessageDialog(null, "Status Changed To Free");
+        DisplayPatientJPanel displayAmbulancePatientJPanel = new DisplayPatientJPanel(userProcessContainer, userAccount, ecoSystem);
+        userProcessContainer.add("Ambulance Display", displayAmbulancePatientJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnSetFreeActionPerformed
+
+    private void btnSetFree1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetFree1ActionPerformed
+        // TODO add your handling code here:
+        DisplayPatientJPanel displayAmbulancePatientJPanel = new DisplayPatientJPanel(userProcessContainer, userAccount, ecoSystem);
+        userProcessContainer.add("Ambulance Display", displayAmbulancePatientJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnSetFree1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSetFree;
+    private javax.swing.JButton btnSetFree1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField lblFirstName;
+    private javax.swing.JTextField lblLastName;
+    private javax.swing.JTextField lblLocation;
+    private javax.swing.JLabel lblPatientFirstName;
+    private javax.swing.JLabel lblPatientLastName;
+    private javax.swing.JLabel lblPatientLocation;
     // End of variables declaration//GEN-END:variables
 }

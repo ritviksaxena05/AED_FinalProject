@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import Model.Pharmacy.Pharmacy;
 import Model.Ambulance.Ambulance;
 import Model.BloodDonationCenter.BloodDonationCenter;
+import Model.Roles.AmbulanceDriver;
 /**
  *
  * @author ramya
@@ -31,6 +32,7 @@ public class MainJFrame extends javax.swing.JFrame {
         this.setSize(1300, 900);
         system.getUserDirectory().createUser("doctor", "doctor", null, new DoctorUser());
         system.getUserDirectory().createUser("doctorAdmin", "doctorAdmin", null, new DoctorAdmin());
+        system.getUserDirectory().createUser("ambulance", "ambulance", null, new AmbulanceDriver());
         
     }
 
