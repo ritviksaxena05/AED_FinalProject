@@ -4,6 +4,9 @@
  */
 package UI.Doctor;
 
+import javax.swing.JOptionPane;
+import java.awt.CardLayout;
+import Model.User.User;
 import Model.EcoModel;
 import Model.Patient.Patient;
 import Model.User.User;
@@ -18,8 +21,17 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DocBloodReportOrderJPanel
      */
-    public DocBloodReportOrderJPanel(JPanel userProcessArea, User userAccount, EcoModel ecoModel, Patient patient) {
+    private User userAccount;
+    private JPanel userWorkArea;
+    private Patient patient;
+    private EcoModel ecoModel;
+    
+    public DocBloodReportOrderJPanel(JPanel userArea, User accountUser, EcoModel ecoSystemModel, Patient patient) {
         initComponents();
+        this.userAccount = accountUser;
+        this.userWorkArea = userArea;
+        this.patient = patient;
+        this.ecoModel = ecoSystemModel;   
     }
 
     /**
@@ -46,20 +58,20 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
         lblOrderBloodTest.setForeground(new java.awt.Color(255, 255, 255));
         lblOrderBloodTest.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblOrderBloodTest.setText("Request Blood");
-        jPanel1.add(lblOrderBloodTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 650, 60));
+        jPanel1.add(lblOrderBloodTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 650, 60));
 
         boxBloodRequestQuantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxBloodRequestQuantityActionPerformed(evt);
             }
         });
-        jPanel1.add(boxBloodRequestQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 180, 40));
+        jPanel1.add(boxBloodRequestQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 180, 40));
 
         lblSelectBloodQuantity.setBackground(new java.awt.Color(255, 255, 255));
         lblSelectBloodQuantity.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblSelectBloodQuantity.setForeground(new java.awt.Color(255, 255, 255));
         lblSelectBloodQuantity.setText("Select Blood Bag Quantity");
-        jPanel1.add(lblSelectBloodQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 260, 40));
+        jPanel1.add(lblSelectBloodQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 260, 40));
 
         btnRequestBlood.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnRequestBlood.setForeground(new java.awt.Color(0, 0, 102));
@@ -69,7 +81,7 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
                 btnRequestBloodActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRequestBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 197, 40));
+        jPanel1.add(btnRequestBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 197, 30));
 
         btnBackBloodReq.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnBackBloodReq.setForeground(new java.awt.Color(0, 0, 102));
@@ -79,7 +91,7 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
                 btnBackBloodReqActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBackBloodReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 128, 42));
+        jPanel1.add(btnBackBloodReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 128, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -116,19 +128,19 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
             patient.setpBloodBagQuantity((String) boxBloodRequestQuantity.getSelectedItem());
 
             JOptionPane.showMessageDialog(null, "Blood Request Sent", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-            DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
-            userProcessContainer.add("Visit Doctor", doctorVisit);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
+            DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userWorkArea, userAccount, ecoModel, patient);
+            userWorkArea.add("Visit Doctor", doctorVisit);
+            CardLayout layout = (CardLayout) userWorkArea.getLayout();
+            layout.next(userWorkArea);
         }
     }//GEN-LAST:event_btnRequestBloodActionPerformed
 
     private void btnBackBloodReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackBloodReqActionPerformed
         // TODO add your handling code here:
-        DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
-        userProcessContainer.add("Visit Doctor", doctorVisit);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userWorkArea, userAccount, ecoModel, patient);
+        userWorkArea.add("Visit Doctor", doctorVisit);
+        CardLayout layout = (CardLayout) userWorkArea.getLayout();
+        layout.next(userWorkArea);
     }//GEN-LAST:event_btnBackBloodReqActionPerformed
 
 
