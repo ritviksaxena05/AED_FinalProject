@@ -4,6 +4,9 @@
  */
 package UI.ReceptionServiceRole;
 
+import Model.EcoModel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author devikaboddu
@@ -13,7 +16,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ReceptionWorkAreaJPanel
      */
-    public ReceptionWorkAreaJPanel() {
+    public ReceptionWorkAreaJPanel(JPanel userProcessContainer, User user, EcoModel business) {
         initComponents();
     }
 
