@@ -369,4 +369,8 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblCommunity;
     // End of variables declaration//GEN-END:variables
+
+    private TreatedPatientJPanel TreatedPatientJPanel(JPanel userProcessContainer, User user, EcoModel ecoModel) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

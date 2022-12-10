@@ -4,6 +4,14 @@
  */
 package UI.ReceptionServiceRole;
 
+import Model.EcoModel;
+import Model.Patient.Patient;
+import Model.Patient.PatientBills;
+import Model.User.User;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author devikaboddu
@@ -13,10 +21,35 @@ public class PatientBillJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PatientBillJPanel
      */
-    public PatientBillJPanel() {
+    JPanel userProcessContainer;
+    Patient patient;
+    User account;
+    EcoModel system;
+    public PatientBillJPanel(JPanel userProcessContainer, Patient p,User account,EcoModel system) {
         initComponents();
+        this.account = account;
+        this.system = system;
+        this.userProcessContainer = userProcessContainer;
+        this.patient = p;
+        lblPatientName.setText(patient.getpFirstName() + " " + patient.getpLastName());
+        populateBillTable();
     }
 
+    private void populateBillTable() {
+        DefaultTableModel model = (DefaultTableModel) talble.getModel();
+        model.setRowCount(0);
+        int totalAmount = 0;
+        for (PatientBills b : patient.getpBills()) {
+            Object[] row = new Object[7];
+            row[0] = b.getName();
+            row[1] = b.getOrgType();
+            row[2] = b.getAmount();
+            totalAmount += b.getAmount();
+            model.addRow(row);
+        }
+        this.totalAmounttxt.setText(String.valueOf(totalAmount));
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,19 +59,140 @@ public class PatientBillJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        talble = new javax.swing.JTable();
+        lblPatientName = new javax.swing.JLabel();
+        bckBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        textBill = new javax.swing.JLabel();
+        totalAmounttxt = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Patient name");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 280, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 145, 1915, 10));
+
+        talble.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        talble.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Charged for", "Organization", "Amount"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(talble);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 580, 251));
+
+        lblPatientName.setBackground(new java.awt.Color(255, 255, 255));
+        lblPatientName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        lblPatientName.setForeground(new java.awt.Color(255, 255, 255));
+        lblPatientName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 347, 44));
+
+        bckBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        bckBtn.setForeground(new java.awt.Color(0, 153, 204));
+        bckBtn.setText(" Back");
+        bckBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bckBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bckBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 60, 140, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1255, 406, 481, 387));
+
+        textBill.setBackground(new java.awt.Color(255, 255, 255));
+        textBill.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        textBill.setForeground(new java.awt.Color(255, 255, 255));
+        textBill.setText("Total bill amount of patient :");
+        jPanel1.add(textBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 470, -1, 30));
+        jPanel1.add(totalAmounttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 470, 120, 30));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("View Bill");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 180, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, 50));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 53, 60, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1292, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 544, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bckBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bckBtnActionPerformed
+        // TODO add your handling code here:
+        ReceptionWorkAreaJPanel patientBillJPanel = new ReceptionWorkAreaJPanel(userProcessContainer,account,system);
+        userProcessContainer.add("Patient Bill", patientBillJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_bckBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bckBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblPatientName;
+    private javax.swing.JTable talble;
+    private javax.swing.JLabel textBill;
+    private javax.swing.JTextField totalAmounttxt;
     // End of variables declaration//GEN-END:variables
 }

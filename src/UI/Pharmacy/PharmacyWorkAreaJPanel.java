@@ -4,6 +4,9 @@
  */
 package UI.Pharmacy;
 
+import Model.EcoModel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author devikaboddu
@@ -13,7 +16,7 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PharmacyWorkAreaJPanel
      */
-    public PharmacyWorkAreaJPanel() {
+    public PharmacyWorkAreaJPanel(JPanel userProcessContainer, User user, EcoModel business) {
         initComponents();
     }
 
