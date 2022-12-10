@@ -10,6 +10,9 @@ import Model.Laboratory.Laboratory;
 import Model.Pharmacy.Pharmacy;
 import Model.Roles.Role;
 import java.util.ArrayList;
+import Model.Ambulance.AmbulanceDirectory;
+import Model.BloodDonationCenter.BloodDonationCenter;
+import Model.InsuranceAuthority.InsuranceDirectory;
 
 /**
  *
@@ -18,8 +21,11 @@ import java.util.ArrayList;
 public class EcoModel extends OrganizationModel {
     private static EcoModel business;
     private Laboratory laboratory;
+    private InsuranceDirectory insuranceDirectory;
     private DoctorDirectory doctorDirectory;
+    private BloodDonationCenter bloodDonationCenter;
     private Pharmacy pharmacy;
+    private AmbulanceDirectory ambulanceDirectory;
     private PatientDirectory patDirectory;
 
     public PatientDirectory getPatDirectory() {
@@ -56,6 +62,30 @@ public class EcoModel extends OrganizationModel {
 
     public DoctorDirectory getDoctorDirectory() {
         return doctorDirectory;
+    }
+
+    public InsuranceDirectory getInsuranceDirectory() {
+        return insuranceDirectory = (insuranceDirectory == null)? new InsuranceDirectory() : insuranceDirectory;
+    }
+
+    public void setInsuranceDirectory(InsuranceDirectory insuranceDirectory) {
+        this.insuranceDirectory = insuranceDirectory;
+    }
+
+    public BloodDonationCenter getBloodDonationCenter() {
+        return bloodDonationCenter = (bloodDonationCenter == null) ? new BloodDonationCenter() : bloodDonationCenter;
+    }
+
+    public void setBloodDonationCenter(BloodDonationCenter bloodDonationCenter) {
+        this.bloodDonationCenter = bloodDonationCenter;
+    }
+
+    public AmbulanceDirectory getAmbulanceDirectory() {
+        return ambulanceDirectory = (ambulanceDirectory == null) ? new AmbulanceDirectory() : ambulanceDirectory;
+    }
+
+    public void setAmbulanceDirectory(AmbulanceDirectory ambulanceDirectory) {
+        this.ambulanceDirectory = ambulanceDirectory;
     }
 
     public void setDoctorDirectory(DoctorDirectory doctorDirectory) {
