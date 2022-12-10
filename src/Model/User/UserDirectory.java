@@ -14,6 +14,10 @@ import java.util.ArrayList;
  */
 public class UserDirectory {
     private final ArrayList<User> userList;
+
+    public ArrayList<User> getUserList() {
+        return userList;
+    }
     
     public UserDirectory() {
         userList = new ArrayList();
