@@ -19,7 +19,9 @@ import Model.Roles.AmbulanceDriver;
 import Model.Roles.Cop;
 import Model.Roles.BloodDonationCenter;
 import Model.Roles.InsuranceAuthority;
+
 import Model.Roles.Laboratory;
+import Model.Roles.ReceptionistRole;
 /** 
  *
  * @author ramya
@@ -40,7 +42,10 @@ public class MainJFrame extends javax.swing.JFrame {
         system.getUserDirectory().createUser("police", "police", null, new Cop());
         system.getUserDirectory().createUser("bloodbank", "bloodbank", null, new BloodDonationCenter());
         system.getUserDirectory().createUser("lab", "lab", null, new Laboratory());   
-        system.getUserDirectory().createUser("reception", "reception", null, new InsuranceAuthority());
+         //system.getUserDirectory().createUser("insurance", "insurance", null, new InsuranceAuthority());
+        system.getUserDirectory().createUser("reception", "reception", null, new ReceptionistRole());
+        
+        
     }
 
     /**

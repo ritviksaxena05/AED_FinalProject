@@ -4,6 +4,24 @@
  */
 package UI.SystemAdmin;
 
+import Model.Ambulance.Ambulance;
+import Model.EcoModel;
+import Model.Patient.Patient;
+import Model.User.User;
+import com.kingaspx.util.BrowserUtil;
+import com.kingaspx.version.Version;
+import com.teamdev.jxbrowser.chromium.Browser;
+import com.teamdev.jxbrowser.chromium.dom.By;
+import com.teamdev.jxbrowser.chromium.dom.DOMDocument;
+import com.teamdev.jxbrowser.chromium.dom.DOMElement;
+import com.teamdev.jxbrowser.chromium.dom.DOMInputElement;
+import com.teamdev.jxbrowser.chromium.events.ConsoleEvent;
+import com.teamdev.jxbrowser.chromium.events.FinishLoadingEvent;
+import com.teamdev.jxbrowser.chromium.events.LoadAdapter;
+import com.teamdev.jxbrowser.chromium.events.TitleEvent;
+import com.teamdev.jxbrowser.chromium.swing.BrowserView;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
 /**
  *
  * @author devikaboddu
@@ -13,8 +31,41 @@ public class DisplayAmbulanceDriversJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DisplayAmbulanceDriversJPanel
      */
-    public DisplayAmbulanceDriversJPanel() {
+    private final JPanel userProcessContainer;
+    private final EcoModel ecoSystem;
+    User userAccount;
+    public DisplayAmbulanceDriversJPanel(JPanel userProcessContainer, User account,EcoModel system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.ecoSystem = system;
+        open_site();
+    }
+    
+    Browser browser;
+    BrowserView view;
+    
+        private void open_site() {
+        
+        BrowserUtil.setVersion(Version.V6_22);
+        browser = new Browser();
+        view = new BrowserView(browser);
+
+        Map_JPanel.add(view, BorderLayout.CENTER);
+
+        
+
+        browser.addConsoleListener((ConsoleEvent evt) -> {
+            System.out.println("LOG: " + evt.getMessage());
+        });
+
+        browser.addLoadListener(new LoadAdapter() {
+            @Override
+            public void onFinishLoadingFrame(FinishLoadingEvent evt) {
+                evt.getBrowser().setZoomLevel(-2);
+            }
+        });
+        browser.loadURL("C:\\Users\\siddh\\AED\\Final-Project---AED\\HospitalEcosystemManagement\\simple_map2.html");
     }
 
     /**
@@ -26,19 +77,86 @@ public class DisplayAmbulanceDriversJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        Map_JPanel = new javax.swing.JPanel();
+
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jPanel3.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Ambulance drivers at the moment");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(356, 20, 310, 52));
+
+        jButton1.setText("get Ambulances");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, 120, 30));
+
+        jPanel1.add(jPanel3, java.awt.BorderLayout.PAGE_START);
+
+        javax.swing.GroupLayout Map_JPanelLayout = new javax.swing.GroupLayout(Map_JPanel);
+        Map_JPanel.setLayout(Map_JPanelLayout);
+        Map_JPanelLayout.setHorizontalGroup(
+            Map_JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 960, Short.MAX_VALUE)
+        );
+        Map_JPanelLayout.setVerticalGroup(
+            Map_JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 483, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(Map_JPanel, java.awt.BorderLayout.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 960, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 555, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        DOMDocument doc = browser.getDocument();
+        DOMElement start_element = doc.findElement(By.id("start"));
+        DOMElement btn_element = doc.findElement(By.id("submit"));
+        DOMElement button = (DOMElement) btn_element;
+
+        DOMInputElement startLocation = (DOMInputElement) start_element;
+        startLocation.setValue("Northeastern University, Boston; Boylston Street, Boston ; Heath Street, Boston");
+
+        button.click();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Map_JPanel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
