@@ -81,7 +81,7 @@ public class EcoModel extends OrganizationModel {
     }
 
     public DoctorDirectory getDoctorDirectory() {
-        return doctorDirectory;
+        return doctorDirectory = (doctorDirectory == null) ? new DoctorDirectory() : doctorDirectory;
     }
 
     public InsuranceDirectory getInsuranceDirectory() {

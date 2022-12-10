@@ -39,16 +39,16 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (User user : ecoSystem.getUserDirectory().getUserAccountList()) {
-
-            if ("Business.Role.AmbulanceDriverRole".equals(user.getUserRole().getClass().getName())) {
-                Object[] row = new Object[3];
-                row[1] = user.getUsername();
-                row[2] = user.getUserPassword();
-                model.addRow(row);
-            }
-
-        }
+//        for (User user : ecoSystem.getUserDirectory().getUserAccountList()) {
+//
+//            if ("Business.Role.AmbulanceDriverRole".equals(user.getUserRole().getClass().getName())) {
+//                Object[] row = new Object[3];
+//                row[1] = user.getUsername();
+//                row[2] = user.getUserPassword();
+//                model.addRow(row);
+//            }
+//
+//        }
     }
 
     /**
