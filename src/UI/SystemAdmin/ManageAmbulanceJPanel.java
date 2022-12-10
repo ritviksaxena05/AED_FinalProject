@@ -4,6 +4,12 @@
  */
 package UI.SystemAdmin;
 
+import Model.EcoModel;
+import Model.User.User;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author devikaboddu
@@ -13,8 +19,36 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageAmbulanceJPanel
      */
-    public ManageAmbulanceJPanel() {
+    private final JPanel userProcessContainer;
+    private final EcoModel ecoSystem;
+    User userAccount;
+
+    /**
+     * Creates new form ManageAmbulanceJPanel
+     */
+    public ManageAmbulanceJPanel(JPanel userProcessContainer, EcoModel system)
+    {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.ecoSystem = system;
+        populateNetworkTable();
+    }
+    
+   private void populateNetworkTable() {
+        DefaultTableModel model = (DefaultTableModel) ManageCustomersTable.getModel();
+
+        model.setRowCount(0);
+
+        for (User user : ecoSystem.getUserDirectory().getUserAccountList()) {
+
+            if ("Business.Role.AmbulanceDriverRole".equals(user.getUserRole().getClass().getName())) {
+                Object[] row = new Object[3];
+                row[1] = user.getUsername();
+                row[2] = user.getUserPassword();
+                model.addRow(row);
+            }
+
+        }
     }
 
     /**
@@ -26,19 +60,166 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblManageCustomers = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ManageCustomersTable = new javax.swing.JTable();
+        btnSubmit = new javax.swing.JButton();
+        lblPassword = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
+        txtUserName = new javax.swing.JTextField();
+        lblUserName = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        lblName = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setForeground(new java.awt.Color(0, 153, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblManageCustomers.setBackground(new java.awt.Color(119, 197, 147));
+        lblManageCustomers.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
+        lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
+        lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblManageCustomers.setText("                      Manage Customers");
+        jPanel1.add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 29, 590, 70));
+
+        ManageCustomersTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        ManageCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Name", "User Name", "Password"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(ManageCustomersTable);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 167, 730, 382));
+
+        btnSubmit.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(0, 153, 204));
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 481, 148, 68));
+
+        lblPassword.setBackground(new java.awt.Color(0, 0, 0));
+        lblPassword.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(255, 255, 255));
+        lblPassword.setText("Password");
+        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 380, -1, 30));
+
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 386, 144, 30));
+
+        txtUserName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUserNameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 292, 144, 30));
+
+        lblUserName.setBackground(new java.awt.Color(0, 0, 0));
+        lblUserName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        lblUserName.setForeground(new java.awt.Color(255, 255, 255));
+        lblUserName.setText("Username");
+        jPanel1.add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 286, -1, 30));
+        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 200, 144, 30));
+
+        lblName.setBackground(new java.awt.Color(0, 0, 0));
+        lblName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
+        lblName.setText("Name");
+        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 194, -1, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1014, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1014, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 534, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+
+        String name = txtName.getText();
+        String uname = txtUserName.getText();
+        String password = txtPassword.getText();
+        if(name.equals("") || uname.equals("") || password.equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Please fill all the details");
+        }
+        else
+        {
+            //ecoSystem.getUserAccountDirectory().createUserAccount(uname, password, null, new PatientRole());
+            //ecoSystem.getPatientDirectory().createPatient(uname);
+            populateNetworkTable();
+        }
+
+        txtName.setText("");
+        txtUserName.setText("");
+        txtPassword.setText("");
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
+
+    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserNameActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable ManageCustomersTable;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblManageCustomers;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblUserName;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }
