@@ -14,9 +14,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import Model.Pharmacy.Pharmacy;
 import Model.Ambulance.Ambulance;
-import Model.BloodDonationCenter.BloodDonationCenter;
+//import Model.BloodDonationCenter.BloodDonationCenter;
 import Model.Roles.AmbulanceDriver;
+import Model.Roles.InsuranceAuthority;
 import Model.Roles.Laboratory;
+
 /**
  *
  * @author ramya
@@ -35,6 +37,7 @@ public class MainJFrame extends javax.swing.JFrame {
         system.getUserDirectory().createUser("doctorAdmin", "doctorAdmin", null, new DoctorAdmin());
         system.getUserDirectory().createUser("ambulance", "ambulance", null, new AmbulanceDriver());
         system.getUserDirectory().createUser("lab", "lab", null, new Laboratory());
+        system.getUserDirectory().createUser("insurance", "insurance", null, new InsuranceAuthority());
     }
 
     /**

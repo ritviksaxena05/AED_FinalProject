@@ -4,6 +4,14 @@
  */
 package UI.InsuranceAuthority;
 
+import Model.EcoModel;
+import Model.Patient.Patient;
+import Model.Patient.PatientBills;
+import Model.User.User;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author devikaboddu
@@ -13,9 +21,46 @@ public class InsurancePastCustomerInfoJPanel extends javax.swing.JPanel {
     /**
      * Creates new form InsurancePastCustomerInfoJPanel
      */
-    public InsurancePastCustomerInfoJPanel() {
+    JPanel userProcessContainer;
+    Patient patient;
+    User user;
+    EcoModel ecoSystem;
+    public InsurancePastCustomerInfoJPanel(JPanel userProcessContainer, EcoModel business, Patient p, User account) {
         initComponents();
+        this.ecoSystem = business;
+        this.userProcessContainer = userProcessContainer;
+        this.patient = p;
+        this.user = account;
+        txtpFirstName.setText(p.getpFirstName());
+        txtpName.setText(p.getpLastName());
+        txtpAddress.setText(p.getpAddress());
+        txtpAge.setText(Integer.toString(p.getpAge()));
+        txtpGender.setText(p.getpGender());
+        txtpInsuranceID.setText(p.getpHealthInsuranceID());
+        txtpNumber.setText(p.getpPhoneNo());
+        txtInsStatus.setText(p.getpInsuranceStatus());
+        populateBillTable();
     }
+
+    InsurancePastCustomerInfoJPanel(JPanel userProcessContainer, User userAccount, EcoModel ecoSystem) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+          private void populateBillTable() {
+        DefaultTableModel model = (DefaultTableModel) talbleForBilling.getModel();
+
+        model.setRowCount(0);
+
+        for (PatientBills b : patient.getpBills()) {
+
+            Object[] row = new Object[7];
+            row[0] = b.getName();
+            row[1] = b.getOrgType();
+            row[2] = b.getAmount();
+            model.addRow(row);
+
+        }
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,19 +71,252 @@ public class InsurancePastCustomerInfoJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        talbleForBilling = new javax.swing.JTable();
+        lblPPhone = new javax.swing.JLabel();
+        txtpAddress = new javax.swing.JTextField();
+        lblPAddress = new javax.swing.JLabel();
+        txtpInsuranceID = new javax.swing.JTextField();
+        lblPInsuranceID = new javax.swing.JLabel();
+        txtpGender = new javax.swing.JTextField();
+        lblPGender = new javax.swing.JLabel();
+        txtpNumber = new javax.swing.JTextField();
+        txtpFirstName = new javax.swing.JTextField();
+        lblPFirstName = new javax.swing.JLabel();
+        txtpAge = new javax.swing.JTextField();
+        lblPAge = new javax.swing.JLabel();
+        txtpName = new javax.swing.JTextField();
+        lblPLastName = new javax.swing.JLabel();
+        backBtn = new javax.swing.JButton();
+        txtInsStatus = new javax.swing.JTextField();
+        lblInsStatus = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Customer Status");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-400, 20, 1090, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1295, 10));
+
+        talbleForBilling.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        talbleForBilling.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Item Name", "Organization", "Amount"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(talbleForBilling);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 730, 380));
+
+        lblPPhone.setBackground(new java.awt.Color(255, 255, 255));
+        lblPPhone.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblPPhone.setForeground(new java.awt.Color(255, 255, 255));
+        lblPPhone.setText("Phone Number");
+        jPanel1.add(lblPPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
+
+        txtpAddress.setEditable(false);
+        txtpAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpAddressActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtpAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 150, 30));
+
+        lblPAddress.setBackground(new java.awt.Color(255, 255, 255));
+        lblPAddress.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblPAddress.setForeground(new java.awt.Color(255, 255, 255));
+        lblPAddress.setText("Address");
+        jPanel1.add(lblPAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, -1));
+
+        txtpInsuranceID.setEditable(false);
+        txtpInsuranceID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpInsuranceIDActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtpInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 150, 30));
+
+        lblPInsuranceID.setBackground(new java.awt.Color(255, 255, 255));
+        lblPInsuranceID.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblPInsuranceID.setForeground(new java.awt.Color(255, 255, 255));
+        lblPInsuranceID.setText("InsuranceID");
+        jPanel1.add(lblPInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 106, -1));
+
+        txtpGender.setEditable(false);
+        txtpGender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpGenderActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtpGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 150, 30));
+
+        lblPGender.setBackground(new java.awt.Color(255, 255, 255));
+        lblPGender.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblPGender.setForeground(new java.awt.Color(255, 255, 255));
+        lblPGender.setText("Gender");
+        jPanel1.add(lblPGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 70, -1));
+
+        txtpNumber.setEditable(false);
+        jPanel1.add(txtpNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 150, 30));
+
+        txtpFirstName.setEditable(false);
+        jPanel1.add(txtpFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 166, 150, 30));
+
+        lblPFirstName.setBackground(new java.awt.Color(255, 255, 255));
+        lblPFirstName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblPFirstName.setForeground(new java.awt.Color(255, 255, 255));
+        lblPFirstName.setText("First Name");
+        jPanel1.add(lblPFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 116, -1));
+
+        txtpAge.setEditable(false);
+        txtpAge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpAgeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtpAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 150, 30));
+
+        lblPAge.setBackground(new java.awt.Color(255, 255, 255));
+        lblPAge.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblPAge.setForeground(new java.awt.Color(255, 255, 255));
+        lblPAge.setText("Age");
+        jPanel1.add(lblPAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 50, -1));
+
+        txtpName.setEditable(false);
+        txtpName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpNameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtpName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 150, 30));
+
+        lblPLastName.setBackground(new java.awt.Color(255, 255, 255));
+        lblPLastName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblPLastName.setForeground(new java.awt.Color(255, 255, 255));
+        lblPLastName.setText("Last Name");
+        jPanel1.add(lblPLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 116, -1));
+
+        backBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(0, 153, 204));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, 196, 47));
+
+        txtInsStatus.setEditable(false);
+        jPanel1.add(txtInsStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 150, 30));
+
+        lblInsStatus.setBackground(new java.awt.Color(255, 255, 255));
+        lblInsStatus.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblInsStatus.setForeground(new java.awt.Color(255, 255, 255));
+        lblInsStatus.setText("Insurance Status");
+        jPanel1.add(lblInsStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1203, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 681, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtpAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpAddressActionPerformed
+
+    private void txtpInsuranceIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpInsuranceIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpInsuranceIDActionPerformed
+
+    private void txtpGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpGenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpGenderActionPerformed
+
+    private void txtpAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpAgeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpAgeActionPerformed
+
+    private void txtpNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpNameActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        //patient.setInsuranceStatus("Approved");
+        InsuranceWorkAreaJPanel bill = new InsuranceWorkAreaJPanel(userProcessContainer, user, ecoSystem);
+        userProcessContainer.add("Insurance main", bill);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_backBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblInsStatus;
+    private javax.swing.JLabel lblPAddress;
+    private javax.swing.JLabel lblPAge;
+    private javax.swing.JLabel lblPFirstName;
+    private javax.swing.JLabel lblPGender;
+    private javax.swing.JLabel lblPInsuranceID;
+    private javax.swing.JLabel lblPLastName;
+    private javax.swing.JLabel lblPPhone;
+    private javax.swing.JTable talbleForBilling;
+    private javax.swing.JTextField txtInsStatus;
+    private javax.swing.JTextField txtpAddress;
+    private javax.swing.JTextField txtpAge;
+    private javax.swing.JTextField txtpFirstName;
+    private javax.swing.JTextField txtpGender;
+    private javax.swing.JTextField txtpInsuranceID;
+    private javax.swing.JTextField txtpName;
+    private javax.swing.JTextField txtpNumber;
     // End of variables declaration//GEN-END:variables
 }
