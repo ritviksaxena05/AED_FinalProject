@@ -4,6 +4,14 @@
  */
 package UI.InsuranceAuthority;
 
+import Model.EcoModel;
+import Model.Patient.Patient;
+import Model.User.User;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author devikaboddu
@@ -13,8 +21,40 @@ public class InsurancePastCustomersJPanel extends javax.swing.JPanel {
     /**
      * Creates new form InsurancePastCustomersJPanel
      */
-    public InsurancePastCustomersJPanel() {
+    private final JPanel userProcessContainer;
+    private final EcoModel ecoSystem;
+    User userAccount;
+    public InsurancePastCustomersJPanel(JPanel userProcessContainer, User account, EcoModel system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.ecoSystem = system;
+        this.userAccount = account;
+        
+        populatePatientTable1();
+        
+    }
+          
+private void populatePatientTable1() {
+        DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
+
+        model.setRowCount(0);
+
+        for (Patient patient : ecoSystem.getInsuranceDirectory().getInsuranceRecord()) {
+
+            Object[] row = new Object[7];
+            row[0] = patient.getpFirstName();
+            row[1] = patient.getpLastName();
+            row[2] = Float.toString(ecoSystem.getPatDirectory().billTotal(patient));
+            row[3] = patient.getpHealthInsuranceID();
+            row[6] = patient.getpInsuranceStatus();
+            row[5] = patient.getpPoliceStatus();
+            row[4] = patient.getpEmailAddress();
+            row[5] = patient;
+            if(!patient.getpInsuranceStatus().equals("Verifying Insurance")){
+            model.addRow(row);
+            }
+
+        }
     }
 
     /**
@@ -26,19 +66,133 @@ public class InsurancePastCustomersJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        patientTable = new javax.swing.JTable();
+        viewDtlsBtn = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Insurer");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-500, 50, 1400, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 126, 1400, 10));
+
+        patientTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
+        patientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 12));
+        patientTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Last", "Bill Total", "HealthId", "Email", "Police Verification", "Insurance Status", "obj"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, true, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(patientTable);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 990, 200));
+
+        viewDtlsBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        viewDtlsBtn.setForeground(new java.awt.Color(0, 153, 204));
+        viewDtlsBtn.setText("View Details");
+        viewDtlsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewDtlsBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(viewDtlsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 220, 80));
+
+        backBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(0, 153, 204));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 220, 80));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1400, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void viewDtlsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDtlsBtnActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = patientTable.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+
+            Patient d = (Patient) patientTable.getValueAt(selectedRow, 5);
+            //d.get
+            InsurancePastCustomerInfoJPanel bill = new InsurancePastCustomerInfoJPanel(userProcessContainer,ecoSystem, d, userAccount);
+            userProcessContainer.add("Past Customer", bill);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+
+        }
+    }//GEN-LAST:event_viewDtlsBtnActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        //patient.setInsuranceStatus("Approved");
+        InsuranceWorkAreaJPanel bill = new InsuranceWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
+        userProcessContainer.add("Insurance main", bill);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_backBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTable patientTable;
+    private javax.swing.JButton viewDtlsBtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -18,6 +18,7 @@ import Model.Ambulance.Ambulance;
 import Model.Roles.AmbulanceDriver;
 import Model.Roles.Cop;
 import Model.Roles.BloodDonationCenter;
+import Model.Roles.InsuranceAuthority;
 import Model.Roles.Laboratory;
 /** 
  *
@@ -38,7 +39,8 @@ public class MainJFrame extends javax.swing.JFrame {
         system.getUserDirectory().createUser("ambulance", "ambulance", null, new AmbulanceDriver());
         system.getUserDirectory().createUser("police", "police", null, new Cop());
         system.getUserDirectory().createUser("bloodbank", "bloodbank", null, new BloodDonationCenter());
-        system.getUserDirectory().createUser("lab", "lab", null, new Laboratory());
+        system.getUserDirectory().createUser("lab", "lab", null, new Laboratory());   
+        system.getUserDirectory().createUser("reception", "reception", null, new InsuranceAuthority());
     }
 
     /**
