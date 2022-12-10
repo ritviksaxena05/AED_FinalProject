@@ -7,10 +7,12 @@ package Model;
 import Model.Doctor.DoctorDirectory;
 import Model.Patient.PatientDirectory;
 import Model.Laboratory.Laboratory;
+import Model.Roles.Admin;
 import Model.Pharmacy.Pharmacy;
 import Model.Roles.Role;
 import java.util.ArrayList;
 import Model.Ambulance.AmbulanceDirectory;
+import Model.Roles.Role;
 import Model.BloodDonationCenter.BloodDonationCenter;
 import Model.InsuranceAuthority.InsuranceDirectory;
 
@@ -28,6 +30,11 @@ public class EcoModel extends OrganizationModel {
     private AmbulanceDirectory ambulanceDirectory;
     private PatientDirectory patDirectory;
 
+    private EcoModel()
+    {
+        super(null);
+    }
+    
     public PatientDirectory getPatDirectory() {
         return patDirectory = (patDirectory == null) ? new PatientDirectory() : patDirectory;
     }
@@ -102,21 +109,15 @@ public class EcoModel extends OrganizationModel {
         return business;
     }
     
-    @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roleList=new ArrayList<>();
-//        TODO: UNCOMMENT
-//        roleList.add(new Administrator());
-        return roleList;
-    }
-    private EcoModel()
-    {
-        super(null);
-    }
-
-    
     public boolean checkIfUserIsUnique(String userName)
     {
        return false;
-    }        
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roleList=new ArrayList<>();
+        roleList.add(new Admin());
+        return roleList;
+    }       
 }
