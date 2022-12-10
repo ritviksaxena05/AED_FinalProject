@@ -5,6 +5,7 @@
 package Model;
 
 import Model.Doctor.DoctorDirectory;
+import Model.Patient.PatientDirectory;
 import Model.Laboratory.Laboratory;
 import Model.Pharmacy.Pharmacy;
 import Model.Roles.Role;
@@ -19,7 +20,16 @@ public class EcoModel extends OrganizationModel {
     private Laboratory laboratory;
     private DoctorDirectory doctorDirectory;
     private Pharmacy pharmacy;
+    private PatientDirectory patDirectory;
 
+    public PatientDirectory getPatDirectory() {
+        return patDirectory = (patDirectory == null) ? new PatientDirectory() : patDirectory;
+    }
+
+    public void setPatDirectory(PatientDirectory patDirectory) {
+        this.patDirectory = patDirectory;
+    }
+    
     public Pharmacy getPharmacy() {
         return pharmacy;
     }
