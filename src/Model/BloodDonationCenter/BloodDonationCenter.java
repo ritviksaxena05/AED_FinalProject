@@ -24,6 +24,14 @@ public class BloodDonationCenter {
         bloodRequestedPatients = new ArrayList<>();
         bloodRequestedPatients = bloodRequestedPatients == null ? new ArrayList<>() : bloodRequestedPatients;
     }
+
+    public BloodDonationCenter() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public BloodDonationCenter() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     public String getBloodDonationCenterName() {
         return bloodDonationCenterName;

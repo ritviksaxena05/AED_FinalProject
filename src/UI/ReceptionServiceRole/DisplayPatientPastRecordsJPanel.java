@@ -4,6 +4,14 @@
  */
 package UI.ReceptionServiceRole;
 
+import Model.EcoModel;
+import Model.Patient.Patient;
+import Model.User.User;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author devikaboddu
@@ -13,8 +21,39 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DisplayPatientPastRecordsJPanel
      */
-    public DisplayPatientPastRecordsJPanel() {
+    private final JPanel userProcessContainer;
+    private final EcoModel ecoSystem;
+    User userAccount;
+
+    public DisplayPatientPastRecordsJPanel(JPanel userProcessContainer, User account, EcoModel system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.ecoSystem = system;
+        populateNetworkTable();
+    }
+
+    private void populateNetworkTable() {
+        DefaultTableModel model = (DefaultTableModel) ManageCustomersTable.getModel();
+
+        model.setRowCount(0);
+
+        for (Patient patient : ecoSystem.getPatDirectory().getPatientList()) {
+
+            Object[] row = new Object[10];
+            row[0] = patient.getpFirstName();
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpGender();
+            row[3] = patient.getpHealthInsuranceID();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpEmailAddress();
+            row[6] = patient.getpInsuranceStatus();
+            row[7] = patient.getpStatus();
+            row[8] = patient;
+            if(patient.getpStatus().equals("Discharged")){
+            model.addRow(row);
+            }
+
+        }
     }
 
     /**
@@ -26,19 +65,138 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        lblManageCustomers = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ManageCustomersTable = new javax.swing.JTable();
+        btnUpdateAmbulanceRecord = new javax.swing.JButton();
+        btnUpdateAmbulanceRecord1 = new javax.swing.JButton();
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(944, 60, 1, 10));
+
+        lblManageCustomers.setBackground(new java.awt.Color(119, 197, 147));
+        lblManageCustomers.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
+        lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
+        lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblManageCustomers.setText("                      Manage Patients");
+        jPanel1.add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 590, 70));
+
+        ManageCustomersTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        ManageCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Last", "Gender", "HealthId", "Age", "Email", "Payment", "Patien Status", "obj"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(ManageCustomersTable);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 143, 925, 191));
+
+        btnUpdateAmbulanceRecord.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        btnUpdateAmbulanceRecord.setForeground(new java.awt.Color(0, 204, 204));
+        btnUpdateAmbulanceRecord.setText("Bill");
+        btnUpdateAmbulanceRecord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateAmbulanceRecordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 160, 50));
+
+        btnUpdateAmbulanceRecord1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        btnUpdateAmbulanceRecord1.setForeground(new java.awt.Color(0, 153, 204));
+        btnUpdateAmbulanceRecord1.setText("Back");
+        btnUpdateAmbulanceRecord1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateAmbulanceRecord1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 30, 140, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 953, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 953, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 497, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnUpdateAmbulanceRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateAmbulanceRecordActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = ManageCustomersTable.getSelectedRow();
+        if (selectedRowIndex < 0)
+        {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        else
+        {
+            Patient patient = (Patient) ManageCustomersTable.getValueAt(selectedRowIndex, 8);
+            PatientBillJPanel patientBillJPanel = new PatientBillJPanel(userProcessContainer, patient,userAccount,ecoSystem);
+            userProcessContainer.add("Patient Bill", patientBillJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+            populateNetworkTable();
+            //patient.setStatus("Insurance Verification");
+            //populateNetworkTable();
+            //ManageCustomersTable doctorRequestLabTestJPanel = new ManageCustomersTable(userProcessContainer, userAccount,patient);
+            //userProcessContainer.add("Request Lab Tests", doctorRequestLabTestJPanel);
+            //CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            //layout.next(userProcessContainer);
+        }
+    }//GEN-LAST:event_btnUpdateAmbulanceRecordActionPerformed
+
+    private void btnUpdateAmbulanceRecord1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateAmbulanceRecord1ActionPerformed
+        // TODO add your handling code here:
+        ReceptionWorkAreaJPanel patientBillJPanel = new ReceptionWorkAreaJPanel(userProcessContainer,userAccount,ecoSystem);
+        userProcessContainer.add("Patient Bill", patientBillJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnUpdateAmbulanceRecord1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable ManageCustomersTable;
+    private javax.swing.JButton btnUpdateAmbulanceRecord;
+    private javax.swing.JButton btnUpdateAmbulanceRecord1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblManageCustomers;
     // End of variables declaration//GEN-END:variables
 }
