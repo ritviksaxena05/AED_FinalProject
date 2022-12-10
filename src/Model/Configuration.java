@@ -4,6 +4,9 @@
  */
 package Model;
 
+import Model.Employee.Employee;
+import Model.Roles.Admin;
+import Model.User.User;
 /**
  *
  * @author ramya
@@ -11,9 +14,9 @@ package Model;
 public class Configuration {
     public static EcoModel configure() {
         EcoModel system = EcoModel.getInstance();
-//        System.out.println("existing employees --"+system.getEmployeeDirectory());
-//        Employee employee = system.getEmployeeDirectory().createEmployee("Ramya");
-//        User ua = system.getUserAccountDirectory().createUser("sysadmin", "sysadmin", employee, new Administrator());
+        System.out.println("existing employees --"+system.getEmployeeDirectory());
+        Employee employee = system.getEmployeeDirectory().createEmployee("Ramya");
+        User ua = system.getUserAccountDirectory().createUser("sysadmin", "sysadmin", employee, new Admin());
         return system;
     }
 }

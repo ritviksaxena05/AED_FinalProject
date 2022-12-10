@@ -6,7 +6,7 @@ package Model;
 
 import Model.Roles.Role;
 import Model.User.UserDirectory;
-import Model.emp.EmployeeDirectory;
+import Model.Employee.EmployeeDirectory;
 import java.util.ArrayList;
 
 /**
@@ -14,56 +14,67 @@ import java.util.ArrayList;
  * @author ramya
  */
 public abstract class OrganizationModel {
-    private String name;
-    private int id;
-    private static int counter = 0;
+    private String OrganisationName;
+    private EmployeeDirectory empDirectory;
     private UserDirectory userDirectory;
-    private EmployeeDirectory employeeDirectory;
-    
-    public OrganizationModel(String name) {        
-        this.id = counter;
-        this.name = name;
+    private int organisationID;
+    private static int counter = 0;
+
+    public enum Type {
+        RestaurantAdmin("RestaurantAdmin"),
+        Customer("Customer"),
+        DeliveryMan("Delivery"),
+        SysAdmin("Sysadmin");
+
+        private final String value;
+
+        private Type(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+    }
+
+    public OrganizationModel(String name) {
+        
+        this.OrganisationName = name;
+        this.empDirectory = new EmployeeDirectory();
         this.userDirectory = new UserDirectory();
-        this.employeeDirectory = new EmployeeDirectory();
+        this.organisationID = counter;
         ++counter;
     }
 
     public OrganizationModel() {
 
     }
-    
+
     public abstract ArrayList<Role> getSupportedRole();
 
-    public UserDirectory getUserDirectory() {
+    public UserDirectory getUserAccountDirectory() {
         return this.userDirectory;
     }
 
-    public void setUserDirectory(UserDirectory userDirectory) {
-        this.userDirectory = userDirectory;
+    public int getOrganizationID() {
+        return this.organisationID;
     }
 
-    public String getName() {
-        return name;
+    public EmployeeDirectory getEmployeeDirectory() {
+        return this.empDirectory;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getOrganisationName() {
+        return this.OrganisationName;
     }
 
-    public int getId() {
-        return id;
+    public void setOrganisationName(String name) {
+        this.OrganisationName = name;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public static int getCounter() {
-        return counter;
-    }
-
-    public static void setCounter(int counter) {
-        OrganizationModel.counter = counter;
+    @Override
+    public String toString() {
+        return this.OrganisationName;
     }
     
     

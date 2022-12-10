@@ -5,7 +5,7 @@
 package Model.User;
 
 import Model.Roles.Role;
-import Model.emp.Employee;
+import Model.Employee.Employee;
 import java.util.ArrayList;
 
 /**
