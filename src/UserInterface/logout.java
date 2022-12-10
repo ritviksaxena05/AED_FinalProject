@@ -19,9 +19,11 @@ import java.util.Date;
  *
  * @author ramya
  */
+
 public class Logout extends javax.swing.JPanel{
     JPanel userMainContainer;
     private javax.swing.JLabel jLabel1;
+
 
     public Logout(JPanel userContainer) {
         initComponents();
