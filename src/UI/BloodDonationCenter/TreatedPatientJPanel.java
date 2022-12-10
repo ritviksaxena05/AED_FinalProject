@@ -4,17 +4,52 @@
  */
 package UI.BloodDonationCenter;
 
+import Model.EcoModel;
+import Model.Patient.Patient;
+import Model.User.User;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
- * @author devikaboddu
+ * @author ritvik
  */
 public class TreatedPatientJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form TreatedPatientJPanel
      */
-    public TreatedPatientJPanel() {
+    private final JPanel userProcessContainer;
+    private final EcoModel ecoModel;
+    User user;
+    public TreatedPatientJPanel(JPanel userProcessContainer, User user, EcoModel ecoModel) {
         initComponents();
+        this.ecoModel = ecoModel;
+        this.user = user;
+        this.userProcessContainer = userProcessContainer;
+        populatePatTable();
+    }
+    
+    private void populatePatTable() {
+        DefaultTableModel model = (DefaultTableModel) ManagePatientTable.getModel();
+
+        model.setRowCount(0);
+
+        for (Patient patient : ecoModel.getBloodDonationCenter().getBloodRequestedPatients()) {
+
+            Object[] row = new Object[9];
+            row[0] = patient.getpFirstName();
+            row[1] = patient.getpHealthInsuranceID();
+            row[2] = patient.getpUserName();
+            row[3] = patient.getpLastName();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpInsuranceStatus();
+            row[6] = patient.getpEmailAddress();
+            row[7] = patient.getpBloodBankStatus();
+            row[8] = patient;
+            model.addRow(row);
+
+        }
     }
 
     /**
@@ -26,19 +61,105 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        btnBack = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ManagePatientTable = new javax.swing.JTable();
+
+        btnBack.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(0, 153, 204));
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        ManagePatientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        ManagePatientTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "User Name", "HealthId", "First", "Last", "Age", "Address", "Email", "Blood Request Status", "obj"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(ManagePatientTable);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(473, 473, 473)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(597, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 25, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(360, Short.MAX_VALUE)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        BloodDonationCenterWorkAreaJPanel bloodBankWorkAreaJPanel = new BloodDonationCenterWorkAreaJPanel(userProcessContainer, user, ecoModel);
+        userProcessContainer.add("Display Treated Patient", bloodBankWorkAreaJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable ManagePatientTable;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }

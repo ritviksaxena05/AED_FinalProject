@@ -39,11 +39,49 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
         BloodReqStBox.addItem("Select Status");
         BloodReqStBox.addItem("Blood Delivered");
         BloodReqStBox.addItem("Unavailable");
-        populatePatientTable();
+        populatePatTable();
     }
     
-    private void populatePatientTable() {
-        
+    private void populatePatTable() {
+        DefaultTableModel model = (DefaultTableModel) PatientTable.getModel();
+
+        model.setRowCount(0);
+
+        for (Patient patient : ecoModel.getPatDirectory().getPatientList()) {
+            if (patient.getpBloodBankStatus().equals("Requested") || patient.getpBloodBankStatus().equals("Unavailable")) {
+                Object[] row = new Object[10];
+                row[0] = patient.getpFirstName();
+                row[1] = patient.getpHealthInsuranceID();
+                row[2] = patient.getpUserName();
+                row[3] = patient.getpLastName();
+                row[4] = patient.getpAge();
+                row[5] = patient.getpInsuranceStatus();
+                row[6] = patient.getpEmailAddress();
+                row[7] = patient.getpBloodBankStatus();
+                row[8] = patient.getpBloodBagQuantity();
+                row[9] = patient;
+                model.addRow(row);
+            }
+        }
+    }
+    
+    private void populateBillTable() {
+        DefaultTableModel model = (DefaultTableModel) BillTable.getModel();
+
+        model.setRowCount(0);
+
+        for (PatientBills b : billPatient.getpBills()) {
+            
+                Object[] row = new Object[4];
+                row[0] = b.getName();
+                row[1] = b.getOrgType();
+                row[2] = b.getAmount();
+                row[3] = b;
+                if(b.getOrgType().toLowerCase().equals("blood bank"))
+                {
+                    model.addRow(row);
+                }
+        }
     }
 
     /**
@@ -65,6 +103,10 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
         lblCommunity = new javax.swing.JLabel();
         BloodReqStBox = new javax.swing.JComboBox<>();
         ProcessReqbtn = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 227));
 
         PatientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         PatientTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -162,6 +204,30 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(255, 102, 102));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("BLOOD BANK");
+        jLabel1.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(639, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(504, 504, 504))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(43, 43, 43))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -187,19 +253,21 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
                         .addGap(349, 349, 349)
                         .addComponent(btnTreatedPatientList, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(btnBloodBankInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                        .addComponent(btnBloodBankInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BloodReqStBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -232,7 +300,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnTreatedPatientListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTreatedPatientListActionPerformed
         // TODO add your handling code here:
-        TreatedPatientJPanel treatedPatiPatientTableeatedPatientJPanel(userProcessContainer,userAccount,ecoSystem);
+        TreatedPatientJPanel treatedPatientJPanel = new TreatedPatientJPanel(userProcessContainer,user,ecoModel);
         userProcessContainer.add("Display Treated Patient", treatedPatientJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -240,7 +308,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnBloodBankInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBloodBankInfoActionPerformed
         // TODO add your handling code here:
-        BloodBankInfoJPanel bloodBankInfoJPanel = new BloodBankInfoJPanel(userProcessContainer, userAccount, ecoSystem);
+        BloodDonationCenterInfoJPanel bloodBankInfoJPanel = new BloodDonationCenterInfoJPanel(userProcessContainer, user, ecoModel);
         userProcessContainer.add("Blood Bank Information", bloodBankInfoJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -253,23 +321,23 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
     private void ProcessReqbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcessReqbtnActionPerformed
         // TODO add your handling code here:
 
-        int selectedRowIndex = ManagePatientTable.getSelectedRow();
+        int selectedRowIndex = PatientTable.getSelectedRow();
 
         if (selectedRowIndex < 0) {
             JOptionPane.showMessageDialog(null, "Pls select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
-            Patient patient = (Patient) ManagePatientTable.getValueAt(selectedRowIndex, 9);
+            Patient patient = (Patient) PatientTable.getValueAt(selectedRowIndex, 9);
 
-            for (Patient p : ecoSystem.getPatientDirectory().getPatientList()) {
+            for (Patient p : ecoModel.getPatDirectory().getPatientList()) {
                 if (patient.getpUserName().equals(p.getpUserName())) {
                     if (!((String) BloodReqStBox.getSelectedItem()).equals("Select Status")) {
                         p.setpBloodBankStatus((String) BloodReqStBox.getSelectedItem());
                         billPatient = p;
                         if (p.getpBloodBankStatus().equals("Blood Delivered")) {
                             for (int bloodBag = 0; bloodBag < Integer.parseInt(billPatient.getpBloodBagQuantity()); bloodBag++) {
-                                ecoSystem.getPatientDirectory().AddBill(billPatient, "Blood Charges", "Blood Bank", "");
-                                ecoSystem.getBloodBank().AddTreatedPatientList(billPatient);
+                                ecoModel.getPatDirectory().AddBill(billPatient, "Blood Charges", "Blood Bank", "");
+                                ecoModel.getBloodDonationCenter().AddTreatedPatientList(billPatient);
                             }
                         }
                         break;
@@ -277,7 +345,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
                 }
             }
 
-            populatePatientTable();
+            populatePatTable();
             populateBillTable();
 
         }
@@ -292,7 +360,9 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton ProcessReqbtn;
     private javax.swing.JButton btnBloodBankInfo;
     private javax.swing.JButton btnTreatedPatientList;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblCommunity;
