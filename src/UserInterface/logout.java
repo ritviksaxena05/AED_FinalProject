@@ -19,10 +19,10 @@ import java.util.Date;
  *
  * @author ramya
  */
-public class logout {
+public class Logout {
     JPanel userMainContainer;
  
-    public logout(JPanel userContainer) {
+    public Logout(JPanel userContainer) {
         initComponents();
         this.userMainContainer = userContainer; 
         

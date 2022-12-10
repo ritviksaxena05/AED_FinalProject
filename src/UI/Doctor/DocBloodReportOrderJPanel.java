@@ -6,6 +6,7 @@ package UI.Doctor;
 
 import Model.EcoModel;
 import Model.Patient.Patient;
+import Model.User.User;
 import javax.swing.JPanel;
 
 /**
