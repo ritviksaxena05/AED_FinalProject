@@ -232,7 +232,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnTreatedPatientListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTreatedPatientListActionPerformed
         // TODO add your handling code here:
-        TreatedPatientJPanel treatedPatiPatientTableeatedPatientJPanel(userProcessContainer,userAccount,ecoSystem);
+        TreatedPatientJPanel treatedPatientJPanel = new TreatedPatientJPanel(userProcessContainer,user,ecoModel);
         userProcessContainer.add("Display Treated Patient", treatedPatientJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -240,7 +240,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnBloodBankInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBloodBankInfoActionPerformed
         // TODO add your handling code here:
-        BloodBankInfoJPanel bloodBankInfoJPanel = new BloodBankInfoJPanel(userProcessContainer, userAccount, ecoSystem);
+        BloodDonationCenterInfoJPanel bloodBankInfoJPanel = new BloodDonationCenterInfoJPanel(userProcessContainer, user, ecoModel);
         userProcessContainer.add("Blood Bank Information", bloodBankInfoJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

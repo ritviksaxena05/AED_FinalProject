@@ -181,10 +181,10 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
             ambulance.getAmbulancePatientsList().add(patient);
 
             ecoSystem.getUserAccountDirectory().createUser(txtPatientUserName.getText(), txtPatientPassword.getText(), null, new Patient_role());
-            ecoSystem.getPatientDirectory().createPatient(patient);
-            for (Patient p : ecoSystem.getPatientDirectory().getPatientList()) {
+            ecoSystem.getPatDirectory().createPatient(patient);
+            for (Patient p : ecoSystem.getPatDirectory().getPatientList()) {
                 if (p.getpUserName().equals(txtPatientUserName.getText())) {
-                    ecoSystem.getPatientDirectory().AddBill(p, "Bed Charge", "Hospital", "Ammount");
+                    ecoSystem.getPatDirectory().AddBill(p, "Bed Charge", "Hospital", "Ammount");
                 }
             }
         } else {

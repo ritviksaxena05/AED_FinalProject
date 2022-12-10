@@ -4,6 +4,9 @@
  */
 package UI.BloodDonationCenter;
 
+import Model.EcoModel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author devikaboddu
@@ -13,7 +16,7 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form TreatedPatientJPanel
      */
-    public TreatedPatientJPanel() {
+    public TreatedPatientJPanel(JPanel userProcessContainer, User user, EcoModel ecoModel) {
         initComponents();
     }
 
