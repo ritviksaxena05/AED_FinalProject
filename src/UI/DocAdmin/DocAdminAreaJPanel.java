@@ -23,18 +23,59 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DocAdminAreaJPanel
      */
+    private final JPanel userProcessContainer;
+    private final EcoModel ecoSystem;
     User userAccount;
-    private final JPanel userWorkArea;
-    private final EcoModel ecoModel;
-    
-    public DocAdminAreaJPanel(JPanel userArea, User accountUser, EcoModel ecoSystemModel) {
-        initComponents();
 
-        populateTableAllDoctor();
-        populateTableAllPatient();
-        this.userAccount = accountUser;
-        this.userWorkArea = userArea;
-        this.ecoModel = ecoSystemModel;
+    public DocAdminAreaJPanel(JPanel userProcessContainer, User account, EcoModel system) {
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.ecoSystem = system;
+        this.userAccount = account;
+        populateNetworkTable();
+        populatePatientTable();
+    }
+
+    private void populateNetworkTable() {
+        DefaultTableModel model = (DefaultTableModel) DoctorTable.getModel();
+
+        model.setRowCount(0);
+
+        for (Doctor Doctor : ecoSystem.getDoctorDirectory().getDoctorList()) {
+
+            Object[] row = new Object[9];
+            row[0] = Doctor.getdocFirstName();
+            row[1] = Doctor.getdocLastName();
+            row[2] = Doctor.getdocWorkID();
+            row[3] = Doctor.getdocExperience();
+            row[4] = Doctor.getdocAge();
+            row[5] = Doctor.getdocGender();
+            row[6] = Doctor.getdocEmail();
+            row[7] = Doctor;
+            model.addRow(row);
+
+        }
+    }
+
+    private void populatePatientTable() {
+        DefaultTableModel model = (DefaultTableModel) PatientTable.getModel();
+
+        model.setRowCount(0);
+
+        for (Patient patient : ecoSystem.getPatDirectory().getPatientList()) {
+
+            Object[] row = new Object[8];
+            row[0] = patient.getpFirstName();
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpInjuryType();
+            row[3] = patient.getpBloodType();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpGender();
+            row[6] = patient.getpEmailAddress();
+            row[7] = patient;
+            model.addRow(row);
+
+        }
     }
 
     /**
@@ -46,34 +87,34 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        lblAssignDocToPatient = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        lblManageCustomers = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tableAllDoctors = new javax.swing.JTable();
-        btnCreateNewDoctor = new javax.swing.JButton();
-        btnUpdateDoctor = new javax.swing.JButton();
-        btnDeleteDoctor = new javax.swing.JButton();
+        DoctorTable = new javax.swing.JTable();
+        btnCreateDoctor = new javax.swing.JButton();
+        upBtn = new javax.swing.JButton();
+        dBtn4 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableAllPatients = new javax.swing.JTable();
-        lblAllPatients = new javax.swing.JLabel();
-        btnAssignDocToPatient = new javax.swing.JButton();
-        lblAllDoctors = new javax.swing.JLabel();
+        PatientTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        btnAssignDoctor1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1227, 722));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1227, 722));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblAssignDocToPatient.setBackground(new java.awt.Color(255, 255, 255));
-        lblAssignDocToPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
-        lblAssignDocToPatient.setForeground(new java.awt.Color(255, 255, 255));
-        lblAssignDocToPatient.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAssignDocToPatient.setText("Assign Patients to Doctors");
-        jPanel1.add(lblAssignDocToPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 720, -1));
+        lblManageCustomers.setBackground(new java.awt.Color(255, 255, 255));
+        lblManageCustomers.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
+        lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageCustomers.setText("Assign Patients to Doctors");
+        jPanel2.add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 720, -1));
 
-        tableAllDoctors.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        tableAllDoctors.setModel(new javax.swing.table.DefaultTableModel(
+        DoctorTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        DoctorTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -99,42 +140,42 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tableAllDoctors);
+        jScrollPane1.setViewportView(DoctorTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 850, 191));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 850, 191));
 
-        btnCreateNewDoctor.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnCreateNewDoctor.setForeground(new java.awt.Color(0, 153, 204));
-        btnCreateNewDoctor.setText("Create Doctor");
-        btnCreateNewDoctor.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateDoctor.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnCreateDoctor.setForeground(new java.awt.Color(0, 153, 204));
+        btnCreateDoctor.setText("Create Doctor");
+        btnCreateDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateNewDoctorActionPerformed(evt);
+                btnCreateDoctorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCreateNewDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 510, 210, 50));
+        jPanel2.add(btnCreateDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 510, 210, 50));
 
-        btnUpdateDoctor.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnUpdateDoctor.setForeground(new java.awt.Color(0, 153, 204));
-        btnUpdateDoctor.setText("Update");
-        btnUpdateDoctor.addActionListener(new java.awt.event.ActionListener() {
+        upBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        upBtn.setForeground(new java.awt.Color(0, 153, 204));
+        upBtn.setText("Update");
+        upBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateDoctorActionPerformed(evt);
+                upBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(btnUpdateDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 570, 210, 40));
+        jPanel2.add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 570, 210, 40));
 
-        btnDeleteDoctor.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnDeleteDoctor.setForeground(new java.awt.Color(0, 153, 204));
-        btnDeleteDoctor.setText("Delete");
-        btnDeleteDoctor.addActionListener(new java.awt.event.ActionListener() {
+        dBtn4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        dBtn4.setForeground(new java.awt.Color(0, 153, 204));
+        dBtn4.setText("Delete");
+        dBtn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteDoctorActionPerformed(evt);
+                dBtn4ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDeleteDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 620, 210, 40));
+        jPanel2.add(dBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 620, 210, 40));
 
-        tableAllPatients.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        tableAllPatients.setModel(new javax.swing.table.DefaultTableModel(
+        PatientTable.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        PatientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -160,36 +201,36 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tableAllPatients);
+        jScrollPane2.setViewportView(PatientTable);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 850, 193));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 850, 193));
 
-        lblAllPatients.setBackground(new java.awt.Color(0, 153, 204));
-        lblAllPatients.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
-        lblAllPatients.setForeground(new java.awt.Color(255, 255, 255));
-        lblAllPatients.setText("Patients");
-        jPanel1.add(lblAllPatients, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 160, 40));
+        jLabel1.setBackground(new java.awt.Color(0, 153, 204));
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Patients");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 160, 40));
 
-        btnAssignDocToPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnAssignDocToPatient.setForeground(new java.awt.Color(0, 153, 204));
-        btnAssignDocToPatient.setText("Assign Doctor");
-        btnAssignDocToPatient.addActionListener(new java.awt.event.ActionListener() {
+        btnAssignDoctor1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnAssignDoctor1.setForeground(new java.awt.Color(0, 153, 204));
+        btnAssignDoctor1.setText("Assign Doctor");
+        btnAssignDoctor1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAssignDocToPatientActionPerformed(evt);
+                btnAssignDoctor1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAssignDocToPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 270, 220, 50));
+        jPanel2.add(btnAssignDoctor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 270, 220, 50));
 
-        lblAllDoctors.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
-        lblAllDoctors.setForeground(new java.awt.Color(255, 255, 255));
-        lblAllDoctors.setText("Doctors");
-        jPanel1.add(lblAllDoctors, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, -1, 40));
+        jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Doctors");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, -1, 40));
 
         jLabel3.setText("jLabel3");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 50, 40));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 50, 40));
 
         jLabel4.setText("jLabel4");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 50, 40));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 50, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -199,7 +240,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 2641, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 2641, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -208,125 +249,84 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 825, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 825, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void populateTableAllPatient() {
-        DefaultTableModel model = (DefaultTableModel) tableAllPatients.getModel();
-
-        model.setRowCount(0);
-
-        for (Patient patient : ecoModel.getPatDirectory().getPatientList()) {
-
-            Object[] row = new Object[8];
-            row[0] = patient.getpFirstName();
-            row[1] = patient.getpLastName();
-            row[2] = patient.getpInjuryType();
-            row[3] = patient.getpBloodType();
-            row[4] = patient.getpAge();
-            row[5] = patient.getpGender();
-            row[6] = patient.getpEmailAddress();
-            row[7] = patient;
-            model.addRow(row);
-
-        }
-    }
-    
-    private void populateTableAllDoctor() {
-        DefaultTableModel model = (DefaultTableModel) tableAllDoctors.getModel();
-
-        model.setRowCount(0);
-
-        for (Doctor Doctor : ecoModel.getDoctorDirectory().getDoctorList()) {
-
-            Object[] row = new Object[9];
-            row[0] = Doctor.getdocFirstName();
-            row[1] = Doctor.getdocLastName();
-            row[2] = Doctor.getdocWorkID();
-            row[3] = Doctor.getdocExperience();
-            row[4] = Doctor.getdocAge();
-            row[5] = Doctor.getdocGender();
-            row[6] = Doctor.getdocEmail();
-            row[7] = Doctor;
-            model.addRow(row);
-
-        }
-    }
-    
-    private void btnCreateNewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNewDoctorActionPerformed
+    private void btnCreateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDoctorActionPerformed
         // TODO add your handling code here:
-        CreateNewDocJPanel createDoctor = new CreateNewDocJPanel(userWorkArea, userAccount, ecoModel);
-        userWorkArea.add("Add Doctor", createDoctor);
-        CardLayout layout = (CardLayout) userWorkArea.getLayout();
-        layout.next(userWorkArea);
-    }//GEN-LAST:event_btnCreateNewDoctorActionPerformed
+        CreateNewDocJPanel createDoctor = new CreateNewDocJPanel(userProcessContainer, userAccount, ecoSystem);
+        userProcessContainer.add("Add Doctor", createDoctor);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnCreateDoctorActionPerformed
 
-    private void btnUpdateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDoctorActionPerformed
+    private void upBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upBtnActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tableAllDoctors.getSelectedRow();
+        int selectedRow = DoctorTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
-            Doctor d = (Doctor) tableAllDoctors.getValueAt(selectedRow, 7);
-            UpdateCurrentDocJPanel updateDoc = new UpdateCurrentDocJPanel(userWorkArea, userAccount, ecoModel, d);
-            userWorkArea.add("Update Doctor", updateDoc);
-            CardLayout layout = (CardLayout) userWorkArea.getLayout();
-            layout.next(userWorkArea);
+            Doctor d = (Doctor) DoctorTable.getValueAt(selectedRow, 7);
+            UpdateCurrentDocJPanel updateDoc = new UpdateCurrentDocJPanel(userProcessContainer, userAccount, ecoSystem, d);
+            userProcessContainer.add("Update Doctor", updateDoc);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
         }
-    }//GEN-LAST:event_btnUpdateDoctorActionPerformed
+    }//GEN-LAST:event_upBtnActionPerformed
 
-    private void btnDeleteDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDoctorActionPerformed
+    private void dBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dBtn4ActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tableAllDoctors.getSelectedRow();
+        int selectedRow = DoctorTable.getSelectedRow();
         if (selectedRow >= 0) {
             int selectionButton = JOptionPane.YES_NO_OPTION;
-            int selectionResult = JOptionPane.showConfirmDialog(null, "Delete Doctor: " + tableAllDoctors.getValueAt(selectedRow, 7) + " ??", "Warning", selectionButton);
+            int selectionResult = JOptionPane.showConfirmDialog(null, "Delete Doctor: " + DoctorTable.getValueAt(selectedRow, 7) + " ??", "Warning", selectionButton);
             if (selectionResult == JOptionPane.YES_OPTION) {
 
-                Doctor p = (Doctor) tableAllDoctors.getValueAt(selectedRow, 7);
+                Doctor p = (Doctor) DoctorTable.getValueAt(selectedRow, 7);
 
-                ecoModel.getDoctorDirectory().deleteDoctor(p);
-                populateTableAllDoctor();
+                ecoSystem.getDoctorDirectory().deleteDoctor(p);
+                populateNetworkTable();
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please Select a Patient");
         }
-    }//GEN-LAST:event_btnDeleteDoctorActionPerformed
+    }//GEN-LAST:event_dBtn4ActionPerformed
 
-    private void btnAssignDocToPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDocToPatientActionPerformed
+    private void btnAssignDoctor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDoctor1ActionPerformed
         // TODO add your handling code here:
-        int selectedRowIndex = tableAllPatients.getSelectedRow();
+        int selectedRowIndex = PatientTable.getSelectedRow();
         if (selectedRowIndex < 0)
         {
             JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
         }
         else
         {
-            Patient patient = (Patient) tableAllPatients.getValueAt(selectedRowIndex, 7);
-            AssignDocToPatientJPanel displayPatientInfoJPanel = new AssignDocToPatientJPanel(userWorkArea, userAccount, ecoModel, patient);
-            userWorkArea.add("Display Patient", displayPatientInfoJPanel);
-            CardLayout layout = (CardLayout) userWorkArea.getLayout();
-            layout.next(userWorkArea);
+            Patient patient = (Patient) PatientTable.getValueAt(selectedRowIndex, 7);
+            AssignDocToPatientJPanel displayPatientInfoJPanel = new AssignDocToPatientJPanel(userProcessContainer, userAccount, ecoSystem, patient);
+            userProcessContainer.add("Display Patient", displayPatientInfoJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
         }
-    }//GEN-LAST:event_btnAssignDocToPatientActionPerformed
+    }//GEN-LAST:event_btnAssignDoctor1ActionPerformed
 
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAssignDocToPatient;
-    private javax.swing.JButton btnCreateNewDoctor;
-    private javax.swing.JButton btnDeleteDoctor;
-    private javax.swing.JButton btnUpdateDoctor;
+    private javax.swing.JTable DoctorTable;
+    private javax.swing.JTable PatientTable;
+    private javax.swing.JButton btnAssignDoctor1;
+    private javax.swing.JButton btnCreateDoctor;
+    private javax.swing.JButton dBtn4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lblAllDoctors;
-    private javax.swing.JLabel lblAllPatients;
-    private javax.swing.JLabel lblAssignDocToPatient;
-    private javax.swing.JTable tableAllDoctors;
-    private javax.swing.JTable tableAllPatients;
+    private javax.swing.JLabel lblManageCustomers;
+    private javax.swing.JButton upBtn;
     // End of variables declaration//GEN-END:variables
 }
