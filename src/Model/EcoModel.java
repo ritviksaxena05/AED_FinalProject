@@ -10,6 +10,8 @@ import Model.Laboratory.Laboratory;
 import Model.Roles.Admin;
 import Model.Pharmacy.Pharmacy;
 import Model.Roles.Role;
+import Model.BloodDonationCenter.BloodDonationCenter;
+import Model.Cop.Cop;
 import java.util.ArrayList;
 import Model.Ambulance.AmbulanceDirectory;
 import Model.Roles.Role;
@@ -29,6 +31,15 @@ public class EcoModel extends OrganizationModel {
     private Pharmacy pharmacy;
     private AmbulanceDirectory ambulanceDirectory;
     private PatientDirectory patDirectory;
+    private Cop copRecords;
+
+    public void setCop(Cop cop) {
+        this.copRecords = cop;
+    }
+
+    public Cop getCop() {
+        return copRecords =(copRecords == null)? new Cop() : copRecords;
+    }
 
     private EcoModel()
     {
