@@ -31,8 +31,22 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateNewDocJPanel
      */
-    public CreateNewDocJPanel(JPanel userWorkArea, User userAccount, EcoModel ecoModel) {
+    User userAccount;
+    private final JPanel userWorkArea;
+    private final EcoModel ecoModel;
+    private Doctor profilePictureDoctor;
+    
+    public CreateNewDocJPanel(JPanel userArea, User user, EcoModel ecoSystemModel) {
         initComponents();
+        this.userAccount = user;
+        this.userWorkArea = userArea;
+        this.profilePictureDoctor = new Doctor();
+        this.ecoModel = ecoSystemModel;
+        comboGender.removeAllItems();
+        comboGender.addItem("Female");
+        comboGender.addItem("Male");
+        comboGender.addItem("Other");
+        dataPopulateTable();
     }
 
     /**
@@ -421,6 +435,21 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void dataPopulateTable() {
+        // DefaultTableModel model = (DefaultTableModel) ManageCustomersTable.getModel();
+
+        //model.setRowCount(0);
+        for (User user : ecoModel.getUserAccountDirectory().getUserList()) {
+            if ("Business.Role.DoctorRole".equals(user.getUserRole().getClass().getName())) {
+                Object[] row = new Object[3];
+                row[1] = user.getUserName();
+                row[2] = user.getUserPassword();
+                // model.addRow(row);
+            }
+
+        }
+    }
+    
     private void txtLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLastNameActionPerformed
@@ -485,9 +514,18 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txtPhoneNumberKeyReleased
 
+    public int CalculateDocAge(Date birthDate, Date currentDate) {
+        // validate inputs ...                                                                               
+        DateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+        int d1 = Integer.parseInt(formatter.format(birthDate));
+        int d2 = Integer.parseInt(formatter.format(currentDate));
+        int age = (d2 - d1) / 10000;
+        return age;
+    }
+    
     private void btnCreateDocSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDocSubmitActionPerformed
         // TODO add your handling code here:
-        if (ecoSystem.getUserAccountDirectory().checkIfUsernameIsUnique(txtPassword.getText())
+        if (ecoModel.getUserAccountDirectory().checkIfUsernameIsUnique(txtPassword.getText())
             && (lblErrorAddress.getText() == null || lblErrorAddress.getText().equals(""))
             && (ErrorEmailLbl.getText() == null || ErrorEmailLbl.getText().equals(""))
             && (ErrorPasswordLbl.getText() == null || ErrorPasswordLbl.getText().equals(""))
@@ -495,27 +533,27 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
             && (ErrorUserNameLbl.getText() == null || ErrorUserNameLbl.getText().equals(""))
         ) {
             Doctor doctor = new Doctor(txtPassword.getText());
-            doctor.setdFirstName(txtFirstName.getText());
-            doctor.setdLastName(txtLastName.getText());
-            doctor.setdAge((CalculateAge(txtDOB.getDate(), java.util.Calendar.getInstance().getTime())));
-            doctor.setdGender((String) comboGender.getSelectedItem());
-            doctor.setdWorkID(txtDoctorWorkID.getText());
-            doctor.setdAddress(txtAddress.getText());
-            doctor.setdPhoneNumber(txtPhoneNumber.getText());
+            doctor.setdocUserName(txtFirstName.getText());
+            doctor.setdocLastName(txtLastName.getText());
+            doctor.setdocAge((CalculateDocAge(txtDOB.getDate(), java.util.Calendar.getInstance().getTime())));
+            doctor.setdocGender((String) comboGender.getSelectedItem());
+            doctor.setdocWorkID(txtDoctorWorkID.getText());
+            doctor.setdocAddress(txtAddress.getText());
+            doctor.setdocContactNumber(txtPhoneNumber.getText());
             //doctor.setDateofBirth(txtDateOfBirth.getText());
-            doctor.setdEmail(txtEmail.getText());
-            doctor.setdSpecialization(txtSpecialist.getText());
-            doctor.setdExperience(txtExperience.getText());
-            doctor.setdUserName(txtPassword.getText());
-            photoDoctor = doctor;
-            ecoSystem.getUserAccountDirectory().createUser(txtPassword.getText(), txtUserName.getText(), null, new Doctor_role());
-            ecoSystem.getDoctorDirectory().createDoctor(doctor);
+            doctor.setdocEmail(txtEmail.getText());
+            doctor.setdocSpecialization(txtSpecialist.getText());
+            doctor.setdocExperience(txtExperience.getText());
+            doctor.setdocUserName(txtPassword.getText());
+            profilePictureDoctor = doctor;
+            ecoModel.getUserAccountDirectory().createUser(txtPassword.getText(), txtUserName.getText(), null, new DoctorUser());
+            ecoModel.getDoctorDirectory().createDoctor(doctor);
             JOptionPane.showMessageDialog(null, "Doctor added.");
 
-            DoctorAdminWorkArea doctorAdminWorkArea = new DoctorAdminWorkArea(userProcessContainer, userAccount, ecoSystem);
-            userProcessContainer.add("Doctor Admin Work Area", doctorAdminWorkArea);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
+            DocAdminAreaJPanel doctorAdminWorkArea = new DocAdminAreaJPanel(userWorkArea, userAccount, ecoModel);
+            userWorkArea.add("Doctor Admin Work Area", doctorAdminWorkArea);
+            CardLayout layout = (CardLayout) userWorkArea.getLayout();
+            layout.next(userWorkArea);
 
         } else
         {
@@ -667,7 +705,7 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
             String selectedImagePath = selectedImageFile.getAbsolutePath();
             JOptionPane.showMessageDialog(null, selectedImagePath);
             //Display image on jlable
-            photoDoctor.setdImageUrl(selectedImagePath);
+            profilePictureDoctor.setdocImagePath(selectedImagePath);
 
             ImageIcon ii = new ImageIcon(selectedImagePath);
             //Resize image to fit jlabel

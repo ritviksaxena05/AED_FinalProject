@@ -21,7 +21,7 @@ public class Doctor extends Person{
     private String docGender;
     private int docAge;
     private Date docDOB;
-    private String docPhoneNumber;
+    private String docContactNumber;
     private String docEmail;
     private String docAddress;
     private String docWorkID;
@@ -95,12 +95,12 @@ public class Doctor extends Person{
         this.docDOB = docDOB;
     }
 
-    public String getdocPhoneNumber() {
-        return docPhoneNumber;
+    public String getdocContactNumber() {
+        return docContactNumber;
     }
 
-    public void setdocPhoneNumber(String docPhoneNumber) {
-        this.docPhoneNumber = docPhoneNumber;
+    public void setdocContactNumber(String docContactNumber) {
+        this.docContactNumber = docContactNumber;
     }
 
     public String getdocEmail() {

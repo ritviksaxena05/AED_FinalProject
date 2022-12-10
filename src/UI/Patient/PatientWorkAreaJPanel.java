@@ -36,7 +36,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         populateBillTable();
     }
     private void populatePatientInfo() {
-        for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
+        for (Patient patient : ecoSystem.getPatDirectory().getPatientList()) {
             if (userAccount.getUsername().equals(patient.getpUserName())) {
                 txtFirstName.setText(patient.getpFirstName());
                 txtLastName.setText(patient.getpLastName());
@@ -63,7 +63,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) BillTalble.getModel();
 
         model.setRowCount(0);
-        for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
+        for (Patient patient : ecoSystem.getPatDirectory().getPatientList()) {
             if (userAccount.getUsername().equals(patient.getpUserName())) {
                 for (PatientBills b : patient.getpBills()) {
 
