@@ -6,7 +6,7 @@ package Model.Roles;
 
 import Model.User.User;
 import Model.EcoModel;
-import UI.Pharmacy.PharmacyWorkAreaJPanel;
+import UI.Pharmacy.PharmacyJPanel;
 import javax.swing.JPanel;
 /**
  *
@@ -15,6 +15,6 @@ import javax.swing.JPanel;
 public class PharmacistRole extends Role{
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User user, EcoModel business) {
-        return new PharmacyWorkAreaJPanel(userProcessContainer, user, business);
+        return new PharmacyJPanel(userProcessContainer, user, business);
     }
 }

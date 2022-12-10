@@ -5,6 +5,8 @@
 package UI.Pharmacy;
 
 import Model.EcoModel;
+import Model.Patient.Patient;
+import javax.swing.JPanel;
 import Model.Patient.PatientBills;
 import Model.Patient.Patient;
 import Model.User.User;
@@ -27,6 +29,7 @@ public class PharmacyDisplayPastRequestsJPanel extends javax.swing.JPanel {
     EcoModel ecoModel;
     
     public PharmacyDisplayPastRequestsJPanel(JPanel userProcessContainer, User account, Patient p,EcoModel ecoModel) {
+
         initComponents();
         this.user = user;
         this.ecoModel = ecoModel;

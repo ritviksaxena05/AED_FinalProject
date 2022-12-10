@@ -5,6 +5,8 @@
 package UI.Pharmacy;
 
 import Model.EcoModel;
+import Model.Patient.Patient;
+import javax.swing.JPanel;
 import Model.Patient.PatientBills;
 import Model.Patient.Patient;
 import Model.User.User;
@@ -20,12 +22,14 @@ public class PharmacyDisplayRequestedTestsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PharmacyDisplayRequestedTestsJPanel
      */
+
     Patient p;
     JPanel userProcessContainer;
     User account;
     EcoModel ecoModel;
     
     public PharmacyDisplayRequestedTestsJPanel(JPanel userProcessContainer, User account, Patient p,EcoModel ecoModel) {
+
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -165,7 +169,7 @@ public class PharmacyDisplayRequestedTestsJPanel extends javax.swing.JPanel {
         }
         p.setpPharmaStatus("Delivered");
         populateBillTable();
-        PharmacyWorkAreaJPanel bill = new PharmacyWorkAreaJPanel(userProcessContainer, account, ecoModel);
+        PharmacyJPanel bill = new PharmacyJPanel(userProcessContainer, account, ecoModel);
         userProcessContainer.add("Insurance main", bill);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
