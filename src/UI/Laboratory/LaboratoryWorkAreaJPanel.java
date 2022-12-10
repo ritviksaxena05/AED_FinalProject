@@ -4,6 +4,15 @@
  */
 package UI.Laboratory;
 
+import Model.EcoModel;
+import Model.Laboratory.LaboratoryTests;
+import Model.Patient.Patient;
+import Model.User.User;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author devikaboddu
@@ -13,10 +22,56 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form LaboratoryWorkAreaJPanel
      */
-    public LaboratoryWorkAreaJPanel() {
+    private JPanel userProcessContainer;
+    private EcoModel ecosystem;
+    private User userAccount;
+    private LaboratoryTests t;
+    
+    public LaboratoryWorkAreaJPanel(JPanel userProcessContainer, User account, EcoModel business) {
+        
         initComponents();
+        System.out.println("with in LabWorkAreaJPanel");
+        this.userProcessContainer = userProcessContainer;
+        this.ecosystem = business;
+        this.userAccount = account;
+        populatePatientTable1();
+        populatePatientTable();
     }
 
+    
+        private void populatePatientTable1() {
+        DefaultTableModel model = (DefaultTableModel) managePatientTable1.getModel();
+        model.setRowCount(0);
+        for (Patient patient : this.ecosystem.getLaboratory().getLaboratoryRecordsList()) {
+            Object[] row = new Object[7];
+            row[0] = patient.getpFirstName();
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpHealthInsuranceID();
+            row[3] = patient.getpAge();
+            row[4] = patient.getpEmailAddress();
+            row[5] = patient.getpLabStatus();
+            row[6] = patient;
+            if(!patient.getpLabStatus().equals("Delivered")){
+            model.addRow(row);}
+
+        }
+    }
+    private void populatePatientTable() {
+            DefaultTableModel model = (DefaultTableModel) managePatientTable2.getModel();
+            model.setRowCount(0);
+            for (Patient patient : this.ecosystem.getLaboratory().getLaboratoryRecordsList()) {
+                Object[] row = new Object[7];
+                row[0] = patient.getpFirstName();
+                row[1] = patient.getpLastName();
+                row[2] = patient.getpHealthInsuranceID();
+                row[3] = patient.getpAge();
+                row[4] = patient.getpEmailAddress();
+                row[5] = patient.getpLabStatus();
+                row[6] = patient;
+                if(patient.getpLabStatus().equals("Delivered")){
+                model.addRow(row);}
+            }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,19 +81,215 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        managePatientTable1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        managePatientTable2 = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Laboratory Center");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 230, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 79, 1295, 10));
+
+        jButton1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 153, 204));
+        jButton1.setText("Available Tests Info");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 240, 50));
+
+        managePatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        managePatientTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "First Name", "Last Name", "HealthId", "Age", "Email", "LabStatus", "obj"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(managePatientTable1);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 1053, 188));
+
+        jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 153, 204));
+        jButton2.setText("View Request");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 185, 50));
+
+        jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Past Requests");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 510, 163, 30));
+
+        jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Current Requests");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 185, 25));
+
+        jButton3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 153, 204));
+        jButton3.setText("View Request");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 700, 158, 53));
+
+        managePatientTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        managePatientTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "First Name", "Last Name", "HealthId", "Age", "Email", "LabStatus", "Obj"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(managePatientTable2);
+
+        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, 1053, 137));
+
+        jLabel4.setText("jLabel4");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 50, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1252, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 795, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        LaboratoryCRUDtestsJPanel doctorRequestLabTestJPanel = new LaboratoryCRUDtestsJPanel(userProcessContainer, userAccount,ecosystem);
+        userProcessContainer.add("Request Lab Tests", doctorRequestLabTestJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = managePatientTable1.getSelectedRow();
+        if (selectedRowIndex < 0)
+        {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        else
+        {
+            Patient patient = (Patient) managePatientTable1.getValueAt(selectedRowIndex, 6);
+            LaboratoryRequestedTestsJPanel doctorRequestLabTestJPanel = new LaboratoryRequestedTestsJPanel(userProcessContainer, userAccount,patient,ecosystem);
+            userProcessContainer.add("Request Lab Tests", doctorRequestLabTestJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = managePatientTable2.getSelectedRow();
+        if (selectedRowIndex < 0)
+        {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        else
+        {
+            Patient patient = (Patient) managePatientTable2.getValueAt(selectedRowIndex, 6);
+            LaboratoryRequestedTestsJPanel doctorRequestLabTestJPanel = new LaboratoryRequestedTestsJPanel(userProcessContainer, userAccount,patient,ecosystem);
+            userProcessContainer.add("Past Lab Tests", doctorRequestLabTestJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTable managePatientTable1;
+    private javax.swing.JTable managePatientTable2;
     // End of variables declaration//GEN-END:variables
 }

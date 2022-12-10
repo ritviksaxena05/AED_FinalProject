@@ -4,6 +4,16 @@
  */
 package UI.Laboratory;
 
+import Model.EcoModel;
+import Model.Laboratory.LaboratoryTests;
+import Model.User.User;
+import java.awt.CardLayout;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author devikaboddu
@@ -13,8 +23,33 @@ public class LaboratoryCRUDtestsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form LaboratoryCRUDtestsJPanel
      */
-    public LaboratoryCRUDtestsJPanel() {
+    private JPanel userProcessContainer;
+    private EcoModel ecosystem;
+    private User userAccount;
+    private LaboratoryTests t;
+
+    public LaboratoryCRUDtestsJPanel(JPanel userProcessContainer, User account, EcoModel business) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.ecosystem = business;
+        this.userAccount = account;
+        populatetableLaboratoryTests();
+
+    }
+    private void populatetableLaboratoryTests() {
+        DefaultTableModel model = (DefaultTableModel) tableTests.getModel();
+
+        model.setRowCount(0);
+
+        for (LaboratoryTests t : ecosystem.getLaboratory().getTestList()) {
+
+            Object[] row = new Object[3];
+            row[0] = t;
+            row[1] = t.getLabTestUsage();
+            row[2] = t.getLabTestprice();
+            model.addRow(row);
+
+        }
     }
 
     /**
@@ -26,19 +61,287 @@ public class LaboratoryCRUDtestsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableTests = new javax.swing.JTable();
+        lblName = new javax.swing.JLabel();
+        lblName1 = new javax.swing.JLabel();
+        lblName2 = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        txtUsage = new javax.swing.JTextField();
+        txtPrice = new javax.swing.JTextField();
+        btnSubmit = new javax.swing.JButton();
+        dBtn4 = new javax.swing.JButton();
+        upBtn = new javax.swing.JButton();
+        conBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Laboratory");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 150, 44));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1390, 10));
+
+        tableTests.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        tableTests.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Test Name", "Test Usage", "Price"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tableTests);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 1050, 260));
+
+        lblName.setBackground(new java.awt.Color(0, 0, 0));
+        lblName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
+        lblName.setText("Test Name");
+        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, -1, 30));
+
+        lblName1.setBackground(new java.awt.Color(0, 0, 0));
+        lblName1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblName1.setForeground(new java.awt.Color(255, 255, 255));
+        lblName1.setText("Usage");
+        jPanel1.add(lblName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, -1, 30));
+
+        lblName2.setBackground(new java.awt.Color(0, 0, 0));
+        lblName2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblName2.setForeground(new java.awt.Color(255, 255, 255));
+        lblName2.setText("Price");
+        jPanel1.add(lblName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 580, -1, 30));
+        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 260, 40));
+        jPanel1.add(txtUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 260, 40));
+
+        txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPriceKeyReleased(evt);
+            }
+        });
+        jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 580, 260, 40));
+
+        btnSubmit.setBackground(new java.awt.Color(0, 102, 0));
+        btnSubmit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setText("Add Test");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 500, 170, 50));
+
+        dBtn4.setBackground(new java.awt.Color(255, 0, 51));
+        dBtn4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        dBtn4.setForeground(new java.awt.Color(255, 255, 255));
+        dBtn4.setText("Delete");
+        dBtn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dBtn4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(dBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 310, 157, 41));
+
+        upBtn.setBackground(new java.awt.Color(15, 85, 177));
+        upBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        upBtn.setForeground(new java.awt.Color(255, 255, 255));
+        upBtn.setText("Update");
+        upBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                upBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 250, 151, 41));
+
+        conBtn.setBackground(new java.awt.Color(0, 102, 0));
+        conBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        conBtn.setForeground(new java.awt.Color(255, 255, 255));
+        conBtn.setText("Save Update");
+        conBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                conBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(conBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 170, 42));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 490, 120, 32));
+
+        jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 153, 204));
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 20, 120, 40));
+
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 13, 50, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1400, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
+        // TODO add your handling code here:
+        String PATTERN = "^[0-9]{0,10}$";
+        Pattern pattern = Pattern.compile(PATTERN);
+        Matcher match = pattern.matcher(txtPrice.getText());
+        if (!match.matches() )
+        {
+            jLabel2.setText("Wrong Input. Please Try Again.");
+        } else {
+            jLabel2.setText(null);
+        }
+    }//GEN-LAST:event_txtPriceKeyReleased
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+
+        if (txtName.getText().equals("") || txtUsage.getText().equals("") || txtPrice.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please fill all the details");
+
+        } else {
+            LaboratoryTests t = new LaboratoryTests();
+            t.setLabTestName(txtName.getText());
+            t.setLabTestUsage(txtUsage.getText());
+            t.setLabTestprice(Integer.parseInt(txtPrice.getText()));
+            ecosystem.getLaboratory().createTest(t);
+
+            populatetableLaboratoryTests();
+
+        }
+
+        txtName.setText("");
+        txtUsage.setText("");
+        txtPrice.setText("");
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void dBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dBtn4ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tableTests.getSelectedRow();
+        if (selectedRow >= 0) {
+            int selectionButton = JOptionPane.YES_NO_OPTION;
+            int selectionResult = JOptionPane.showConfirmDialog(null, "Delete Test: " + tableTests.getValueAt(selectedRow, 0) + " ??", "Warning", selectionButton);
+            if (selectionResult == JOptionPane.YES_OPTION) {
+
+                LaboratoryTests p = (LaboratoryTests) tableTests.getValueAt(selectedRow, 0);
+
+                ecosystem.getLaboratory().deleteTests(p);
+                populatetableLaboratoryTests();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Select a Row!");
+        }
+    }//GEN-LAST:event_dBtn4ActionPerformed
+
+    private void upBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upBtnActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tableTests.getSelectedRow();
+        //Tests p = (Tests) tableTests.getValueAt(selectedRow, 0);
+        if (selectedRow >= 0) {
+            t = (LaboratoryTests) tableTests.getValueAt(selectedRow, 0);
+            txtName.setText(t.getLabTestName());
+            txtUsage.setText(t.getLabTestUsage());
+            txtPrice.setText(Integer.toString(t.getLabTestprice()));
+            // system.getUserAccountDirectory().deleteUserAccount(user);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row");
+        }
+    }//GEN-LAST:event_upBtnActionPerformed
+
+    private void conBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conBtnActionPerformed
+        // TODO add your handling code here:
+
+        String name = txtName.getText();
+        String uname = txtUsage.getText();
+        String password = txtPrice.getText();
+        if (name.equalsIgnoreCase("") || uname.equalsIgnoreCase("") || password.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(null, "Pls, Fill data Correctly!!", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            ecosystem.getLaboratory().updateTests(t, name, uname, Integer.parseInt(password));
+            populatetableLaboratoryTests();
+        }
+        txtName.setText("");
+        txtUsage.setText("");
+        txtPrice.setText("");
+    }//GEN-LAST:event_conBtnActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        //patient.setInsuranceStatus("Approved");
+        LaboratoryWorkAreaJPanel bill = new LaboratoryWorkAreaJPanel(userProcessContainer, userAccount, ecosystem);
+        userProcessContainer.add("Insurance main", bill);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton conBtn;
+    private javax.swing.JButton dBtn4;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblName1;
+    private javax.swing.JLabel lblName2;
+    private javax.swing.JTable tableTests;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPrice;
+    private javax.swing.JTextField txtUsage;
+    private javax.swing.JButton upBtn;
     // End of variables declaration//GEN-END:variables
 }

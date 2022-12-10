@@ -16,6 +16,7 @@ import Model.Pharmacy.Pharmacy;
 import Model.Ambulance.Ambulance;
 import Model.BloodDonationCenter.BloodDonationCenter;
 import Model.Roles.AmbulanceDriver;
+import Model.Roles.Laboratory;
 /**
  *
  * @author ramya
@@ -33,7 +34,7 @@ public class MainJFrame extends javax.swing.JFrame {
         system.getUserDirectory().createUser("doctor", "doctor", null, new DoctorUser());
         system.getUserDirectory().createUser("doctorAdmin", "doctorAdmin", null, new DoctorAdmin());
         system.getUserDirectory().createUser("ambulance", "ambulance", null, new AmbulanceDriver());
-        
+        system.getUserDirectory().createUser("lab", "lab", null, new Laboratory());
     }
 
     /**

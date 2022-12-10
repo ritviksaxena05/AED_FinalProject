@@ -128,7 +128,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         ManageAmbulanceTable.setMaximumSize(new java.awt.Dimension(600, 80));
         jScrollPane1.setViewportView(ManageAmbulanceTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 510, 180));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 590, 180));
 
         btnAssignPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnAssignPatient.setForeground(new java.awt.Color(0, 153, 204));
@@ -163,7 +163,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 672, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, Short.MAX_VALUE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
