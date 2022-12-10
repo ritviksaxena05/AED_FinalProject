@@ -4,6 +4,10 @@
  */
 package UI.Pharmacy;
 
+import Model.EcoModel;
+import Model.Patient.Patient;
+import javax.swing.JPanel;
+
 /**
  *
  * @author devikaboddu
@@ -13,7 +17,7 @@ public class PharmacyDisplayRequestedTestsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PharmacyDisplayRequestedTestsJPanel
      */
-    public PharmacyDisplayRequestedTestsJPanel() {
+    public PharmacyDisplayRequestedTestsJPanel(JPanel userWorkArea, User userAccount, Patient patient, EcoModel ecoModel) {
         initComponents();
     }
 
