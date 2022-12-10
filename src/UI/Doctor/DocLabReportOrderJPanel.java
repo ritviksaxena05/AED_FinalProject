@@ -4,9 +4,17 @@
  */
 package UI.Doctor;
 
+import java.awt.CardLayout;
+import static java.lang.Integer.sum;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import Model.EcoModel;
 import Model.Patient.Patient;
 import javax.swing.JPanel;
+import Model.Patient.PatientBills;
+import Model.User.User;
+import Model.Laboratory.LaboratoryTests;
 
 /**
  *
@@ -17,8 +25,19 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DocLabReportOrderJPanel
      */
-    public DocLabReportOrderJPanel(JPanel userProcessArea, User userAccount, EcoModel ecoModel, Patient patient) {
+    ArrayList<LaboratoryTests> items=new ArrayList<LaboratoryTests>();
+    private User userAccount;
+    private JPanel userWorkArea;
+    private EcoModel ecoModel;
+    private Patient patient;
+    
+    public DocLabReportOrderJPanel(JPanel userArea, User accountUser, EcoModel ecoSystemModel, Patient patient) {
         initComponents();
+        this.userAccount = accountUser;
+        this.userWorkArea = userArea;
+        this.ecoModel = ecoSystemModel;
+        this.patient = patient;
+        populateAvailableTests();
     }
 
     /**
@@ -33,11 +52,11 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         lblLabTest = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        carttable = new javax.swing.JTable();
+        tableSelectedTests = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableTests1 = new javax.swing.JTable();
-        btnAddLabTest = new javax.swing.JButton();
-        btnRemoveLabTest = new javax.swing.JButton();
+        tableAvailableTests = new javax.swing.JTable();
+        btnAddNewTest = new javax.swing.JButton();
+        btnRemoveTest = new javax.swing.JButton();
         btnRequestLabTest = new javax.swing.JButton();
         btnBackRequest = new javax.swing.JButton();
         lblTestAvailable = new javax.swing.JLabel();
@@ -51,10 +70,10 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         lblLabTest.setForeground(new java.awt.Color(255, 255, 255));
         lblLabTest.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLabTest.setText("Request Lab Tests");
-        jPanel1.add(lblLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 500, 60));
+        jPanel1.add(lblLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 500, 60));
 
-        carttable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        carttable.setModel(new javax.swing.table.DefaultTableModel(
+        tableSelectedTests.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        tableSelectedTests.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -80,12 +99,12 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(carttable);
+        jScrollPane1.setViewportView(tableSelectedTests);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 430, 210));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 490, 210));
 
-        tableTests1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        tableTests1.setModel(new javax.swing.table.DefaultTableModel(
+        tableAvailableTests.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        tableAvailableTests.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -111,29 +130,29 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tableTests1);
+        jScrollPane2.setViewportView(tableAvailableTests);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 410, 210));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 490, 210));
 
-        btnAddLabTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
-        btnAddLabTest.setForeground(new java.awt.Color(0, 0, 102));
-        btnAddLabTest.setText("ADD >>");
-        btnAddLabTest.addActionListener(new java.awt.event.ActionListener() {
+        btnAddNewTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
+        btnAddNewTest.setForeground(new java.awt.Color(0, 0, 102));
+        btnAddNewTest.setText("ADD");
+        btnAddNewTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddLabTestActionPerformed(evt);
+                btnAddNewTestActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAddLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 110, 50));
+        jPanel1.add(btnAddNewTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 110, 30));
 
-        btnRemoveLabTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
-        btnRemoveLabTest.setForeground(new java.awt.Color(0, 0, 102));
-        btnRemoveLabTest.setText("<< REMOVE ");
-        btnRemoveLabTest.addActionListener(new java.awt.event.ActionListener() {
+        btnRemoveTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
+        btnRemoveTest.setForeground(new java.awt.Color(0, 0, 102));
+        btnRemoveTest.setText("REMOVE ");
+        btnRemoveTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveLabTestActionPerformed(evt);
+                btnRemoveTestActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRemoveLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 120, 50));
+        jPanel1.add(btnRemoveTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 120, 30));
 
         btnRequestLabTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         btnRequestLabTest.setForeground(new java.awt.Color(0, 0, 102));
@@ -143,7 +162,7 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
                 btnRequestLabTestActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRequestLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, 170, 50));
+        jPanel1.add(btnRequestLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 350, 170, 50));
 
         btnBackRequest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         btnBackRequest.setForeground(new java.awt.Color(0, 0, 102));
@@ -153,17 +172,17 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
                 btnBackRequestActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBackRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 20, 130, 40));
+        jPanel1.add(btnBackRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 20, 100, 30));
 
         lblTestAvailable.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         lblTestAvailable.setForeground(new java.awt.Color(255, 255, 255));
         lblTestAvailable.setText("Available Tests");
-        jPanel1.add(lblTestAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, -1));
+        jPanel1.add(lblTestAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
 
         lblTestSelected.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         lblTestSelected.setForeground(new java.awt.Color(255, 255, 255));
         lblTestSelected.setText("Selected Tests");
-        jPanel1.add(lblTestSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 130, -1, -1));
+        jPanel1.add(lblTestSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -187,16 +206,43 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddLabTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddLabTestActionPerformed
+    private void populateAvailableTests() {
+        DefaultTableModel model = (DefaultTableModel) tableAvailableTests.getModel();
+        model.setRowCount(0); 
+
+        for (LaboratoryTests t : ecoModel.getLaboratory().getTestList()) {
+            Object[] row = new Object[3];                
+            row[0] = t;
+            row[1] = t.getLabTestUsage();
+            row[2] = t.getLabTestprice();
+            model.addRow(row);
+        }
+    }
+    
+    public void populateAddCart(LaboratoryTests item){
+        DefaultTableModel model = (DefaultTableModel) tableSelectedTests.getModel();
+        model.setRowCount(0);
+        items.add(item);
+        Object[] row = new Object[3];
+        
+        for(LaboratoryTests t:items){
+            row[0] = t;
+            row[1] = t.getLabTestUsage();
+            row[2] = t.getLabTestprice();
+            model.addRow(row);
+        }  
+     }
+    
+    private void btnAddNewTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewTestActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tableTests1.getSelectedRow();
+        int selectedRow = tableAvailableTests.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Tests item=(Tests)tableTests1.getValueAt(selectedRow, 0);
+            LaboratoryTests item=(LaboratoryTests)tableAvailableTests.getValueAt(selectedRow, 0);
             int i =0;
-            for(Tests ite:items){
+            for(LaboratoryTests ite:items){
                 //System.out.print(ite.getTestName());
                 if(ite==item){
                     i=1;
@@ -205,31 +251,31 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
                 }
             }
             if(i==0){
-                populateCart(item);}
+                populateAddCart(item);}
         }
-    }//GEN-LAST:event_btnAddLabTestActionPerformed
+    }//GEN-LAST:event_btnAddNewTestActionPerformed
 
-    private void btnRemoveLabTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveLabTestActionPerformed
+    private void btnRemoveTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveTestActionPerformed
         // TODO add your handling code here:
-        int selectedRow = carttable.getSelectedRow();
+        int selectedRow = tableSelectedTests.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Tests item=(Tests)carttable.getValueAt(selectedRow, 0);
+            LaboratoryTests item=(LaboratoryTests)tableSelectedTests.getValueAt(selectedRow, 0);
             items.remove(item);
-            DefaultTableModel model = (DefaultTableModel) carttable.getModel();
+            DefaultTableModel model = (DefaultTableModel) tableSelectedTests.getModel();
             model.setRowCount(0);
             Object[] row = new Object[3];
-            for(Tests t:items){
+            for(LaboratoryTests t:items){
                 row[0] = t;
-                row[1] = t.getUsage();
-                row[2] = t.getPrice();
+                row[1] = t.getLabTestUsage();
+                row[2] = t.getLabTestprice();
                 model.addRow(row);
             }
 
         }
-    }//GEN-LAST:event_btnRemoveLabTestActionPerformed
+    }//GEN-LAST:event_btnRemoveTestActionPerformed
 
     private void btnRequestLabTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestLabTestActionPerformed
         // TODO add your handling code here:
@@ -238,18 +284,18 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
 
         }
         else{
-            for(Tests t:items){
+            for(LaboratoryTests t:items){
                 //String itemName,String organization1,float itemAmount, String result, String itemStatus
                 JOptionPane.showMessageDialog(null,"Request Placed.","Success",JOptionPane.INFORMATION_MESSAGE);
-                PatientBills bill = new PatientBills(t.getTestName(), "Lab", t.getPrice(),"Awaiting","Requested");
+                PatientBills bill = new PatientBills(t.getLabTestName(), "Lab", t.getLabTestprice(),"Awaiting","Requested");
                 patient.addbill(bill);
-                DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
-                userProcessContainer.add("Visit Doctor", doctorVisit);
-                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-                layout.next(userProcessContainer);
+                DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userWorkArea, userAccount, ecoModel, patient);
+                userWorkArea.add("Visit Doctor", doctorVisit);
+                CardLayout layout = (CardLayout) userWorkArea.getLayout();
+                layout.next(userWorkArea);
                 //ecosystem.AddTreatedPatientList(patient);
             }
-            ecosystem.getLab().AddTreatedPatientList(patient);
+            ecoModel.getLaboratory().AddTreatedPatientList(patient);
             patient.setpLabStatus("Requested");
         }
 
@@ -257,25 +303,25 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
 
     private void btnBackRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackRequestActionPerformed
         // TODO add your handling code here:
-        DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
-        userProcessContainer.add("Visit Doctor", doctorVisit);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userWorkArea, userAccount, ecoModel, patient);
+        userWorkArea.add("Visit Doctor", doctorVisit);
+        CardLayout layout = (CardLayout) userWorkArea.getLayout();
+        layout.next(userWorkArea);
     }//GEN-LAST:event_btnBackRequestActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddLabTest;
+    private javax.swing.JButton btnAddNewTest;
     private javax.swing.JButton btnBackRequest;
-    private javax.swing.JButton btnRemoveLabTest;
+    private javax.swing.JButton btnRemoveTest;
     private javax.swing.JButton btnRequestLabTest;
-    private javax.swing.JTable carttable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblLabTest;
     private javax.swing.JLabel lblTestAvailable;
     private javax.swing.JLabel lblTestSelected;
-    private javax.swing.JTable tableTests1;
+    private javax.swing.JTable tableAvailableTests;
+    private javax.swing.JTable tableSelectedTests;
     // End of variables declaration//GEN-END:variables
 }
