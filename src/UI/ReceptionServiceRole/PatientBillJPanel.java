@@ -25,7 +25,7 @@ public class PatientBillJPanel extends javax.swing.JPanel {
     Patient patient;
     User account;
     EcoModel system;
-    public PatientBillJPanel(JPanel userProcessContainer, Patient p,User account,EcoModel system) {
+    public PatientBillJPanel(JPanel userProcessContainer, Patient p, User account, EcoModel system) {
         initComponents();
         this.account = account;
         this.system = system;
@@ -72,7 +72,7 @@ public class PatientBillJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 204, 204));
+        setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));

@@ -60,7 +60,7 @@ public class AmbulanceInfoJPanel extends javax.swing.JPanel {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(135, 200, 208));
+        jPanel1.setBackground(new java.awt.Color(229, 210, 188));
         jPanel1.setMaximumSize(new java.awt.Dimension(1500, 1000));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -74,20 +74,20 @@ public class AmbulanceInfoJPanel extends javax.swing.JPanel {
         lblDriverFirstName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblDriverFirstName.setForeground(new java.awt.Color(255, 255, 255));
         lblDriverFirstName.setText("Enter Driver First Name :");
-        jPanel1.add(lblDriverFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, -1, -1));
+        jPanel1.add(lblDriverFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
 
         txtFirstName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtFirstNameKeyReleased(evt);
             }
         });
-        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 410, 280, 30));
+        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 280, 30));
 
         lblDriverLastName.setBackground(new java.awt.Color(255, 255, 255));
         lblDriverLastName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblDriverLastName.setForeground(new java.awt.Color(255, 255, 255));
         lblDriverLastName.setText("Enter Driver Last Name");
-        jPanel1.add(lblDriverLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, -1, -1));
+        jPanel1.add(lblDriverLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
 
         txtLastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,13 +99,13 @@ public class AmbulanceInfoJPanel extends javax.swing.JPanel {
                 txtLastNameKeyReleased(evt);
             }
         });
-        jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, 280, 30));
+        jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 280, 30));
 
         lblVehicleNumber.setBackground(new java.awt.Color(255, 255, 255));
         lblVehicleNumber.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblVehicleNumber.setForeground(new java.awt.Color(255, 255, 255));
         lblVehicleNumber.setText("Ambulance Vehicle Number");
-        jPanel1.add(lblVehicleNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, -1, -1));
+        jPanel1.add(lblVehicleNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
         txtVehicleNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,13 +117,13 @@ public class AmbulanceInfoJPanel extends javax.swing.JPanel {
                 txtVehicleNumberKeyReleased(evt);
             }
         });
-        jPanel1.add(txtVehicleNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 550, 280, 30));
+        jPanel1.add(txtVehicleNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 280, 30));
 
         lblDriverAge.setBackground(new java.awt.Color(255, 255, 255));
         lblDriverAge.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblDriverAge.setForeground(new java.awt.Color(255, 255, 255));
         lblDriverAge.setText("Enter Driver Age:");
-        jPanel1.add(lblDriverAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, -1, -1));
+        jPanel1.add(lblDriverAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         txtAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,7 +135,7 @@ public class AmbulanceInfoJPanel extends javax.swing.JPanel {
                 txtAgeKeyReleased(evt);
             }
         });
-        jPanel1.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 280, 30));
+        jPanel1.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 280, 30));
 
         btnSubmit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnSubmit.setForeground(new java.awt.Color(0, 153, 204));
@@ -145,7 +145,7 @@ public class AmbulanceInfoJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 610, 133, 43));
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 133, 43));
 
         lblErrorLname.setBackground(new java.awt.Color(255, 255, 255));
         lblErrorLname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
@@ -170,26 +170,24 @@ public class AmbulanceInfoJPanel extends javax.swing.JPanel {
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 1434, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/ambulance_gif.jpeg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/ambulance_gif.gif"))); // NOI18N
         jLabel3.setMaximumSize(new java.awt.Dimension(560, 340));
         jLabel3.setMinimumSize(new java.awt.Dimension(560, 340));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 790, 320));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 140, 710, 410));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
