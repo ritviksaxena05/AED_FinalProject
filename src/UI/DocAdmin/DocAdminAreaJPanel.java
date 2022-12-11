@@ -44,6 +44,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         for (Doctor Doctor : ecoSystem.getDoctorDirectory().getDoctorList()) {
 
             Object[] row = new Object[9];
+            System.out.println("Hi"+Doctor.getdocFirstName());
             row[0] = Doctor.getdocFirstName();
             row[1] = Doctor.getdocLastName();
             row[2] = Doctor.getdocWorkID();
@@ -65,6 +66,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         for (Patient patient : ecoSystem.getPatDirectory().getPatientList()) {
 
             Object[] row = new Object[8];
+            System.out.println("Hi"+patient.getpFirstName());
             row[0] = patient.getpFirstName();
             row[1] = patient.getpLastName();
             row[2] = patient.getpInjuryType();
