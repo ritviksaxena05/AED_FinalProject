@@ -34,11 +34,57 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
     
     public DocMedicineRequestJPanel(JPanel userWorkArea, User userAccount, EcoModel ecoModel, Patient patient) {
         initComponents();
-        populateTablePrescription();
+        
         this.userWorkArea = userWorkArea;
         this.patient = patient;
         this.ecoModel = ecoModel;
         this.userAccount = userAccount;
+        populateTablePrescription();
+    }
+    
+    private void populateTablePrescription() {
+        DefaultTableModel model = (DefaultTableModel) tableavailableMedicine.getModel();
+        model.setRowCount(0);
+        for (Prescription t : ecoModel.getPharmacy().getPrescriptionList()) {
+            
+               Object[] row = new Object[4];                
+                row[0] = t;
+                row[1] = t.getMedUsage();
+                row[2] =t.getMedQuantity();
+                row[3] = t.getMedPrice();
+                model.addRow(row);
+        }
+    }
+        
+        public void populateCart(Prescription item){
+        DefaultTableModel model = (DefaultTableModel) tableSelectedMedicines.getModel();
+        model.setRowCount(0);
+        
+         items.add(item);
+         Object[] row = new Object[4];
+                for(Prescription t:items){
+                     row[0] = t;
+                row[1] = t.getMedUsage();
+                row[2] =t.getMedQuantity();
+                row[3] = t.getMedPrice();
+                model.addRow(row);
+                }  
+     }
+    private void populatePatientTable() {
+        //DefaultTableModel model = (DefaultTableModel) tableAddedLabTest.getModel();
+        //model.setRowCount(0);
+        for (Patient patient : ecoModel.getPatDirectory().getPatientList()) {
+            Object[] row = new Object[7];
+            row[0] = patient.getpUserName();
+            row[1] = patient.getpHealthInsuranceID();
+            row[2] = patient.getpFirstName();
+            row[3] = patient.getpLastName();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpAddress();
+            row[6] = patient.getpEmailAddress();
+            
+          //  model.addRow(row);
+        }
     }
 
     /**
@@ -191,22 +237,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void populateTablePrescription() {
-        DefaultTableModel model = (DefaultTableModel) tableavailableMedicine.getModel();
-
-        model.setRowCount(0); 
-
-        for (Prescription t : ecoModel.getPharmacy().getPrescriptionList()) {
-
-            
-               Object[] row = new Object[4];                
-                row[0] = t;
-                row[1] = t.getMedUsage();
-                row[2] =t.getMedQuantity();
-                row[3] = t.getMedPrice();
-                model.addRow(row);
-        }
-    }
+    
     
     private void btnMedRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedRemoveActionPerformed
         // TODO add your handling code here:

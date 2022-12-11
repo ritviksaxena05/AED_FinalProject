@@ -178,7 +178,7 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
 
     private void recBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recBtnActionPerformed
         // TODO add your handling code here:
-        InsurancePastCustomerInfoJPanel bill = new InsurancePastCustomerInfoJPanel(userProcessContainer, userAccount,ecoSystem);
+        InsurancePastCustomersJPanel bill = new InsurancePastCustomersJPanel(userProcessContainer, userAccount,ecoSystem);
         userProcessContainer.add("Past Customers", bill);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

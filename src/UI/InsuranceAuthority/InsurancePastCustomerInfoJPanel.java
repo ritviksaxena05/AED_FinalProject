@@ -42,9 +42,7 @@ public class InsurancePastCustomerInfoJPanel extends javax.swing.JPanel {
         populateBillTable();
     }
 
-    InsurancePastCustomerInfoJPanel(JPanel userProcessContainer, User userAccount, EcoModel ecoSystem) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
           private void populateBillTable() {
         DefaultTableModel model = (DefaultTableModel) talbleForBilling.getModel();
 
