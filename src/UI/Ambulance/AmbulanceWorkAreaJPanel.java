@@ -74,7 +74,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setBackground(new java.awt.Color(229, 210, 188));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setMaximumSize(new java.awt.Dimension(1080, 650));
         jPanel1.setMinimumSize(new java.awt.Dimension(1080, 750));
@@ -86,7 +86,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("EXISTING AMBULANCE DRIVERS DETAILS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 730, 80));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 780, 80));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 127, 1280, 10));
 
         btnCreateAmbulance.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -97,7 +97,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
                 btnCreateAmbulanceActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCreateAmbulance, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 700, 204, 50));
+        jPanel1.add(btnCreateAmbulance, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 680, 204, 50));
 
         ManageAmbulanceTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         ManageAmbulanceTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -129,7 +129,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         ManageAmbulanceTable.setMaximumSize(new java.awt.Dimension(600, 80));
         jScrollPane1.setViewportView(ManageAmbulanceTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 590, 180));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 890, 180));
 
         btnAssignPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnAssignPatient.setForeground(new java.awt.Color(0, 153, 204));
@@ -139,7 +139,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
                 btnAssignPatientActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAssignPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 696, 230, 50));
+        jPanel1.add(btnAssignPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 680, 230, 50));
 
         btnSubmit1.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
         btnSubmit1.setForeground(new java.awt.Color(0, 153, 204));
@@ -153,26 +153,25 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/ambulance_gif.jpeg"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 440, 320));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 440, 320));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 50, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 784, Short.MAX_VALUE)
+            .addGap(0, 1102, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, Short.MAX_VALUE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1096, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 887, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 875, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );

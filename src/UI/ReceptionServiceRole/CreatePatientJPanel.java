@@ -130,34 +130,34 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         txtDOB = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setBackground(new java.awt.Color(9, 145, 143));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblPatientFirstName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientFirstName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientFirstName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientFirstName.setText("First Name");
-        jPanel1.add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+        jPanel1.add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
         lblRestaurantInfo.setBackground(new java.awt.Color(255, 255, 255));
         lblRestaurantInfo.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         lblRestaurantInfo.setForeground(new java.awt.Color(255, 255, 255));
         lblRestaurantInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRestaurantInfo.setText("Create Patient");
-        jPanel1.add(lblRestaurantInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 260, 80));
+        jPanel1.add(lblRestaurantInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 380, 80));
 
         txtFirstName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtFirstNameKeyReleased(evt);
             }
         });
-        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 120, 40));
+        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 180, 30));
 
         lblPatientLastName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientLastName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientLastName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientLastName.setText("Last Name");
-        jPanel1.add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+        jPanel1.add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         txtLastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,19 +169,19 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtLastNameKeyReleased(evt);
             }
         });
-        jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 110, 40));
+        jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 180, 30));
 
         lblPatientGender.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientGender.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientGender.setForeground(new java.awt.Color(255, 255, 255));
-        lblPatientGender.setText("Sex");
-        jPanel1.add(lblPatientGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+        lblPatientGender.setText("Gender");
+        jPanel1.add(lblPatientGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         lblPatientHealthInsuranceID.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientHealthInsuranceID.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientHealthInsuranceID.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientHealthInsuranceID.setText("Insurance Id");
-        jPanel1.add(lblPatientHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, -1, -1));
+        jPanel1.add(lblPatientHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, -1, -1));
 
         txtHealthInsuranceID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,13 +193,13 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtHealthInsuranceIDKeyReleased(evt);
             }
         });
-        jPanel1.add(txtHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 110, 40));
+        jPanel1.add(txtHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 180, 30));
 
         lblPatientAddress.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientAddress.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientAddress.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientAddress.setText("Patient address");
-        jPanel1.add(lblPatientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 140, 20));
+        jPanel1.add(lblPatientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 140, 20));
 
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,13 +211,13 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtAddressKeyReleased(evt);
             }
         });
-        jPanel1.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 130, 40));
+        jPanel1.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, 180, 30));
 
         lblPatientPhone.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientPhone.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientPhone.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientPhone.setText("Mobile Number");
-        jPanel1.add(lblPatientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
+        jPanel1.add(lblPatientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
         txtPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,20 +229,20 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtPhoneNumberKeyReleased(evt);
             }
         });
-        jPanel1.add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 130, 40));
+        jPanel1.add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 180, 30));
 
         lblDOB.setBackground(new java.awt.Color(255, 255, 255));
         lblDOB.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblDOB.setForeground(new java.awt.Color(255, 255, 255));
         lblDOB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDOB.setText("Date of Birth");
-        jPanel1.add(lblDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, -1, 40));
+        jPanel1.add(lblDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, 40));
 
         lblEmail.setBackground(new java.awt.Color(255, 255, 255));
         lblEmail.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setText("Email address");
-        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, -1, -1));
+        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -254,14 +254,14 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtEmailKeyReleased(evt);
             }
         });
-        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 130, 40));
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 180, 30));
 
         lblAddress4.setBackground(new java.awt.Color(255, 255, 255));
         lblAddress4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblAddress4.setForeground(new java.awt.Color(255, 255, 255));
         lblAddress4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAddress4.setText("Blood Type");
-        jPanel1.add(lblAddress4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 116, -1));
+        jPanel1.add(lblAddress4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 116, -1));
 
         txtInjuryType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -273,19 +273,19 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtInjuryTypeKeyReleased(evt);
             }
         });
-        jPanel1.add(txtInjuryType, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, 150, 40));
+        jPanel1.add(txtInjuryType, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 610, 190, 30));
 
         lblPhoneNumber4.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPhoneNumber4.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber4.setText("Injury Type");
-        jPanel1.add(lblPhoneNumber4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, -1, -1));
+        jPanel1.add(lblPhoneNumber4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, -1, -1));
 
         lblRestaurantName4.setBackground(new java.awt.Color(255, 255, 255));
         lblRestaurantName4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         lblRestaurantName4.setForeground(new java.awt.Color(255, 255, 255));
         lblRestaurantName4.setText("UserName");
-        jPanel1.add(lblRestaurantName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 170, -1, -1));
+        jPanel1.add(lblRestaurantName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, -1, -1));
 
         txtUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -297,7 +297,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtUserNameKeyReleased(evt);
             }
         });
-        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 210, 150, 40));
+        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 220, 170, 30));
 
         btnSubmit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnSubmit.setForeground(new java.awt.Color(0, 153, 204));
@@ -307,20 +307,20 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 490, 159, 46));
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 490, 159, 46));
 
         lblRestaurantName5.setBackground(new java.awt.Color(255, 255, 255));
         lblRestaurantName5.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         lblRestaurantName5.setForeground(new java.awt.Color(255, 255, 255));
         lblRestaurantName5.setText("Password");
-        jPanel1.add(lblRestaurantName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 300, -1, -1));
+        jPanel1.add(lblRestaurantName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, -1, -1));
 
         txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPasswordKeyReleased(evt);
             }
         });
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 340, 150, 40));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 260, 170, 30));
 
         jRadioCash.setBackground(new java.awt.Color(255, 255, 255));
         jRadioCash.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
@@ -331,7 +331,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 jRadioCashActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 230, -1, -1));
+        jPanel1.add(jRadioCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 570, -1, -1));
 
         jRadioInsurance.setBackground(new java.awt.Color(255, 255, 255));
         jRadioInsurance.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
@@ -342,7 +342,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 jRadioInsuranceActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioInsurance, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 170, -1, -1));
+        jPanel1.add(jRadioInsurance, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, -1, -1));
 
         btnBrowse.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         btnBrowse.setForeground(new java.awt.Color(0, 153, 204));
@@ -352,14 +352,13 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 btnBrowseActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBrowse, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 100, 40));
-        jPanel1.add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 610, 160, 140));
+        jPanel1.add(btnBrowse, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 400, 100, 40));
+        jPanel1.add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 210, 160, 140));
 
         lblPaymentMethod.setBackground(new java.awt.Color(255, 255, 255));
         lblPaymentMethod.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         lblPaymentMethod.setForeground(new java.awt.Color(255, 255, 255));
-        lblPaymentMethod.setText("Login Credentials");
-        jPanel1.add(lblPaymentMethod, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, -1, -1));
+        jPanel1.add(lblPaymentMethod, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, -1, -1));
 
         GenderComboBox.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         GenderComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -368,7 +367,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 GenderComboBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(GenderComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 92, 30));
+        jPanel1.add(GenderComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 180, 30));
 
         BloodGroupComboBox.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         BloodGroupComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -377,62 +376,62 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 BloodGroupComboBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(BloodGroupComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 120, 40));
+        jPanel1.add(BloodGroupComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 180, 30));
 
         lblAccidentLocation.setBackground(new java.awt.Color(255, 255, 255));
         lblAccidentLocation.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblAccidentLocation.setForeground(new java.awt.Color(255, 255, 255));
-        lblAccidentLocation.setText("Accident Location");
-        jPanel1.add(lblAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, -1, 25));
+        lblAccidentLocation.setText("Accident Place");
+        jPanel1.add(lblAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, -1, 25));
 
         txtAccidentLocation.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtAccidentLocationKeyReleased(evt);
             }
         });
-        jPanel1.add(txtAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 150, 40));
+        jPanel1.add(txtAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, 190, 30));
 
         lblPhoto.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoto.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblPhoto.setForeground(new java.awt.Color(255, 255, 255));
-        lblPhoto.setText("Photo");
-        jPanel1.add(lblPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, -1, -1));
+        lblPhoto.setText("Upload Photo");
+        jPanel1.add(lblPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 370, -1, -1));
 
         lblErrorFname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorFname.setForeground(new java.awt.Color(255, 51, 51));
-        jPanel1.add(lblErrorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 110, 30));
+        jPanel1.add(lblErrorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 110, 30));
 
         lblErrorLname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorLname.setForeground(new java.awt.Color(255, 51, 51));
-        jPanel1.add(lblErrorLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 100, 30));
+        jPanel1.add(lblErrorLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 100, 30));
 
         lblErrorHId.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorHId.setForeground(new java.awt.Color(255, 51, 51));
-        jPanel1.add(lblErrorHId, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 124, 21));
+        jPanel1.add(lblErrorHId, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 124, 21));
 
         lblErrorPhone.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorPhone.setForeground(new java.awt.Color(255, 51, 51));
-        jPanel1.add(lblErrorPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, 135, 20));
+        jPanel1.add(lblErrorPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 120, 20));
 
         lblErrorAddress.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorAddress.setForeground(new java.awt.Color(255, 51, 51));
-        jPanel1.add(lblErrorAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 130, 21));
+        jPanel1.add(lblErrorAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, 130, 21));
 
         lblErrorEmail.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorEmail.setForeground(new java.awt.Color(255, 51, 51));
-        jPanel1.add(lblErrorEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 129, 22));
+        jPanel1.add(lblErrorEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 129, 22));
 
         lblErrorInjury.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorInjury.setForeground(new java.awt.Color(255, 51, 51));
-        jPanel1.add(lblErrorInjury, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 410, 140, 22));
+        jPanel1.add(lblErrorInjury, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 610, 140, 22));
 
         lblErrorUserName.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorUserName.setForeground(new java.awt.Color(255, 51, 51));
-        jPanel1.add(lblErrorUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 270, 200, 26));
+        jPanel1.add(lblErrorUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 220, 100, 26));
 
         lblErrorPassword.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorPassword.setForeground(new java.awt.Color(255, 51, 51));
-        jPanel1.add(lblErrorPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 410, 200, 26));
+        jPanel1.add(lblErrorPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 260, 120, 26));
 
         lblErrorAccidentLocation.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorAccidentLocation.setForeground(new java.awt.Color(255, 51, 51));
@@ -440,7 +439,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Accident Details");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, 210, 34));
 
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -450,7 +448,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Contact Details");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 190, 31));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
@@ -470,18 +467,18 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 btnSubmit1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1049, 30, 120, 46));
+        jPanel1.add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 40, 120, 46));
 
         lblPaymentMethod1.setBackground(new java.awt.Color(255, 255, 255));
         lblPaymentMethod1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPaymentMethod1.setForeground(new java.awt.Color(255, 255, 255));
-        lblPaymentMethod1.setText("Payment Method");
-        jPanel1.add(lblPaymentMethod1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 100, -1, -1));
+        lblPaymentMethod1.setText("Payment");
+        jPanel1.add(lblPaymentMethod1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, -1, -1));
 
         txtDOB.setBackground(new java.awt.Color(204, 204, 204));
         txtDOB.setDateFormatString("MM-dd-yyyy");
         txtDOB.setMaxSelectableDate(new Date());
-        jPanel1.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 140, 30));
+        jPanel1.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 180, 30));
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

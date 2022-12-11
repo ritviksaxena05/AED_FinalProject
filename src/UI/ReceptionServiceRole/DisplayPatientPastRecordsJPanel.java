@@ -65,7 +65,6 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         lblManageCustomers = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -73,16 +72,16 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
         btnUpdateAmbulanceRecord = new javax.swing.JButton();
         btnUpdateAmbulanceRecord1 = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(944, 60, 1, 10));
+        setBackground(new java.awt.Color(9, 145, 143));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(944, 60, 1, 10));
 
         lblManageCustomers.setBackground(new java.awt.Color(119, 197, 147));
         lblManageCustomers.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
         lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
         lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblManageCustomers.setText("                      Manage Patients");
-        jPanel1.add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 590, 70));
+        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 590, 70));
 
         ManageCustomersTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         ManageCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -113,7 +112,7 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(ManageCustomersTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 143, 925, 191));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 143, 925, 191));
 
         btnUpdateAmbulanceRecord.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         btnUpdateAmbulanceRecord.setForeground(new java.awt.Color(0, 204, 204));
@@ -123,7 +122,7 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
                 btnUpdateAmbulanceRecordActionPerformed(evt);
             }
         });
-        jPanel1.add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 160, 50));
+        add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 160, 50));
 
         btnUpdateAmbulanceRecord1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         btnUpdateAmbulanceRecord1.setForeground(new java.awt.Color(0, 153, 204));
@@ -133,28 +132,7 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
                 btnUpdateAmbulanceRecord1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 30, 140, 50));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 953, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 953, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 497, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 30, 140, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateAmbulanceRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateAmbulanceRecordActionPerformed
@@ -194,7 +172,6 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
     private javax.swing.JTable ManageCustomersTable;
     private javax.swing.JButton btnUpdateAmbulanceRecord;
     private javax.swing.JButton btnUpdateAmbulanceRecord1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblManageCustomers;

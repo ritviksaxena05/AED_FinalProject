@@ -76,7 +76,7 @@ public class PatientDischargeJPanel extends javax.swing.JPanel {
         btnUpdate1 = new javax.swing.JButton();
         btnUpdateAmbulanceRecord1 = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setBackground(new java.awt.Color(9, 145, 143));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
