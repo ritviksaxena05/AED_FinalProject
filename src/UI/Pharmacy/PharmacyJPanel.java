@@ -54,9 +54,9 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         btnView1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblPharmWorkArea1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(128, 206, 206));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,17 +70,18 @@ public class PharmacyJPanel extends javax.swing.JPanel {
                 btnViewRequest1ActionPerformed(evt);
             }
         });
-        add(btnViewRequest1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 150, 130, 30));
+        add(btnViewRequest1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, 130, 30));
 
         btnUpdateInventory1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnUpdateInventory1.setForeground(new java.awt.Color(128, 206, 206));
+        btnUpdateInventory1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/refresh.png"))); // NOI18N
         btnUpdateInventory1.setText("Update Inventory");
         btnUpdateInventory1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateInventory1ActionPerformed(evt);
             }
         });
-        add(btnUpdateInventory1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 260, -1, 41));
+        add(btnUpdateInventory1, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 240, -1, 41));
 
         tablePatientDetails1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         tablePatientDetails1.setModel(new javax.swing.table.DefaultTableModel(
@@ -111,7 +112,7 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         });
         jScrollPane6.setViewportView(tablePatientDetails1);
 
-        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 840, 195));
+        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 840, 195));
 
         tablePatient1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         tablePatient1.setModel(new javax.swing.table.DefaultTableModel(
@@ -142,7 +143,7 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         });
         jScrollPane7.setViewportView(tablePatient1);
 
-        add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 840, 191));
+        add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 840, 191));
 
         btnView1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnView1.setForeground(new java.awt.Color(128, 206, 206));
@@ -152,39 +153,31 @@ public class PharmacyJPanel extends javax.swing.JPanel {
                 btnView1ActionPerformed(evt);
             }
         });
-        add(btnView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 430, -1, 30));
+        add(btnView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 390, -1, 30));
 
         jPanel2.setBackground(new java.awt.Color(9, 145, 143));
 
         lblPharmWorkArea1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
         lblPharmWorkArea1.setForeground(new java.awt.Color(255, 255, 255));
         lblPharmWorkArea1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPharmWorkArea1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/pharmacy.png"))); // NOI18N
         lblPharmWorkArea1.setText("Pharmacy");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/people-in-pharmacy-vector.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(121, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(58, 58, 58)
-                .addComponent(lblPharmWorkArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(491, 491, 491))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(449, 449, 449)
+                .addComponent(lblPharmWorkArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(459, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(lblPharmWorkArea1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(lblPharmWorkArea1)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 80));
@@ -192,12 +185,15 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("PREVIOUS REQUESTS");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("NEW REQUEST");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/people-in-pharmacy-vector.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 680, -1, 80));
     }// </editor-fold>//GEN-END:initComponents
 
     private void populatePatientTable1() {
