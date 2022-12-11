@@ -70,6 +70,7 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Namelbl = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(128, 206, 206));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -80,13 +81,13 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
                 NametxtActionPerformed(evt);
             }
         });
-        add(Nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(381, 230, 144, 30));
+        add(Nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 144, 30));
 
         Addrlbl.setBackground(new java.awt.Color(0, 0, 0));
-        Addrlbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Addrlbl.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         Addrlbl.setForeground(new java.awt.Color(255, 255, 255));
         Addrlbl.setText("Address");
-        add(Addrlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 200, -1, 30));
+        add(Addrlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 110, 30));
 
         Addrtxt.setText("North Eastern University");
         Addrtxt.addActionListener(new java.awt.event.ActionListener() {
@@ -94,13 +95,13 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
                 AddrtxtActionPerformed(evt);
             }
         });
-        add(Addrtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 230, 144, 30));
+        add(Addrtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 144, 30));
 
         PhNumlbl.setBackground(new java.awt.Color(0, 0, 0));
-        PhNumlbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        PhNumlbl.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         PhNumlbl.setForeground(new java.awt.Color(255, 255, 255));
         PhNumlbl.setText("Phone Number");
-        add(PhNumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(797, 200, 139, 30));
+        add(PhNumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 160, 30));
 
         PhNumtxt.setText("8579087561");
         PhNumtxt.addActionListener(new java.awt.event.ActionListener() {
@@ -108,13 +109,13 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
                 PhNumtxtActionPerformed(evt);
             }
         });
-        add(PhNumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(792, 230, 144, 30));
+        add(PhNumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 144, 30));
 
         Emaillbl.setBackground(new java.awt.Color(0, 0, 0));
-        Emaillbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Emaillbl.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         Emaillbl.setForeground(new java.awt.Color(255, 255, 255));
         Emaillbl.setText("Email");
-        add(Emaillbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 310, -1, 30));
+        add(Emaillbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 80, 30));
 
         Emailtxt.setText("neu.bloodBank@gmail.com");
         Emailtxt.addActionListener(new java.awt.event.ActionListener() {
@@ -122,12 +123,13 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
                 EmailtxtActionPerformed(evt);
             }
         });
-        add(Emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(591, 312, 170, 30));
+        add(Emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 170, 30));
 
         jPanel2.setBackground(new java.awt.Color(9, 145, 143));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/blood-test.png"))); // NOI18N
         jLabel1.setText("BLOOD BANK INFORMATION");
         jLabel1.setToolTipText("");
 
@@ -166,10 +168,13 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 200, -1, -1));
 
         Namelbl.setBackground(new java.awt.Color(0, 0, 0));
-        Namelbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Namelbl.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         Namelbl.setForeground(new java.awt.Color(255, 255, 255));
         Namelbl.setText("Name");
-        add(Namelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 200, -1, 30));
+        add(Namelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 80, 30));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/blood-bank (1).png"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void NametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NametxtActionPerformed
@@ -210,6 +215,7 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
