@@ -40,18 +40,18 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-//        for (Patient_Bills bill : patient.getpBills()) {
-//
-//            Object[] row = new Object[7];
-//            row[0] = bill.getName();
-//            row[1] = bill.getOrgType();
-//            row[2] = bill.getAmount();
-//            row[3] = bill.getStatus();
-//            row[4] = bill.getResult();
-//            
-//            model.addRow(row);
-//
-//        }
+        for (PatientBills bill : patient.getpBills()) {
+
+            Object[] row = new Object[7];
+            row[0] = bill.getName();
+            row[1] = bill.getOrgType();
+            row[2] = bill.getAmount();
+            row[3] = bill.getStatus();
+            row[4] = bill.getResult();
+            
+            model.addRow(row);
+
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
