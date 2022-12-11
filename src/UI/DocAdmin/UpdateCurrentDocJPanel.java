@@ -14,6 +14,7 @@ import Model.EcoModel;
 import javax.swing.JPanel;
 import Model.User.User;
 import Model.Roles.DoctorUser;
+import java.awt.CardLayout;
 
 /**
  *
@@ -86,6 +87,7 @@ public class UpdateCurrentDocJPanel extends javax.swing.JPanel {
         lblDocUserName = new javax.swing.JLabel();
         btnDocUpdate = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnSubmit1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -260,6 +262,16 @@ public class UpdateCurrentDocJPanel extends javax.swing.JPanel {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/steth_45x46.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 50, 50));
+
+        btnSubmit1.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
+        btnSubmit1.setForeground(new java.awt.Color(0, 153, 204));
+        btnSubmit1.setText("Back");
+        btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmit1ActionPerformed(evt);
+            }
+        });
+        add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtDocLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocLastNameActionPerformed
@@ -324,9 +336,18 @@ public class UpdateCurrentDocJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnDocUpdateActionPerformed
 
+    private void btnSubmit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit1ActionPerformed
+        // TODO add your handling code here:
+        DocAdminAreaJPanel docJPanel = new DocAdminAreaJPanel(userWorkArea,userAccount,ecoModel);
+        userWorkArea.add("Doctor Workarea", docJPanel);
+        CardLayout layout = (CardLayout) userWorkArea.getLayout();
+        layout.next(userWorkArea);
+    }//GEN-LAST:event_btnSubmit1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDocUpdate;
+    private javax.swing.JButton btnSubmit1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblDocAddress;
     private javax.swing.JLabel lblDocAge;
