@@ -80,7 +80,7 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         Route_JButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(229, 210, 188));
+        jPanel1.setBackground(new java.awt.Color(9, 145, 143));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -111,8 +111,8 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1.add(txtPatientLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 530, 250, 30));
 
         btnSubmit.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(0, 153, 204));
-        btnSubmit.setText("SUBMIT");
+        btnSubmit.setForeground(new java.awt.Color(9, 145, 143));
+        btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
@@ -143,8 +143,8 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1432, 10));
 
         Route_JButton.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
-        Route_JButton.setForeground(new java.awt.Color(0, 153, 204));
-        Route_JButton.setText("VIEW ROUTE");
+        Route_JButton.setForeground(new java.awt.Color(9, 145, 143));
+        Route_JButton.setText("View Route");
         Route_JButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Route_JButtonActionPerformed(evt);
@@ -152,7 +152,7 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(Route_JButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 700, 180, 40));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/ambulance_gif.jpeg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/ambulance-doctor-stock-gif-3814-1024x576_1_50.gif"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 540, 300));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -163,8 +163,8 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(210, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

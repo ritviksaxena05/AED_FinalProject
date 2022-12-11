@@ -86,8 +86,9 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
 
-        setBackground(new java.awt.Color(0, 204, 204));
+        setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtPhoneNumber.setEditable(false);
@@ -97,7 +98,7 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
                 txtPhoneNumberActionPerformed(evt);
             }
         });
-        add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 150, 30));
+        add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 190, 30));
 
         txtInjuryType.setEditable(false);
         txtInjuryType.setBackground(new java.awt.Color(255, 255, 255));
@@ -106,19 +107,19 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
                 txtInjuryTypeActionPerformed(evt);
             }
         });
-        add(txtInjuryType, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 150, 30));
+        add(txtInjuryType, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, 190, 30));
 
         lblPatientAge.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientAge.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientAge.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientAge.setText("Age");
-        add(lblPatientAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, -1, -1));
+        add(lblPatientAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
 
         lblPhoneNumber5.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber5.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPhoneNumber5.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber5.setText("Date of Admit ");
-        add(lblPhoneNumber5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, 20));
+        add(lblPhoneNumber5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, -1, 20));
 
         lblPatientFirstName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientFirstName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -133,29 +134,29 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
                 txtDateOfBirthActionPerformed(evt);
             }
         });
-        add(txtDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, 140, 30));
+        add(txtDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 190, 30));
 
         lblPatientLastName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientLastName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientLastName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientLastName.setText("Last Name");
-        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
+        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
         txtFirstName.setEditable(false);
         txtFirstName.setBackground(new java.awt.Color(255, 255, 255));
-        add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 160, 30));
+        add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 190, 30));
 
         lblDOB.setBackground(new java.awt.Color(255, 255, 255));
         lblDOB.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblDOB.setForeground(new java.awt.Color(255, 255, 255));
         lblDOB.setText("Date of Birth");
-        add(lblDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, -1, -1));
+        add(lblDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
         lblEmail.setBackground(new java.awt.Color(255, 255, 255));
         lblEmail.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setText("Email");
-        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, -1, 20));
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, 20));
 
         txtAddress.setEditable(false);
         txtAddress.setBackground(new java.awt.Color(255, 255, 255));
@@ -164,7 +165,7 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
                 txtAddressActionPerformed(evt);
             }
         });
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 160, 70));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 190, 70));
 
         txtEmail.setEditable(false);
         txtEmail.setBackground(new java.awt.Color(255, 255, 255));
@@ -173,14 +174,14 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
                 txtEmailActionPerformed(evt);
             }
         });
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, 150, 30));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 190, 30));
 
         lblPatientAddress.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientAddress.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientAddress.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientAddress.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPatientAddress.setText("Address");
-        add(lblPatientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
+        add(lblPatientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
         txtBloodGroup.setEditable(false);
         txtBloodGroup.setBackground(new java.awt.Color(255, 255, 255));
@@ -189,7 +190,7 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
                 txtBloodGroupActionPerformed(evt);
             }
         });
-        add(txtBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 150, 30));
+        add(txtBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, 190, 30));
 
         txtDateOfAdmit.setEditable(false);
         txtDateOfAdmit.setBackground(new java.awt.Color(255, 255, 255));
@@ -198,7 +199,7 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
                 txtDateOfAdmitActionPerformed(evt);
             }
         });
-        add(txtDateOfAdmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 160, 30));
+        add(txtDateOfAdmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 200, 190, 30));
 
         txtPatientStatus.setEditable(false);
         txtPatientStatus.setBackground(new java.awt.Color(255, 255, 255));
@@ -207,58 +208,58 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
                 txtPatientStatusActionPerformed(evt);
             }
         });
-        add(txtPatientStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 150, 30));
+        add(txtPatientStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 190, 30));
 
         lblPatientGender.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientGender.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientGender.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientGender.setText("Gender");
-        add(lblPatientGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
+        add(lblPatientGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, -1, -1));
 
         lblPatientPhone.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientPhone.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientPhone.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientPhone.setText("Phone Number");
-        add(lblPatientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, -1, -1));
+        add(lblPatientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, -1, -1));
 
         lblDisplayPatient.setBackground(new java.awt.Color(255, 255, 255));
         lblDisplayPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         lblDisplayPatient.setForeground(new java.awt.Color(255, 255, 255));
         lblDisplayPatient.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDisplayPatient.setText("Patient Details");
-        add(lblDisplayPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 280, 82));
+        add(lblDisplayPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 280, 70));
 
         lblAddress4.setBackground(new java.awt.Color(255, 255, 255));
         lblAddress4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblAddress4.setForeground(new java.awt.Color(255, 255, 255));
         lblAddress4.setText("Blood Group");
-        add(lblAddress4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, -1, 20));
+        add(lblAddress4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, 20));
 
         btnAssignDoctor.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnAssignDoctor.setForeground(new java.awt.Color(0, 153, 204));
+        btnAssignDoctor.setForeground(new java.awt.Color(9, 145, 143));
         btnAssignDoctor.setText("Assign Doctor");
         btnAssignDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAssignDoctorActionPerformed(evt);
             }
         });
-        add(btnAssignDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 530, -1, 48));
+        add(btnAssignDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, -1, 48));
 
         lblPatientStatus.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientStatus.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientStatus.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientStatus.setText("Patient Status");
-        add(lblPatientStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 460, -1, 20));
+        add(lblPatientStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, -1, 20));
 
         txtGender.setEditable(false);
         txtGender.setBackground(new java.awt.Color(255, 255, 255));
-        add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 140, 30));
+        add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 190, 30));
 
         lblPhoneNumber4.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPhoneNumber4.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber4.setText("Injury Type");
-        add(lblPhoneNumber4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, -1, 20));
+        add(lblPhoneNumber4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, -1, 20));
 
         txtAge.setEditable(false);
         txtAge.setBackground(new java.awt.Color(255, 255, 255));
@@ -267,7 +268,7 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
                 txtAgeActionPerformed(evt);
             }
         });
-        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 130, 30));
+        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 190, 30));
 
         txtLastName.setEditable(false);
         txtLastName.setBackground(new java.awt.Color(255, 255, 255));
@@ -276,7 +277,7 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
                 txtLastNameActionPerformed(evt);
             }
         });
-        add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 170, 30));
+        add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 190, 30));
 
         DoctorTable.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         DoctorTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -307,27 +308,31 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(DoctorTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, 870, 170));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 580, 870, 170));
         add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 160, 200, 200));
 
         btnBack.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(0, 153, 204));
+        btnBack.setForeground(new java.awt.Color(9, 145, 143));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 40, 120, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 120, -1));
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Available doctors");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 540, 360, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, 360, -1));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 23, 50, 50));
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/steth_45x46.png"))); // NOI18N
         jLabel3.setText("jLabel3");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 50, 40));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, 50, 40));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 1434, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneNumberActionPerformed
@@ -458,6 +463,7 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblAddress4;
     private javax.swing.JLabel lblDOB;
     private javax.swing.JLabel lblDisplayPatient;

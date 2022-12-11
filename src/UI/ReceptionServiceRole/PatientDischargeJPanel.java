@@ -92,7 +92,6 @@ public class PatientDischargeJPanel extends javax.swing.JPanel {
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
@@ -119,7 +118,7 @@ public class PatientDischargeJPanel extends javax.swing.JPanel {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 1190, 216));
 
         btnUpdateAmbulanceRecord.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnUpdateAmbulanceRecord.setForeground(new java.awt.Color(0, 153, 204));
+        btnUpdateAmbulanceRecord.setForeground(new java.awt.Color(9, 145, 143));
         btnUpdateAmbulanceRecord.setText("Discharge");
         btnUpdateAmbulanceRecord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,7 +128,7 @@ public class PatientDischargeJPanel extends javax.swing.JPanel {
         jPanel1.add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, 140, 40));
 
         btnUpdate1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnUpdate1.setForeground(new java.awt.Color(0, 153, 204));
+        btnUpdate1.setForeground(new java.awt.Color(9, 145, 143));
         btnUpdate1.setText("Send to Insurance Check");
         btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,14 +138,14 @@ public class PatientDischargeJPanel extends javax.swing.JPanel {
         jPanel1.add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 260, 40));
 
         btnUpdateAmbulanceRecord1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnUpdateAmbulanceRecord1.setForeground(new java.awt.Color(0, 153, 204));
+        btnUpdateAmbulanceRecord1.setForeground(new java.awt.Color(9, 145, 143));
         btnUpdateAmbulanceRecord1.setText("Back");
         btnUpdateAmbulanceRecord1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateAmbulanceRecord1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 30, 120, 40));
+        jPanel1.add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 120, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

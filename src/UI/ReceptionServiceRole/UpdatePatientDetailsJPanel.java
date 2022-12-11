@@ -312,17 +312,17 @@ public class UpdatePatientDetailsJPanel extends javax.swing.JPanel {
                 txtUserNameKeyReleased(evt);
             }
         });
-        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 180, 40));
+        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 180, 40));
 
         btnSubmit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(0, 153, 204));
+        btnSubmit.setForeground(new java.awt.Color(9, 145, 143));
         btnSubmit.setText("Update");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 550, 170, 50));
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 310, 170, 50));
 
         jRadioCash.setBackground(new java.awt.Color(255, 255, 255));
         jRadioCash.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
@@ -344,22 +344,22 @@ public class UpdatePatientDetailsJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(jRadioInsurance, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 580, -1, -1));
 
-        btnBrowse.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnBrowse.setForeground(new java.awt.Color(0, 153, 204));
+        btnBrowse.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
+        btnBrowse.setForeground(new java.awt.Color(9, 145, 143));
         btnBrowse.setText("Browse");
         btnBrowse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBrowseActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBrowse, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 310, -1, 40));
-        jPanel1.add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 110, 170, 160));
+        jPanel1.add(btnBrowse, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 460, -1, 40));
+        jPanel1.add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 170, 160));
 
         lblPhoto.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoto.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPhoto.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoto.setText("Update Photo");
-        jPanel1.add(lblPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 280, -1, -1));
+        jPanel1.add(lblPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 430, -1, -1));
 
         lblPaymentMethod.setBackground(new java.awt.Color(255, 255, 255));
         lblPaymentMethod.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -435,14 +435,14 @@ public class UpdatePatientDetailsJPanel extends javax.swing.JPanel {
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1300, 10));
 
         btnSubmit1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnSubmit1.setForeground(new java.awt.Color(0, 153, 204));
+        btnSubmit1.setForeground(new java.awt.Color(9, 145, 143));
         btnSubmit1.setText("Back");
         btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmit1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 30, 159, 46));
+        jPanel1.add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 130, 40));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 50, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

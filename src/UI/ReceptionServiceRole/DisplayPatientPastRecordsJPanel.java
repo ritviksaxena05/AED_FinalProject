@@ -71,6 +71,7 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
         ManageCustomersTable = new javax.swing.JTable();
         btnUpdateAmbulanceRecord = new javax.swing.JButton();
         btnUpdateAmbulanceRecord1 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -114,8 +115,8 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 143, 925, 191));
 
-        btnUpdateAmbulanceRecord.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        btnUpdateAmbulanceRecord.setForeground(new java.awt.Color(0, 204, 204));
+        btnUpdateAmbulanceRecord.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
+        btnUpdateAmbulanceRecord.setForeground(new java.awt.Color(9, 145, 143));
         btnUpdateAmbulanceRecord.setText("Bill");
         btnUpdateAmbulanceRecord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,15 +125,18 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
         });
         add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 160, 50));
 
-        btnUpdateAmbulanceRecord1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        btnUpdateAmbulanceRecord1.setForeground(new java.awt.Color(0, 153, 204));
+        btnUpdateAmbulanceRecord1.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
+        btnUpdateAmbulanceRecord1.setForeground(new java.awt.Color(9, 145, 143));
         btnUpdateAmbulanceRecord1.setText("Back");
         btnUpdateAmbulanceRecord1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateAmbulanceRecord1ActionPerformed(evt);
             }
         });
-        add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 30, 140, 50));
+        add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 120, 50));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 1434, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateAmbulanceRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateAmbulanceRecordActionPerformed
@@ -174,6 +178,7 @@ public class DisplayPatientPastRecordsJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnUpdateAmbulanceRecord1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblManageCustomers;
     // End of variables declaration//GEN-END:variables
 }

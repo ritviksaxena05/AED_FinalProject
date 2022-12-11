@@ -60,7 +60,7 @@ public class AmbulanceInfoJPanel extends javax.swing.JPanel {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(229, 210, 188));
+        jPanel1.setBackground(new java.awt.Color(9, 145, 143));
         jPanel1.setMaximumSize(new java.awt.Dimension(1500, 1000));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -138,7 +138,7 @@ public class AmbulanceInfoJPanel extends javax.swing.JPanel {
         jPanel1.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 280, 30));
 
         btnSubmit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(0, 153, 204));
+        btnSubmit.setForeground(new java.awt.Color(9, 145, 143));
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,10 +170,10 @@ public class AmbulanceInfoJPanel extends javax.swing.JPanel {
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 1434, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/ambulance_gif.gif"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/ambulance_gif_40 (1).gif"))); // NOI18N
         jLabel3.setMaximumSize(new java.awt.Dimension(560, 340));
         jLabel3.setMinimumSize(new java.awt.Dimension(560, 340));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 140, 710, 410));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 70, 600, 390));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

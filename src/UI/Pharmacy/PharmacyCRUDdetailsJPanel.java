@@ -75,7 +75,7 @@ public class PharmacyCRUDdetailsJPanel extends javax.swing.JPanel {
         lblPharm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPharm.setText("Pharmacy");
         jPanel1.add(lblPharm, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 220, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 139, 1328, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 1328, 10));
 
         btnAddMedicine.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         btnAddMedicine.setForeground(new java.awt.Color(0, 153, 204));
@@ -85,7 +85,7 @@ public class PharmacyCRUDdetailsJPanel extends javax.swing.JPanel {
                 btnAddMedicineActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAddMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, 180, 30));
+        jPanel1.add(btnAddMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 670, 180, 30));
 
         tableMedDetails.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         tableMedDetails.setModel(new javax.swing.table.DefaultTableModel(
@@ -116,47 +116,47 @@ public class PharmacyCRUDdetailsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableMedDetails);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 788, 186));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 788, 186));
 
         lblMedCost.setBackground(new java.awt.Color(0, 0, 0));
         lblMedCost.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         lblMedCost.setForeground(new java.awt.Color(255, 255, 255));
         lblMedCost.setText("Cost");
-        jPanel1.add(lblMedCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, 30));
+        jPanel1.add(lblMedCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 610, -1, 30));
 
         txtMedCost.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtMedCostKeyReleased(evt);
             }
         });
-        jPanel1.add(txtMedCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 530, 144, 30));
-        jPanel1.add(txtMedUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 144, 30));
-        jPanel1.add(txtMedName, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 144, 30));
+        jPanel1.add(txtMedCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 600, 144, 30));
+        jPanel1.add(txtMedUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, 144, 30));
+        jPanel1.add(txtMedName, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 470, 144, 30));
 
         lblMedName.setBackground(new java.awt.Color(0, 0, 0));
         lblMedName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         lblMedName.setForeground(new java.awt.Color(255, 255, 255));
         lblMedName.setText("Medicine Name");
-        jPanel1.add(lblMedName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, -1, 30));
+        jPanel1.add(lblMedName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, 30));
 
         lblMedUsage.setBackground(new java.awt.Color(0, 0, 0));
         lblMedUsage.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         lblMedUsage.setForeground(new java.awt.Color(255, 255, 255));
         lblMedUsage.setText("Medicine Usage");
-        jPanel1.add(lblMedUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, -1, 30));
+        jPanel1.add(lblMedUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, 30));
 
         txtMedQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtMedQuantityKeyReleased(evt);
             }
         });
-        jPanel1.add(txtMedQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, 144, 30));
+        jPanel1.add(txtMedQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, 144, 30));
 
         lblMedQuantity.setBackground(new java.awt.Color(0, 0, 0));
         lblMedQuantity.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         lblMedQuantity.setForeground(new java.awt.Color(255, 255, 255));
         lblMedQuantity.setText("Quantity");
-        jPanel1.add(lblMedQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, -1, 30));
+        jPanel1.add(lblMedQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 560, -1, 30));
 
         btnDeleteMed.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         btnDeleteMed.setForeground(new java.awt.Color(0, 153, 204));
@@ -166,7 +166,7 @@ public class PharmacyCRUDdetailsJPanel extends javax.swing.JPanel {
                 btnDeleteMedActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDeleteMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 600, 100, 30));
+        jPanel1.add(btnDeleteMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 660, 100, 30));
 
         btnSaveUpdatedMed.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         btnSaveUpdatedMed.setForeground(new java.awt.Color(0, 153, 204));
@@ -176,7 +176,7 @@ public class PharmacyCRUDdetailsJPanel extends javax.swing.JPanel {
                 btnSaveUpdatedMedActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSaveUpdatedMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 600, 160, 30));
+        jPanel1.add(btnSaveUpdatedMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 680, 160, 30));
 
         btnMedUpdate.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         btnMedUpdate.setForeground(new java.awt.Color(0, 153, 204));
@@ -186,7 +186,7 @@ public class PharmacyCRUDdetailsJPanel extends javax.swing.JPanel {
                 btnMedUpdateActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMedUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 600, 120, 30));
+        jPanel1.add(btnMedUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 680, 120, 30));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 490, 213, 32));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 550, 213, 32));
 
@@ -201,7 +201,7 @@ public class PharmacyCRUDdetailsJPanel extends javax.swing.JPanel {
         jPanel1.add(btnPharmBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 100, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/people-in-pharmacy-vector.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, 120));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
