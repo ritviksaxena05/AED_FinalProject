@@ -13,6 +13,10 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import UI.ReceptionServiceRole.ReceptionWorkAreaJPanel;
+import Utils.GoogleMapsJPanel;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author devikaboddu
@@ -190,7 +194,6 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
             patient.setpPharmaStatus("NewPatient");
             patient.setpLabStatus("NewPatient");
             patient.setpDateOfAdmit(java.util.Calendar.getInstance().getTime());
-            //System.out.println("ambulance"+ambulance.getStatus());
             ambulance.setStatus("Busy");
             
             ambulance.setAccidentLocation(txtPatientLocation.getText());
@@ -217,26 +220,24 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void Route_JButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Route_JButtonActionPerformed
-        // TODO add your handling code here:
-        /*ReceptionWorkAreaJPanel receptionWorkAreaJPanel = new ReceptionWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
-        userProcessContainer.add("Reception Work Area", receptionWorkAreaJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        */
-        Patient patient = new Patient(txtPatientUserName.getText());
-        patient.setpFirstName(txtPatientFirstName.getText());
-        patient.setpLastName(txtPatientLastName.getText());
-        patient.setpAccidentLocation(txtPatientLocation.getText());
-        patient.setpStatus("NewPatient");
-        patient.setpBloodBankStatus("NewPatient");
-        patient.setpPharmaStatus("NewPatient");
-        patient.setpLabStatus("NewPatient");
-        patient.setpDateOfAdmit(java.util.Calendar.getInstance().getTime());
-
-//        GoogleMapsAmbulanceJPanel GoogleMapsWorkAreaJPanel = new GoogleMapsAmbulanceJPanel(userProcessContainer, ecoSystem, userAccount, ambulance, txtPatientLocation.getText(), patient);
-//        userProcessContainer.add("Google Maps Work Area", GoogleMapsWorkAreaJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try {
+            Patient patient = new Patient(txtPatientUserName.getText());
+            patient.setpFirstName(txtPatientFirstName.getText());
+            patient.setpLastName(txtPatientLastName.getText());
+            patient.setpAccidentLocation(txtPatientLocation.getText());
+            patient.setpStatus("NewPatient");
+            patient.setpBloodBankStatus("NewPatient");
+            patient.setpPharmaStatus("NewPatient");
+            patient.setpLabStatus("NewPatient");
+            patient.setpDateOfAdmit(java.util.Calendar.getInstance().getTime());
+            
+            GoogleMapsJPanel GoogleMapsWorkAreaJPanel = new GoogleMapsJPanel(userProcessContainer, ecoSystem, userAccount, ambulance, txtPatientLocation.getText(), patient);
+            userProcessContainer.add("Google Maps Work Area", GoogleMapsWorkAreaJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        } catch (IOException ex) {
+//            Logger.getLogger(ReceptionAmbulanceWorkAreaJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_Route_JButtonActionPerformed
 

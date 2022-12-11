@@ -81,7 +81,6 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
@@ -95,16 +94,16 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
         managePatientTable2 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(0, 204, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Laboratory Center");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 230, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 79, 1295, 10));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 230, -1));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 79, 1295, 10));
 
         jButton1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 153, 204));
@@ -114,7 +113,7 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 240, 50));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 220, 50));
 
         managePatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         managePatientTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -145,7 +144,7 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane4.setViewportView(managePatientTable1);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 1053, 188));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 800, 170));
 
         jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 153, 204));
@@ -155,17 +154,17 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 185, 50));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 185, 50));
 
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Past Requests");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 510, 163, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 163, 30));
 
         jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Current Requests");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 185, 25));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 185, 25));
 
         jButton3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 153, 204));
@@ -175,7 +174,7 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 700, 158, 53));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 660, 158, 53));
 
         managePatientTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         managePatientTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -206,31 +205,10 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane6.setViewportView(managePatientTable2);
 
-        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, 1053, 137));
+        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 800, 137));
 
         jLabel4.setText("jLabel4");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 50, 50));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1252, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -285,7 +263,6 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
