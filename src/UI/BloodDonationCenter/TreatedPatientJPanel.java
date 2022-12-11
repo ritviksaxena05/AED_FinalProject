@@ -67,6 +67,7 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(128, 206, 206));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -100,12 +101,13 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(ManagePatientTable);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 280, 1155, 191));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 1155, 191));
 
         jPanel2.setBackground(new java.awt.Color(9, 145, 143));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/medical-records.png"))); // NOI18N
         jLabel1.setText("REQUESTED PATIENTS HISTORY");
         jLabel1.setToolTipText("");
 
@@ -126,9 +128,9 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(80, 80, 80)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(254, 254, 254)
                 .addComponent(jLabel1)
-                .addGap(504, 504, 504))
+                .addContainerGap(416, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,6 +144,9 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1309, -1));
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 172, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/medical-checkup.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -157,6 +162,7 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
     private javax.swing.JTable ManagePatientTable;
     private javax.swing.JButton btnBack;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane3;
