@@ -80,9 +80,11 @@ public class CopPersonalInfoJPanel extends javax.swing.JPanel {
         PoliceVertxt = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(128, 206, 206));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -196,7 +198,7 @@ public class CopPersonalInfoJPanel extends javax.swing.JPanel {
         PoliceVerlbl.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         PoliceVerlbl.setForeground(new java.awt.Color(255, 255, 255));
         PoliceVerlbl.setText("Police Verification");
-        add(PoliceVerlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 267, 230, -1));
+        add(PoliceVerlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 540, 230, -1));
 
         PoliceVertxt.setEditable(false);
         PoliceVertxt.setBackground(new java.awt.Color(255, 255, 255));
@@ -205,7 +207,7 @@ public class CopPersonalInfoJPanel extends javax.swing.JPanel {
                 PoliceVertxtActionPerformed(evt);
             }
         });
-        add(PoliceVertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(744, 302, 150, 31));
+        add(PoliceVertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 540, 150, 31));
 
         jPanel2.setBackground(new java.awt.Color(9, 145, 143));
 
@@ -215,12 +217,23 @@ public class CopPersonalInfoJPanel extends javax.swing.JPanel {
         jLabel1.setText("PERSON INFORMATION");
         jLabel1.setToolTipText("");
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(9, 145, 143));
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(484, 484, 484)
+                .addGap(78, 78, 78)
+                .addComponent(jButton1)
+                .addGap(334, 334, 334)
                 .addComponent(jLabel1)
                 .addContainerGap(447, Short.MAX_VALUE))
         );
@@ -228,34 +241,41 @@ public class CopPersonalInfoJPanel extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1))
                 .addGap(41, 41, 41))
         );
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 1288, -1));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1288, -1));
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1294, 265, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(50, 207, 105));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/check-mark (1).png"))); // NOI18N
         jButton2.setText("Approve");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 538, 196, 47));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 500, 196, 47));
 
         jButton3.setBackground(new java.awt.Color(255, 75, 76));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/close.png"))); // NOI18N
         jButton3.setText("Reject");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(664, 538, 196, 47));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 590, 196, 47));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/verification (1).png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void LocationtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LocationtxtActionPerformed
@@ -300,6 +320,15 @@ public class CopPersonalInfoJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_PoliceVertxtActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+        CopWorkAreaJPanel bill = new CopWorkAreaJPanel(userProcessContainer,account,ecoModel);
+        userProcessContainer.add("Police Workarea", bill);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Addrtxt;
@@ -320,9 +349,11 @@ public class CopPersonalInfoJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField PhNumtxt;
     private javax.swing.JLabel PoliceVerlbl;
     private javax.swing.JTextField PoliceVertxt;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
