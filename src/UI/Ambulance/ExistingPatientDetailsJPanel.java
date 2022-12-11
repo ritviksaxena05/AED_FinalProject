@@ -70,7 +70,7 @@ public class ExistingPatientDetailsJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("EMERGENCY DETAILS");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1409, 80));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 840, 80));
 
         lblPatientLastName.setBackground(new java.awt.Color(15, 85, 177));
         lblPatientLastName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
@@ -93,12 +93,22 @@ public class ExistingPatientDetailsJPanel extends javax.swing.JPanel {
         btnSetFree.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
         btnSetFree.setForeground(new java.awt.Color(9, 145, 143));
         btnSetFree.setText("Set Free");
+        btnSetFree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSetFreeActionPerformed(evt);
+            }
+        });
         add(btnSetFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 560, 170, 38));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 107, 1432, 10));
 
         btnSetFree1.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
         btnSetFree1.setForeground(new java.awt.Color(9, 145, 143));
         btnSetFree1.setText("Back");
+        btnSetFree1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSetFree1ActionPerformed(evt);
+            }
+        });
         add(btnSetFree1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 150, 38));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/istockphoto-1218104087-612x612_75.jpeg"))); // NOI18N
@@ -107,6 +117,24 @@ public class ExistingPatientDetailsJPanel extends javax.swing.JPanel {
         add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, 210, 30));
         add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, 210, 30));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSetFreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetFreeActionPerformed
+        // TODO add your handling code here:
+        ambulance.setStatus("Free");
+        JOptionPane.showMessageDialog(null, "Status Changed To Free");
+        DisplayPatientJPanel displayAmbulancePatientJPanel = new DisplayPatientJPanel(userProcessContainer, userAccount, ecoSystem);
+        userProcessContainer.add("Ambulance Display", displayAmbulancePatientJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnSetFreeActionPerformed
+
+    private void btnSetFree1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetFree1ActionPerformed
+        // TODO add your handling code here:
+        DisplayPatientJPanel displayAmbulancePatientJPanel = new DisplayPatientJPanel(userProcessContainer, userAccount, ecoSystem);
+        userProcessContainer.add("Ambulance Display", displayAmbulancePatientJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnSetFree1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
