@@ -208,8 +208,6 @@ public class CopPersonalInfoJPanel extends javax.swing.JPanel {
                 .addGap(46, 46, 46))
         );
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Cop/personal-information.png"))); // NOI18N
-
         jButton2.setBackground(new java.awt.Color(50, 206, 45));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
