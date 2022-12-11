@@ -156,7 +156,7 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(PatientTable);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 152, 1260, 140));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 1260, 140));
 
         PatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         PatientTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -187,7 +187,7 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane4.setViewportView(PatientTable1);
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 387, 1260, 191));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 1260, 191));
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(9, 145, 143));
@@ -197,7 +197,7 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 304, 316, 37));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 316, 37));
 
         jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(9, 145, 143));
@@ -207,12 +207,13 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 596, 310, 39));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 620, 310, 39));
 
         jPanel3.setBackground(new java.awt.Color(9, 145, 143));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/policeman.png"))); // NOI18N
         jLabel2.setText("POLICE DEPARTMENT");
         jLabel2.setToolTipText("");
 
@@ -239,12 +240,12 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("VERIFICATION REQUEST");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 113, 334, 21));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 334, 21));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("PREVIOUS RECORDS");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 354, 313, 21));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 313, 21));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
