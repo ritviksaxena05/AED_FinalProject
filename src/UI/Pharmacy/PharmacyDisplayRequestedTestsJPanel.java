@@ -129,6 +129,7 @@ public class PharmacyDisplayRequestedTestsJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/pills.png"))); // NOI18N
         jLabel1.setText("Patient Request");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -136,19 +137,19 @@ public class PharmacyDisplayRequestedTestsJPanel extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(559, Short.MAX_VALUE)
+                .addContainerGap(491, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(488, 488, 488))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, -1));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 110));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/pharmacy (1).png"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, -1, -1));
