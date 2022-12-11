@@ -79,6 +79,7 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         Route_JButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        btnSetFree1 = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(9, 145, 143));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -154,6 +155,16 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/ambulance-doctor-stock-gif-3814-1024x576_1_50.gif"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 540, 300));
+
+        btnSetFree1.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
+        btnSetFree1.setForeground(new java.awt.Color(9, 145, 143));
+        btnSetFree1.setText("Back");
+        btnSetFree1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSetFree1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSetFree1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 150, 38));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -241,9 +252,19 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_Route_JButtonActionPerformed
 
+    private void btnSetFree1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetFree1ActionPerformed
+        // TODO add your handling code here:
+        ReceptionWorkAreaJPanel patientBillJPanel = new ReceptionWorkAreaJPanel(userProcessContainer,userAccount,ecoSystem);
+        userProcessContainer.add("Patient Bill", patientBillJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+       
+    }//GEN-LAST:event_btnSetFree1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Route_JButton;
+    private javax.swing.JButton btnSetFree1;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;

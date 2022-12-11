@@ -52,7 +52,8 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
         btnProcessRequest = new javax.swing.JButton();
         Request1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(9, 145, 143));
+        setForeground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
