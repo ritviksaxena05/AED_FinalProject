@@ -11,6 +11,7 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import UI.ReceptionServiceRole.ReceptionWorkAreaJPanel;
 
 /**
  *
@@ -40,7 +41,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) ManageAmbulanceTable.getModel();
         model.setRowCount(0);
         for (Ambulance ambulance : ecoSystem.getAmbulanceDirectory().getAmbulances()) {
-
+            
             Object[] row = new Object[5];
             row[0] = ambulance;
             row[1] = ambulance.getDriverLastName();
@@ -193,7 +194,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         } else {
             Ambulance ambulance = (Ambulance) ManageAmbulanceTable.getValueAt(selectedRowIndex, 0);
             if (!ambulance.getStatus().toLowerCase().equals("busy")) {
-                ReceptionAmbulanceWorkAreaJPanel receptionAmbulanceWorkAreaJPanel = new ReceptionAmbulanceWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
+                ReceptionAmbulanceWorkAreaJPanel receptionAmbulanceWorkAreaJPanel = new ReceptionAmbulanceWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem, ambulance);
                 userProcessContainer.add("Add Patient", receptionAmbulanceWorkAreaJPanel);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
@@ -208,7 +209,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnSubmit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit1ActionPerformed
         // TODO add your handling code here:
-        ReceptionAmbulanceWorkAreaJPanel patientBillJPanel = new ReceptionAmbulanceWorkAreaJPanel(userProcessContainer,userAccount,ecoSystem);
+        ReceptionWorkAreaJPanel patientBillJPanel = new ReceptionWorkAreaJPanel(userProcessContainer,userAccount,ecoSystem);
         userProcessContainer.add("Patient Bill", patientBillJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

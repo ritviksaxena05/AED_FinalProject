@@ -12,7 +12,7 @@ import Model.User.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
+import UI.ReceptionServiceRole.ReceptionWorkAreaJPanel;
 /**
  *
  * @author devikaboddu
@@ -27,13 +27,27 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
     User userAccount;
     Ambulance ambulance;
 
-    public ReceptionAmbulanceWorkAreaJPanel(JPanel userProcessContainer, User userAccount, EcoModel ecoSystem) {
+    public ReceptionAmbulanceWorkAreaJPanel(JPanel userProcessContainer, User userAccount, EcoModel ecoSystem, Ambulance ambulance) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = ecoSystem;
         this.ambulance = ambulance;
     }
 
+    public ReceptionAmbulanceWorkAreaJPanel(JPanel userProcessContainer, EcoModel ecoSystem, User userAccount, Ambulance ambulance, Patient patientDetails) {
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.ecoSystem = ecoSystem;
+        this.ambulance = ambulance;
+        setUpTextFields(patientDetails);
+    }
+    
+    public void setUpTextFields(Patient p){
+        txtPatientUserName.setText(p.getpUserName());
+        txtPatientFirstName.setText(p.getpFirstName());
+        txtPatientLastName.setText(p.getpLastName());
+        txtPatientLocation.setText(p.getpAccidentLocation());
+    }
 
 
     /**
@@ -176,7 +190,9 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
             patient.setpPharmaStatus("NewPatient");
             patient.setpLabStatus("NewPatient");
             patient.setpDateOfAdmit(java.util.Calendar.getInstance().getTime());
+            //System.out.println("ambulance"+ambulance.getStatus());
             ambulance.setStatus("Busy");
+            
             ambulance.setAccidentLocation(txtPatientLocation.getText());
             ambulance.getAmbulancePatientsList().add(patient);
 
@@ -193,7 +209,7 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 
         JOptionPane.showMessageDialog(null, "Help Is On The Way");
 
-        ReceptionAmbulanceWorkAreaJPanel receptionWorkAreaJPanel = new ReceptionAmbulanceWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
+        ReceptionWorkAreaJPanel receptionWorkAreaJPanel = new ReceptionWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
         userProcessContainer.add("Reception Work Area", receptionWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
