@@ -247,7 +247,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="8f" green="91" red="9" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="View Details of Past Records"/>
+        <Property name="text" type="java.lang.String" value="View Details of Previous Records"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
@@ -317,7 +317,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="PAST RECORDS"/>
+        <Property name="text" type="java.lang.String" value="PREVIOUS RECORDS"/>
       </Properties>
     </Component>
   </SubComponents>

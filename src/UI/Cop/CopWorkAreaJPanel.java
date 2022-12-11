@@ -195,7 +195,7 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(9, 145, 143));
-        jButton2.setText("View Details of Past Records");
+        jButton2.setText("View Details of Previous Records");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -233,7 +233,7 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("PAST RECORDS");
+        jLabel5.setText("PREVIOUS RECORDS");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
