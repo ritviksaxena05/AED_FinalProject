@@ -80,6 +80,7 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(128, 206, 206));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,7 +89,7 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
         PatientFNamelbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         PatientFNamelbl.setForeground(new java.awt.Color(255, 255, 255));
         PatientFNamelbl.setText("First Name:");
-        add(PatientFNamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 116, -1));
+        add(PatientFNamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 116, -1));
 
         FNametxt.setEditable(false);
         FNametxt.setBackground(new java.awt.Color(255, 255, 255));
@@ -97,13 +98,13 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
                 FNametxtActionPerformed(evt);
             }
         });
-        add(FNametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 180, 31));
+        add(FNametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 180, 31));
 
         PatientLNamelbl.setBackground(new java.awt.Color(255, 255, 255));
         PatientLNamelbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         PatientLNamelbl.setForeground(new java.awt.Color(255, 255, 255));
         PatientLNamelbl.setText("Last Name:");
-        add(PatientLNamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 116, -1));
+        add(PatientLNamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 116, -1));
 
         LNametxt.setEditable(false);
         LNametxt.setBackground(new java.awt.Color(255, 255, 255));
@@ -112,13 +113,13 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
                 LNametxtActionPerformed(evt);
             }
         });
-        add(LNametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 180, 31));
+        add(LNametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 180, 31));
 
         PatientAddrlbl.setBackground(new java.awt.Color(255, 255, 255));
         PatientAddrlbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         PatientAddrlbl.setForeground(new java.awt.Color(255, 255, 255));
         PatientAddrlbl.setText("Address: ");
-        add(PatientAddrlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
+        add(PatientAddrlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, -1, -1));
 
         Addrtxt.setEditable(false);
         Addrtxt.setBackground(new java.awt.Color(255, 255, 255));
@@ -127,7 +128,7 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
                 AddrtxtActionPerformed(evt);
             }
         });
-        add(Addrtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 180, 31));
+        add(Addrtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 180, 31));
 
         HealthInsIDtxt.setEditable(false);
         HealthInsIDtxt.setBackground(new java.awt.Color(255, 255, 255));
@@ -136,19 +137,19 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
                 HealthInsIDtxtActionPerformed(evt);
             }
         });
-        add(HealthInsIDtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 170, 180, 31));
+        add(HealthInsIDtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 360, 180, 31));
 
         PatientHealthInsIDlbl.setBackground(new java.awt.Color(255, 255, 255));
         PatientHealthInsIDlbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         PatientHealthInsIDlbl.setForeground(new java.awt.Color(255, 255, 255));
         PatientHealthInsIDlbl.setText("Insurance ID:");
-        add(PatientHealthInsIDlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 128, -1));
+        add(PatientHealthInsIDlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 128, -1));
 
         Agelbl.setBackground(new java.awt.Color(255, 255, 255));
         Agelbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Agelbl.setForeground(new java.awt.Color(255, 255, 255));
         Agelbl.setText("DOB:");
-        add(Agelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 90, -1));
+        add(Agelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 610, 90, -1));
 
         Agetxt.setEditable(false);
         Agetxt.setBackground(new java.awt.Color(255, 255, 255));
@@ -157,13 +158,13 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
                 AgetxtActionPerformed(evt);
             }
         });
-        add(Agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 180, 31));
+        add(Agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 610, 180, 31));
 
         Genderlbl.setBackground(new java.awt.Color(255, 255, 255));
         Genderlbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Genderlbl.setForeground(new java.awt.Color(255, 255, 255));
         Genderlbl.setText("Gender:");
-        add(Genderlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 98, -1));
+        add(Genderlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 98, -1));
 
         Gendertxt.setEditable(false);
         Gendertxt.setBackground(new java.awt.Color(255, 255, 255));
@@ -172,23 +173,23 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
                 GendertxtActionPerformed(evt);
             }
         });
-        add(Gendertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, 180, 31));
+        add(Gendertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 510, 180, 31));
 
         Locationlbl.setBackground(new java.awt.Color(255, 255, 255));
         Locationlbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Locationlbl.setForeground(new java.awt.Color(255, 255, 255));
         Locationlbl.setText("Accident Location:");
-        add(Locationlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 167, 18));
+        add(Locationlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 410, 167, 18));
 
         PhNumlbl.setBackground(new java.awt.Color(255, 255, 255));
         PhNumlbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         PhNumlbl.setForeground(new java.awt.Color(255, 255, 255));
         PhNumlbl.setText("Phone Number:");
-        add(PhNumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 150, -1));
+        add(PhNumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 560, 150, -1));
 
         PhNumtxt.setEditable(false);
         PhNumtxt.setBackground(new java.awt.Color(255, 255, 255));
-        add(PhNumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 180, 31));
+        add(PhNumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 560, 180, 31));
 
         Locationtxt.setEditable(false);
         Locationtxt.setBackground(new java.awt.Color(255, 255, 255));
@@ -197,22 +198,23 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
                 LocationtxtActionPerformed(evt);
             }
         });
-        add(Locationtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, 180, 31));
+        add(Locationtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 410, 180, 31));
 
         PoliceVerlbl.setBackground(new java.awt.Color(255, 255, 255));
         PoliceVerlbl.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         PoliceVerlbl.setForeground(new java.awt.Color(255, 255, 255));
         PoliceVerlbl.setText("Police Verification:");
-        add(PoliceVerlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 240, -1));
+        add(PoliceVerlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 240, -1));
 
         PoliceVertxt.setEditable(false);
         PoliceVertxt.setBackground(new java.awt.Color(255, 255, 255));
-        add(PoliceVertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, 180, 31));
+        add(PoliceVertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 530, 180, 31));
 
         jPanel2.setBackground(new java.awt.Color(9, 145, 143));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/man.png"))); // NOI18N
         jLabel1.setText("PERSON INFORMATION");
         jLabel1.setToolTipText("");
 
@@ -232,9 +234,9 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(341, 341, 341)
+                .addGap(310, 310, 310)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(473, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,6 +249,9 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
         );
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/medical-record.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void LNametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LNametxtActionPerformed
@@ -308,6 +313,7 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField PoliceVertxt;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
