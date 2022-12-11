@@ -44,50 +44,46 @@ public class PharmacyJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        lblPharmWorkArea = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        btnViewRequest = new javax.swing.JButton();
-        btnUpdateInventory = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tablePatientDetails = new javax.swing.JTable();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        tablePatient = new javax.swing.JTable();
-        btnView = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        btnViewRequest1 = new javax.swing.JButton();
+        btnUpdateInventory1 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tablePatientDetails1 = new javax.swing.JTable();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tablePatient1 = new javax.swing.JTable();
+        btnView1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        lblPharmWorkArea1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(128, 206, 206));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1221, 10));
 
-        lblPharmWorkArea.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
-        lblPharmWorkArea.setForeground(new java.awt.Color(255, 255, 255));
-        lblPharmWorkArea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPharmWorkArea.setText("Pharmacy");
-        jPanel1.add(lblPharmWorkArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 200, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1221, 10));
-
-        btnViewRequest.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        btnViewRequest.setForeground(new java.awt.Color(0, 153, 204));
-        btnViewRequest.setText("View Request");
-        btnViewRequest.addActionListener(new java.awt.event.ActionListener() {
+        btnViewRequest1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnViewRequest1.setForeground(new java.awt.Color(128, 206, 206));
+        btnViewRequest1.setText("View Request");
+        btnViewRequest1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewRequestActionPerformed(evt);
+                btnViewRequest1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnViewRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, -1, 41));
+        add(btnViewRequest1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 150, 130, 30));
 
-        btnUpdateInventory.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        btnUpdateInventory.setForeground(new java.awt.Color(0, 153, 204));
-        btnUpdateInventory.setText("Update Inventory");
-        btnUpdateInventory.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdateInventory1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnUpdateInventory1.setForeground(new java.awt.Color(128, 206, 206));
+        btnUpdateInventory1.setText("Update Inventory");
+        btnUpdateInventory1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateInventoryActionPerformed(evt);
+                btnUpdateInventory1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnUpdateInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, -1, 41));
+        add(btnUpdateInventory1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 260, -1, 41));
 
-        tablePatientDetails.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        tablePatientDetails.setModel(new javax.swing.table.DefaultTableModel(
+        tablePatientDetails1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        tablePatientDetails1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -113,12 +109,12 @@ public class PharmacyJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(tablePatientDetails);
+        jScrollPane6.setViewportView(tablePatientDetails1);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 840, 195));
+        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 840, 195));
 
-        tablePatient.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        tablePatient.setModel(new javax.swing.table.DefaultTableModel(
+        tablePatient1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        tablePatient1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -144,47 +140,68 @@ public class PharmacyJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(tablePatient);
+        jScrollPane7.setViewportView(tablePatient1);
 
-        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 850, 191));
+        add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 840, 191));
 
-        btnView.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        btnView.setForeground(new java.awt.Color(0, 153, 204));
-        btnView.setText("View Request");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
+        btnView1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnView1.setForeground(new java.awt.Color(128, 206, 206));
+        btnView1.setText("View Request");
+        btnView1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
+                btnView1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 650, -1, 41));
+        add(btnView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 430, -1, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/people-in-pharmacy-vector.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 80));
+        jPanel2.setBackground(new java.awt.Color(9, 145, 143));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1207, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+        lblPharmWorkArea1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
+        lblPharmWorkArea1.setForeground(new java.awt.Color(255, 255, 255));
+        lblPharmWorkArea1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPharmWorkArea1.setText("Pharmacy");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/people-in-pharmacy-vector.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(121, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(58, 58, 58)
+                .addComponent(lblPharmWorkArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(491, 491, 491))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 760, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(lblPharmWorkArea1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 80));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("PREVIOUS REQUESTS");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("NEW REQUEST");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void populatePatientTable1() {
-        DefaultTableModel model = (DefaultTableModel) tablePatient.getModel();
+        DefaultTableModel model = (DefaultTableModel) tablePatient1.getModel();
 
         model.setRowCount(0);
 
@@ -205,25 +222,8 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         }
     }
     
-    private void btnViewRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewRequestActionPerformed
-        // TODO add your handling code here:
-        int selectedRowIndex = tablePatientDetails.getSelectedRow();
-        if (selectedRowIndex < 0)
-        {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
-        }
-        else
-        {
-            Patient patient = (Patient) tablePatientDetails.getValueAt(selectedRowIndex, 7);
-            PharmacyDisplayRequestedTestsJPanel doctorRequestLabTestJPanel = new PharmacyDisplayRequestedTestsJPanel(userWorkArea, userAccount,patient,ecoModel);
-            userWorkArea.add("Request Lab Tests", doctorRequestLabTestJPanel);
-            CardLayout layout = (CardLayout) userWorkArea.getLayout();
-            layout.next(userWorkArea);
-        }
-    }//GEN-LAST:event_btnViewRequestActionPerformed
-
     private void populatePatientDetailsTable() {
-        DefaultTableModel model = (DefaultTableModel) tablePatientDetails.getModel();
+        DefaultTableModel model = (DefaultTableModel) tablePatientDetails1.getModel();
 
         model.setRowCount(0);
 
@@ -244,43 +244,32 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         }
     }
     
-    private void btnUpdateInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateInventoryActionPerformed
+    private void btnViewRequest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewRequest1ActionPerformed
         // TODO add your handling code here:
-        PharmacyCRUDdetailsJPanel doctorRequestLabTestJPanel = new PharmacyCRUDdetailsJPanel(userWorkArea, userAccount,ecoModel);
-        userWorkArea.add("Request Lab Tests", doctorRequestLabTestJPanel);
-        CardLayout layout = (CardLayout) userWorkArea.getLayout();
-        layout.next(userWorkArea);
-    }//GEN-LAST:event_btnUpdateInventoryActionPerformed
+    }//GEN-LAST:event_btnViewRequest1ActionPerformed
 
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+    private void btnUpdateInventory1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateInventory1ActionPerformed
         // TODO add your handling code here:
-        int selectedRowIndex = tablePatient.getSelectedRow();
-        if (selectedRowIndex < 0)
-        {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
-        }
-        else
-        {
-            Patient patient = (Patient) tablePatient.getValueAt(selectedRowIndex, 7);
-            PharmacyDisplayPastRequestsJPanel doctorRequestLabTestJPanel = new PharmacyDisplayPastRequestsJPanel(userWorkArea, userAccount,patient,ecoModel);
-            userWorkArea.add("Past Tests", doctorRequestLabTestJPanel);
-            CardLayout layout = (CardLayout) userWorkArea.getLayout();
-            layout.next(userWorkArea);
-        }
-    }//GEN-LAST:event_btnViewActionPerformed
+    }//GEN-LAST:event_btnUpdateInventory1ActionPerformed
+
+    private void btnView1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnView1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnView1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnUpdateInventory;
-    private javax.swing.JButton btnView;
-    private javax.swing.JButton btnViewRequest;
+    private javax.swing.JButton btnUpdateInventory1;
+    private javax.swing.JButton btnView1;
+    private javax.swing.JButton btnViewRequest1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblPharmWorkArea;
-    private javax.swing.JTable tablePatient;
-    private javax.swing.JTable tablePatientDetails;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel lblPharmWorkArea1;
+    private javax.swing.JTable tablePatient1;
+    private javax.swing.JTable tablePatientDetails1;
     // End of variables declaration//GEN-END:variables
 }
