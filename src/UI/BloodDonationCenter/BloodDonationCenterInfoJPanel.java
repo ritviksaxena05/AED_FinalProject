@@ -57,7 +57,6 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         Nametxt = new javax.swing.JTextField();
         Addrlbl = new javax.swing.JLabel();
         Addrtxt = new javax.swing.JTextField();
@@ -72,7 +71,8 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         Namelbl = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 227));
+        setBackground(new java.awt.Color(128, 206, 206));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Nametxt.setText("HUSKY BLOOD BANK");
         Nametxt.addActionListener(new java.awt.event.ActionListener() {
@@ -80,11 +80,13 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
                 NametxtActionPerformed(evt);
             }
         });
+        add(Nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(381, 230, 144, 30));
 
         Addrlbl.setBackground(new java.awt.Color(0, 0, 0));
         Addrlbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Addrlbl.setForeground(new java.awt.Color(255, 102, 102));
+        Addrlbl.setForeground(new java.awt.Color(255, 255, 255));
         Addrlbl.setText("Address");
+        add(Addrlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 200, -1, 30));
 
         Addrtxt.setText("North Eastern University");
         Addrtxt.addActionListener(new java.awt.event.ActionListener() {
@@ -92,11 +94,13 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
                 AddrtxtActionPerformed(evt);
             }
         });
+        add(Addrtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 230, 144, 30));
 
         PhNumlbl.setBackground(new java.awt.Color(0, 0, 0));
         PhNumlbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        PhNumlbl.setForeground(new java.awt.Color(255, 102, 102));
+        PhNumlbl.setForeground(new java.awt.Color(255, 255, 255));
         PhNumlbl.setText("Phone Number");
+        add(PhNumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(797, 200, 139, 30));
 
         PhNumtxt.setText("8579087561");
         PhNumtxt.addActionListener(new java.awt.event.ActionListener() {
@@ -104,11 +108,13 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
                 PhNumtxtActionPerformed(evt);
             }
         });
+        add(PhNumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(792, 230, 144, 30));
 
         Emaillbl.setBackground(new java.awt.Color(0, 0, 0));
         Emaillbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Emaillbl.setForeground(new java.awt.Color(255, 102, 102));
+        Emaillbl.setForeground(new java.awt.Color(255, 255, 255));
         Emaillbl.setText("Email");
+        add(Emaillbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 310, -1, 30));
 
         Emailtxt.setText("neu.bloodBank@gmail.com");
         Emailtxt.addActionListener(new java.awt.event.ActionListener() {
@@ -116,33 +122,17 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
                 EmailtxtActionPerformed(evt);
             }
         });
+        add(Emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(591, 312, 170, 30));
 
-        jPanel2.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(9, 145, 143));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BLOOD BANK INFORMATION");
         jLabel1.setToolTipText("");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(247, 247, 247)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(29, 29, 29))
-        );
-
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 102, 102));
+        btnBack.setForeground(new java.awt.Color(9, 145, 143));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,95 +140,36 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(272, 272, 272)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
+        );
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1294, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 240, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 200, -1, -1));
+
         Namelbl.setBackground(new java.awt.Color(0, 0, 0));
         Namelbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Namelbl.setForeground(new java.awt.Color(255, 102, 102));
+        Namelbl.setForeground(new java.awt.Color(255, 255, 255));
         Namelbl.setText("Name");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(281, 281, 281)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Namelbl)
-                                .addGap(150, 150, 150)
-                                .addComponent(Addrlbl)
-                                .addGap(99, 99, 99)
-                                .addComponent(PhNumlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Nametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(67, 67, 67)
-                                .addComponent(Addrtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(56, 56, 56)
-                                .addComponent(PhNumtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(271, 271, 271)
-                        .addComponent(Emaillbl)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(126, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel2)))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PhNumlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Addrlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Nametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Addrtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PhNumtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Emaillbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69)
-                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(128, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
-        );
+        add(Namelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 200, -1, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void NametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NametxtActionPerformed
@@ -279,7 +210,6 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
