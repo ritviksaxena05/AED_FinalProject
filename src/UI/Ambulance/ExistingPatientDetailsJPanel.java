@@ -62,7 +62,7 @@ public class ExistingPatientDetailsJPanel extends javax.swing.JPanel {
         lblLastName = new javax.swing.JTextField();
         lblLocation = new javax.swing.JTextField();
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setBackground(new java.awt.Color(229, 210, 188));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));

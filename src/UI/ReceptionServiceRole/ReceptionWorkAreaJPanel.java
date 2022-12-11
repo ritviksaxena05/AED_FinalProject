@@ -86,11 +86,11 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setBackground(new java.awt.Color(9, 145, 143));
         jPanel1.setToolTipText("");
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        createPatBtn.setBackground(new java.awt.Color(0, 153, 204));
+        createPatBtn.setBackground(new java.awt.Color(9, 145, 143));
         createPatBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         createPatBtn.setForeground(new java.awt.Color(255, 255, 255));
         createPatBtn.setText("Create New Patient");
@@ -108,7 +108,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setText("Hospital ");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 160, 80));
 
-        patientTable.setBackground(new java.awt.Color(0, 153, 204));
+        patientTable.setBackground(new java.awt.Color(128, 206, 206));
         patientTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         patientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         patientTable.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,7 +147,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 920, 640));
 
-        billPatBtn.setBackground(new java.awt.Color(0, 153, 204));
+        billPatBtn.setBackground(new java.awt.Color(9, 145, 143));
         billPatBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         billPatBtn.setForeground(new java.awt.Color(255, 255, 255));
         billPatBtn.setText("Bill the Patient");
@@ -158,7 +158,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(billPatBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 600, 260, 42));
 
-        delBtn.setBackground(new java.awt.Color(0, 153, 204));
+        delBtn.setBackground(new java.awt.Color(9, 145, 143));
         delBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         delBtn.setForeground(new java.awt.Color(255, 255, 255));
         delBtn.setText("Delete Patient");
@@ -169,7 +169,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 290, 260, 42));
 
-        updateAmbulRecBtn.setBackground(new java.awt.Color(0, 153, 204));
+        updateAmbulRecBtn.setBackground(new java.awt.Color(9, 145, 143));
         updateAmbulRecBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         updateAmbulRecBtn.setForeground(new java.awt.Color(255, 255, 255));
         updateAmbulRecBtn.setText("Ambulance Record");
@@ -180,7 +180,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(updateAmbulRecBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, 260, 42));
 
-        btnUpdate1.setBackground(new java.awt.Color(0, 153, 204));
+        btnUpdate1.setBackground(new java.awt.Color(9, 145, 143));
         btnUpdate1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         btnUpdate1.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate1.setText("Update Patient");
@@ -191,7 +191,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 180, 260, 42));
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 204));
+        jButton2.setBackground(new java.awt.Color(9, 145, 143));
         jButton2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Discharged Patients");
@@ -215,7 +215,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Perform an action");
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setBackground(new java.awt.Color(9, 145, 143));
         jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Discharge a Patient");

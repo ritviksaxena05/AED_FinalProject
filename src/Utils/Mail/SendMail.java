@@ -50,7 +50,8 @@ public class SendMail {
             Transport.send(message);
             System.out.println("Email sent Successfully!");
         } catch (MessagingException ex) {
-            Logger.getLogger(SendMail.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(SendMail.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
    
     }
@@ -65,7 +66,8 @@ public class SendMail {
             message.setText(msg);
             return message;
         } catch (Exception ex) {
-            Logger.getLogger(SendMail.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(SendMail.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
         return null;
     }
