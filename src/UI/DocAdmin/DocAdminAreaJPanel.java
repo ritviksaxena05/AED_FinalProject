@@ -87,7 +87,6 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
         lblManageCustomers = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DoctorTable = new javax.swing.JTable();
@@ -102,16 +101,15 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 204));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1227, 722));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(0, 204, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblManageCustomers.setBackground(new java.awt.Color(255, 255, 255));
         lblManageCustomers.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
         lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageCustomers.setText("Assign Patients to Doctors");
-        jPanel2.add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 720, -1));
+        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 720, -1));
 
         DoctorTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         DoctorTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -142,7 +140,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(DoctorTable);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 850, 191));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 840, 191));
 
         btnCreateDoctor.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnCreateDoctor.setForeground(new java.awt.Color(0, 153, 204));
@@ -152,7 +150,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
                 btnCreateDoctorActionPerformed(evt);
             }
         });
-        jPanel2.add(btnCreateDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 510, 210, 50));
+        add(btnCreateDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 500, 180, 40));
 
         upBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         upBtn.setForeground(new java.awt.Color(0, 153, 204));
@@ -162,7 +160,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
                 upBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 570, 210, 40));
+        add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 560, 180, 40));
 
         dBtn4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         dBtn4.setForeground(new java.awt.Color(0, 153, 204));
@@ -172,7 +170,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
                 dBtn4ActionPerformed(evt);
             }
         });
-        jPanel2.add(dBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 620, 210, 40));
+        add(dBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 620, 180, 40));
 
         PatientTable.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         PatientTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -203,13 +201,13 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(PatientTable);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 850, 193));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 830, 193));
 
         jLabel1.setBackground(new java.awt.Color(0, 153, 204));
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Patients");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 160, 40));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 160, 40));
 
         btnAssignDoctor1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnAssignDoctor1.setForeground(new java.awt.Color(0, 153, 204));
@@ -219,39 +217,18 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
                 btnAssignDoctor1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAssignDoctor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 270, 220, 50));
+        add(btnAssignDoctor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 280, 180, 40));
 
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Doctors");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, -1, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, -1, 40));
 
         jLabel3.setText("jLabel3");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 50, 40));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 50, 40));
 
         jLabel4.setText("jLabel4");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 50, 40));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2641, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 2641, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 825, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 825, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 50, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDoctorActionPerformed
@@ -323,7 +300,6 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblManageCustomers;

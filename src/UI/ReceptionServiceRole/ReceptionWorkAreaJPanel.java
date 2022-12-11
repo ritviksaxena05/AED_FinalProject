@@ -139,6 +139,11 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(patientTable);
+        if (patientTable.getColumnModel().getColumnCount() > 0) {
+            patientTable.getColumnModel().getColumn(6).setMinWidth(0);
+            patientTable.getColumnModel().getColumn(6).setPreferredWidth(0);
+            patientTable.getColumnModel().getColumn(6).setMaxWidth(0);
+        }
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 920, 640));
 

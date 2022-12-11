@@ -40,18 +40,18 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-//        for (Patient_Bills bill : patient.getpBills()) {
-//
-//            Object[] row = new Object[7];
-//            row[0] = bill.getName();
-//            row[1] = bill.getOrgType();
-//            row[2] = bill.getAmount();
-//            row[3] = bill.getStatus();
-//            row[4] = bill.getResult();
-//            
-//            model.addRow(row);
-//
-//        }
+        for (PatientBills bill : patient.getpBills()) {
+
+            Object[] row = new Object[7];
+            row[0] = bill.getName();
+            row[1] = bill.getOrgType();
+            row[2] = bill.getAmount();
+            row[3] = bill.getStatus();
+            row[4] = bill.getResult();
+            
+            model.addRow(row);
+
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -62,7 +62,6 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         BillTable = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
@@ -75,9 +74,7 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
         btnOrderBloodReport = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 0, 102));
-
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BillTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         BillTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -109,15 +106,15 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
         BillTable.setPreferredSize(new java.awt.Dimension(300, 80));
         jScrollPane1.setViewportView(BillTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 1030, 191));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 126, 1030, 10));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 970, 170));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1030, 10));
 
         lblPatientTreatArea.setBackground(new java.awt.Color(0, 153, 204));
         lblPatientTreatArea.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         lblPatientTreatArea.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientTreatArea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPatientTreatArea.setText("Patient History");
-        jPanel1.add(lblPatientTreatArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 320, 50));
+        add(lblPatientTreatArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 320, 50));
 
         btnDischargePatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnDischargePatient.setForeground(new java.awt.Color(0, 0, 102));
@@ -127,7 +124,7 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
                 btnDischargePatientActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDischargePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 210, 40));
+        add(btnDischargePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 220, 40));
 
         btnEndPatientVisit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnEndPatientVisit.setForeground(new java.awt.Color(0, 0, 102));
@@ -137,11 +134,11 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
                 btnEndPatientVisitActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEndPatientVisit, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 460, 120, 40));
+        add(btnEndPatientVisit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 130, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/pat_hist.png"))); // NOI18N
         jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 50, 50));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 50, 50));
 
         btnOrderLabReport.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnOrderLabReport.setForeground(new java.awt.Color(0, 0, 102));
@@ -152,7 +149,7 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
                 btnOrderLabReportActionPerformed(evt);
             }
         });
-        jPanel1.add(btnOrderLabReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, -1, 50));
+        add(btnOrderLabReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, 50));
 
         btnRequestMedicine.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnRequestMedicine.setForeground(new java.awt.Color(0, 0, 102));
@@ -163,7 +160,7 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
                 btnRequestMedicineActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRequestMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 370, 250, 50));
+        add(btnRequestMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 250, 50));
 
         btnOrderBloodReport.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnOrderBloodReport.setForeground(new java.awt.Color(0, 0, 102));
@@ -174,23 +171,7 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
                 btnOrderBloodReportActionPerformed(evt);
             }
         });
-        jPanel1.add(btnOrderBloodReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, 270, 50));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1492, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        add(btnOrderBloodReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, 270, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDischargePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDischargePatientActionPerformed
@@ -247,7 +228,6 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnOrderLabReport;
     private javax.swing.JButton btnRequestMedicine;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblPatientTreatArea;

@@ -34,11 +34,57 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
     
     public DocMedicineRequestJPanel(JPanel userWorkArea, User userAccount, EcoModel ecoModel, Patient patient) {
         initComponents();
-        populateTablePrescription();
+        
         this.userWorkArea = userWorkArea;
         this.patient = patient;
         this.ecoModel = ecoModel;
         this.userAccount = userAccount;
+        populateTablePrescription();
+    }
+    
+    private void populateTablePrescription() {
+        DefaultTableModel model = (DefaultTableModel) tableavailableMedicine.getModel();
+        model.setRowCount(0);
+        for (Prescription t : ecoModel.getPharmacy().getPrescriptionList()) {
+            
+               Object[] row = new Object[4];                
+                row[0] = t;
+                row[1] = t.getMedUsage();
+                row[2] =t.getMedQuantity();
+                row[3] = t.getMedPrice();
+                model.addRow(row);
+        }
+    }
+        
+        public void populateCart(Prescription item){
+        DefaultTableModel model = (DefaultTableModel) tableSelectedMedicines.getModel();
+        model.setRowCount(0);
+        
+         items.add(item);
+         Object[] row = new Object[4];
+                for(Prescription t:items){
+                     row[0] = t;
+                row[1] = t.getMedUsage();
+                row[2] =t.getMedQuantity();
+                row[3] = t.getMedPrice();
+                model.addRow(row);
+                }  
+     }
+    private void populatePatientTable() {
+        //DefaultTableModel model = (DefaultTableModel) tableAddedLabTest.getModel();
+        //model.setRowCount(0);
+        for (Patient patient : ecoModel.getPatDirectory().getPatientList()) {
+            Object[] row = new Object[7];
+            row[0] = patient.getpUserName();
+            row[1] = patient.getpHealthInsuranceID();
+            row[2] = patient.getpFirstName();
+            row[3] = patient.getpLastName();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpAddress();
+            row[6] = patient.getpEmailAddress();
+            
+          //  model.addRow(row);
+        }
     }
 
     /**
@@ -50,7 +96,6 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         lblReqMed = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableSelectedMedicines = new javax.swing.JTable();
@@ -65,15 +110,13 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 0, 102));
-
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblReqMed.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         lblReqMed.setForeground(new java.awt.Color(255, 255, 255));
         lblReqMed.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblReqMed.setText("Request Medicines");
-        jPanel1.add(lblReqMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 350, -1));
+        add(lblReqMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 350, -1));
 
         tableSelectedMedicines.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         tableSelectedMedicines.setModel(new javax.swing.table.DefaultTableModel(
@@ -104,7 +147,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableSelectedMedicines);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 500, 170));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 500, 170));
 
         tableavailableMedicine.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         tableavailableMedicine.setModel(new javax.swing.table.DefaultTableModel(
@@ -135,7 +178,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tableavailableMedicine);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 510, 170));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 510, 170));
 
         btnMedRemove.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         btnMedRemove.setForeground(new java.awt.Color(0, 0, 102));
@@ -145,7 +188,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
                 btnMedRemoveActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMedRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 100, 30));
+        add(btnMedRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 100, 30));
 
         btnMedAdd.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
         btnMedAdd.setForeground(new java.awt.Color(0, 0, 102));
@@ -155,7 +198,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
                 btnMedAddActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMedAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 90, 30));
+        add(btnMedAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 90, 30));
 
         btnFinalMedReq.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnFinalMedReq.setForeground(new java.awt.Color(0, 0, 102));
@@ -166,7 +209,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
                 btnFinalMedReqActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFinalMedReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 350, 180, 42));
+        add(btnFinalMedReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 350, 180, 42));
 
         btnBack.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnBack.setForeground(new java.awt.Color(0, 0, 102));
@@ -177,60 +220,24 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 30, 140, 42));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 30, 140, 42));
 
         lblMedAvailable.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblMedAvailable.setForeground(new java.awt.Color(255, 255, 255));
         lblMedAvailable.setText("Available Medicine");
-        jPanel1.add(lblMedAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
+        add(lblMedAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
 
         lblMedSelected.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblMedSelected.setForeground(new java.awt.Color(255, 255, 255));
         lblMedSelected.setText("Selected Medicine");
-        jPanel1.add(lblMedSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, -1, -1));
+        add(lblMedSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/med.png"))); // NOI18N
         jLabel4.setText("jLabel4");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 50, 50));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1208, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 694, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void populateTablePrescription() {
-        DefaultTableModel model = (DefaultTableModel) tableavailableMedicine.getModel();
-
-        model.setRowCount(0); 
-
-        for (Prescription t : ecoModel.getPharmacy().getPrescriptionList()) {
-
-            
-               Object[] row = new Object[4];                
-                row[0] = t;
-                row[1] = t.getMedUsage();
-                row[2] =t.getMedQuantity();
-                row[3] = t.getMedPrice();
-                model.addRow(row);
-        }
-    }
+    
     
     private void btnMedRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedRemoveActionPerformed
         // TODO add your handling code here:
@@ -263,7 +270,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
          items.add(item);
          Object[] row = new Object[4];
                 for(Prescription t:items){
-                     row[0] = t;
+                    row[0] = t;
                     row[1] = t.getMedUsage();
                     row[2] =t.getMedQuantity();
                     row[3] = t.getMedPrice();
@@ -325,7 +332,6 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnMedAdd;
     private javax.swing.JButton btnMedRemove;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblMedAvailable;

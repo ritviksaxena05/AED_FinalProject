@@ -4,36 +4,39 @@
  */
 package UI.Doctor;
 
-import javax.swing.JOptionPane;
-import java.awt.CardLayout;
-import Model.User.User;
 import Model.EcoModel;
 import Model.Patient.Patient;
 import Model.User.User;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
  *
- * @author ramya
+ * @author devikaboddu
  */
 public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form DocBloodReportOrderJPanel
      */
+    private JPanel userProcessContainer;
+    private EcoModel ecosystem;
     private User userAccount;
-    private JPanel userWorkArea;
     private Patient patient;
-    private EcoModel ecoModel;
-    
-    public DocBloodReportOrderJPanel(JPanel userArea, User accountUser, EcoModel ecoSystemModel, Patient patient) {
-        initComponents();
-        this.userAccount = accountUser;
-        this.userWorkArea = userArea;
-        this.patient = patient;
-        this.ecoModel = ecoSystemModel;   
-    }
 
+    public DocBloodReportOrderJPanel(JPanel userProcessContainer, User account, EcoModel ecosystem, Patient patient) {
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.ecosystem = ecosystem;
+        this.userAccount = account;
+        this.patient = patient;
+        BloodRequestQuantityBox.addItem("Select Quantity");
+        BloodRequestQuantityBox.addItem("1");
+        BloodRequestQuantityBox.addItem("2");
+        BloodRequestQuantityBox.addItem("3");
+        BloodRequestQuantityBox.addItem("4");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,115 +46,90 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        lblOrderBloodTest = new javax.swing.JLabel();
-        boxBloodRequestQuantity = new javax.swing.JComboBox<>();
-        lblSelectBloodQuantity = new javax.swing.JLabel();
-        btnRequestBlood = new javax.swing.JButton();
-        btnBackBloodReq = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        BloodRequestQuantityBox = new javax.swing.JComboBox<>();
+        lblRequestBloodQuantity = new javax.swing.JLabel();
+        btnProcessRequest = new javax.swing.JButton();
+        Request1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 0, 102));
+        setBackground(new java.awt.Color(255, 204, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Request Blood");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 40, 1274, -1));
 
-        lblOrderBloodTest.setBackground(new java.awt.Color(255, 255, 255));
-        lblOrderBloodTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
-        lblOrderBloodTest.setForeground(new java.awt.Color(255, 255, 255));
-        lblOrderBloodTest.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOrderBloodTest.setText("Request Blood");
-        jPanel1.add(lblOrderBloodTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 650, 60));
-
-        boxBloodRequestQuantity.addActionListener(new java.awt.event.ActionListener() {
+        BloodRequestQuantityBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boxBloodRequestQuantityActionPerformed(evt);
+                BloodRequestQuantityBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(boxBloodRequestQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 180, 40));
+        add(BloodRequestQuantityBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 162, 180, 40));
 
-        lblSelectBloodQuantity.setBackground(new java.awt.Color(255, 255, 255));
-        lblSelectBloodQuantity.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        lblSelectBloodQuantity.setForeground(new java.awt.Color(255, 255, 255));
-        lblSelectBloodQuantity.setText("Select Blood Bag Quantity");
-        jPanel1.add(lblSelectBloodQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 260, 40));
+        lblRequestBloodQuantity.setBackground(new java.awt.Color(255, 255, 255));
+        lblRequestBloodQuantity.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblRequestBloodQuantity.setForeground(new java.awt.Color(255, 255, 255));
+        lblRequestBloodQuantity.setText("Select Blood Bag Quantity");
+        add(lblRequestBloodQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 260, 40));
 
-        btnRequestBlood.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnRequestBlood.setForeground(new java.awt.Color(0, 0, 102));
-        btnRequestBlood.setText("Process Request");
-        btnRequestBlood.addActionListener(new java.awt.event.ActionListener() {
+        btnProcessRequest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnProcessRequest.setForeground(new java.awt.Color(0, 153, 204));
+        btnProcessRequest.setText("Process Request");
+        btnProcessRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRequestBloodActionPerformed(evt);
+                btnProcessRequestActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRequestBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 197, 30));
+        add(btnProcessRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 197, 40));
 
-        btnBackBloodReq.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnBackBloodReq.setForeground(new java.awt.Color(0, 0, 102));
-        btnBackBloodReq.setText("<< BACK");
-        btnBackBloodReq.addActionListener(new java.awt.event.ActionListener() {
+        Request1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        Request1.setForeground(new java.awt.Color(0, 153, 204));
+        Request1.setText("<< BACK");
+        Request1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackBloodReqActionPerformed(evt);
+                Request1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBackBloodReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 128, 30));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1090, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1090, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 711, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(Request1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 128, 42));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void boxBloodRequestQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxBloodRequestQuantityActionPerformed
+    private void BloodRequestQuantityBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodRequestQuantityBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_boxBloodRequestQuantityActionPerformed
+    }//GEN-LAST:event_BloodRequestQuantityBoxActionPerformed
 
-    private void btnRequestBloodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestBloodActionPerformed
+    private void btnProcessRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessRequestActionPerformed
         // TODO add your handling code here:
 
-        if (!((String) boxBloodRequestQuantity.getSelectedItem()).equals("Select Quantity")) {
+        if (!((String) BloodRequestQuantityBox.getSelectedItem()).equals("Select Quantity")) {
 
             patient.setpBloodBankStatus("Requested");
-            patient.setpBloodBagQuantity((String) boxBloodRequestQuantity.getSelectedItem());
+            patient.setpBloodBagQuantity((String) BloodRequestQuantityBox.getSelectedItem());
 
             JOptionPane.showMessageDialog(null, "Blood Request Sent", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-            DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userWorkArea, userAccount, ecoModel, patient);
-            userWorkArea.add("Visit Doctor", doctorVisit);
-            CardLayout layout = (CardLayout) userWorkArea.getLayout();
-            layout.next(userWorkArea);
+            DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userProcessContainer, userAccount, ecosystem, patient);
+            userProcessContainer.add("Visit Doctor", doctorVisit);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
         }
-    }//GEN-LAST:event_btnRequestBloodActionPerformed
+    }//GEN-LAST:event_btnProcessRequestActionPerformed
 
-    private void btnBackBloodReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackBloodReqActionPerformed
+    private void Request1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Request1ActionPerformed
         // TODO add your handling code here:
-        DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userWorkArea, userAccount, ecoModel, patient);
-        userWorkArea.add("Visit Doctor", doctorVisit);
-        CardLayout layout = (CardLayout) userWorkArea.getLayout();
-        layout.next(userWorkArea);
-    }//GEN-LAST:event_btnBackBloodReqActionPerformed
+        DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userProcessContainer, userAccount, ecosystem, patient);
+        userProcessContainer.add("Visit Doctor", doctorVisit);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_Request1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> boxBloodRequestQuantity;
-    private javax.swing.JButton btnBackBloodReq;
-    private javax.swing.JButton btnRequestBlood;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblOrderBloodTest;
-    private javax.swing.JLabel lblSelectBloodQuantity;
+    private javax.swing.JComboBox<String> BloodRequestQuantityBox;
+    private javax.swing.JButton Request1;
+    private javax.swing.JButton btnProcessRequest;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblRequestBloodQuantity;
     // End of variables declaration//GEN-END:variables
 }

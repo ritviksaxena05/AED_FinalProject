@@ -8,6 +8,7 @@ import Model.EcoModel;
 import Model.Patient.Patient;
 import Model.Patient.PatientBills;
 import Model.User.User;
+import Utils.Mail.SendMail;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -188,12 +189,12 @@ public class PatientDischargeJPanel extends javax.swing.JPanel {
             }
             else if(patient.getpInsuranceStatus().equals("Cash")||patient.getpInsuranceStatus().equals("Rejected")){
                 patient.setpStatus("Discharged");
-                //SendMail.sendMail(patient.getpEmailAddress(), "Hello "+patient.getpFirstName()+", you have been discharged and your total bill amount is "+String.valueOf(totalAmount));
+                SendMail.sendMail(patient.getpEmailAddress(), "Hello "+patient.getpFirstName()+", you have been discharged and your total bill amount is "+String.valueOf(totalAmount));
                 JOptionPane.showMessageDialog(null, "Cash payment Received.Patient Discharged.", "Information", JOptionPane.INFORMATION_MESSAGE);
             }
             else{
                 patient.setpStatus("Discharged");
-                //SendMail.sendMail(patient.getpEmailAddress(), "Hello "+patient.getpFirstName()+", you have been discharged and your total bill amount is "+String.valueOf(totalAmount));
+                SendMail.sendMail(patient.getpEmailAddress(), "Hello "+patient.getpFirstName()+", you have been discharged and your total bill amount is "+String.valueOf(totalAmount));
                 JOptionPane.showMessageDialog(null, "Insurance payment Received.Patient Discharged.", "Warning", JOptionPane.INFORMATION_MESSAGE);
             }
             //patient.setStatus("Insurance Verification");
