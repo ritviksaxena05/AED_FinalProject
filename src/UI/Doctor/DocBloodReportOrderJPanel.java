@@ -43,7 +43,6 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         lblOrderBloodTest = new javax.swing.JLabel();
         boxBloodRequestQuantity = new javax.swing.JComboBox<>();
         lblSelectBloodQuantity = new javax.swing.JLabel();
@@ -51,29 +50,27 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
         btnBackBloodReq = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 0, 102));
-
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblOrderBloodTest.setBackground(new java.awt.Color(255, 255, 255));
         lblOrderBloodTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         lblOrderBloodTest.setForeground(new java.awt.Color(255, 255, 255));
         lblOrderBloodTest.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblOrderBloodTest.setText("Request Blood");
-        jPanel1.add(lblOrderBloodTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 650, 60));
+        add(lblOrderBloodTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 650, 60));
 
         boxBloodRequestQuantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxBloodRequestQuantityActionPerformed(evt);
             }
         });
-        jPanel1.add(boxBloodRequestQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 180, 40));
+        add(boxBloodRequestQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 180, 40));
 
         lblSelectBloodQuantity.setBackground(new java.awt.Color(255, 255, 255));
         lblSelectBloodQuantity.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblSelectBloodQuantity.setForeground(new java.awt.Color(255, 255, 255));
         lblSelectBloodQuantity.setText("Select Blood Bag Quantity");
-        jPanel1.add(lblSelectBloodQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 260, 40));
+        add(lblSelectBloodQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 260, 40));
 
         btnRequestBlood.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnRequestBlood.setForeground(new java.awt.Color(0, 0, 102));
@@ -83,7 +80,7 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
                 btnRequestBloodActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRequestBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 197, 30));
+        add(btnRequestBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 197, 30));
 
         btnBackBloodReq.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnBackBloodReq.setForeground(new java.awt.Color(0, 0, 102));
@@ -93,28 +90,7 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
                 btnBackBloodReqActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBackBloodReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 128, 30));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1090, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1090, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 711, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(btnBackBloodReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 128, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void boxBloodRequestQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxBloodRequestQuantityActionPerformed
@@ -150,7 +126,6 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> boxBloodRequestQuantity;
     private javax.swing.JButton btnBackBloodReq;
     private javax.swing.JButton btnRequestBlood;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblOrderBloodTest;
     private javax.swing.JLabel lblSelectBloodQuantity;
     // End of variables declaration//GEN-END:variables

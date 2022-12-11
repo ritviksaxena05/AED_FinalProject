@@ -49,7 +49,6 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         lblLabTest = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableSelectedTests = new javax.swing.JTable();
@@ -63,16 +62,14 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         lblTestSelected = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 0, 102));
-
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblLabTest.setBackground(new java.awt.Color(255, 255, 255));
         lblLabTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         lblLabTest.setForeground(new java.awt.Color(255, 255, 255));
         lblLabTest.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLabTest.setText("Request Lab Tests");
-        jPanel1.add(lblLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 500, 60));
+        add(lblLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 500, 60));
 
         tableSelectedTests.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         tableSelectedTests.setModel(new javax.swing.table.DefaultTableModel(
@@ -103,7 +100,7 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableSelectedTests);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 490, 210));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 490, 210));
 
         tableAvailableTests.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         tableAvailableTests.setModel(new javax.swing.table.DefaultTableModel(
@@ -134,7 +131,7 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tableAvailableTests);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 490, 210));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 490, 210));
 
         btnAddNewTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
         btnAddNewTest.setForeground(new java.awt.Color(0, 0, 102));
@@ -144,7 +141,7 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
                 btnAddNewTestActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAddNewTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 110, 30));
+        add(btnAddNewTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 110, 30));
 
         btnRemoveTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
         btnRemoveTest.setForeground(new java.awt.Color(0, 0, 102));
@@ -154,7 +151,7 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
                 btnRemoveTestActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRemoveTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 120, 30));
+        add(btnRemoveTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 120, 30));
 
         btnRequestLabTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         btnRequestLabTest.setForeground(new java.awt.Color(0, 0, 102));
@@ -164,7 +161,7 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
                 btnRequestLabTestActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRequestLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 350, 170, 50));
+        add(btnRequestLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 350, 170, 50));
 
         btnBackRequest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         btnBackRequest.setForeground(new java.awt.Color(0, 0, 102));
@@ -174,38 +171,17 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
                 btnBackRequestActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBackRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 20, 100, 30));
+        add(btnBackRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, 100, 30));
 
         lblTestAvailable.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         lblTestAvailable.setForeground(new java.awt.Color(255, 255, 255));
         lblTestAvailable.setText("Available Tests");
-        jPanel1.add(lblTestAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
+        add(lblTestAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
 
         lblTestSelected.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         lblTestSelected.setForeground(new java.awt.Color(255, 255, 255));
         lblTestSelected.setText("Selected Tests");
-        jPanel1.add(lblTestSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, -1, -1));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1182, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 677, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 677, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(lblTestSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void populateAvailableTests() {
@@ -317,7 +293,6 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBackRequest;
     private javax.swing.JButton btnRemoveTest;
     private javax.swing.JButton btnRequestLabTest;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblLabTest;
