@@ -263,7 +263,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
          items.add(item);
          Object[] row = new Object[4];
                 for(Prescription t:items){
-                     row[0] = t;
+                    row[0] = t;
                     row[1] = t.getMedUsage();
                     row[2] =t.getMedQuantity();
                     row[3] = t.getMedPrice();
