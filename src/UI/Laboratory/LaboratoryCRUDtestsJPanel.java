@@ -140,6 +140,11 @@ public class LaboratoryCRUDtestsJPanel extends javax.swing.JPanel {
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 260, 40));
         add(txtUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 260, 40));
 
+        txtPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPriceActionPerformed(evt);
+            }
+        });
         txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPriceKeyReleased(evt);
@@ -224,15 +229,17 @@ public class LaboratoryCRUDtestsJPanel extends javax.swing.JPanel {
         if (txtName.getText().equals("") || txtUsage.getText().equals("") || txtPrice.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Please fill all the details");
 
-        } else {
-            LaboratoryTests t = new LaboratoryTests();
+        } else if(txtPrice.getText().matches("[0-9]+")){ 
+             LaboratoryTests t = new LaboratoryTests();
             t.setLabTestName(txtName.getText());
             t.setLabTestUsage(txtUsage.getText());
             t.setLabTestprice(Integer.parseInt(txtPrice.getText()));
             ecosystem.getLaboratory().createTest(t);
 
             populatetableLaboratoryTests();
-
+        }
+        else {
+           JOptionPane.showMessageDialog(null, "Enter Valid Amount");
         }
 
         txtName.setText("");
@@ -300,6 +307,10 @@ public class LaboratoryCRUDtestsJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPriceActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
