@@ -139,8 +139,6 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
                 .addGap(34, 34, 34))
         );
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/BloodDonationCenter/personal-info.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(

@@ -6,7 +6,6 @@ package UI.Doctor;
 
 import javax.swing.JOptionPane;
 import java.awt.CardLayout;
-import Model.User.User;
 import Model.EcoModel;
 import Model.Patient.Patient;
 import Model.User.User;
@@ -31,7 +30,12 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
         this.userAccount = accountUser;
         this.userWorkArea = userArea;
         this.patient = patient;
-        this.ecoModel = ecoSystemModel;   
+        this.ecoModel = ecoSystemModel;  
+        BloodRequestQuantityBox.addItem("Select Quantity");
+        BloodRequestQuantityBox.addItem("1");
+        BloodRequestQuantityBox.addItem("2");
+        BloodRequestQuantityBox.addItem("3");
+        BloodRequestQuantityBox.addItem("4");
     }
 
     /**
@@ -45,7 +49,7 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         lblOrderBloodTest = new javax.swing.JLabel();
-        boxBloodRequestQuantity = new javax.swing.JComboBox<>();
+        BloodRequestQuantityBox = new javax.swing.JComboBox<>();
         lblSelectBloodQuantity = new javax.swing.JLabel();
         btnRequestBlood = new javax.swing.JButton();
         btnBackBloodReq = new javax.swing.JButton();
@@ -62,12 +66,12 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
         lblOrderBloodTest.setText("Request Blood");
         jPanel1.add(lblOrderBloodTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 650, 60));
 
-        boxBloodRequestQuantity.addActionListener(new java.awt.event.ActionListener() {
+        BloodRequestQuantityBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boxBloodRequestQuantityActionPerformed(evt);
+                BloodRequestQuantityBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(boxBloodRequestQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 180, 40));
+        jPanel1.add(BloodRequestQuantityBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 180, 40));
 
         lblSelectBloodQuantity.setBackground(new java.awt.Color(255, 255, 255));
         lblSelectBloodQuantity.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -117,17 +121,17 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void boxBloodRequestQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxBloodRequestQuantityActionPerformed
+    private void BloodRequestQuantityBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodRequestQuantityBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_boxBloodRequestQuantityActionPerformed
+    }//GEN-LAST:event_BloodRequestQuantityBoxActionPerformed
 
     private void btnRequestBloodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestBloodActionPerformed
         // TODO add your handling code here:
 
-        if (!((String) boxBloodRequestQuantity.getSelectedItem()).equals("Select Quantity")) {
+        if (!((String) BloodRequestQuantityBox.getSelectedItem()).equals("Select Quantity")) {
 
             patient.setpBloodBankStatus("Requested");
-            patient.setpBloodBagQuantity((String) boxBloodRequestQuantity.getSelectedItem());
+            patient.setpBloodBagQuantity((String) BloodRequestQuantityBox.getSelectedItem());
 
             JOptionPane.showMessageDialog(null, "Blood Request Sent", "Information Message", JOptionPane.INFORMATION_MESSAGE);
             DocTreatPatientJPanel doctorVisit = new DocTreatPatientJPanel(userWorkArea, userAccount, ecoModel, patient);
@@ -147,7 +151,7 @@ public class DocBloodReportOrderJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> boxBloodRequestQuantity;
+    private javax.swing.JComboBox<String> BloodRequestQuantityBox;
     private javax.swing.JButton btnBackBloodReq;
     private javax.swing.JButton btnRequestBlood;
     private javax.swing.JPanel jPanel1;

@@ -150,8 +150,6 @@ public class BloodDonationCenterInfoJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/BloodDonationCenter/blood-bank.png"))); // NOI18N
-
         Namelbl.setBackground(new java.awt.Color(0, 0, 0));
         Namelbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Namelbl.setForeground(new java.awt.Color(255, 102, 102));
