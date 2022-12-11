@@ -533,7 +533,7 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
             && (ErrorUserNameLbl.getText() == null || ErrorUserNameLbl.getText().equals(""))
         ) {
             Doctor doctor = new Doctor(txtPassword.getText());
-            doctor.setdocFirstName(txtFirstName.getText());
+            doctor.setdocUserName(txtFirstName.getText());
             doctor.setdocLastName(txtLastName.getText());
             doctor.setdocAge((CalculateDocAge(txtDOB.getDate(), java.util.Calendar.getInstance().getTime())));
             doctor.setdocGender((String) comboGender.getSelectedItem());

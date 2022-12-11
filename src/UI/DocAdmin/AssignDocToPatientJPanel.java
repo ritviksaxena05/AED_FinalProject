@@ -363,7 +363,7 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
         for (Doctor Doctor : ecoModel.getDoctorDirectory().getDoctorList()) {
 
             Object[] row = new Object[9];
-            row[0] = Doctor.getdocFirstName();
+            row[0] = Doctor;
             row[1] = Doctor.getdocLastName();
             row[2] = Doctor.getdocWorkID();
             row[3] = Doctor.getdocAddress();
