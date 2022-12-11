@@ -34,10 +34,14 @@ public abstract class Role {
         }
     }
     
+    public abstract JPanel createWorkArea(JPanel userProcessContainer,
+            User user,
+            EcoModel system);
+    
     @Override
     public String toString() {
         return this.getClass().getName();
     }
     
-    public abstract JPanel createWorkArea(JPanel userProcessContainer, User user, EcoModel system);
+    
 }

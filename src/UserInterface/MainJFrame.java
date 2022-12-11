@@ -167,6 +167,7 @@ public class MainJFrame extends javax.swing.JFrame {
         try{
             User user = system.getUserAccountDirectory().userAuthorization(txtUserNameInput.getText(), pwdInput.getText());
             CardLayout layout = (CardLayout) panelWorkArea.getLayout();
+            System.out.println("Hello from main j frame");
             System.out.println("role of user ---"+user.getUserRole());
             panelWorkArea.add(user.getUserRole().createWorkArea(panelWorkArea, user, system));
             layout.next(panelWorkArea);

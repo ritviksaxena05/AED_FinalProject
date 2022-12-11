@@ -61,6 +61,7 @@ public class Ambulance {
     }
 
     public String getStatus() {
+        
         return ambulanceDriverStatus;
     }
 

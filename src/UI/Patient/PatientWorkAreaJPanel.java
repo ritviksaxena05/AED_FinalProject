@@ -37,7 +37,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
     }
     private void populatePatientInfo() {
         for (Patient patient : ecoSystem.getPatDirectory().getPatientList()) {
-            if (userAccount.getUsername().equals(patient.getpUserName())) {
+            if (userAccount.getUserName().equals(patient.getpUserName())) {
                 txtFirstName.setText(patient.getpFirstName());
                 txtLastName.setText(patient.getpLastName());
                 txtAge.setText(Integer.toString(patient.getpAge()));
@@ -51,9 +51,9 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
                 txtBloodGroup.setText(patient.getpBloodType());
                 txtPatientStatus.setText(patient.getpStatus());
 
-                ImageIcon ii = new ImageIcon(patient.getpImageUrl());
-                Image image = ii.getImage().getScaledInstance(130, 130, Image.SCALE_SMOOTH);
-                lblPhotoImage.setIcon(new ImageIcon(image));
+//                ImageIcon ii = new ImageIcon(patient.getpImageUrl());
+//                Image image = ii.getImage().getScaledInstance(130, 130, Image.SCALE_SMOOTH);
+//                lblPhotoImage.setIcon(new ImageIcon(image));
             }
 
         }
@@ -64,7 +64,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (Patient patient : ecoSystem.getPatDirectory().getPatientList()) {
-            if (userAccount.getUsername().equals(patient.getpUserName())) {
+            if (userAccount.getUserName().equals(patient.getpUserName())) {
                 for (PatientBills b : patient.getpBills()) {
 
                     Object[] row = new Object[7];
