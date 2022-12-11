@@ -72,6 +72,7 @@ private void populatePatientTable1() {
         patientTable = new javax.swing.JTable();
         viewDtlsBtn = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -80,7 +81,7 @@ private void populatePatientTable1() {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Insurer");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-160, 40, 1400, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, 170, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 126, 1400, 10));
 
         patientTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
@@ -123,7 +124,7 @@ private void populatePatientTable1() {
                 viewDtlsBtnActionPerformed(evt);
             }
         });
-        add(viewDtlsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, 180, 50));
+        add(viewDtlsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 180, 50));
 
         backBtn.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
         backBtn.setForeground(new java.awt.Color(9, 145, 143));
@@ -133,7 +134,10 @@ private void populatePatientTable1() {
                 backBtnActionPerformed(evt);
             }
         });
-        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 160, 50));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 110, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/Insurer_40x40.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewDtlsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDtlsBtnActionPerformed
@@ -167,6 +171,7 @@ private void populatePatientTable1() {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable patientTable;

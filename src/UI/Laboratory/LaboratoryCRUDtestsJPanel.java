@@ -78,15 +78,16 @@ public class LaboratoryCRUDtestsJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 204, 204));
+        setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Laboratory");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 150, 44));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 210, 44));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1390, 10));
 
         tableTests.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -118,27 +119,27 @@ public class LaboratoryCRUDtestsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableTests);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 640, 260));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, 640, 260));
 
         lblName.setBackground(new java.awt.Color(0, 0, 0));
         lblName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Test Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, 30));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, -1, 30));
 
         lblName1.setBackground(new java.awt.Color(0, 0, 0));
         lblName1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblName1.setForeground(new java.awt.Color(255, 255, 255));
         lblName1.setText("Usage");
-        add(lblName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, -1, 30));
+        add(lblName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, -1, 30));
 
         lblName2.setBackground(new java.awt.Color(0, 0, 0));
         lblName2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblName2.setForeground(new java.awt.Color(255, 255, 255));
         lblName2.setText("Price");
-        add(lblName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, 30));
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 260, 40));
-        add(txtUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 260, 40));
+        add(lblName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, -1, 30));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, 260, 40));
+        add(txtUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 160, 260, 40));
 
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,65 +151,64 @@ public class LaboratoryCRUDtestsJPanel extends javax.swing.JPanel {
                 txtPriceKeyReleased(evt);
             }
         });
-        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 260, 40));
+        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 260, 40));
 
-        btnSubmit.setBackground(new java.awt.Color(0, 102, 0));
         btnSubmit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setForeground(new java.awt.Color(9, 145, 143));
         btnSubmit.setText("Add Test");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 130, 40));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 130, 40));
 
-        dBtn4.setBackground(new java.awt.Color(255, 0, 51));
         dBtn4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        dBtn4.setForeground(new java.awt.Color(255, 255, 255));
+        dBtn4.setForeground(new java.awt.Color(9, 145, 143));
         dBtn4.setText("Delete");
         dBtn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dBtn4ActionPerformed(evt);
             }
         });
-        add(dBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 350, 120, 40));
+        add(dBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, 120, 40));
 
-        upBtn.setBackground(new java.awt.Color(15, 85, 177));
         upBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        upBtn.setForeground(new java.awt.Color(255, 255, 255));
+        upBtn.setForeground(new java.awt.Color(9, 145, 143));
         upBtn.setText("Update");
         upBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 upBtnActionPerformed(evt);
             }
         });
-        add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(521, 350, 120, 40));
+        add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 290, 120, 40));
 
-        conBtn.setBackground(new java.awt.Color(0, 102, 0));
         conBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        conBtn.setForeground(new java.awt.Color(255, 255, 255));
+        conBtn.setForeground(new java.awt.Color(9, 145, 143));
         conBtn.setText("Save Update");
         conBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 conBtnActionPerformed(evt);
             }
         });
-        add(conBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 150, 40));
+        add(conBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 150, 40));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 490, 120, 32));
 
         jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 153, 204));
+        jButton2.setForeground(new java.awt.Color(9, 145, 143));
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 120, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 120, 40));
 
-        jLabel3.setText("jLabel3");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 50, 50));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/blood_40x40.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 50, 50));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/lab_40x40.png"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
@@ -321,6 +321,7 @@ public class LaboratoryCRUDtestsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblName;
