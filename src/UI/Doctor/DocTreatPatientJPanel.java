@@ -73,7 +73,7 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
         btnRequestMedicine = new javax.swing.JButton();
         btnOrderBloodReport = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 0, 102));
+        setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BillTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -114,34 +114,34 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
         lblPatientTreatArea.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientTreatArea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPatientTreatArea.setText("Patient History");
-        add(lblPatientTreatArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 320, 50));
+        add(lblPatientTreatArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 320, 50));
 
         btnDischargePatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnDischargePatient.setForeground(new java.awt.Color(0, 0, 102));
+        btnDischargePatient.setForeground(new java.awt.Color(9, 145, 143));
         btnDischargePatient.setText("Ready to Discharge");
         btnDischargePatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDischargePatientActionPerformed(evt);
             }
         });
-        add(btnDischargePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 220, 40));
+        add(btnDischargePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 220, 40));
 
         btnEndPatientVisit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnEndPatientVisit.setForeground(new java.awt.Color(0, 0, 102));
+        btnEndPatientVisit.setForeground(new java.awt.Color(9, 145, 143));
         btnEndPatientVisit.setText("End Visit");
         btnEndPatientVisit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEndPatientVisitActionPerformed(evt);
             }
         });
-        add(btnEndPatientVisit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 130, 40));
+        add(btnEndPatientVisit, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, 130, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/pat_hist.png"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 50, 50));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 50, 50));
 
         btnOrderLabReport.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnOrderLabReport.setForeground(new java.awt.Color(0, 0, 102));
+        btnOrderLabReport.setForeground(new java.awt.Color(9, 145, 143));
         btnOrderLabReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/blood_test_40x40.png"))); // NOI18N
         btnOrderLabReport.setText("Order Lab Test");
         btnOrderLabReport.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +152,7 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
         add(btnOrderLabReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, 50));
 
         btnRequestMedicine.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnRequestMedicine.setForeground(new java.awt.Color(0, 0, 102));
+        btnRequestMedicine.setForeground(new java.awt.Color(9, 145, 143));
         btnRequestMedicine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/med.png"))); // NOI18N
         btnRequestMedicine.setText("Request Medicines");
         btnRequestMedicine.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +163,7 @@ public class DocTreatPatientJPanel extends javax.swing.JPanel {
         add(btnRequestMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 250, 50));
 
         btnOrderBloodReport.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnOrderBloodReport.setForeground(new java.awt.Color(0, 0, 102));
+        btnOrderBloodReport.setForeground(new java.awt.Color(9, 145, 143));
         btnOrderBloodReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/lab_report.png"))); // NOI18N
         btnOrderBloodReport.setText("Order Blood Report");
         btnOrderBloodReport.addActionListener(new java.awt.event.ActionListener() {

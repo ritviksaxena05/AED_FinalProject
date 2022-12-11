@@ -121,7 +121,7 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(0, 0, 102));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(9, 145, 143));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblDocArea.setBackground(new java.awt.Color(0, 0, 102));
@@ -163,7 +163,7 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 740, 191));
 
         btnVisitPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnVisitPatient.setForeground(new java.awt.Color(0, 0, 102));
+        btnVisitPatient.setForeground(new java.awt.Color(9, 145, 143));
         btnVisitPatient.setText("Visit");
         btnVisitPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,12 +207,12 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
         lblPreviousPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPreviousPatient.setForeground(new java.awt.Color(255, 255, 255));
         lblPreviousPatient.setText("My Old Patients History");
-        jPanel1.add(lblPreviousPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, 230, 34));
+        jPanel1.add(lblPreviousPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 230, 34));
 
         lblPatientAssigned.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPatientAssigned.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientAssigned.setText("My Current Patients");
-        jPanel1.add(lblPatientAssigned, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 190, 20));
+        jPanel1.add(lblPatientAssigned, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 190, 20));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/doc.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 40, 40));
