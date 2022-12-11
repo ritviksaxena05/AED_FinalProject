@@ -124,7 +124,7 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(46, 46, 46))
         );
 
-        setBackground(new java.awt.Color(255, 255, 227));
+        setBackground(new java.awt.Color(128, 206, 206));
 
         PatientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         PatientTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -185,7 +185,7 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane4.setViewportView(PatientTable1);
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 102, 102));
+        jButton1.setForeground(new java.awt.Color(9, 145, 143));
         jButton1.setText("View Details of Verification");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,7 +194,7 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 102, 102));
+        jButton2.setForeground(new java.awt.Color(9, 145, 143));
         jButton2.setText("View Details of Past Records");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,7 +202,7 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jPanel3.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel3.setBackground(new java.awt.Color(9, 145, 143));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -228,11 +228,11 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel4.setBackground(new java.awt.Color(255, 102, 102));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 102, 102));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("VERIFICATION REQUEST");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 102, 102));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("PAST RECORDS");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
