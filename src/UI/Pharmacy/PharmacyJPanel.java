@@ -242,14 +242,47 @@ public class PharmacyJPanel extends javax.swing.JPanel {
     
     private void btnViewRequest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewRequest1ActionPerformed
         // TODO add your handling code here:
+
+        int selectedRowIndex = tablePatientDetails1.getSelectedRow();
+        if (selectedRowIndex < 0) 
+        {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        } 
+        else 
+        {
+            Patient patient = (Patient) tablePatientDetails1.getValueAt(selectedRowIndex, 7);
+            PharmacyDisplayRequestedTestsJPanel doctorRequestLabTestJPanel = new PharmacyDisplayRequestedTestsJPanel(userWorkArea, userAccount,patient,ecoModel);
+            userWorkArea.add("Request Lab Tests", doctorRequestLabTestJPanel);
+            CardLayout layout = (CardLayout) userWorkArea.getLayout();
+            layout.next(userWorkArea);
+        }
     }//GEN-LAST:event_btnViewRequest1ActionPerformed
 
     private void btnUpdateInventory1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateInventory1ActionPerformed
         // TODO add your handling code here:
+        PharmacyDisplayCRUDJpanel doctorRequestLabTestJPanel = new PharmacyDisplayCRUDJpanel(userWorkArea, userAccount,ecoModel);
+        userWorkArea.add("Request Lab Tests", doctorRequestLabTestJPanel);
+        CardLayout layout = (CardLayout) userWorkArea.getLayout();
+        layout.next(userWorkArea);
     }//GEN-LAST:event_btnUpdateInventory1ActionPerformed
 
     private void btnView1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnView1ActionPerformed
-        // TODO add your handling code here:
+       // TODO add your handling code here:
+       
+       int selectedRowIndex = tablePatient1.getSelectedRow();
+        if (selectedRowIndex < 0) 
+        {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        } 
+        else 
+        {
+            Patient patient = (Patient) tablePatient1.getValueAt(selectedRowIndex, 7);
+            PharmacyDisplayPastRequestsJPanel doctorRequestLabTestJPanel = new PharmacyDisplayPastRequestsJPanel(userWorkArea, userAccount,patient,ecoModel);
+            userWorkArea.add("Past Tests", doctorRequestLabTestJPanel);
+            CardLayout layout = (CardLayout) userWorkArea.getLayout();
+            layout.next(userWorkArea);
+        }
+       
     }//GEN-LAST:event_btnView1ActionPerformed
 
 
