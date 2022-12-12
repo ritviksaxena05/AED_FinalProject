@@ -120,7 +120,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         BillTalble = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(9, 145, 143));
+        setBackground(new java.awt.Color(0, 0, 102));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 1300, 20));
 

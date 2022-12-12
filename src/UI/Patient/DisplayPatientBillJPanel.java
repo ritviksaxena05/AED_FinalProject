@@ -33,7 +33,7 @@ public class DisplayPatientBillJPanel extends javax.swing.JPanel {
         lblPatientName = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(9, 145, 143));
+        setBackground(new java.awt.Color(0, 0, 102));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 153, 204));
