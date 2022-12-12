@@ -100,8 +100,9 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
 
-        setBackground(new java.awt.Color(0, 204, 204));
+        setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblManageCustomers.setBackground(new java.awt.Color(255, 255, 255));
@@ -140,10 +141,10 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(DoctorTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 840, 191));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 840, 191));
 
         btnCreateDoctor.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnCreateDoctor.setForeground(new java.awt.Color(0, 153, 204));
+        btnCreateDoctor.setForeground(new java.awt.Color(9, 145, 143));
         btnCreateDoctor.setText("Create Doctor");
         btnCreateDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,7 +154,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         add(btnCreateDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 500, 180, 40));
 
         upBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        upBtn.setForeground(new java.awt.Color(0, 153, 204));
+        upBtn.setForeground(new java.awt.Color(9, 145, 143));
         upBtn.setText("Update");
         upBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +164,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 560, 180, 40));
 
         dBtn4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        dBtn4.setForeground(new java.awt.Color(0, 153, 204));
+        dBtn4.setForeground(new java.awt.Color(9, 145, 143));
         dBtn4.setText("Delete");
         dBtn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -210,7 +211,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 160, 40));
 
         btnAssignDoctor1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnAssignDoctor1.setForeground(new java.awt.Color(0, 153, 204));
+        btnAssignDoctor1.setForeground(new java.awt.Color(9, 145, 143));
         btnAssignDoctor1.setText("Assign Doctor");
         btnAssignDoctor1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,13 +223,17 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Doctors");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, -1, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, -1, 40));
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/pat_40x40.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 50, 40));
 
-        jLabel4.setText("jLabel4");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 50, 40));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/Doc.png"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, 50, 40));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 1434, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDoctorActionPerformed
@@ -302,6 +307,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblManageCustomers;
     private javax.swing.JButton upBtn;
     // End of variables declaration//GEN-END:variables

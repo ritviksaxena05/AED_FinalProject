@@ -300,14 +300,14 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 220, 170, 30));
 
         btnSubmit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(0, 153, 204));
+        btnSubmit.setForeground(new java.awt.Color(9, 145, 143));
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 490, 159, 46));
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 370, 159, 46));
 
         lblRestaurantName5.setBackground(new java.awt.Color(255, 255, 255));
         lblRestaurantName5.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
@@ -345,15 +345,15 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         jPanel1.add(jRadioInsurance, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, -1, -1));
 
         btnBrowse.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        btnBrowse.setForeground(new java.awt.Color(0, 153, 204));
+        btnBrowse.setForeground(new java.awt.Color(9, 145, 143));
         btnBrowse.setText("Browse");
         btnBrowse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBrowseActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBrowse, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 400, 100, 40));
-        jPanel1.add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 210, 160, 140));
+        jPanel1.add(btnBrowse, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 550, 100, 40));
+        jPanel1.add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 160, 140));
 
         lblPaymentMethod.setBackground(new java.awt.Color(255, 255, 255));
         lblPaymentMethod.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
@@ -395,7 +395,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         lblPhoto.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblPhoto.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoto.setText("Upload Photo");
-        jPanel1.add(lblPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 370, -1, -1));
+        jPanel1.add(lblPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 520, -1, -1));
 
         lblErrorFname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorFname.setForeground(new java.awt.Color(255, 51, 51));
@@ -443,7 +443,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Personal Details");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 230, 31));
 
         jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -457,17 +456,17 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 1434, 5));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 115, 1434, 30));
 
         btnSubmit1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnSubmit1.setForeground(new java.awt.Color(0, 153, 204));
+        btnSubmit1.setForeground(new java.awt.Color(9, 145, 143));
         btnSubmit1.setText("Back");
         btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmit1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 40, 120, 46));
+        jPanel1.add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 120, 46));
 
         lblPaymentMethod1.setBackground(new java.awt.Color(255, 255, 255));
         lblPaymentMethod1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N

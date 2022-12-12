@@ -91,7 +91,6 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -120,15 +119,15 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
         backBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(9, 145, 143));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Customer Information");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-460, 20, 1382, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1392, 10));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 540, 50));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1392, 10));
 
         table1.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         table1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -160,14 +159,14 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(table1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 680, 460));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 770, 350));
 
         lblpPhone.setBackground(new java.awt.Color(255, 255, 255));
         lblpPhone.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblpPhone.setForeground(new java.awt.Color(255, 255, 255));
         lblpPhone.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblpPhone.setText("Phone Number");
-        jPanel1.add(lblpPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, -1, 30));
+        add(lblpPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, 30));
 
         txtpAddress.setEditable(false);
         txtpAddress.addActionListener(new java.awt.event.ActionListener() {
@@ -175,14 +174,14 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
                 txtpAddressActionPerformed(evt);
             }
         });
-        jPanel1.add(txtpAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 150, 40));
+        add(txtpAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 190, 40));
 
         lblpAddress.setBackground(new java.awt.Color(255, 255, 255));
         lblpAddress.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblpAddress.setForeground(new java.awt.Color(255, 255, 255));
         lblpAddress.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblpAddress.setText("Address");
-        jPanel1.add(lblpAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 76, 18));
+        add(lblpAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 76, 18));
 
         txtphInsuranceID.setEditable(false);
         txtphInsuranceID.addActionListener(new java.awt.event.ActionListener() {
@@ -190,23 +189,23 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
                 txtphInsuranceIDActionPerformed(evt);
             }
         });
-        jPanel1.add(txtphInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 150, 40));
+        add(txtphInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 190, 30));
 
         lblpHealthInsuranceID.setBackground(new java.awt.Color(255, 255, 255));
         lblpHealthInsuranceID.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblpHealthInsuranceID.setForeground(new java.awt.Color(255, 255, 255));
         lblpHealthInsuranceID.setText("Insurance Id");
-        jPanel1.add(lblpHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 106, -1));
+        add(lblpHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 106, -1));
 
         txtpGender.setEditable(false);
-        jPanel1.add(txtpGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 150, 40));
+        add(txtpGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 190, 30));
 
         lblpGender.setBackground(new java.awt.Color(255, 255, 255));
         lblpGender.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblpGender.setForeground(new java.awt.Color(255, 255, 255));
         lblpGender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblpGender.setText("Gender");
-        jPanel1.add(lblpGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, 98, 30));
+        add(lblpGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 98, 30));
 
         txtpNumber.setEditable(false);
         txtpNumber.addActionListener(new java.awt.event.ActionListener() {
@@ -214,17 +213,17 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
                 txtpNumberActionPerformed(evt);
             }
         });
-        jPanel1.add(txtpNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 570, 150, 40));
+        add(txtpNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 190, 30));
 
         txtpFirstName.setEditable(false);
-        jPanel1.add(txtpFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 156, 150, 40));
+        add(txtpFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 166, 190, 30));
 
         lblpFirstName.setBackground(new java.awt.Color(255, 255, 255));
         lblpFirstName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblpFirstName.setForeground(new java.awt.Color(255, 255, 255));
         lblpFirstName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblpFirstName.setText("First Name");
-        jPanel1.add(lblpFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 116, -1));
+        add(lblpFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 116, -1));
 
         txtpAge.setEditable(false);
         txtpAge.addActionListener(new java.awt.event.ActionListener() {
@@ -232,14 +231,14 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
                 txtpAgeActionPerformed(evt);
             }
         });
-        jPanel1.add(txtpAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 150, 40));
+        add(txtpAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 190, 30));
 
         lblpAge.setBackground(new java.awt.Color(255, 255, 255));
         lblpAge.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblpAge.setForeground(new java.awt.Color(255, 255, 255));
         lblpAge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblpAge.setText("Age");
-        jPanel1.add(lblpAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 50, -1));
+        add(lblpAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 50, -1));
 
         txtpLastName.setEditable(false);
         txtpLastName.addActionListener(new java.awt.event.ActionListener() {
@@ -247,26 +246,26 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
                 txtpLastNameActionPerformed(evt);
             }
         });
-        jPanel1.add(txtpLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 216, 150, 40));
+        add(txtpLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 190, 30));
 
         lblpLastName.setBackground(new java.awt.Color(255, 255, 255));
         lblpLastName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblpLastName.setForeground(new java.awt.Color(255, 255, 255));
         lblpLastName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblpLastName.setText("Last Name");
-        jPanel1.add(lblpLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 116, -1));
+        add(lblpLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 116, -1));
 
         jLabel2.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 204, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 308, 33));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 308, 33));
 
         jLabel3.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 51, 51));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(716, 284, 304, 33));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(716, 284, 304, 33));
 
-        aprvBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        aprvBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         aprvBtn.setForeground(new java.awt.Color(0, 255, 0));
         aprvBtn.setText("Approve");
         aprvBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -274,9 +273,9 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
                 aprvBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(aprvBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, 210, 70));
+        add(aprvBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 580, 210, 70));
 
-        rjctBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        rjctBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         rjctBtn.setForeground(new java.awt.Color(255, 0, 51));
         rjctBtn.setText("Reject");
         rjctBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -284,9 +283,9 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
                 rjctBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(rjctBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 630, 210, 70));
+        add(rjctBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 580, 210, 70));
 
-        verificationBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        verificationBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         verificationBtn.setForeground(new java.awt.Color(0, 51, 153));
         verificationBtn.setText("Send for Verification");
         verificationBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -294,7 +293,7 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
                 verificationBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(verificationBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 630, 220, 70));
+        add(verificationBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 580, 220, 70));
 
         txtpVerification.setEditable(false);
         txtpVerification.addActionListener(new java.awt.event.ActionListener() {
@@ -302,49 +301,28 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
                 txtpVerificationActionPerformed(evt);
             }
         });
-        jPanel1.add(txtpVerification, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 150, 40));
+        add(txtpVerification, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 190, 30));
 
         lblpVerification.setBackground(new java.awt.Color(255, 255, 255));
         lblpVerification.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblpVerification.setForeground(new java.awt.Color(255, 255, 255));
         lblpVerification.setText("Police Verification");
-        jPanel1.add(lblpVerification, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 156, -1));
+        add(lblpVerification, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 156, -1));
 
-        backBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        backBtn.setForeground(new java.awt.Color(0, 153, 204));
+        backBtn.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(9, 145, 143));
         backBtn.setText("Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, 190, 50));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 120, 50));
 
         jLabel4.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 51, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 540, 210, 41));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 540, 210, 41));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtpAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpAddressActionPerformed
@@ -422,7 +400,6 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblpAddress;
