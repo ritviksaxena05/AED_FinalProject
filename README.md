@@ -6,10 +6,31 @@ This repo is for info 5100 final project fall 2022 semester
 ## Enterprises | Organizations | Roles
 
 ### Enterprises:
+Hospital
+Blood Bank
+Insurance
+Police
 
 ### Organizations:
+Pharmacy Organization
+Lab Organization
+Ambulance Organization
+Hospital Organization
+Blood Bank Organization
+Insurer Organization
+Police Department Organization
 
 ### Roles:
+Doctor Admin
+Pharmacy Admin
+Lab Manager
+Ambulance Admin
+Doctor Department Admin
+Blood Bank System Admin Role
+Insurance Manager
+Police Officer
+
+
 
 # Hierarchy Model
 
