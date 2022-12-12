@@ -60,8 +60,10 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         btnBackRequest = new javax.swing.JButton();
         lblTestAvailable = new javax.swing.JLabel();
         lblTestSelected = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 0, 102));
+        setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblLabTest.setBackground(new java.awt.Color(255, 255, 255));
@@ -69,7 +71,7 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         lblLabTest.setForeground(new java.awt.Color(255, 255, 255));
         lblLabTest.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLabTest.setText("Request Lab Tests");
-        add(lblLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 500, 60));
+        add(lblLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 360, 60));
 
         tableSelectedTests.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         tableSelectedTests.setModel(new javax.swing.table.DefaultTableModel(
@@ -100,7 +102,7 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableSelectedTests);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 490, 210));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 490, 210));
 
         tableAvailableTests.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         tableAvailableTests.setModel(new javax.swing.table.DefaultTableModel(
@@ -131,57 +133,62 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tableAvailableTests);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 490, 210));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 490, 210));
 
         btnAddNewTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
-        btnAddNewTest.setForeground(new java.awt.Color(0, 0, 102));
-        btnAddNewTest.setText("ADD");
+        btnAddNewTest.setForeground(new java.awt.Color(9, 145, 143));
+        btnAddNewTest.setText("ADD >>");
         btnAddNewTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddNewTestActionPerformed(evt);
             }
         });
-        add(btnAddNewTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 110, 30));
+        add(btnAddNewTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 110, 30));
 
         btnRemoveTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
-        btnRemoveTest.setForeground(new java.awt.Color(0, 0, 102));
-        btnRemoveTest.setText("REMOVE ");
+        btnRemoveTest.setForeground(new java.awt.Color(9, 145, 143));
+        btnRemoveTest.setText(" << REMOVE ");
         btnRemoveTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRemoveTestActionPerformed(evt);
             }
         });
-        add(btnRemoveTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 120, 30));
+        add(btnRemoveTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 120, 30));
 
-        btnRequestLabTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
-        btnRequestLabTest.setForeground(new java.awt.Color(0, 0, 102));
+        btnRequestLabTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnRequestLabTest.setForeground(new java.awt.Color(9, 145, 143));
+        btnRequestLabTest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/req.png"))); // NOI18N
         btnRequestLabTest.setText("REQUEST TESTS");
         btnRequestLabTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestLabTestActionPerformed(evt);
             }
         });
-        add(btnRequestLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 350, 170, 50));
+        add(btnRequestLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 430, 240, 50));
 
         btnBackRequest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
-        btnBackRequest.setForeground(new java.awt.Color(0, 0, 102));
+        btnBackRequest.setForeground(new java.awt.Color(9, 145, 143));
         btnBackRequest.setText("BACK");
         btnBackRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackRequestActionPerformed(evt);
             }
         });
-        add(btnBackRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, 100, 30));
+        add(btnBackRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 100, 30));
 
-        lblTestAvailable.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
+        lblTestAvailable.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblTestAvailable.setForeground(new java.awt.Color(255, 255, 255));
         lblTestAvailable.setText("Available Tests");
-        add(lblTestAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
+        add(lblTestAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
-        lblTestSelected.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
+        lblTestSelected.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblTestSelected.setForeground(new java.awt.Color(255, 255, 255));
         lblTestSelected.setText("Selected Tests");
-        add(lblTestSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, -1, -1));
+        add(lblTestSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 120, -1, -1));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 87, 1392, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/lab_report.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void populateAvailableTests() {
@@ -293,8 +300,10 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBackRequest;
     private javax.swing.JButton btnRemoveTest;
     private javax.swing.JButton btnRequestLabTest;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblLabTest;
     private javax.swing.JLabel lblTestAvailable;
     private javax.swing.JLabel lblTestSelected;

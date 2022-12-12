@@ -52,14 +52,14 @@ public class LaboratoryPastRequestedTestsJPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 204, 204));
+        setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Patient Request");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 200, 40));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 200, 40));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1400, 10));
 
         BillTable.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -91,17 +91,17 @@ public class LaboratoryPastRequestedTestsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(BillTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 810, 180));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 810, 180));
 
         jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 153, 204));
+        jButton2.setForeground(new java.awt.Color(9, 145, 143));
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 140, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 140, 40));
 
         jLabel2.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 380, 60));

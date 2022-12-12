@@ -79,7 +79,7 @@ public class PatientBillJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Patient name");
+        jLabel1.setText("Patient name :");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 280, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 1915, 10));
 
@@ -118,17 +118,17 @@ public class PatientBillJPanel extends javax.swing.JPanel {
         lblPatientName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lblPatientName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 347, 44));
+        add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 260, 30));
 
         bckBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        bckBtn.setForeground(new java.awt.Color(0, 153, 204));
+        bckBtn.setForeground(new java.awt.Color(9, 145, 143));
         bckBtn.setText(" Back");
         bckBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bckBtnActionPerformed(evt);
             }
         });
-        add(bckBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 140, 40));
+        add(bckBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 140, 40));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1255, 406, 481, 387));
 
         textBill.setBackground(new java.awt.Color(255, 255, 255));

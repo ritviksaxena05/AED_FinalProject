@@ -49,7 +49,6 @@ public class ExistingPatientDetailsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblPatientLastName = new javax.swing.JLabel();
         lblPatientFirstName = new javax.swing.JLabel();
@@ -62,86 +61,65 @@ public class ExistingPatientDetailsJPanel extends javax.swing.JPanel {
         lblLastName = new javax.swing.JTextField();
         lblLocation = new javax.swing.JTextField();
 
-        jPanel1.setBackground(new java.awt.Color(229, 210, 188));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(9, 145, 143));
+        setForeground(new java.awt.Color(9, 145, 143));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("EMERGENCY DETAILS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1409, 80));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 840, 80));
 
         lblPatientLastName.setBackground(new java.awt.Color(15, 85, 177));
-        lblPatientLastName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientLastName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblPatientLastName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientLastName.setText("Patient Last Name");
-        jPanel1.add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, -1, -1));
+        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, -1, -1));
 
         lblPatientFirstName.setBackground(new java.awt.Color(0, 153, 204));
-        lblPatientFirstName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientFirstName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblPatientFirstName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientFirstName.setText("Patient First Name");
-        jPanel1.add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, -1, -1));
+        add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, -1, -1));
 
         lblPatientLocation.setBackground(new java.awt.Color(15, 85, 177));
-        lblPatientLocation.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientLocation.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblPatientLocation.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientLocation.setText("Patient Location");
-        jPanel1.add(lblPatientLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 490, -1, -1));
+        add(lblPatientLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 490, -1, -1));
 
-        btnSetFree.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnSetFree.setForeground(new java.awt.Color(0, 153, 204));
+        btnSetFree.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
+        btnSetFree.setForeground(new java.awt.Color(9, 145, 143));
         btnSetFree.setText("Set Free");
         btnSetFree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSetFreeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSetFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(715, 550, 170, 38));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 107, 1432, 10));
+        add(btnSetFree, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 560, 170, 38));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 107, 1432, 10));
 
-        btnSetFree1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnSetFree1.setForeground(new java.awt.Color(0, 153, 204));
+        btnSetFree1.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
+        btnSetFree1.setForeground(new java.awt.Color(9, 145, 143));
         btnSetFree1.setText("Back");
         btnSetFree1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSetFree1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSetFree1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 550, 150, 38));
+        add(btnSetFree1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 150, 38));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/ambulance_gif.jpeg"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 480, 170));
-        jPanel1.add(lblFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 390, 210, 30));
-        jPanel1.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, 210, 30));
-        jPanel1.add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, 210, 30));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1013, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1013, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/istockphoto-1218104087-612x612_75.jpeg"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 430, 230));
+        add(lblFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 390, 210, 30));
+        add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, 210, 30));
+        add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, 210, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSetFreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetFreeActionPerformed
         // TODO add your handling code here:
-
         ambulance.setStatus("Free");
         JOptionPane.showMessageDialog(null, "Status Changed To Free");
         DisplayPatientJPanel displayAmbulancePatientJPanel = new DisplayPatientJPanel(userProcessContainer, userAccount, ecoSystem);
@@ -164,7 +142,6 @@ public class ExistingPatientDetailsJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSetFree1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField lblFirstName;
     private javax.swing.JTextField lblLastName;

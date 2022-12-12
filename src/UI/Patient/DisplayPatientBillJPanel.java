@@ -26,7 +26,6 @@ public class DisplayPatientBillJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -34,16 +33,16 @@ public class DisplayPatientBillJPanel extends javax.swing.JPanel {
         lblPatientName = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(0, 0, 102));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 153, 204));
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("BILL");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 1300, 80));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 127, 1300, 10));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 1300, 80));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 1300, 10));
 
         BillTalble.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         BillTalble.setModel(new javax.swing.table.DefaultTableModel(
@@ -74,35 +73,14 @@ public class DisplayPatientBillJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(BillTalble);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 570, 1294, 180));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 1294, 180));
 
         lblPatientName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        jPanel1.add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 311, 30));
+        add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 311, 30));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/hospital-logo.jpeg"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 850, 390));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1202, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 815, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 803, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/bill2.png"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 700, 300));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -110,7 +88,6 @@ public class DisplayPatientBillJPanel extends javax.swing.JPanel {
     private javax.swing.JTable BillTalble;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblPatientName;

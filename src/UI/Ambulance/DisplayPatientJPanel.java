@@ -68,7 +68,7 @@ public class DisplayPatientJPanel extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(229, 210, 188));
+        jPanel1.setBackground(new java.awt.Color(9, 145, 143));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         AmbulanceTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -103,7 +103,7 @@ public class DisplayPatientJPanel extends javax.swing.JPanel {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 1230, 191));
 
         btnCurrentPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnCurrentPatient.setForeground(new java.awt.Color(0, 153, 204));
+        btnCurrentPatient.setForeground(new java.awt.Color(9, 145, 143));
         btnCurrentPatient.setText("Current Patient");
         btnCurrentPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
