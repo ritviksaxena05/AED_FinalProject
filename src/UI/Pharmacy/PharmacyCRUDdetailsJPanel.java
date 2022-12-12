@@ -44,51 +44,41 @@ public class PharmacyCRUDdetailsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        lblPharm = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        btnAddMedicine = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableMedDetails = new javax.swing.JTable();
-        lblMedCost = new javax.swing.JLabel();
-        txtMedCost = new javax.swing.JTextField();
-        txtMedUsage = new javax.swing.JTextField();
-        txtMedName = new javax.swing.JTextField();
-        lblMedName = new javax.swing.JLabel();
-        lblMedUsage = new javax.swing.JLabel();
-        txtMedQuantity = new javax.swing.JTextField();
-        lblMedQuantity = new javax.swing.JLabel();
-        btnDeleteMed = new javax.swing.JButton();
-        btnSaveUpdatedMed = new javax.swing.JButton();
-        btnMedUpdate = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        btnPharmBack = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        btnAddMedicine1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableMedDetails1 = new javax.swing.JTable();
+        lblMedCost1 = new javax.swing.JLabel();
+        txtMedCost1 = new javax.swing.JTextField();
+        txtMedUsage1 = new javax.swing.JTextField();
+        txtMedName1 = new javax.swing.JTextField();
+        lblMedName1 = new javax.swing.JLabel();
+        lblMedUsage1 = new javax.swing.JLabel();
+        txtMedQuantity1 = new javax.swing.JTextField();
+        lblMedQuantity1 = new javax.swing.JLabel();
+        btnDeleteMed1 = new javax.swing.JButton();
+        btnSaveUpdatedMed1 = new javax.swing.JButton();
+        btnMedUpdate1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        lblPharmWorkArea2 = new javax.swing.JLabel();
+        btnPharmBack1 = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(128, 206, 206));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblPharm.setBackground(new java.awt.Color(0, 153, 204));
-        lblPharm.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
-        lblPharm.setForeground(new java.awt.Color(255, 255, 255));
-        lblPharm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPharm.setText("Pharmacy");
-        jPanel1.add(lblPharm, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 220, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 139, 1328, 10));
-
-        btnAddMedicine.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        btnAddMedicine.setForeground(new java.awt.Color(0, 153, 204));
-        btnAddMedicine.setText("Add Medicine");
-        btnAddMedicine.addActionListener(new java.awt.event.ActionListener() {
+        btnAddMedicine1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnAddMedicine1.setForeground(new java.awt.Color(128, 206, 206));
+        btnAddMedicine1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/add (1).png"))); // NOI18N
+        btnAddMedicine1.setText("Add Medicine");
+        btnAddMedicine1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddMedicineActionPerformed(evt);
+                btnAddMedicine1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAddMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, 180, 30));
+        add(btnAddMedicine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 170, 200, 40));
 
-        tableMedDetails.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        tableMedDetails.setModel(new javax.swing.table.DefaultTableModel(
+        tableMedDetails1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        tableMedDetails1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -114,119 +104,127 @@ public class PharmacyCRUDdetailsJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tableMedDetails);
+        jScrollPane2.setViewportView(tableMedDetails1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 788, 186));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 300, 740, 186));
 
-        lblMedCost.setBackground(new java.awt.Color(0, 0, 0));
-        lblMedCost.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        lblMedCost.setForeground(new java.awt.Color(255, 255, 255));
-        lblMedCost.setText("Cost");
-        jPanel1.add(lblMedCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, 30));
+        lblMedCost1.setBackground(new java.awt.Color(0, 0, 0));
+        lblMedCost1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblMedCost1.setForeground(new java.awt.Color(255, 255, 255));
+        lblMedCost1.setText("Cost");
+        add(lblMedCost1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, 30));
 
-        txtMedCost.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtMedCost1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtMedCostKeyReleased(evt);
+                txtMedCost1KeyReleased(evt);
             }
         });
-        jPanel1.add(txtMedCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 530, 144, 30));
-        jPanel1.add(txtMedUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 144, 30));
-        jPanel1.add(txtMedName, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 144, 30));
+        add(txtMedCost1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 200, 144, 30));
+        add(txtMedUsage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 144, 30));
+        add(txtMedName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 144, 30));
 
-        lblMedName.setBackground(new java.awt.Color(0, 0, 0));
-        lblMedName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        lblMedName.setForeground(new java.awt.Color(255, 255, 255));
-        lblMedName.setText("Medicine Name");
-        jPanel1.add(lblMedName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, -1, 30));
+        lblMedName1.setBackground(new java.awt.Color(0, 0, 0));
+        lblMedName1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblMedName1.setForeground(new java.awt.Color(255, 255, 255));
+        lblMedName1.setText("Medicine Name");
+        add(lblMedName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, 30));
 
-        lblMedUsage.setBackground(new java.awt.Color(0, 0, 0));
-        lblMedUsage.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        lblMedUsage.setForeground(new java.awt.Color(255, 255, 255));
-        lblMedUsage.setText("Medicine Usage");
-        jPanel1.add(lblMedUsage, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, -1, 30));
+        lblMedUsage1.setBackground(new java.awt.Color(0, 0, 0));
+        lblMedUsage1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblMedUsage1.setForeground(new java.awt.Color(255, 255, 255));
+        lblMedUsage1.setText("Medicine Usage");
+        add(lblMedUsage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, 30));
 
-        txtMedQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtMedQuantity1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtMedQuantityKeyReleased(evt);
+                txtMedQuantity1KeyReleased(evt);
             }
         });
-        jPanel1.add(txtMedQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, 144, 30));
+        add(txtMedQuantity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 144, 30));
 
-        lblMedQuantity.setBackground(new java.awt.Color(0, 0, 0));
-        lblMedQuantity.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        lblMedQuantity.setForeground(new java.awt.Color(255, 255, 255));
-        lblMedQuantity.setText("Quantity");
-        jPanel1.add(lblMedQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, -1, 30));
+        lblMedQuantity1.setBackground(new java.awt.Color(0, 0, 0));
+        lblMedQuantity1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblMedQuantity1.setForeground(new java.awt.Color(255, 255, 255));
+        lblMedQuantity1.setText("Quantity");
+        add(lblMedQuantity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, -1, 30));
 
-        btnDeleteMed.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        btnDeleteMed.setForeground(new java.awt.Color(0, 153, 204));
-        btnDeleteMed.setText("Delete");
-        btnDeleteMed.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteMed1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnDeleteMed1.setForeground(new java.awt.Color(128, 206, 206));
+        btnDeleteMed1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/delete (1).png"))); // NOI18N
+        btnDeleteMed1.setText("Delete");
+        btnDeleteMed1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteMedActionPerformed(evt);
+                btnDeleteMed1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDeleteMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 600, 100, 30));
+        add(btnDeleteMed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 430, 220, 40));
 
-        btnSaveUpdatedMed.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        btnSaveUpdatedMed.setForeground(new java.awt.Color(0, 153, 204));
-        btnSaveUpdatedMed.setText("Save Update");
-        btnSaveUpdatedMed.addActionListener(new java.awt.event.ActionListener() {
+        btnSaveUpdatedMed1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnSaveUpdatedMed1.setForeground(new java.awt.Color(128, 206, 206));
+        btnSaveUpdatedMed1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/download.png"))); // NOI18N
+        btnSaveUpdatedMed1.setText("Save Update");
+        btnSaveUpdatedMed1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveUpdatedMedActionPerformed(evt);
+                btnSaveUpdatedMed1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSaveUpdatedMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 600, 160, 30));
+        add(btnSaveUpdatedMed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 370, 220, 40));
 
-        btnMedUpdate.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        btnMedUpdate.setForeground(new java.awt.Color(0, 153, 204));
-        btnMedUpdate.setText("Update");
-        btnMedUpdate.addActionListener(new java.awt.event.ActionListener() {
+        btnMedUpdate1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnMedUpdate1.setForeground(new java.awt.Color(128, 206, 206));
+        btnMedUpdate1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/update (1).png"))); // NOI18N
+        btnMedUpdate1.setText("Update");
+        btnMedUpdate1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMedUpdateActionPerformed(evt);
+                btnMedUpdate1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMedUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 600, 120, 30));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 490, 213, 32));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 550, 213, 32));
+        add(btnMedUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 310, 220, 40));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 550, 213, 32));
 
-        btnPharmBack.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnPharmBack.setForeground(new java.awt.Color(0, 153, 204));
-        btnPharmBack.setText("Back");
-        btnPharmBack.addActionListener(new java.awt.event.ActionListener() {
+        jPanel3.setBackground(new java.awt.Color(9, 145, 143));
+
+        lblPharmWorkArea2.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
+        lblPharmWorkArea2.setForeground(new java.awt.Color(255, 255, 255));
+        lblPharmWorkArea2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPharmWorkArea2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/pharmacy.png"))); // NOI18N
+        lblPharmWorkArea2.setText("Pharmacy");
+
+        btnPharmBack1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnPharmBack1.setForeground(new java.awt.Color(9, 145, 143));
+        btnPharmBack1.setText("Back");
+        btnPharmBack1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPharmBackActionPerformed(evt);
+                btnPharmBack1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPharmBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 100, 40));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/people-in-pharmacy-vector.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, 120));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1326, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(btnPharmBack1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(267, 267, 267)
+                .addComponent(lblPharmWorkArea2, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 831, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPharmWorkArea2)
+                    .addComponent(btnPharmBack1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1330, 80));
     }// </editor-fold>//GEN-END:initComponents
 
     private void populateMedicineDetails() {
-        DefaultTableModel model = (DefaultTableModel) tableMedDetails.getModel();
+        DefaultTableModel model = (DefaultTableModel) tableMedDetails1.getModel();
 
         model.setRowCount(0);
 
@@ -240,142 +238,53 @@ public class PharmacyCRUDdetailsJPanel extends javax.swing.JPanel {
         }
     }
     
-    private void btnAddMedicineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMedicineActionPerformed
-
-        if (txtMedName.getText().equals("") || txtMedUsage.getText().equals("")|| txtMedCost.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Please fill all the details");
-        } else {
-            Prescription m = new Prescription();
-            m.setName(txtMedName.getText());
-            m.setMedQuantity(Integer.parseInt(txtMedQuantity.getText()));
-            m.setMedUsage(txtMedUsage.getText());
-            m.setMedPrice(Integer.parseInt(txtMedCost.getText()));
-            ecoModel.getPharmacy().createPrescription(m);
-            populateMedicineDetails();
-
-        }
-
-        txtMedName.setText("");
-        txtMedUsage.setText("");
-        txtMedCost.setText("");
-        txtMedQuantity.setText("");
-    }//GEN-LAST:event_btnAddMedicineActionPerformed
-
-    private void txtMedCostKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMedCostKeyReleased
+    private void btnAddMedicine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMedicine1ActionPerformed
         // TODO add your handling code here:
-        String PATTERN = "^[0-9]{0,10}$";
-        Pattern pattern = Pattern.compile(PATTERN);
-        Matcher match = pattern.matcher(txtMedCost.getText());
-        if (!match.matches() )
-        {
-            jLabel3.setText("Please input correct data. HINT: number");
-        }
-        else
-        {
-            jLabel3.setText(null);
-        }
-    }//GEN-LAST:event_txtMedCostKeyReleased
+    }//GEN-LAST:event_btnAddMedicine1ActionPerformed
 
-    private void txtMedQuantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMedQuantityKeyReleased
+    private void txtMedCost1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMedCost1KeyReleased
         // TODO add your handling code here:
-        String PATTERN = "^[0-9]{0,10}$";
-        Pattern pattern = Pattern.compile(PATTERN);
-        Matcher match = pattern.matcher(txtMedQuantity.getText());
-        if (!match.matches() )
-        {
-            jLabel2.setText("Please input correct data. HINT: number");
-        } else
-        {
-            jLabel2.setText(null);
-        }
-    }//GEN-LAST:event_txtMedQuantityKeyReleased
+    }//GEN-LAST:event_txtMedCost1KeyReleased
 
-    private void btnDeleteMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteMedActionPerformed
+    private void txtMedQuantity1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMedQuantity1KeyReleased
         // TODO add your handling code here:
-        int selectedRow = tableMedDetails.getSelectedRow();
-        if(selectedRow>=0){
-            int selectionButton = JOptionPane.YES_NO_OPTION;
-            int selectionResult = JOptionPane.showConfirmDialog(null, "Delete Medicine: "+tableMedDetails.getValueAt(selectedRow, 0)+" ??","Warning",selectionButton);
-            if(selectionResult == JOptionPane.YES_OPTION){
-                Prescription p = (Prescription) tableMedDetails.getValueAt(selectedRow, 0);
-                ecoModel.getPharmacy().deletePrescription(p);
-                populateMedicineDetails();
-            }
-        }else{
-            JOptionPane.showMessageDialog(null, "Select a Customer to delete!");
-        }
-    }//GEN-LAST:event_btnDeleteMedActionPerformed
+    }//GEN-LAST:event_txtMedQuantity1KeyReleased
 
-    private void btnSaveUpdatedMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveUpdatedMedActionPerformed
+    private void btnDeleteMed1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteMed1ActionPerformed
         // TODO add your handling code here:
-        String name = txtMedName.getText();
-        String uname=txtMedUsage.getText();
-        String password=txtMedCost.getText();
-        String quantity= txtMedQuantity.getText();
-        if(name.equalsIgnoreCase("")||uname.equalsIgnoreCase("")||password.equalsIgnoreCase(""))
-        {
-            JOptionPane.showMessageDialog(null, "Pls, Fill data Correctly!!", "Warning", JOptionPane.WARNING_MESSAGE);
-        }
-        else{
+    }//GEN-LAST:event_btnDeleteMed1ActionPerformed
 
-            ecoModel.getPharmacy().updatePrescription(med,name,uname,Integer.parseInt(password),Integer.parseInt(quantity));
-            populateMedicineDetails();
-        }
-        txtMedName.setText("");
-        txtMedUsage.setText("");
-        txtMedCost.setText("");
-        txtMedQuantity.setText("");
-    }//GEN-LAST:event_btnSaveUpdatedMedActionPerformed
-
-    private void btnMedUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedUpdateActionPerformed
+    private void btnSaveUpdatedMed1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveUpdatedMed1ActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tableMedDetails.getSelectedRow();
-        //Tests p = (Tests) tableTests.getValueAt(selectedRow, 0);
-        if(selectedRow>=0){
-            med = (Prescription) tableMedDetails.getValueAt(selectedRow, 0);
-            txtMedName.setText(med.getName());
-            txtMedUsage.setText(med.getMedUsage());
-            txtMedCost.setText(Integer.toString(med.getMedPrice()));
-            txtMedQuantity.setText(Integer.toString(med.getMedQuantity()));
-            // system.getUserAccountDirectory().deleteUserAccount(user);
+    }//GEN-LAST:event_btnSaveUpdatedMed1ActionPerformed
 
-        }
-        else {
-            JOptionPane.showMessageDialog(null,"Please select a row");
-        }
-    }//GEN-LAST:event_btnMedUpdateActionPerformed
-
-    private void btnPharmBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPharmBackActionPerformed
+    private void btnMedUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedUpdate1ActionPerformed
         // TODO add your handling code here:
-        //patient.setInsuranceStatus("Approved");
-        PharmacyJPanel bill = new PharmacyJPanel(userworkArea, userAccount, ecoModel);
-        userworkArea.add("Insurance main", bill);
-        CardLayout layout = (CardLayout) userworkArea.getLayout();
-        layout.next(userworkArea);
-    }//GEN-LAST:event_btnPharmBackActionPerformed
+    }//GEN-LAST:event_btnMedUpdate1ActionPerformed
+
+    private void btnPharmBack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPharmBack1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPharmBack1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddMedicine;
-    private javax.swing.JButton btnDeleteMed;
-    private javax.swing.JButton btnMedUpdate;
-    private javax.swing.JButton btnPharmBack;
-    private javax.swing.JButton btnSaveUpdatedMed;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblMedCost;
-    private javax.swing.JLabel lblMedName;
-    private javax.swing.JLabel lblMedQuantity;
-    private javax.swing.JLabel lblMedUsage;
-    private javax.swing.JLabel lblPharm;
-    private javax.swing.JTable tableMedDetails;
-    private javax.swing.JTextField txtMedCost;
-    private javax.swing.JTextField txtMedName;
-    private javax.swing.JTextField txtMedQuantity;
-    private javax.swing.JTextField txtMedUsage;
+    private javax.swing.JButton btnAddMedicine1;
+    private javax.swing.JButton btnDeleteMed1;
+    private javax.swing.JButton btnMedUpdate1;
+    private javax.swing.JButton btnPharmBack1;
+    private javax.swing.JButton btnSaveUpdatedMed1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblMedCost1;
+    private javax.swing.JLabel lblMedName1;
+    private javax.swing.JLabel lblMedQuantity1;
+    private javax.swing.JLabel lblMedUsage1;
+    private javax.swing.JLabel lblPharmWorkArea2;
+    private javax.swing.JTable tableMedDetails1;
+    private javax.swing.JTextField txtMedCost1;
+    private javax.swing.JTextField txtMedName1;
+    private javax.swing.JTextField txtMedQuantity1;
+    private javax.swing.JTextField txtMedUsage1;
     // End of variables declaration//GEN-END:variables
 }
