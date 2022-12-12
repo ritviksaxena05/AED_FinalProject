@@ -42,8 +42,9 @@ Hospital Management System is an organized application designed and programmed t
 ![Hospital Management System](https://github.com/ritviksaxena05/AED_FinalProject/blob/7f60d479d8368e1f951cc720e859ddc9454611da/Project%20Model%20Diagram.drawio%20(1).png)
 
 #Context Diagram
+
 ![Hospital Management System]
-(https://github.com/ritviksaxena05/AED_FinalProject/blob/cdc9e6842dc3570f85138a79deba05994c92615f/context%20diagram.jpg))
+(https://github.com/ritviksaxena05/AED_FinalProject/blob/cdc9e6842dc3570f85138a79deba05994c92615f/context%20diagram.jpg)
 
 # Team Members:
 
