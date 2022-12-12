@@ -61,7 +61,7 @@ Hospital Management System is an organized application designed and programmed t
 
 # Steps to reproduce this project
 
-1. Git clone the project by running the below command in the terminal at the location you want to clone locally:  git clone https://github.com/apoddaturi/Final-Project-AED.git
+1. Git clone the project by running the below command in the terminal at the location you want to clone locally:  git clone (https://github.com/ritviksaxena05/AED_FinalProject)
 2. Open the project in Eclipse or Netbeans
 3. Add all the dependencies to libraries and right click on the project from project file manager then click clean and build.
 4. Run it.
