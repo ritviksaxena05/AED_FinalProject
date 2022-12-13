@@ -140,6 +140,11 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(DoctorTable);
+        if (DoctorTable.getColumnModel().getColumnCount() > 0) {
+            DoctorTable.getColumnModel().getColumn(7).setMinWidth(0);
+            DoctorTable.getColumnModel().getColumn(7).setPreferredWidth(0);
+            DoctorTable.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 840, 191));
 
@@ -201,6 +206,11 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(PatientTable);
+        if (PatientTable.getColumnModel().getColumnCount() > 0) {
+            PatientTable.getColumnModel().getColumn(7).setMinWidth(0);
+            PatientTable.getColumnModel().getColumn(7).setPreferredWidth(0);
+            PatientTable.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 830, 193));
 

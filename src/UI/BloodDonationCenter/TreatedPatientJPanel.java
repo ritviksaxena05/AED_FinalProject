@@ -100,6 +100,11 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane3.setViewportView(ManagePatientTable);
+        if (ManagePatientTable.getColumnModel().getColumnCount() > 0) {
+            ManagePatientTable.getColumnModel().getColumn(8).setMinWidth(0);
+            ManagePatientTable.getColumnModel().getColumn(8).setPreferredWidth(0);
+            ManagePatientTable.getColumnModel().getColumn(8).setMaxWidth(0);
+        }
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 1155, 191));
 
@@ -130,7 +135,7 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(254, 254, 254)
                 .addComponent(jLabel1)
-                .addContainerGap(416, Short.MAX_VALUE))
+                .addContainerGap(418, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

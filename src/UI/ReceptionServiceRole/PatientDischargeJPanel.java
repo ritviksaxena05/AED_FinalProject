@@ -114,6 +114,11 @@ public class PatientDischargeJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(ManageCustomersTable);
+        if (ManageCustomersTable.getColumnModel().getColumnCount() > 0) {
+            ManageCustomersTable.getColumnModel().getColumn(8).setMinWidth(0);
+            ManageCustomersTable.getColumnModel().getColumn(8).setPreferredWidth(0);
+            ManageCustomersTable.getColumnModel().getColumn(8).setMaxWidth(0);
+        }
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 1190, 216));
 

@@ -57,8 +57,7 @@ public class EcoModel extends OrganizationModel {
     }
     
     public Pharmacy getPharmacy() {
-        return pharmacy ;
-                //= (pharmacy == null)? new Pharmacy() : pharmacy;
+        return pharmacy = (pharmacy == null)? new Pharmacy() : pharmacy;
     }
 
     public void setPharmacy(Pharmacy pharmacy) {

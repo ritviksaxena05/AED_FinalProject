@@ -118,7 +118,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "User Name", "HealthId", "First", "Last", "Age", "Address", "Email", "Request Status", "Blood Quantity", "obj"
+                "User Name", "HealthId", "First", "Last", "Age", "Payment Type", "Email", "Request Status", "Blood Quantity", "obj"
             }
         ) {
             Class[] types = new Class [] {
@@ -137,6 +137,11 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane3.setViewportView(PatientTable);
+        if (PatientTable.getColumnModel().getColumnCount() > 0) {
+            PatientTable.getColumnModel().getColumn(9).setMinWidth(0);
+            PatientTable.getColumnModel().getColumn(9).setPreferredWidth(0);
+            PatientTable.getColumnModel().getColumn(9).setMaxWidth(0);
+        }
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 860, 142));
 
@@ -168,8 +173,13 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(BillTable);
+        if (BillTable.getColumnModel().getColumnCount() > 0) {
+            BillTable.getColumnModel().getColumn(3).setMinWidth(0);
+            BillTable.getColumnModel().getColumn(3).setPreferredWidth(0);
+            BillTable.getColumnModel().getColumn(3).setMaxWidth(0);
+        }
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 1163, 146));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 870, 146));
 
         btnTreatedPatientList.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnTreatedPatientList.setForeground(new java.awt.Color(9, 145, 143));
@@ -179,7 +189,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
                 btnTreatedPatientListActionPerformed(evt);
             }
         });
-        add(btnTreatedPatientList, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, 300, 40));
+        add(btnTreatedPatientList, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 580, 300, 40));
 
         btnBloodBankInfo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnBloodBankInfo.setForeground(new java.awt.Color(9, 145, 143));
@@ -189,22 +199,22 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
                 btnBloodBankInfoActionPerformed(evt);
             }
         });
-        add(btnBloodBankInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 590, 270, 40));
+        add(btnBloodBankInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 580, 270, 40));
 
         lblCommunity.setBackground(new java.awt.Color(255, 255, 255));
         lblCommunity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblCommunity.setForeground(new java.awt.Color(255, 255, 255));
+        lblCommunity.setForeground(new java.awt.Color(9, 145, 143));
         lblCommunity.setText("Blood Request Status");
-        add(lblCommunity, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 180, 197, 30));
+        add(lblCommunity, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 170, 197, 30));
 
         BloodReqStBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BloodReqStBoxActionPerformed(evt);
             }
         });
-        add(BloodReqStBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 220, 162, 30));
+        add(BloodReqStBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(1012, 220, 190, 30));
 
-        ProcessReqbtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ProcessReqbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ProcessReqbtn.setForeground(new java.awt.Color(9, 145, 143));
         ProcessReqbtn.setText("Process Request");
         ProcessReqbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -212,7 +222,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
                 ProcessReqbtnActionPerformed(evt);
             }
         });
-        add(ProcessReqbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 270, 160, 30));
+        add(ProcessReqbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 270, 190, 30));
 
         jPanel2.setBackground(new java.awt.Color(9, 145, 143));
 
@@ -229,7 +239,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(574, 574, 574)
                 .addComponent(jLabel1)
-                .addContainerGap(596, Short.MAX_VALUE))
+                .addContainerGap(600, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,7 +255,7 @@ public class BloodDonationCenterWorkAreaJPanel extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/bill.png"))); // NOI18N
         jLabel2.setText("BILLS");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTreatedPatientListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTreatedPatientListActionPerformed

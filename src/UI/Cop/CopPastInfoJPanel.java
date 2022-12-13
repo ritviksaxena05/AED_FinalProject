@@ -218,9 +218,9 @@ public class CopPastInfoJPanel extends javax.swing.JPanel {
         jLabel1.setText("PERSON INFORMATION");
         jLabel1.setToolTipText("");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(9, 145, 143));
-        jButton1.setText("Back");
+        jButton1.setText("BACK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

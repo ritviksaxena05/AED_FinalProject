@@ -222,7 +222,7 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tableAvailableTests.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please select a row from the table of available tests","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
             LaboratoryTests item=(LaboratoryTests)tableAvailableTests.getValueAt(selectedRow, 0);
@@ -244,7 +244,7 @@ public class DocLabReportOrderJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tableSelectedTests.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please select a row from the table of selected tests","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
             LaboratoryTests item=(LaboratoryTests)tableSelectedTests.getValueAt(selectedRow, 0);

@@ -116,6 +116,11 @@ public class LaboratoryRequestedTestsJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(BillTable);
+        if (BillTable.getColumnModel().getColumnCount() > 0) {
+            BillTable.getColumnModel().getColumn(5).setMinWidth(0);
+            BillTable.getColumnModel().getColumn(5).setPreferredWidth(0);
+            BillTable.getColumnModel().getColumn(5).setMaxWidth(0);
+        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 820, 171));
 
@@ -147,7 +152,8 @@ public class LaboratoryRequestedTestsJPanel extends javax.swing.JPanel {
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 140, 40));
 
         jLabel3.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 94, 380, 36));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 380, 36));
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));

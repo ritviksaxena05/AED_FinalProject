@@ -77,7 +77,7 @@ private void populatePatientTable1() {
         setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Insurer");
@@ -113,10 +113,15 @@ private void populatePatientTable1() {
             }
         });
         jScrollPane4.setViewportView(patientTable);
+        if (patientTable.getColumnModel().getColumnCount() > 0) {
+            patientTable.getColumnModel().getColumn(7).setMinWidth(0);
+            patientTable.getColumnModel().getColumn(7).setPreferredWidth(0);
+            patientTable.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 990, 200));
 
-        viewDtlsBtn.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
+        viewDtlsBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         viewDtlsBtn.setForeground(new java.awt.Color(9, 145, 143));
         viewDtlsBtn.setText("View Details");
         viewDtlsBtn.addActionListener(new java.awt.event.ActionListener() {

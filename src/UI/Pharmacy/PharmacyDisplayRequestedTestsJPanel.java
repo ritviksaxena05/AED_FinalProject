@@ -82,7 +82,7 @@ public class PharmacyDisplayRequestedTestsJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(128, 206, 206));
+        jButton1.setForeground(new java.awt.Color(9, 145, 143));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/checkout.png"))); // NOI18N
         jButton1.setText("Delivered");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +135,7 @@ public class PharmacyDisplayRequestedTestsJPanel extends javax.swing.JPanel {
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(9, 145, 143));
-        jButton3.setText("Back");
+        jButton3.setText("BACK");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);

@@ -143,6 +143,11 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane4.setViewportView(managePatientTable1);
+        if (managePatientTable1.getColumnModel().getColumnCount() > 0) {
+            managePatientTable1.getColumnModel().getColumn(6).setMinWidth(0);
+            managePatientTable1.getColumnModel().getColumn(6).setPreferredWidth(0);
+            managePatientTable1.getColumnModel().getColumn(6).setMaxWidth(0);
+        }
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 800, 170));
 
@@ -192,7 +197,7 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
                 java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -204,6 +209,11 @@ public class LaboratoryWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane6.setViewportView(managePatientTable2);
+        if (managePatientTable2.getColumnModel().getColumnCount() > 0) {
+            managePatientTable2.getColumnModel().getColumn(6).setMinWidth(0);
+            managePatientTable2.getColumnModel().getColumn(6).setPreferredWidth(0);
+            managePatientTable2.getColumnModel().getColumn(6).setMaxWidth(0);
+        }
 
         add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, 800, 137));
 

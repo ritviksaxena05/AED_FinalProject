@@ -90,6 +90,11 @@ public class LaboratoryPastRequestedTestsJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(BillTable);
+        if (BillTable.getColumnModel().getColumnCount() > 0) {
+            BillTable.getColumnModel().getColumn(5).setMinWidth(0);
+            BillTable.getColumnModel().getColumn(5).setPreferredWidth(0);
+            BillTable.getColumnModel().getColumn(5).setMaxWidth(0);
+        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 810, 180));
 

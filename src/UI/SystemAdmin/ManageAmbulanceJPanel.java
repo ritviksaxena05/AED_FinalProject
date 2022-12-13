@@ -6,6 +6,7 @@ package UI.SystemAdmin;
 
 import Model.EcoModel;
 import Model.User.User;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -35,9 +36,9 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
     }
     
    private void populateNetworkTable() {
-        DefaultTableModel model = (DefaultTableModel) ManageCustomersTable.getModel();
+        //DefaultTableModel model = (DefaultTableModel) ManageCustomersTable.getModel();
 
-        model.setRowCount(0);
+        //model.setRowCount(0);
 
 //        for (User user : ecoSystem.getUserDirectory().getUserAccountList()) {
 //
@@ -61,9 +62,6 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblManageCustomers = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        ManageCustomersTable = new javax.swing.JTable();
         btnSubmit = new javax.swing.JButton();
         lblPassword = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
@@ -71,111 +69,101 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
         lblUserName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
+        lblManageCustomers = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
-        jPanel1.setForeground(new java.awt.Color(0, 153, 204));
+        setBackground(new java.awt.Color(9, 145, 143));
+
+        jPanel1.setBackground(new java.awt.Color(9, 145, 143));
+        jPanel1.setForeground(new java.awt.Color(9, 145, 143));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblManageCustomers.setBackground(new java.awt.Color(119, 197, 147));
-        lblManageCustomers.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
-        lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
-        lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblManageCustomers.setText("                      Manage Customers");
-        jPanel1.add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 29, 590, 70));
-
-        ManageCustomersTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        ManageCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Name", "User Name", "Password"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(ManageCustomersTable);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 167, 730, 382));
-
-        btnSubmit.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(0, 153, 204));
+        btnSubmit.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(9, 145, 143));
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 481, 148, 68));
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, 130, 50));
 
         lblPassword.setBackground(new java.awt.Color(0, 0, 0));
         lblPassword.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lblPassword.setForeground(new java.awt.Color(255, 255, 255));
         lblPassword.setText("Password");
-        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 380, -1, 30));
+        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, -1, 30));
 
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 386, 144, 30));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 144, 30));
 
         txtUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUserNameActionPerformed(evt);
             }
         });
-        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 292, 144, 30));
+        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 220, 144, 30));
 
         lblUserName.setBackground(new java.awt.Color(0, 0, 0));
         lblUserName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lblUserName.setForeground(new java.awt.Color(255, 255, 255));
         lblUserName.setText("Username");
-        jPanel1.add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 286, -1, 30));
-        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 200, 144, 30));
+        jPanel1.add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, 30));
+        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 180, 144, 30));
 
         lblName.setBackground(new java.awt.Color(0, 0, 0));
         lblName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Name");
-        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 194, -1, 30));
+        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, -1, 30));
+
+        lblManageCustomers.setBackground(new java.awt.Color(119, 197, 147));
+        lblManageCustomers.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
+        lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblManageCustomers.setText("                      Manage Ambulance Drivers");
+
+        jButton1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(9, 145, 143));
+        jButton1.setText("BACK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1014, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1014, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(44, 44, 44))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblManageCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 791, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(185, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 534, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(lblManageCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(103, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -192,12 +180,14 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
         {
             //ecoSystem.getUserAccountDirectory().createUserAccount(uname, password, null, new PatientRole());
             //ecoSystem.getPatientDirectory().createPatient(uname);
-            populateNetworkTable();
+            //populateNetworkTable();
+            JOptionPane.showMessageDialog(null, "Saved Details, Successfully");
         }
 
         txtName.setText("");
         txtUserName.setText("");
         txtPassword.setText("");
+        
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
@@ -208,12 +198,19 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserNameActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        SystemAdminWorkAreaJPanel patientBillJPanel = new SystemAdminWorkAreaJPanel(userProcessContainer,userAccount,ecoSystem);
+        userProcessContainer.add("Patient Bill", patientBillJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable ManageCustomersTable;
     private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblManageCustomers;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPassword;

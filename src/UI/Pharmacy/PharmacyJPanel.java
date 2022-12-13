@@ -62,18 +62,18 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1221, 10));
 
-        btnViewRequest1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnViewRequest1.setForeground(new java.awt.Color(128, 206, 206));
+        btnViewRequest1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnViewRequest1.setForeground(new java.awt.Color(9, 145, 143));
         btnViewRequest1.setText("View Request");
         btnViewRequest1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewRequest1ActionPerformed(evt);
             }
         });
-        add(btnViewRequest1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, 130, 30));
+        add(btnViewRequest1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, 180, 30));
 
         btnUpdateInventory1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnUpdateInventory1.setForeground(new java.awt.Color(128, 206, 206));
+        btnUpdateInventory1.setForeground(new java.awt.Color(9, 145, 143));
         btnUpdateInventory1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/refresh.png"))); // NOI18N
         btnUpdateInventory1.setText("Update Inventory");
         btnUpdateInventory1.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +111,11 @@ public class PharmacyJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane6.setViewportView(tablePatientDetails1);
+        if (tablePatientDetails1.getColumnModel().getColumnCount() > 0) {
+            tablePatientDetails1.getColumnModel().getColumn(7).setMinWidth(0);
+            tablePatientDetails1.getColumnModel().getColumn(7).setPreferredWidth(0);
+            tablePatientDetails1.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
         add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 840, 195));
 
@@ -142,18 +147,23 @@ public class PharmacyJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane7.setViewportView(tablePatient1);
+        if (tablePatient1.getColumnModel().getColumnCount() > 0) {
+            tablePatient1.getColumnModel().getColumn(7).setMinWidth(0);
+            tablePatient1.getColumnModel().getColumn(7).setPreferredWidth(0);
+            tablePatient1.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
-        add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 840, 191));
+        add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 600, 840, 191));
 
-        btnView1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnView1.setForeground(new java.awt.Color(128, 206, 206));
+        btnView1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnView1.setForeground(new java.awt.Color(9, 145, 143));
         btnView1.setText("View Request");
         btnView1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnView1ActionPerformed(evt);
             }
         });
-        add(btnView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 390, -1, 30));
+        add(btnView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 550, -1, 30));
 
         jPanel2.setBackground(new java.awt.Color(9, 145, 143));
 
@@ -185,7 +195,7 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("PREVIOUS REQUESTS");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -193,7 +203,7 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/people-in-pharmacy-vector.png"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 680, -1, 80));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, -1, 190));
     }// </editor-fold>//GEN-END:initComponents
 
     private void populatePatientTable1() {

@@ -43,11 +43,12 @@ public class PharmacyDisplayCRUDJpanel extends javax.swing.JPanel {
         for (Prescription t : ecoModel.getPharmacy().getPrescriptionList()) {
 
             
-                Object[] row = new Object[4];                
+                Object[] row = new Object[5];                
                 row[0] = t;
-                row[1] = t.getMedUsage();
-                row[2] =t.getMedQuantity();
-                row[3] = t.getMedPrice();
+                row[1]=t.getName();
+                row[2] = t.getMedUsage();
+                row[3] =t.getMedQuantity();
+                row[4] = t.getMedPrice();
                 model.addRow(row);
         }
     }
@@ -98,20 +99,20 @@ public class PharmacyDisplayCRUDJpanel extends javax.swing.JPanel {
         tableTests.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         tableTests.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Med Name", "Med Usage", "Quantity", "Price"
+                "obj", "Med Name", "Med Usage", "Quantity", "Price"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -123,6 +124,11 @@ public class PharmacyDisplayCRUDJpanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(tableTests);
+        if (tableTests.getColumnModel().getColumnCount() > 0) {
+            tableTests.getColumnModel().getColumn(0).setMinWidth(0);
+            tableTests.getColumnModel().getColumn(0).setPreferredWidth(0);
+            tableTests.getColumnModel().getColumn(0).setMaxWidth(0);
+        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 788, 186));
 
@@ -298,7 +304,7 @@ public class PharmacyDisplayCRUDJpanel extends javax.swing.JPanel {
         int selectedRow = tableTests.getSelectedRow();
         if(selectedRow>=0){
             int selectionButton = JOptionPane.YES_NO_OPTION;
-            int selectionResult = JOptionPane.showConfirmDialog(null, "Delete Medicine: "+tableTests.getValueAt(selectedRow, 0)+" ??","Warning",selectionButton);
+            int selectionResult = JOptionPane.showConfirmDialog(null, "Delete Medicine: "+tableTests.getValueAt(selectedRow, 1)+" ??","Warning",selectionButton);
             if(selectionResult == JOptionPane.YES_OPTION){
 
                 Prescription p = (Prescription) tableTests.getValueAt(selectedRow, 0);
@@ -364,7 +370,6 @@ public class PharmacyDisplayCRUDJpanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton conBtn;
     private javax.swing.JButton dBtn;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
