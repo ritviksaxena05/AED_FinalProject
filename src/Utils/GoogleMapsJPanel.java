@@ -12,6 +12,10 @@ import UI.Ambulance.ReceptionAmbulanceWorkAreaJPanel;
 import com.kingaspx.util.BrowserUtil;
 import com.kingaspx.version.Version;
 import com.teamdev.jxbrowser.chromium.Browser;
+import com.teamdev.jxbrowser.chromium.dom.By;
+import com.teamdev.jxbrowser.chromium.dom.DOMDocument;
+import com.teamdev.jxbrowser.chromium.dom.DOMElement;
+import com.teamdev.jxbrowser.chromium.dom.DOMInputElement;
 import com.teamdev.jxbrowser.chromium.events.ConsoleEvent;
 import com.teamdev.jxbrowser.chromium.events.FinishLoadingEvent;
 import com.teamdev.jxbrowser.chromium.events.LoadAdapter;
@@ -58,7 +62,7 @@ public class GoogleMapsJPanel extends javax.swing.JPanel {
             }
         });
         
-        File file = new File("/Users/ramya/NetBeansProjects/Final/AED_FinalProject/google_maps.html");
+        File file = new File("\\Users\\ritvik\\NetBeansProject\\Final/AED_FinalProject\\simple_map.html");
         BufferedReader reader = new BufferedReader(new FileReader(file));
         StringBuilder stringBuilder = new StringBuilder();
         String line = null;
@@ -110,31 +114,30 @@ public class GoogleMapsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         Map_JPanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
         lblMapsHeading = new javax.swing.JLabel();
+        btnBack1 = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        setLayout(new java.awt.BorderLayout());
 
         Map_JPanel.setFont(new java.awt.Font("Microsoft YaHei", 0, 18)); // NOI18N
         Map_JPanel.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(Map_JPanel, java.awt.BorderLayout.CENTER);
+        add(Map_JPanel, java.awt.BorderLayout.CENTER);
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel2.setBackground(new java.awt.Color(9, 145, 143));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnBack.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(0, 153, 204));
+        btnBack.setForeground(new java.awt.Color(9, 145, 143));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 30, 100, 30));
+        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 20, 100, 30));
 
         lblMapsHeading.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
         lblMapsHeading.setForeground(new java.awt.Color(255, 255, 255));
@@ -142,28 +145,17 @@ public class GoogleMapsJPanel extends javax.swing.JPanel {
         lblMapsHeading.setText("Route from driver's location to accident location");
         jPanel2.add(lblMapsHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 770, 50));
 
-        jPanel1.add(jPanel2, java.awt.BorderLayout.PAGE_START);
+        btnBack1.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
+        btnBack1.setForeground(new java.awt.Color(9, 145, 143));
+        btnBack1.setText("Get Route");
+        btnBack1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBack1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnBack1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 20, 140, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1088, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1088, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 658, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(jPanel2, java.awt.BorderLayout.PAGE_START);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -175,11 +167,26 @@ public class GoogleMapsJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnBack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack1ActionPerformed
+        // TODO add your handling code here:
+        DOMDocument doc = jxBrowser.getDocument();
+        DOMElement start_element = doc.findElement(By.id("start"));
+        DOMElement end_element = doc.findElement(By.id("end"));
+        DOMElement btn_element = doc.findElement(By.id("submit"));
+        DOMElement button = (DOMElement) btn_element;
+
+        DOMInputElement startLocation = (DOMInputElement) start_element;
+        DOMInputElement endLocation = (DOMInputElement) end_element;
+        startLocation.setValue("Northeastern University, Boston");
+        endLocation.setValue(this.accidentLocation);
+        button.click();
+    }//GEN-LAST:event_btnBack1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Map_JPanel;
     private javax.swing.JButton btnBack;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton btnBack1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblMapsHeading;
     // End of variables declaration//GEN-END:variables
