@@ -273,7 +273,7 @@ public class DocAdminAreaJPanel extends javax.swing.JPanel {
         int selectedRow = DoctorTable.getSelectedRow();
         if (selectedRow >= 0) {
             int selectionButton = JOptionPane.YES_NO_OPTION;
-            int selectionResult = JOptionPane.showConfirmDialog(null, "Delete Doctor: " + DoctorTable.getValueAt(selectedRow, 7) + " ??", "Warning", selectionButton);
+            int selectionResult = JOptionPane.showConfirmDialog(null, "Delete Doctor: " + DoctorTable.getValueAt(selectedRow, 0) + " ??", "Warning", selectionButton);
             if (selectionResult == JOptionPane.YES_OPTION) {
 
                 Doctor p = (Doctor) DoctorTable.getValueAt(selectedRow, 7);
