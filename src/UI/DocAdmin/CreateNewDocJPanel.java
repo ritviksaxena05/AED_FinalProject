@@ -372,7 +372,7 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
                 lblErrorWorkExperienceKeyReleased(evt);
             }
         });
-        add(lblErrorWorkExperience, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 540, 170, 26));
+        add(lblErrorWorkExperience, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, 170, 26));
 
         ErrorUserNameLbl.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         ErrorUserNameLbl.setForeground(new java.awt.Color(255, 51, 51));
