@@ -123,7 +123,7 @@ public class PharmacyDisplayPastRequestsJPanel extends javax.swing.JPanel {
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(9, 145, 143));
-        jButton5.setText("Back");
+        jButton5.setText("BACK");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -170,8 +170,6 @@ public class PharmacyDisplayPastRequestsJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable BillTable;
     private javax.swing.JLabel FName;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

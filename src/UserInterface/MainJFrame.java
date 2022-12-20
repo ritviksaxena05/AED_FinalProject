@@ -40,12 +40,26 @@ public class MainJFrame extends javax.swing.JFrame {
         system.getUserDirectory().createUser("doctor", "doctor", null, new DoctorUser());
         system.getUserDirectory().createUser("docadmin", "docadmin", null, new DoctorAdmin());
         system.getUserDirectory().createUser("ambulance", "ambulance", null, new AmbulanceDriver());
+        system.getUserDirectory().createUser("ambulance1", "ambulance", null, new AmbulanceDriver());
+        system.getUserDirectory().createUser("ambulance2", "ambulance", null, new AmbulanceDriver());
         system.getUserDirectory().createUser("police", "police", null, new Cop());
+        system.getUserDirectory().createUser("police1", "police", null, new Cop());
+        system.getUserDirectory().createUser("police2", "police", null, new Cop());
         system.getUserDirectory().createUser("bloodbank", "bloodbank", null, new BloodDonationCenter());
+        system.getUserDirectory().createUser("bloodbank1", "bloodbank", null, new BloodDonationCenter());
+        system.getUserDirectory().createUser("bloodbank2", "bloodbank", null, new BloodDonationCenter());
         system.getUserDirectory().createUser("lab", "lab", null, new Laboratory());   
+        system.getUserDirectory().createUser("lab1", "lab", null, new Laboratory());   
+        system.getUserDirectory().createUser("lab2", "lab", null, new Laboratory());   
         system.getUserDirectory().createUser("insurance", "insurance", null, new InsuranceAuthority());
+        system.getUserDirectory().createUser("insurance1", "insurance", null, new InsuranceAuthority());
+        system.getUserDirectory().createUser("insurance2", "insurance", null, new InsuranceAuthority());
         system.getUserDirectory().createUser("reception", "reception", null, new ReceptionistRole());
+        system.getUserDirectory().createUser("reception1", "reception", null, new ReceptionistRole());
+        system.getUserDirectory().createUser("reception2", "reception", null, new ReceptionistRole());
         system.getUserDirectory().createUser("pharmacy", "pharmacy", null, new PharmacistRole());
+        system.getUserDirectory().createUser("pharmacy1", "pharmacy", null, new PharmacistRole());
+        system.getUserDirectory().createUser("pharmacy2", "pharmacy", null, new PharmacistRole());
 
     }
 

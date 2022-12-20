@@ -217,9 +217,9 @@ public class CopPersonalInfoJPanel extends javax.swing.JPanel {
         jLabel1.setText("PERSON INFORMATION");
         jLabel1.setToolTipText("");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(9, 145, 143));
-        jButton1.setText("Back");
+        jButton1.setText("BACK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -235,7 +235,7 @@ public class CopPersonalInfoJPanel extends javax.swing.JPanel {
                 .addComponent(jButton1)
                 .addGap(334, 334, 334)
                 .addComponent(jLabel1)
-                .addContainerGap(447, Short.MAX_VALUE))
+                .addContainerGap(444, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

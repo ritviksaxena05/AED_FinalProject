@@ -73,7 +73,7 @@ public class DisplayPatientBillJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(BillTalble);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 1294, 180));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 1120, 180));
 
         lblPatientName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N

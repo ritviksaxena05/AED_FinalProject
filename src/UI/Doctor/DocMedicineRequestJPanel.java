@@ -47,11 +47,12 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Prescription t : ecoModel.getPharmacy().getPrescriptionList()) {
             
-               Object[] row = new Object[4];                
+               Object[] row = new Object[5];                
                 row[0] = t;
-                row[1] = t.getMedUsage();
-                row[2] =t.getMedQuantity();
-                row[3] = t.getMedPrice();
+                row[1] = t.getName();
+                row[2] = t.getMedUsage();
+                row[3] =t.getMedQuantity();
+                row[4] = t.getMedPrice();
                 model.addRow(row);
         }
     }
@@ -61,12 +62,13 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
          items.add(item);
-         Object[] row = new Object[4];
+         Object[] row = new Object[5];
                 for(Prescription t:items){
                      row[0] = t;
-                row[1] = t.getMedUsage();
-                row[2] =t.getMedQuantity();
-                row[3] = t.getMedPrice();
+                     row[1] = t.getName();
+                row[2] = t.getMedUsage();
+                row[3] =t.getMedQuantity();
+                row[4] = t.getMedPrice();
                 model.addRow(row);
                 }  
      }
@@ -121,20 +123,20 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         tableSelectedMedicines.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         tableSelectedMedicines.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Med Name", "Med Usage", "Quantity", "Price"
+                "obj", "Med Name", "Med Usage", "Quantity", "Price"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                true, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -146,26 +148,31 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(tableSelectedMedicines);
+        if (tableSelectedMedicines.getColumnModel().getColumnCount() > 0) {
+            tableSelectedMedicines.getColumnModel().getColumn(0).setMinWidth(0);
+            tableSelectedMedicines.getColumnModel().getColumn(0).setPreferredWidth(0);
+            tableSelectedMedicines.getColumnModel().getColumn(0).setMaxWidth(0);
+        }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, 500, 170));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 170, 420, 170));
 
         tableavailableMedicine.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         tableavailableMedicine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Med Name", "Med Usage", "Quantity", "Price"
+                "obj", "Med Name", "Med Usage", "Quantity", "Price"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -177,8 +184,13 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(tableavailableMedicine);
+        if (tableavailableMedicine.getColumnModel().getColumnCount() > 0) {
+            tableavailableMedicine.getColumnModel().getColumn(0).setMinWidth(0);
+            tableavailableMedicine.getColumnModel().getColumn(0).setPreferredWidth(0);
+            tableavailableMedicine.getColumnModel().getColumn(0).setMaxWidth(0);
+        }
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 510, 170));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 510, 170));
 
         btnMedRemove.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         btnMedRemove.setForeground(new java.awt.Color(9, 145, 143));
@@ -188,7 +200,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
                 btnMedRemoveActionPerformed(evt);
             }
         });
-        add(btnMedRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 270, 120, 30));
+        add(btnMedRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 270, 120, 30));
 
         btnMedAdd.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         btnMedAdd.setForeground(new java.awt.Color(9, 145, 143));
@@ -198,7 +210,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
                 btnMedAddActionPerformed(evt);
             }
         });
-        add(btnMedAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, 90, 30));
+        add(btnMedAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, 90, 30));
 
         btnFinalMedReq.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnFinalMedReq.setForeground(new java.awt.Color(9, 145, 143));
@@ -212,8 +224,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         add(btnFinalMedReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, 180, 42));
 
         btnBack.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(0, 0, 102));
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/back.png"))); // NOI18N
+        btnBack.setForeground(new java.awt.Color(9, 145, 143));
         btnBack.setText(" BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,19 +255,20 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         int selectedRow = tableSelectedMedicines.getSelectedRow();
         if(selectedRow<0)
         {
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please select a row from the table of selected medicines","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
             Prescription item=(Prescription)tableSelectedMedicines.getValueAt(selectedRow, 0);
             items.remove(item);
             DefaultTableModel model = (DefaultTableModel) tableSelectedMedicines.getModel();
             model.setRowCount(0);
-            Object[] row = new Object[4];
+            Object[] row = new Object[5];
             for(Prescription t:items){
                 row[0] = t;
-                row[1] = t.getMedUsage();
-                row[2] =t.getMedQuantity();
-                row[3] = t.getMedPrice();
+                row[1]=t.getName();
+                row[2] = t.getMedUsage();
+                row[3] =t.getMedQuantity();
+                row[4] = t.getMedPrice();
                 model.addRow(row);
             }
         }
@@ -268,12 +280,13 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
          items.add(item);
-         Object[] row = new Object[4];
+         Object[] row = new Object[5];
                 for(Prescription t:items){
                     row[0] = t;
-                    row[1] = t.getMedUsage();
-                    row[2] =t.getMedQuantity();
-                    row[3] = t.getMedPrice();
+                    row[1]=t.getName();
+                    row[2] = t.getMedUsage();
+                    row[3] =t.getMedQuantity();
+                    row[4] = t.getMedPrice();
                     model.addRow(row);
                 }  
      }
@@ -282,7 +295,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tableavailableMedicine.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please select a row from the table of available medicies","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
             Prescription item=(Prescription)tableavailableMedicine.getValueAt(selectedRow, 0);
@@ -295,7 +308,7 @@ public class DocMedicineRequestJPanel extends javax.swing.JPanel {
     private void btnFinalMedReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalMedReqActionPerformed
         // TODO add your handling code here:
         if(items.size()==0){
-            JOptionPane.showMessageDialog(null,"Please add test to the cart.","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please add medicine to the cart.","Warning",JOptionPane.WARNING_MESSAGE);
 
         }
         else{

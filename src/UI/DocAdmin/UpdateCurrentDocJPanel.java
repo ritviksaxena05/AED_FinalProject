@@ -73,8 +73,6 @@ public class UpdateCurrentDocJPanel extends javax.swing.JPanel {
         txtDocID = new javax.swing.JTextField();
         lbldocContactNo = new javax.swing.JLabel();
         txtDocContactNo = new javax.swing.JTextField();
-        lblDocDOB = new javax.swing.JLabel();
-        txtDocDOB = new javax.swing.JTextField();
         lblDocEmail = new javax.swing.JLabel();
         txtDocEmail = new javax.swing.JTextField();
         lblDocSpecialist = new javax.swing.JLabel();
@@ -130,14 +128,14 @@ public class UpdateCurrentDocJPanel extends javax.swing.JPanel {
         lblDocAge.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblDocAge.setForeground(new java.awt.Color(255, 255, 255));
         lblDocAge.setText("Age");
-        add(lblDocAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 40, -1));
+        add(lblDocAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 40, -1));
 
         txtDocAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDocAgeActionPerformed(evt);
             }
         });
-        add(txtDocAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 190, 30));
+        add(txtDocAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 190, 30));
 
         lblDocGender.setBackground(new java.awt.Color(255, 255, 255));
         lblDocGender.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -169,40 +167,27 @@ public class UpdateCurrentDocJPanel extends javax.swing.JPanel {
         lbldocContactNo.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lbldocContactNo.setForeground(new java.awt.Color(255, 255, 255));
         lbldocContactNo.setText("Conatct Number");
-        add(lbldocContactNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 160, 30));
+        add(lbldocContactNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 160, 30));
 
         txtDocContactNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDocContactNoActionPerformed(evt);
             }
         });
-        add(txtDocContactNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 190, 30));
-
-        lblDocDOB.setBackground(new java.awt.Color(255, 255, 255));
-        lblDocDOB.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        lblDocDOB.setForeground(new java.awt.Color(255, 255, 255));
-        lblDocDOB.setText("Date of Birth");
-        add(lblDocDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
-
-        txtDocDOB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDocDOBActionPerformed(evt);
-            }
-        });
-        add(txtDocDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 190, 30));
+        add(txtDocContactNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 190, 30));
 
         lblDocEmail.setBackground(new java.awt.Color(255, 255, 255));
         lblDocEmail.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblDocEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblDocEmail.setText("Email");
-        add(lblDocEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, -1, -1));
+        add(lblDocEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
 
         txtDocEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDocEmailActionPerformed(evt);
             }
         });
-        add(txtDocEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, 190, 30));
+        add(txtDocEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 190, 30));
 
         lblDocSpecialist.setBackground(new java.awt.Color(255, 255, 255));
         lblDocSpecialist.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -221,14 +206,14 @@ public class UpdateCurrentDocJPanel extends javax.swing.JPanel {
         lblDocAddress.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblDocAddress.setForeground(new java.awt.Color(255, 255, 255));
         lblDocAddress.setText("Address");
-        add(lblDocAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 80, -1));
+        add(lblDocAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 80, -1));
 
         txtDocAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDocAddressActionPerformed(evt);
             }
         });
-        add(txtDocAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 190, 30));
+        add(txtDocAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 190, 30));
 
         lblDocExperience.setBackground(new java.awt.Color(255, 255, 255));
         lblDocExperience.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -304,10 +289,6 @@ public class UpdateCurrentDocJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDocContactNoActionPerformed
 
-    private void txtDocDOBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocDOBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDocDOBActionPerformed
-
     private void txtDocEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDocEmailActionPerformed
@@ -366,7 +347,6 @@ public class UpdateCurrentDocJPanel extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblDocAddress;
     private javax.swing.JLabel lblDocAge;
-    private javax.swing.JLabel lblDocDOB;
     private javax.swing.JLabel lblDocEmail;
     private javax.swing.JLabel lblDocExperience;
     private javax.swing.JLabel lblDocGender;
@@ -380,7 +360,6 @@ public class UpdateCurrentDocJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtDocAddress;
     private javax.swing.JTextField txtDocAge;
     private javax.swing.JTextField txtDocContactNo;
-    private javax.swing.JTextField txtDocDOB;
     private javax.swing.JTextField txtDocEmail;
     private javax.swing.JTextField txtDocExperience;
     private javax.swing.JTextField txtDocFirstName;

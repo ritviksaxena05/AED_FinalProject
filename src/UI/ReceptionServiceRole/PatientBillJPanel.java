@@ -48,6 +48,7 @@ public class PatientBillJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
         this.totalAmounttxt.setText(String.valueOf(totalAmount));
+        this.totalAmounttxt.setEditable(false); //added
         
     }
     /**
@@ -136,6 +137,12 @@ public class PatientBillJPanel extends javax.swing.JPanel {
         textBill.setForeground(new java.awt.Color(255, 255, 255));
         textBill.setText("Total bill amount of patient :");
         add(textBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, -1, 30));
+
+        totalAmounttxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalAmounttxtActionPerformed(evt);
+            }
+        });
         add(totalAmounttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 420, 120, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -155,6 +162,11 @@ public class PatientBillJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_bckBtnActionPerformed
+
+    private void totalAmounttxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalAmounttxtActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_totalAmounttxtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

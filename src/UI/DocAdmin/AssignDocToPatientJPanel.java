@@ -424,7 +424,7 @@ public class AssignDocToPatientJPanel extends javax.swing.JPanel {
             model.addRow(row);
 
         }
-    }
+}
 
      private void populatePatientInfo() {
         

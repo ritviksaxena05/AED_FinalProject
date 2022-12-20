@@ -334,7 +334,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(BillTalble);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 570, 1260, 140));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 570, 850, 140));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/assets/Patient.png"))); // NOI18N
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 470, 230));

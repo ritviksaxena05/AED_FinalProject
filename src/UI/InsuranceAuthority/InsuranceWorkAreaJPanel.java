@@ -75,13 +75,13 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Insurer");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1380, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-160, 50, 1380, -1));
 
-        jButton1.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(9, 145, 143));
         jButton1.setText("View Details");
         jButton1.setBorderPainted(false);
@@ -90,7 +90,7 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 440, 190, 60));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, 190, 60));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 126, 1380, 10));
 
         PatientTbl.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
@@ -107,7 +107,7 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, true, true, false, false
@@ -122,10 +122,15 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane4.setViewportView(PatientTbl);
+        if (PatientTbl.getColumnModel().getColumnCount() > 0) {
+            PatientTbl.getColumnModel().getColumn(7).setMinWidth(0);
+            PatientTbl.getColumnModel().getColumn(7).setPreferredWidth(0);
+            PatientTbl.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 980, 260));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 980, 260));
 
-        recBtn.setFont(new java.awt.Font("Menlo", 1, 18)); // NOI18N
+        recBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         recBtn.setForeground(new java.awt.Color(9, 145, 143));
         recBtn.setText("View Past Records");
         recBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +138,7 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
                 recBtnActionPerformed(evt);
             }
         });
-        add(recBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 230, 60));
+        add(recBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 230, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

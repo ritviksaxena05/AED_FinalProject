@@ -336,7 +336,7 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
                 ErrorPhoneLblKeyReleased(evt);
             }
         });
-        add(ErrorPhoneLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 170, 20));
+        add(ErrorPhoneLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 170, 20));
 
         ErrorEmailLbl.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         ErrorEmailLbl.setForeground(new java.awt.Color(255, 51, 51));
@@ -345,7 +345,7 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
                 ErrorEmailLblKeyReleased(evt);
             }
         });
-        add(ErrorEmailLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 330, 170, 26));
+        add(ErrorEmailLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, 170, 26));
 
         lblErrorAddress.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorAddress.setForeground(new java.awt.Color(255, 51, 51));
@@ -354,7 +354,7 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
                 lblErrorAddressKeyReleased(evt);
             }
         });
-        add(lblErrorAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 240, 210, 30));
+        add(lblErrorAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 180, 30));
 
         lblErrorSpecialist.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorSpecialist.setForeground(new java.awt.Color(255, 51, 51));
@@ -363,7 +363,7 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
                 lblErrorSpecialistKeyReleased(evt);
             }
         });
-        add(lblErrorSpecialist, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 610, 170, 26));
+        add(lblErrorSpecialist, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 520, 170, 26));
 
         lblErrorWorkExperience.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorWorkExperience.setForeground(new java.awt.Color(255, 51, 51));
@@ -372,7 +372,7 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
                 lblErrorWorkExperienceKeyReleased(evt);
             }
         });
-        add(lblErrorWorkExperience, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 540, 170, 26));
+        add(lblErrorWorkExperience, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, 170, 26));
 
         ErrorUserNameLbl.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         ErrorUserNameLbl.setForeground(new java.awt.Color(255, 51, 51));
@@ -381,7 +381,7 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
                 ErrorUserNameLblKeyReleased(evt);
             }
         });
-        add(ErrorUserNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, 200, 26));
+        add(ErrorUserNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 200, 26));
 
         ErrorPasswordLbl.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         ErrorPasswordLbl.setForeground(new java.awt.Color(255, 51, 51));
@@ -390,10 +390,10 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
                 ErrorPasswordLblKeyReleased(evt);
             }
         });
-        add(ErrorPasswordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 120, 200, 26));
+        add(ErrorPasswordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 180, 200, 26));
 
         lblPhotoImage.setText("Upload doctor photo ");
-        add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 160, 150));
+        add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 160, 150));
 
         lblDocImage.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         lblDocImage.setForeground(new java.awt.Color(9, 145, 143));
@@ -403,8 +403,8 @@ public class CreateNewDocJPanel extends javax.swing.JPanel {
                 lblDocImageActionPerformed(evt);
             }
         });
-        add(lblDocImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 420, -1, -1));
-        add(lblErrorDoctorWorkID, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 540, 170, 20));
+        add(lblDocImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 420, -1, -1));
+        add(lblErrorDoctorWorkID, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 170, 20));
 
         txtDOB.setBackground(new java.awt.Color(204, 204, 204));
         txtDOB.setDateFormatString("MM-dd-yyyy");

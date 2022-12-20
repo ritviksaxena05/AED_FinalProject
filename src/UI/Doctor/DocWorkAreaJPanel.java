@@ -63,7 +63,7 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
         }
         }
         catch(Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
             System.out.println("error message ---"+e.getMessage());
             System.out.println("no patients yet");
         }
@@ -119,7 +119,7 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
         lblPatientAssigned = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 0, 102));
+        setBackground(new java.awt.Color(9, 145, 143));
 
         jPanel1.setBackground(new java.awt.Color(9, 145, 143));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -134,6 +134,10 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
         tablePatientDetail.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         tablePatientDetail.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -159,8 +163,13 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(tablePatientDetail);
+        if (tablePatientDetail.getColumnModel().getColumnCount() > 0) {
+            tablePatientDetail.getColumnModel().getColumn(7).setMinWidth(0);
+            tablePatientDetail.getColumnModel().getColumn(7).setPreferredWidth(0);
+            tablePatientDetail.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 740, 191));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 890, 191));
 
         btnVisitPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnVisitPatient.setForeground(new java.awt.Color(9, 145, 143));
@@ -201,8 +210,13 @@ public class DocWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane3.setViewportView(tablePreviousPatientDetail);
+        if (tablePreviousPatientDetail.getColumnModel().getColumnCount() > 0) {
+            tablePreviousPatientDetail.getColumnModel().getColumn(7).setMinWidth(0);
+            tablePreviousPatientDetail.getColumnModel().getColumn(7).setPreferredWidth(0);
+            tablePreviousPatientDetail.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 730, 191));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 900, 191));
 
         lblPreviousPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         lblPreviousPatient.setForeground(new java.awt.Color(255, 255, 255));

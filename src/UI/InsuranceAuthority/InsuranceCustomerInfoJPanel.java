@@ -122,7 +122,7 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(9, 145, 143));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Customer Information");
@@ -320,9 +320,9 @@ public class InsuranceCustomerInfoJPanel extends javax.swing.JPanel {
         add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 120, 50));
 
         jLabel4.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 540, 210, 41));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 510, 210, 41));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtpAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpAddressActionPerformed

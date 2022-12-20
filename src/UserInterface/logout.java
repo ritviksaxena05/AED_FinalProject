@@ -14,6 +14,7 @@ import Model.User.User;
 import java.awt.CardLayout;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JLabel;
 
 /**
  *
@@ -32,6 +33,25 @@ public class Logout extends javax.swing.JPanel{
     }  
      @SuppressWarnings("unchecked")
     private void initComponents() {
+//        JPanel jPanel2 = new JPanel();
+//        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+//        
+//        jPanel2.setLayout(jPanel2Layout);
+         JLabel jLabel3 = new JLabel("Hospital Management");
+//        jPanel2Layout.setHorizontalGroup(
+//            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGroup(jPanel2Layout.createSequentialGroup()
+//                .addGap(334, 334, 334)
+//                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
+//                .addContainerGap(281, Short.MAX_VALUE))
+//        );
+//        jPanel2Layout.setVerticalGroup(
+//            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+//                .addContainerGap(44, Short.MAX_VALUE)
+//                .addComponent(jLabel3)
+//                .addGap(39, 39, 39))
+//        );
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));

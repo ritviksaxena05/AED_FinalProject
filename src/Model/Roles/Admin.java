@@ -6,6 +6,7 @@ package Model.Roles;
 
 import Model.EcoModel;
 import Model.User.User;
+import UI.SystemAdmin.SystemAdminWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -16,7 +17,6 @@ public class Admin extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User user, EcoModel system) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         return new SystemAdminWorkAreaJPanel(userProcessContainer, user, system);
     }
-    
 }

@@ -155,8 +155,13 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane3.setViewportView(PatientTable);
+        if (PatientTable.getColumnModel().getColumnCount() > 0) {
+            PatientTable.getColumnModel().getColumn(7).setMinWidth(0);
+            PatientTable.getColumnModel().getColumn(7).setPreferredWidth(0);
+            PatientTable.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 1260, 140));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 1180, 140));
 
         PatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         PatientTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -186,8 +191,13 @@ public class CopWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane4.setViewportView(PatientTable1);
+        if (PatientTable1.getColumnModel().getColumnCount() > 0) {
+            PatientTable1.getColumnModel().getColumn(7).setMinWidth(0);
+            PatientTable1.getColumnModel().getColumn(7).setPreferredWidth(0);
+            PatientTable1.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 1260, 191));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 1190, 191));
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(9, 145, 143));
